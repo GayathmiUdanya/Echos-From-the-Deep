@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="4;url=home.html">
+  <title>Echoes From the Deep — Protect Our Oceans</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/spash.css">
+</head>
+<body>
+
+<section class="hero">
+
+  <img src="assets/hero_bg.png" class="hero-bg" alt="Night ocean scene with clouds and stars">
+  <div class="stars" id="stars"></div>
+  <div class="moonHalo" id="moonHalo"></div>
+  <div class="moonReflection" id="moonReflection"></div>
+  <img src="assets/moon.png" class="moon" id="moon" alt="Full moon rising over the ocean">
+  <div class="heroContent" id="heroContent">
+    <p class="sdg">A call to action — SDG 14</p>
+    <h1>Echoes From<br><em>the Deep</em></h1>
+    <p class="tagline">The ocean is speaking. Are we listening?</p>
+    <div class="loader-wrap" id="loaderWrap">
+      <div class="loader-ring" aria-label="Loading indicator">
+        <div class="loader-dot"></div>
+      </div>
+      <p class="countdown" id="countdown" aria-live="polite">
+        Entering site in <span id="countNum">4</span>
+      </p>
+      <button class="skip-btn" id="skipBtn" onclick="skipIntro()" aria-label="Skip intro and enter the site">
+        Skip Intro
+      </button>
+    </div>
+  </div>
+
+  <div class="info-panel" id="infoPanel">
+    <p class="sdg-badge">UN Sustainable Development Goal 14 · Life Below Water</p>
+    <p class="mission">
+      Exploring how individuals, communities, and students can take real action
+      to protect and restore our ocean ecosystems before it is too late.
+    </p>
+    <div class="divider"></div>
+    <div class="team-row" aria-label="Team members">
+      <span class="team-member">Gayathmi</span>
+      <span class="team-member">Kulith</span>
+      <span class="team-member">Dulansa</span>
+      <span class="team-member">Nethnu</span>
+    </div>
+  </div>
+
+</section>
+<script src="scripts/splash.js"></script>
+
+</body>
+</html>
