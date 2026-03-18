@@ -1,6 +1,7 @@
 body{
     background-image:url("assets/bg_image.jpeg");
 }
+
 .team_members{
     display: flex;
     flex-direction: row;
