@@ -25,7 +25,7 @@ const sampleProfiles = [
         goal: "Organize beach cleanups in my community",
         volunteer: "Yes",
         awareness: "Start a social media campaign to educate others about plastic waste",
-        photo:"sample2.png"
+        photo:"assets/sample2.png"
     },
 
     {
@@ -39,7 +39,7 @@ const sampleProfiles = [
         goal: "Clean the oceans",
         volunteer: "No",
         awareness: "Social media campaigns",
-        photo:"sample4.png"
+        photo:"assets/sample4.png"
     },
 
     {
@@ -53,7 +53,7 @@ const sampleProfiles = [
         goal: "Promote sustainable fishing practices",
         volunteer: "Yes",
         awareness: "Educational workshops and social media",
-        photo:"sample5.png"
+        photo:"assets/sample5.png"
     }
 ];
 
