@@ -11,27 +11,32 @@ body{
 .student{
      /*Size*/
     width: 250px;
-    padding: 20px;
+    padding: 15px;
 
     /*Look*/
-    background-color:rgb(216, 214, 214) ; 
+    background-color:#0d1b2a; 
     border-radius: 10px;
-            
+    border: 2px solid #1e3a5f;
+    
     /*Text*/
     text-align: center;
+    color:white;
+    overflow: visible; 
 
     /*Trasitoning*/
     transition: all 0.3s ease;
+
+    position: relative;
 }
 
 .student img{
     /*Size*/
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 220px;
 
     /*Look*/
-    border-radius: 10%;
     object-fit: cover; /*Ensures that the images will fits in the frame*/
+    border-radius: 5px;
 
     /*Trasitoning*/
     transition: all 0.3s ease;
@@ -39,8 +44,8 @@ body{
 
 .student:hover {
     transform: scale(1.05); /*Image will be slightly bigger*/
-    background-color: rgb(180,178,178); 
-    cursor:pointer; 
+    background-color: rgb(150, 160, 180); 
+    cursor:pointer;  
 }
 
 .student:hover img{
@@ -50,6 +55,7 @@ body{
 /*Hides the DETAILS by default*/
 .student .details{
     display: none; 
+    text-align: left; 
 }
 
 /*Shows the DETAILS on hover or focus*/
@@ -71,21 +77,35 @@ body{
 }
 
 .role_1{
-    background-color:#C896FF; /*purple*/
+    background-color:transparent; 
+    border-color:#C896FF; /*purple*/
     box-shadow:0px 0px 10px #C896FF;
 }
 
 .role_2{
-    background-color: rgb(150, 200, 255);  /*blue*/
+    background-color:transparent;
+    border-color: rgb(150, 200, 255);  /*blue*/
     box-shadow: 0px 0px 10px rgb(150, 200, 255);
 }
 
 .role_3{
-    background-color: rgb(150, 255, 180);  /* green */
+    background-color:transparent;
+    border-color: rgb(150, 255, 180);  /* green */
     box-shadow: 0px 0px 10px rgb(150, 255, 180);
 }
 
 .role_4{
-    background-color: rgb(255, 180, 150);  /* orange */
+    background-color:transparent;
+    border-color: rgb(255, 180, 150);  /* orange */
     box-shadow: 0px 0px 10px rgb(255, 180, 150);
+}
+
+table {
+    width:100%;
+}
+
+table td{
+    padding-right:10px;
+    vertical-align:top; /*pushes the text to the top*/
+    padding-bottom:8px; /*adds space between the lines*/
 }
