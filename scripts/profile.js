@@ -122,7 +122,7 @@ function createCreateButton() {
 function saveProfile() {
     const newProfile = {...profile}; // Create a copy of the current profile 
     newProfile.photo = "assets/sample.png"; //Might add a randomizing thingyy
-    sampleProfiles.push(newProfile); //Adds the profile -> Sample profiles
+    sampleProfiles.unshift(newProfile); //Adds the profile -> Sample profiles (unshift for top, push for bottom)
 
     document.getElementById("sample-data-container").innerHTML = ""; // Clear existing profiles
     renderSampleData(); // Re-render profiles to include the new one
