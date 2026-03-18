@@ -1,0 +1,87 @@
+.team_members{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center; 
+}
+.student{
+     /*Size*/
+    width: 250px;
+    padding: 20px;
+
+    /*Look*/
+    background-color:rgb(216, 214, 214) ; 
+    border-radius: 10px;
+            
+    /*Text*/
+    text-align: center;
+
+    /*Trasitoning*/
+    transition: all 0.3s ease;
+}
+
+.student img{
+    /*Size*/
+    width: 100px;
+    height: 100px;
+
+    /*Look*/
+    border-radius: 10%;
+    object-fit: cover; /*Ensures that the images will fits in the frame*/
+
+    /*Trasitoning*/
+    transition: all 0.3s ease;
+}
+
+.student:hover {
+    transform: scale(1.05); /*Image will be slightly bigger*/
+    background-color: rgb(180,178,178); 
+    cursor:pointer; 
+}
+
+.student:hover img{
+    opacity: 0.5; 
+}
+
+/*Hides the DETAILS by default*/
+.student .details{
+    display: none; 
+}
+
+/*Shows the DETAILS on hover or focus*/
+.student:hover .details,
+.student:focus .details{
+    display: block; 
+}
+
+/* Role "button" */
+.role{
+    display: inline-block;
+    color: white; 
+    letter-spacing: 1px;
+    padding: 5px 30px;
+    border-radius: 20px;
+    font-size: 12px; 
+    font-weight:600;
+    margin-top:2px; 
+}
+
+.role_1{
+    background-color:#C896FF; /*purple*/
+    box-shadow:0px 0px 10px #C896FF;
+}
+
+.role_2{
+    background-color: rgb(150, 200, 255);  /*blue*/
+    box-shadow: 0px 0px 10px rgb(150, 200, 255);
+}
+
+.role_3{
+    background-color: rgb(150, 255, 180);  /* green */
+    box-shadow: 0px 0px 10px rgb(150, 255, 180);
+}
+
+.role_4{
+    background-color: rgb(255, 180, 150);  /* orange */
+    box-shadow: 0px 0px 10px rgb(255, 180, 150);
+}
