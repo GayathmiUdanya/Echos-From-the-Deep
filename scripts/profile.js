@@ -118,20 +118,19 @@ function createCreateButton() {
 }
 
 
-//Function to save profiles 
+//Function to save the profiles 
 function saveProfile() {
-    // Push the current profile to the sampleProfiles array
-    const newProfile = { ...profile }; // copy the profile object
-    // Optionally, set a default photo
-    newProfile.photo = "sample.jpeg"; 
-    sampleProfiles.push(newProfile);
+    const newProfile = {...profile}; // Create a copy of the current profile 
+    newProfile.photo = "assets/sample.png"; //Might add a randomizing thingyy
+    sampleProfiles.push(newProfile); //Adds the profile -> Sample profiles
 
-    // Re-render the cards
-    renderSampleData();
+    document.getElementById("sample-data-container").innerHTML = ""; // Clear existing profiles
+    renderSampleData(); // Re-render profiles to include the new one
+    alert("Profile saved successfully!");
 
-    // Reset the builder
-    clearProfile(); // optional: clear form for next user
-    alert("Profile saved and added to sample cards!");
+    document.getElementById("sample-data-container").style.display = "grid";
+    document.getElementById("createProfileBtn").style.display = "inline-block";
+    document.getElementById("profileBuilder").innerHTML = ""; 
 }
 
 //Function to Create the Profile Builder Interface
