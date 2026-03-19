@@ -133,6 +133,41 @@ function saveProfile() {
     document.getElementById("profileBuilder").innerHTML = ""; 
 }
 
+//Function to reset the profile builder 
+function clearProfile() {
+    if (!confirm("Are you sure you want to reset your profile?")) return; //If true this stops the function, false -> Resets the profile
+
+    profile = {
+        name:"",
+        username:"",
+        age:"",
+        country:"",
+        role:"",
+        issue:"",
+        animal:"",
+        goal:"",
+        volunteer:"",
+        awareness:"",
+    }
+    
+    //Reset the displayed values to "Not added yet"
+    document.getElementById("name").textContent = "Not added yet";
+    document.getElementById("username").textContent = "Not added yet";
+    document.getElementById("age").textContent = "Not added yet";
+    document.getElementById("country").textContent = "Not added yet";
+    document.getElementById("role").textContent = "Not added yet";
+    document.getElementById("issue").textContent = "Not added yet";
+    document.getElementById("animal").textContent = "Not added yet";
+    document.getElementById("goal").textContent = "Not added yet";
+    document.getElementById("volunteer").textContent = "Not added yet";
+    document.getElementById("awareness").textContent = "Not added yet";
+
+    //Reset progress bar
+    document.getElementById("progressBar").style.width = "0%";
+    document.getElementById("progressText").textContent = "0% Completed";
+
+}
+
 //Function to Create the Profile Builder Interface
 function createProfile() {
 
