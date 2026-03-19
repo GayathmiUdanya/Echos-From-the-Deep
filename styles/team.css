@@ -1,5 +1,41 @@
 body{
     background-image:url("../assets/bg_image.jpeg");
+    color:#e8f4f8;
+    font-family:'Cinzel', serif;
+}
+
+img {
+    font-size: 12px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family:'Cinzel', serif;
+    background-color:#241f1f;
+    border: 2px solid #4b91b4;
+    color:  #4b91b4;
+    opacity:0.9;
+    border-radius: 10px;
+    cursor: pointer; 
+}
+
+button:hover {
+    box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
+}
+
+
+.team_details_title{
+    padding: 15px;
+    background-color:rgb(13,27,42,0.9); 
+    border: 2px solid #1e3a5f;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: #d0dce8; 
+    margin: 20px auto 20px auto;
+    width: fit-content;
 }
 
 .team_members{
@@ -7,51 +43,42 @@ body{
     flex-direction: row;
     gap: 20px;
     justify-content: center; 
+    align-items: flex-start; /*Stops the cards from streching each other*/
 }
 
 .student{
-    /*Size*/
-    width: 250px;
-    padding: 15px;
-
-    /*Look*/
+    width: 350px;
+    padding: 10px;
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 2px solid #1e3a5f;
-    
-    /*Text*/
     text-align: center;
     color: #d0dce8; 
     overflow: visible; 
-
-    /*Trasitoning*/
     transition: all 0.3s ease;
-
     position: relative;
 }
 
 .student img{
-    /*Size*/
     width: 100%;
-    height: 220px;
-
-    /*Look*/
+    height: 300px;
     object-fit: cover; /*Ensures that the images will fits in the frame*/
     border-radius: 5px;
-
-    /*Trasitoning*/
     transition: all 0.3s ease;
 }
 
 .student:hover {
     transform: scale(1.05); /*Image will be slightly bigger*/
-    cursor:pointer;  
+    cursor:pointer; 
+    z-index: 10;
+    position: relative; 
 }
 
 /*Hides the DETAILS by default*/
 .student .details{
     display: none; 
     text-align: left; 
+    margin-top: 5px;
 }
 
 /*Shows the DETAILS on hover or focus*/
@@ -60,41 +87,7 @@ body{
     display: block; 
 }
 
-/* Role "button" */
-.role{
-    display: inline-block;
-    color: #d0dce8; 
-    letter-spacing: 1px;
-    padding: 5px 30px;
-    border-radius: 20px;
-    font-size: 12px; 
-    font-weight:600;
-    margin-top:2px; 
-}
 
-.role_1{
-    background-color:transparent; 
-    border-color:#C896FF; /*purple*/
-    box-shadow:0px 0px 10px #C896FF;
-}
-
-.role_2{
-    background-color:transparent;
-    border-color: rgb(150, 200, 255);  /*blue*/
-    box-shadow: 0px 0px 10px rgb(150, 200, 255);
-}
-
-.role_3{
-    background-color:transparent;
-    border-color: rgb(150, 255, 180);  /* green */
-    box-shadow: 0px 0px 10px rgb(150, 255, 180);
-}
-
-.role_4{
-    background-color:transparent;
-    border-color: rgb(255, 180, 150);  /* orange */
-    box-shadow: 0px 0px 10px rgb(255, 180, 150);
-}
 
 .row{
     display:flex;
@@ -106,12 +99,17 @@ body{
     color: #d0dce8;
     font-weight: bold; 
     font-variant: small-caps;
-    min-width: 100px; /*ensures that the values are aliged*/
-    flex-shrink:0; /*makes sure the content doesnt skrink to fit*/
+    min-width: 120px; /*Ensures that the values are aliged*/
+    flex-shrink:0; /*Makes sure the content doesnt skrink to fit*/
+}
+
+.value_group{
+    display:flex;
+    flex-direction: column; 
 }
 
 .value{
     color: #d0dce8; 
     font-variant: small-caps;
-    line-height: 1.5;
+    line-height: 1.5; 
 }

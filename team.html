@@ -4,8 +4,9 @@
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
         <title>Team Page</title>
-        <link rel="stylesheet" href="styles/global.css">
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="styles/team.css">
         
     </head>
@@ -20,27 +21,27 @@
                 </section>
             </section>
             <section class="nav-links">
-                <a href="home.html" >Home</a>
+                <a href="home.html">Home</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="ais.html">Impact Simulator</a>
+                <a href="ais.html">Action Impact Simulator</a>
                 <a href="feedback.html">Feedback</a>
                 <a href="team.html" class="active">Team</a>
-                <a href="profile.html" >Profile</a>
+                <a href="profile.html">Profile</a>
                 <a href="sitemap.html">Sitemap</a>
             </section>
         </nav>
         </header>
 
         <main>
-            <h1>Team Details</h1>
-            <p>A little bit about us</p>
+            <div class="team_details_title">Team Details</div>
+    
             <div class="team_members">
 
                 <!--Student_1 profile!-->
                 <article class="student" tabindex = "0">
                     <img src="kulith.jpeg" alt="Image of the team member, Kulith Silva">
                     <h3>Kulith Silva</h3>
-                    <p class="role role_1">Student 01</p>
+                    <button>Student 01</button>
 
                     <div class="details">
 
@@ -54,11 +55,17 @@
                         </div>
                         <div class= "row">
                             <span class="label">Pages: </span>
-                            <span class="value"></span>
+                            <div class="value_group">
+                                <span class="value">Home Page</span>
+                                <span class="value">Home Page</span>
+                            </div>
                         </div>
                         <div class= "row">
                             <span class="label">Contribution:</span>
-                            <span class="value"></span>
+                            <div class="value_group">
+                                <span class="value">Led the development of the home page, ensuring a visually appealing and user-friendly design.</span>
+                                <span class="value">Designed and implemented the home page layout and responsive design.</span>
+                            </div>
                         </div>
                         
                     </div>
@@ -68,7 +75,7 @@
                 <article class="student" tabindex = "0">
                     <img src="nethnu.jpeg" alt="Image of the team member, Nethnu Bulathsinghala">
                     <h3>Nethnu Bulathsinghala</h3>
-                    <p class="role role_2">Student 02</p>
+                    <button>Student 02</button>
 
                     <div class="details">
                         <div class = "row">
@@ -80,12 +87,18 @@
                             <span class="value">Student 02</span>
                         </div>
                         <div class= "row">
-                            <span class="label">Pages: </span>
-                            <span class="value"></span>
+                            <span class="label">Pages:</span>
+                            <div class="value_group">
+                                <span class="value">Action Impact Simulator</span>
+                                <span class="value">Action Impact Simulator</span>
+                            </div>
                         </div>
                         <div class= "row">
                             <span class="label">Contribution:</span>
-                            <span class="value"></span>
+                            <div class="value_group">
+                                <span class="value">Developed the user interface and implemented the core functionality of the simulator.</span>
+                                <span class="value">Collaborated on the design and layout of the website to ensure a cohesive user experience.</span>
+                            </div>
                         </div>
                     
                     </div>
@@ -95,7 +108,7 @@
                 <article class="student" tabindex = "0">
                     <img src="assets/Dulansa_Manamperi.jpg" alt="Image of the team member, Dulansa Manamperi">
                     <h3>Dulansa Manamperi</h3>
-                    <p class="role role_3">Student 03</p>
+                    <button>Student 03</button>
 
                     <div class="details">
                         <div class = "row">
@@ -107,12 +120,18 @@
                             <span class="value">Student 03</span>
                         </div>
                         <div class= "row">
-                            <span class="label">Pages: </span>
-                            <span class="value"></span>
+                            <span class="label">Pages:</span>
+                            <div class="value_group">
+                                <span class="value">Feedback Page</span>
+                                <span class="value">Team Page</span>
+                            </div>
                         </div>
                         <div class= "row">
                             <span class="label">Contribution:</span>
-                            <span class="value"></span>
+                            <div class ="value_group">
+                            <span class="value">Worked on building the feedback page, handling the layout and styling.</span>
+                            <span class="value">Helped with the overall design of the team page and made sure everything looked consistent.</span>
+                            </div>
                         </div>
                         
                     </div>
@@ -122,7 +141,7 @@
                 <article class="student" tabindex = "0">
                     <img src="assets/Gayathmi_Udanya.png" alt="Image of the team member, Gayathmi Udanya">
                     <h3>Gayathmi Udanya</h3>
-                    <p class="role role_4">Student 04</p>
+                    <button>Student 04</button>
 
                     <div class="details">
                         <div class = "row">
@@ -135,11 +154,17 @@
                         </div>
                         <div class= "row">
                             <span class="label">Pages: </span>
-                            <span class="value"></span>
+                            <div class="value_group">
+                                <span class="value">Profile Page</span>
+                                <span class="value">Sitemap Page</span>
+                            </div>
                         </div>
                         <div class= "row">
                             <span class="label">Contribution:</span>
-                            <span class="value"></span>
+                            <div class="value_group">
+                                <span class="value">Designed and styled the profile page, focusing on layout and visual presentation.</span>
+                                <span class="value">Built the sitemap page and organised the structure so navigation is clear and easy to follow.</span>
+                            </div>
                         </div>
                         
                     </div>
@@ -147,5 +172,10 @@
                 
             </div>
         </main>
+
+        <!--Footer
+        <footer> 
+        </footer>
+        !-->
     </body>
 </html>

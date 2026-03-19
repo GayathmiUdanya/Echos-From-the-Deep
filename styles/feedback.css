@@ -1,5 +1,19 @@
 body{
     background-image:url("../assets/bg_image.jpeg");   
+    color:#e8f4f8;
+    font-family:'Cinzel', serif;
+}
+
+.feedback_title{
+    padding: 20px 90px 20px 90px;
+    background-color:rgb(13,27,42,0.9); 
+    border: 2px solid #1e3a5f;
+    border-radius: 10px;
+    font-size: 30px;
+    text-align: center;
+    color: #d0dce8; 
+    margin: 20px auto 20px auto;
+    width: fit-content;
 }
 
 .filter{
@@ -11,12 +25,11 @@ body{
 .sort_dropdown{
     background-color:rgb(13,27,42,0.9);
     color: #d0dce8;
-    /*border: 2px solid #1e3a5f;*/
     padding: 10px 12px;
     font-size: 14px;
     cursor: pointer;
     transition: border-color 0.2s, box-shadow 0.2s;
-    border-radius: 10px; /*curved edges*/
+    border-radius: 10px; /*Curved edges*/
     font-weight: bold; 
 }
 
@@ -149,6 +162,8 @@ button:hover{
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 3px solid #1e3a5f;
+
+    font-family:'Lora', serif;
 }
 
 .review_footer{
@@ -164,6 +179,8 @@ button:hover{
 
 
 hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
     border:none;
     border-top: 1px solid #abb5c0;
 }
