@@ -8,6 +8,32 @@
     container.appendChild(p); // appending dynamic variable back to the star div
   }
 
+  for (let i = 0; i < 35; i++) { // 35 glowing teal dots on water surface
+  const b = document.createElement('div'); // create each bio-dot
+  b.className = 'bio-dot'; // assign CSS bio-dot class
+  const s = Math.random() * 3 + 1.5; // randomise size 1.5–4.5px
+  const op = (Math.random() * 0.55 + 0.15).toFixed(2); // randomise opacity
+  const gsize = (s * 2.5).toFixed(1) + 'px'; // glow radius scales with dot size
+  // position only in lower 48% of screen (water area)
+  b.style.cssText = `width:${s}px;height:${s}px;top:${52 + Math.random()*46}%;left:${Math.random()*100}%;--op:${op};--gsize:${gsize};--duration:${(Math.random()*5+2.5).toFixed(1)}s;--delay:-${(Math.random()*7).toFixed(1)}s;`;
+  container.appendChild(b); // add bio-dot to same container
+}
+
+/* ── Ripple rings (water surface) ── */
+const ripplesContainer = document.getElementById('ripples'); // catch ripples div
+
+for (let i = 0; i < 6; i++) { // 6 expanding ripple rings
+  const r = document.createElement('div'); // create each ripple
+  r.className = 'ripple'; // assign CSS ripple class
+  const w = Math.random() * 40 + 20; // ring start size 20–60px
+  const top = 52 + Math.random() * 30; // position on water (52–82%)
+  const left = 10 + Math.random() * 80; // spread across width (10–90%)
+  const dur = (Math.random() * 4 + 4).toFixed(1) + 's'; // duration 4–8s
+  const delay = '-' + (Math.random() * 6).toFixed(1) + 's'; // stagger start times
+  r.style.cssText = `width:${w}px;height:${w * 0.45}px;top:${top}%;left:${left}%;--rdur:${dur};--rdelay:${delay};`;
+  ripplesContainer.appendChild(r); // add ripple to container
+}
+
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('moon').classList.add('loaded');
