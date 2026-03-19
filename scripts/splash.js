@@ -17,18 +17,23 @@
       document.getElementById('loaderWrap').classList.add('loaded');
       document.getElementById('skipBtn').classList.add('loaded');
       document.getElementById('infoPanel').classList.add('loaded');
+      setTimeout(startCountdown,1900);
     }, 300);
   });
   // letting the elemets to load or 0.3 sec and then adding the "loaded" class to them (styling)
 
   let count = 4;
   let redirectTimer;
+  let countdownStarted = false;
 
   function startCountdown() { // autoredirect after 4 second function
+    if (countdownStarted) return;
+    countdownStarted = true;
     const numEl = document.getElementById('countNum'); 
+    numEl.textContent = count;
     redirectTimer = setInterval(() => { //creating a timer that runs every second 
       count--; //reducing the count by a second 
-      if (count > 0) {
+      if (count >= 1) {
         numEl.textContent = count; //updating the no on the screen
       } else {
         clearInterval(redirectTimer); // stopping the count down when its done
@@ -37,7 +42,9 @@
       }
     }, 1000); // 1 sec interval
   }
-  window.addEventListener('load', startCountdown); // after the page is fully loaded running the startcountdown function
+  // window.addEventListener('load', () => {
+  // setTimeout(startCountdown, 300);
+  // }); // after the page is fully loaded running the startcountdown function
   function skipIntro() { // function when the user clicks on the skipp button 
     if (redirectTimer) clearInterval(redirectTimer); // if pressed stopping the countdown 
     window.location.href = 'home.html'; // redirect instatntly to the home page 
