@@ -14,7 +14,7 @@ body{
     padding: 15px;
 
     /*Look*/
-    background-color:#0d1b2a; 
+    background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 2px solid #1e3a5f;
     
@@ -44,13 +44,13 @@ body{
 
 .student:hover {
     transform: scale(1.05); /*Image will be slightly bigger*/
-    background-color: rgb(150, 160, 180); 
     cursor:pointer;  
 }
 
+/*will probably remove this
 .student:hover img{
-    opacity: 0.5; 
-}
+    filter: grayscale(1) brightness(1.2); /*Offers a washed out look to the image when it has been "selected"
+*/
 
 /*Hides the DETAILS by default*/
 .student .details{
