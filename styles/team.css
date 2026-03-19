@@ -9,7 +9,7 @@ body{
     justify-content: center; 
 }
 .student{
-     /*Size*/
+    /*Size*/
     width: 250px;
     padding: 15px;
 
@@ -20,7 +20,7 @@ body{
     
     /*Text*/
     text-align: center;
-    color:white;
+    color: #d0dce8; 
     overflow: visible; 
 
     /*Trasitoning*/
@@ -46,11 +46,6 @@ body{
     transform: scale(1.05); /*Image will be slightly bigger*/
     cursor:pointer;  
 }
-
-/*will probably remove this
-.student:hover img{
-    filter: grayscale(1) brightness(1.2); /*Offers a washed out look to the image when it has been "selected"
-*/
 
 /*Hides the DETAILS by default*/
 .student .details{
@@ -100,12 +95,22 @@ body{
     box-shadow: 0px 0px 10px rgb(255, 180, 150);
 }
 
-table {
-    width:100%;
+.row{
+    display:flex;
+    align-items: flex-start;
+    margin-bottom: 14px;
 }
 
-table td{
-    padding-right:10px;
-    vertical-align:top; /*pushes the text to the top*/
-    padding-bottom:8px; /*adds space between the lines*/
+.label{
+    color: #d0dce8;
+    font-weight: bold; 
+    font-variant: small-caps;
+    min-width: 100px; /*ensures that the values are aliged*/
+    flex-shrink:0; /*makes sure the content doesnt skrink to fit*/
+}
+
+.value{
+    color: #d0dce8; 
+    font-variant: small-caps;
+    line-height: 1.5;
 }
