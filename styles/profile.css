@@ -154,7 +154,8 @@ button:hover {
 #profileBuilder h1 {
     font-size: 25px;
     font-weight: 700;
-    margin-bottom: 20px;
+    padding-bottom:0;
+
 }
 
 /* Progress bar */
