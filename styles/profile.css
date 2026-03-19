@@ -134,3 +134,66 @@ button:hover {
 
 /* User Profile Builder */
 
+/* User Profile Builder */
+
+#profileBuilder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    width: 80%;
+    background-color: #081B2B;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+#profileBuilder h1 {
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Progress bar */
+.progressContainer {
+    width:100%;
+    max-width:500px;
+    height:10px;
+    border-radius:10px;
+    border:2px solid #e8f4f8;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+.progressBar {
+    height:100%;
+    background-color:#4b91b4;
+    width:0%;
+    transition: width 0.3s ease-in-out;
+}
+
+.profile{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.profile-section {
+    border: 2px solid #4b91b4;
+    margin-bottom:20px;
+    padding:20px;
+    border-radius: 10px;
+}
+
+.profile-row{
+    display:flex;
+    flex-direction:row;
+    gap:20px;
+    line-height:35px;
+}
+
+.profile-row p:first-child{
+    width:500px;
+    min-width:300px;
+}
