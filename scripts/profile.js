@@ -1,7 +1,6 @@
 //Object To Store the Profile Data
 let profile = {
     name:"",
-    username:"",
     age:"",
     country:"",
     role:"",
@@ -15,9 +14,8 @@ let profile = {
 //sample user profiles
 const sampleProfiles = [
     {
-        name: "Gayathmi Udanya",
-        username: "jay_gayathmiii",
-        age: 17,
+        name: "Big Ass",
+        age: 19,
         country: "Sri Lanka",
         role: "Student",
         issue: "Plastic Pollution",
@@ -31,7 +29,6 @@ const sampleProfiles = [
 
     {
         name: "Jane Smith",
-        username: "ocean_lover123",
         age: 70,
         country: "USA",
         role: "Researcher",
@@ -46,7 +43,6 @@ const sampleProfiles = [
 
     {
         name: "John Doe",
-        username: "marine_enthusiast",
         age: 25,
         country: "UK",
         role: "Ocean Enthusiast",
@@ -63,6 +59,7 @@ const sampleProfiles = [
 //Function to display user profiles 
 function renderSampleData() {
     const container = document.getElementById("sample-data-container");
+    container.innerHTML = ""; // clear first
 
     sampleProfiles.forEach(profile => {
         const card = document.createElement("div");
@@ -76,36 +73,16 @@ function renderSampleData() {
             </div>
 
             <div class="name">
-            <h1>${profile.name}</h1>
+                <h1>${profile.name}</h1>
             </div>
-            <div class="details">
-                <p>Age :</p>
-                <p>${profile.age}</p>
-            </div>
-            <div class="details">
-                <p>Issue :</p>
-                <p>${profile.issue}</p>
-            </div>
-            <div class="details">
-                <p>Animal :</p>
-                <p>${profile.animal}</p>
-            </div>
-            <div class="details">
-                <p>Activity :</p>
-                <p>${profile.activity}</p>
-            </div>
-            <div class="details">
-                <p>Goal :</p>
-                <p>${profile.goal}</p>
-            </div>
-            <div class="details">
-                <p>Volunteer :</p>
-                <p>${profile.volunteer}</p>
-            </div>
-            <div class="details">
-                <p>Awareness :</p>
-                <p>${profile.awareness}</p>
-            </div>
+
+            ${profile.age ? `<div class="details"><p>Age :</p><p>${profile.age}</p></div>` : ""}
+            ${profile.issue ? `<div class="details"><p>Issue :</p><p>${profile.issue}</p></div>` : ""}
+            ${profile.animal ? `<div class="details"><p>Animal :</p><p>${profile.animal}</p></div>` : ""}
+            ${profile.activity ? `<div class="details"><p>Activity :</p><p>${profile.activity}</p></div>` : ""}
+            ${profile.goal ? `<div class="details"><p>Goal :</p><p>${profile.goal}</p></div>` : ""}
+            ${profile.volunteer ? `<div class="details"><p>Volunteer :</p><p>${profile.volunteer}</p></div>` : ""}
+            ${profile.awareness ? `<div class="details"><p>Awareness :</p><p>${profile.awareness}</p></div>` : ""}
         `;
 
         container.appendChild(card);
@@ -162,7 +139,6 @@ function clearProfile() {
 
     profile = {
         name:"",
-        username:"",
         age:"",
         country:"",
         role:"",
@@ -176,7 +152,6 @@ function clearProfile() {
     
     //Reset the displayed values to "Not added yet"
     document.getElementById("name").textContent = "Not added yet";
-    document.getElementById("username").textContent = "Not added yet";
     document.getElementById("age").textContent = "Not added yet";
     document.getElementById("country").textContent = "Not added yet";
     document.getElementById("role").textContent = "Not added yet";
@@ -220,6 +195,8 @@ function createProfile() {
 
         <p id="progressText">0% Completed</p>
         <h2>Build Your Profile</h2>
+        <p>Leave blank to skip the question which are not marked required*.</p>
+        <p>They will NOT appear in your profile.</p>
 
         <div class="profile">
 
@@ -229,11 +206,6 @@ function createProfile() {
                 <div class="profile-row">
                     <p class="profile-label">Name:</p>
                     <p id="name" class="profile-value">Not added yet</p>
-                </div>
-
-                <div class="profile-row">
-                    <p class="profile-label">Username:</p>
-                    <p id="username" class="profile-value">Not added yet</p>
                 </div>
 
                 <div class="profile-row">
@@ -321,25 +293,23 @@ function step1() {
         }
     }
 
-    while(!username) {
-        let input = prompt("Choose a username:");
-        if(input === null || input.trim() === "") {
-            alert("Username is required!");
-        } else {
-            username = input;
-            profile.username = username;
-        }
-    }
 
     // Optional fields — allow skipping
     age = prompt("How old are you? (Optional — leave blank to skip)");
     profile.age = (age && age.trim() !== "") ? age : "Not Mentioned";
 
-    country = prompt("Which country do you live in? (Optional — leave blank to skip)");
-    profile.country = (country && country.trim() !== "") ? country : "Not Mentioned";
+    while(!country) {
+    let input = prompt("Which country do you live in?*");
+    if(input === null || input.trim() === "") {
+        alert("Country is required!");
+    } else {
+        country = input;
+        profile.country = country;
+    }
+}
 
     while(!role) {
-        let input = prompt("What is your role? (Student / Ocean Enthusiast / Volunteer / Researcher / Other)");
+        let input = prompt("What is your role?* (Student / Ocean Enthusiast / Volunteer / Researcher / Other)");
         if(input === null || input.trim() === "") {
             alert("Role is required!");
         } else {
@@ -358,10 +328,10 @@ function step1() {
 
 //Interests 
 function step2() {
-    let issue = prompt("Which marine issue concerns you the most? (Optional — leave blank to skip)");
+    let issue = prompt("Which marine issue concerns you the most?");
     profile.issue = (issue && issue.trim() !== "") ? issue : "Not Mentioned";
 
-    let animal = prompt("Which marine animal do you care about the most? (Optional)");
+    let animal = prompt("Which marine animal do you care about the most");
     profile.animal = (animal && animal.trim() !== "") ? animal : "Not Mentioned";
 
     let activity = prompt("What ocean related activity do you enjoy the most? (e.g: Diving, Surfing)")
@@ -375,13 +345,13 @@ function step2() {
 
 //Future 
 function step3() {
-    let goal = prompt("What is one ocean protection goal you want to achieve? (Optional)");
+    let goal = prompt("What is one ocean protection goal you want to achieve?");
     profile.goal = (goal && goal.trim() !== "") ? goal : "Not Mentioned";
 
-    let volunteer = prompt("Are you willing to volunteer conservation efforts? (Yes/No, Optional)");
+    let volunteer = prompt("Are you willing to volunteer conservation efforts? (Yes/No)");
     profile.volunteer = (volunteer && volunteer.trim() !== "") ? volunteer : "Not Mentioned";
 
-    let awareness = prompt("How do you plan to raise awareness? (Optional)");
+    let awareness = prompt("How do you plan to raise awareness?");
     profile.awareness = (awareness && awareness.trim() !== "") ? awareness : "Not Mentioned";
 
     document.querySelectorAll(".profile-section")[2].style.display = "block";
@@ -407,17 +377,11 @@ function updateProgress() {
 
 //profile builder 
 function renderProfile() {
-    document.getElementById("name").textContent = profile.name || "Not added yet";
-    document.getElementById("username").textContent = profile.username || "Not added yet";
-    document.getElementById("age").textContent = profile.age || "Not added yet";
-    document.getElementById("country").textContent = profile.country || "Not added yet";
-    document.getElementById("role").textContent = profile.role || "Not added yet";
-    document.getElementById("issue").textContent = profile.issue || "Not added yet";
-    document.getElementById("animal").textContent = profile.animal || "Not added yet";
-    document.getElementById("activity").textContent = profile.animal || "Not added yet";
-    document.getElementById("goal").textContent = profile.goal || "Not added yet";
-    document.getElementById("volunteer").textContent = profile.volunteer || "Not added yet";
-    document.getElementById("awareness").textContent = profile.awareness || "Not added yet";
+    const fields = ["name","age","country","role","issue","animal","activity","goal","volunteer","awareness"];
+    fields.forEach(f => {
+        const el = document.getElementById(f);
+        el.textContent = profile[f] && profile[f].trim() !== "" ? profile[f] : "";
+    });
 }
 
 
