@@ -22,6 +22,7 @@ const sampleProfiles = [
         role: "Student",
         issue: "Plastic Pollution",
         animal: "Sea Turtles",
+        activity:"Diving",
         goal: "Organize beach cleanups in my community",
         volunteer: "Yes",
         awareness: "Start a social media campaign to educate others about plastic waste",
@@ -36,6 +37,7 @@ const sampleProfiles = [
         role: "Researcher",
         issue: "Plastic Pollution",
         animal: "Dolphin",
+        activity:"Surfing",
         goal: "Clean the oceans",
         volunteer: "No",
         awareness: "Social media campaigns",
@@ -50,6 +52,7 @@ const sampleProfiles = [
         role: "Ocean Enthusiast",
         issue: "Overfishing",
         animal: "Sharks",
+        activity:"Swimming",
         goal: "Promote sustainable fishing practices",
         volunteer: "Yes",
         awareness: "Educational workshops and social media",
@@ -88,6 +91,10 @@ function renderSampleData() {
                 <p>${profile.animal}</p>
             </div>
             <div class="details">
+                <p>Activity :</p>
+                <p>${profile.activity}</p>
+            </div>
+            <div class="details">
                 <p>Goal :</p>
                 <p>${profile.goal}</p>
             </div>
@@ -120,17 +127,33 @@ function createCreateButton() {
 
 //Function to save the profiles 
 function saveProfile() {
-    const newProfile = {...profile}; // Create a copy of the current profile 
-    newProfile.photo = "assets/sample.png"; //Might add a randomizing thingyy
-    sampleProfiles.unshift(newProfile); //Adds the profile -> Sample profiles (unshift for top, push for bottom)
+    const newProfile = {...profile}; 
+    newProfile.photo = "assets/sample.png"; 
 
-    document.getElementById("sample-data-container").innerHTML = ""; // Clear existing profiles
-    renderSampleData(); // Re-render profiles to include the new one
-    alert("Profile saved successfully!");
+    // Replace "Not Mentioned" with empty string
+    for(let key in newProfile){
+        if(newProfile[key] === "Not Mentioned") newProfile[key] = "";
+    }
 
-    document.getElementById("sample-data-container").style.display = "grid";
+    sampleProfiles.unshift(newProfile); 
+
+    // Clear the sample container
+    const container = document.getElementById("sample-data-container");
+    container.innerHTML = ""; 
+
+    // Hide profile builder completely
+    const builder = document.getElementById("profileBuilder");
+    builder.style.display = "none";
+    builder.innerHTML = "";  // remove all builder HTML
+
+    // Re-render profiles
+    renderSampleData();
+
+    // Show sample profiles container & create button
+    container.style.display = "grid";
     document.getElementById("createProfileBtn").style.display = "inline-block";
-    document.getElementById("profileBuilder").innerHTML = ""; 
+
+    alert("Profile saved successfully!");
 }
 
 //Function to reset the profile builder 
@@ -145,6 +168,7 @@ function clearProfile() {
         role:"",
         issue:"",
         animal:"",
+        activity:"",
         goal:"",
         volunteer:"",
         awareness:"",
@@ -158,6 +182,7 @@ function clearProfile() {
     document.getElementById("role").textContent = "Not added yet";
     document.getElementById("issue").textContent = "Not added yet";
     document.getElementById("animal").textContent = "Not added yet";
+    document.getElementById("activity").textContent = "Not added yet";
     document.getElementById("goal").textContent = "Not added yet";
     document.getElementById("volunteer").textContent = "Not added yet";
     document.getElementById("awareness").textContent = "Not added yet";
@@ -241,6 +266,11 @@ function createProfile() {
                     <p id="animal" class="profile-value">Not added yet</p>
                 </div>
 
+                <div class="profile-row">
+                    <p class="profile-label">Favourite Activity:</p>
+                    <p id="activity" class="profile-value">Not added yet</p>
+                </div>
+
             </section>
 
             <section class="profile-section">
@@ -318,6 +348,9 @@ function step1() {
         }
     }
 
+    document.querySelectorAll(".profile-section")[0].style.display = "block";
+    document.querySelector(".save").style.display = "block";
+
     updateProgress();
     renderProfile();
 
@@ -330,6 +363,11 @@ function step2() {
 
     let animal = prompt("Which marine animal do you care about the most? (Optional)");
     profile.animal = (animal && animal.trim() !== "") ? animal : "Not Mentioned";
+
+    let activity = prompt("What ocean related activity do you enjoy the most? (e.g: Diving, Surfing)")
+    profile.activity = (activity && activity.trim() !== "") ? activity : "Not Mentioned";
+
+    document.querySelectorAll(".profile-section")[1].style.display = "block";
 
     updateProgress();
     renderProfile();
@@ -345,6 +383,8 @@ function step3() {
 
     let awareness = prompt("How do you plan to raise awareness? (Optional)");
     profile.awareness = (awareness && awareness.trim() !== "") ? awareness : "Not Mentioned";
+
+    document.querySelectorAll(".profile-section")[2].style.display = "block";
 
     updateProgress();
     renderProfile();
@@ -374,6 +414,7 @@ function renderProfile() {
     document.getElementById("role").textContent = profile.role || "Not added yet";
     document.getElementById("issue").textContent = profile.issue || "Not added yet";
     document.getElementById("animal").textContent = profile.animal || "Not added yet";
+    document.getElementById("activity").textContent = profile.animal || "Not added yet";
     document.getElementById("goal").textContent = profile.goal || "Not added yet";
     document.getElementById("volunteer").textContent = profile.volunteer || "Not added yet";
     document.getElementById("awareness").textContent = profile.awareness || "Not added yet";
