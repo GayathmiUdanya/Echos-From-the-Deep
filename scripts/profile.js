@@ -176,9 +176,10 @@ function createProfile() {
 
     const profileBuilder = document.getElementById("profileBuilder");
 
-    profileBuilder.innerHTML = `
-    <div id="profileBuilder">
 
+    profileBuilder.style.display = "flex"; //Makes the hidden profile builder visible
+
+    profileBuilder.innerHTML = `
         <h1>User Profile Builder</h1>
 
         <div>
@@ -260,7 +261,6 @@ function createProfile() {
                     <p id="awareness" class="profile-value">Not added yet</p>
                 </div>
 
-
             </section>
 
         </div>
@@ -268,11 +268,8 @@ function createProfile() {
         <div class="save">
             <button onclick="saveProfile()">Save</button>
         </div>
-
-    </div>
     `;
 }
-
 
 //Basic Information 
 
