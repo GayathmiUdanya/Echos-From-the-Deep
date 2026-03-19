@@ -1,0 +1,36 @@
+body{
+    background-image: url('../assets/bg_image.jpeg');
+    color:#e8f4f8;
+    font-family:'Cinzel', serif;
+}
+
+
+
+.box {
+    fill: #081B2B;
+    opacity:0.9;
+    cursor:pointer;
+}
+
+.text {
+    fill:#e8f4f8;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+
+
+/* Optional: center SVG */
+svg {
+    display: block;
+    margin: 200px auto;
+
+}
+
+/* Optional: hover effect */
+.box:hover {
+    stroke: #4A86A3; /* adds outline */
+    stroke-width: 3;
+    opacity: 1;
+    transition: 0.2s;
+}
