@@ -14,7 +14,7 @@ let profile = {
 //sample user profiles
 const sampleProfiles = [
     {
-        name: "Big Ass",
+        name: "Hashinth Sandul",
         age: 19,
         country: "Sri Lanka",
         role: "Student",
