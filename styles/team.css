@@ -8,6 +8,7 @@ body{
     gap: 20px;
     justify-content: center; 
 }
+
 .student{
     /*Size*/
     width: 250px;
@@ -62,7 +63,7 @@ body{
 /* Role "button" */
 .role{
     display: inline-block;
-    color: white; 
+    color: #d0dce8; 
     letter-spacing: 1px;
     padding: 5px 30px;
     border-radius: 20px;
