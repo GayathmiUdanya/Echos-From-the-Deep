@@ -23,13 +23,12 @@ body{
 /* Optional: center SVG */
 svg {
     display: block;
-    margin: 200px auto;
+    margin: 60px auto;
 
 }
 
-/* Optional: hover effect */
 .box:hover {
-    stroke: #4A86A3; /* adds outline */
+    stroke: #4A86A3; 
     stroke-width: 3;
     opacity: 1;
     transition: 0.2s;
