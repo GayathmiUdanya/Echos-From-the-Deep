@@ -3,8 +3,29 @@ body{
     color:#e8f4f8;
     font-family:'Cinzel', serif;
 }
+  .container1 {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+    }
 
-.cards_container,
+.cards_container{
+      background: rgba(3, 13, 26, 0.85);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(125, 211, 252, 0.14);
+      border-radius: 18px;
+      padding: 0;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      transition: border-color 0.7s ease, box-shadow 0.7s ease;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      position: relative;
+      width: 50%;
+      margin: 0 auto;
+      width: 50%;
+}
 .review_container{
       background: rgba(3, 13, 26, 0.85);
       backdrop-filter: blur(28px);
@@ -31,11 +52,6 @@ body{
     width: fit-content;
 }
 
-.filter{
-    display:flex;
-    justify-content: flex-end;
-    padding:10px 16px;
-}
 
 /*Scrolling feature for the content cards*/
 .container{
