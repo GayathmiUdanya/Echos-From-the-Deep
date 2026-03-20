@@ -181,6 +181,7 @@ function createProfile() {
 
     profileBuilder.innerHTML = `
         <h1>User Profile Builder</h1>
+        <p>Click through each step to build your identity and personalize your profile</p>
 
         <div>
             <button onclick="step1()">Step 1: Basic Info</button>
