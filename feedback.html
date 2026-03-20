@@ -6,7 +6,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
         <title>User Profile Page</title>
         <title>Feedback Page</title>
+
+        <!--Global CSS-->
         <link rel="stylesheet" href="style.css">
+
+        <!--Feedback CSS-->
         <link rel="stylesheet" href="styles/feedback.css">
     </head>
     <body>
@@ -91,6 +95,7 @@
 
             </div>
 
+            <!--Review Section-->
             <!--Overall rating-->
             <div class="overall_rating">
                 <div class="big_score">9.6</div>
@@ -100,6 +105,7 @@
                 </div>
             </div>
 
+            <!--Individual Rating-->
             <div class="review_layout">
             <div class="review_card">
                 <h4>A Night I Will Never Forget</h4>
@@ -193,6 +199,67 @@
 
             </div>
 
+            <!--Feedback Form-->
+            <form class="feedback_form" id="feedbackForm" novalidate>
+
+                <fieldset>
+                    <legend>Personal Details</legend>
+
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" placeholder="Senilka Perera">
+                    <span class="error" id="fullname_error"></span>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="senilka.perera@example.com">
+                    <span class="error" id="email_error"></span>
+
+                    <label for="telephone">Telephone:</label>
+                    <input type="tel" id="telephone" placeholder="077 123 4567">
+                    <span class="error" id="telephone_error"></span>
+
+                    <label for="address">Address:</label>
+                    <textarea id="address" placeholder="123 Main Street"></textarea>
+                    <span class="error" id="address_error"></span>
+                    
+                </fieldset>
+                <feildset>
+                    <legend>Feedback Details</legend>
+
+                    <label for="category">Category:</label>
+                    <select id="category">
+                        <option value="">Select a category...</option>
+                        <option>Volunteering</option>
+                        <option>Student Actions</option>
+                        <option>Campaigns</option>
+                        <option>Community</option>
+                    </select>
+                    <span class="error" id="category_error"></span>
+
+                    <label for="date">Date of Experience:</label>
+                    <input type="date" id="date">
+                    <span class="error" id="date_error"></span>
+
+                    <label for="datetime">Preferred Contact Time:</label>
+                    <input type="datetime-local" id="datetime">
+                    
+                    <label for="message">Comment
+                        <span id="char_count">300 Characters Remaining</span>
+                    </label>
+                    <textarea id="message" maxlength="300" placeholder="Write your feedback here..."></textarea>
+                    <span class="error" id="message_error"></span>
+
+                </feildset>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+                <div class="success_message" id="success_message">Thank you for your feedback!</div>
+
+            </form>
+
+            
         </main>
+
+        <!--Feedback JavaScript-->
+        <script src="scripts/feedback.js"></script>
     </body>
 </html>
