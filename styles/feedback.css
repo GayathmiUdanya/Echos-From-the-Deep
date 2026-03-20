@@ -8,6 +8,10 @@ body{
     font-size:20px;
 }
 
+.card_font{
+    font-size:18px;
+}
+
 .side-nav{
     position: absolute;
     right: 1.5rem;
