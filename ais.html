@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Action Impact Simulator — Echoes From the Deep</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    :root {
+      --border: 1px solid rgba(125, 211, 252, 0.12);
+    }
+
+    #sceneBg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .page-hero {
+      background: var(--abyss);
+      border-bottom: 1px solid rgba(125, 211, 252, 0.12);
+      padding: 3.5rem 0 2rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 38vh;
+      padding-bottom: 3rem;
+    }
+
+
+    .feed {
+      background: rgba(3, 13, 26, 0.85);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(125, 211, 252, 0.14);
+      border-radius: 18px;
+      padding: 0;
+      margin-bottom: 2rem;
+      overflow: hidden;
+      transition: border-color 0.7s ease, box-shadow 0.7s ease;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      position: relative;
+    }
+
+
+    .feed::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: rgba(125, 211, 252, 0.3);
+      border-radius: 18px 0 0 18px;
+      transition: background 0.7s ease;
+    }
+
+    .feed.impact-low {
+      border-color: rgba(239, 68, 68, 0.3);
+      box-shadow: 0 8px 40px rgba(239, 68, 68, 0.08);
+    }
+
+    .feed.impact-mid {
+      border-color: rgba(245, 158, 11, 0.35);
+      box-shadow: 0 8px 40px rgba(245, 158, 11, 0.1);
+    }
+
+    .feed.impact-high {
+      border-color: rgba(16, 185, 129, 0.4);
+      box-shadow: 0 8px 40px rgba(16, 185, 129, 0.12);
+    }
+
+    .feed.impact-low::after {
+      background: #f87171;
+    }
+
+    .feed.impact-mid::after {
+      background: #fbbf24;
+    }
+
+    .feed.impact-high::after {
+      background: #34d399;
+    }
+
+    .inside {
+      padding: 1.8rem 2rem 1.8rem 2.4rem;
+    }
+
+    .score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: #7dd3fc;
+      transition: color 0.7s ease;
+      text-shadow: 0 0 40px rgba(125, 211, 252, 0.3);
+      display: inline-block;
+    }
+
+    .score.pop {
+      animation: scorePop 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    }
+
+    @keyframes scorePop {
+      0% {
+        transform: scale(1);
+      }
+
+      30% {
+        transform: scale(1.3);
+      }
+
+      60% {
+        transform: scale(0.92);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .score.impact-low {
+      color: #f87171;
+      text-shadow: 0 0 40px rgba(239, 68, 68, 0.3);
+    }
+
+    .score.impact-mid {
+      color: #fbbf24;
+      text-shadow: 0 0 40px rgba(245, 158, 11, 0.3);
+    }
+
+    .score.impact-high {
+      color: #34d399;
+      text-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
+    }
+
+    .label {
+      font-family: 'Cinzel', serif;
+      font-size: .58rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #4a7a94;
+      margin-top: .3rem;
+    }
+
+    .impact-level-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      font-family: 'Cinzel', serif;
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      padding: .3rem 1.1rem;
+      border-radius: 20px;
+      border: 1px solid;
+      margin-bottom: .6rem;
+      transition: all 0.5s ease;
+    }
+
+    .impact-level-badge.none {
+      background: rgba(125, 211, 252, .07);
+      color: #7dd3fc;
+      border-color: rgba(125, 211, 252, .2);
+    }
+
+    .impact-level-badge.low {
+      background: rgba(239, 68, 68, .1);
+      color: #f87171;
+      border-color: rgba(239, 68, 68, .28);
+    }
+
+    .impact-level-badge.mid {
+      background: rgba(245, 158, 11, .1);
+      color: #fbbf24;
+      border-color: rgba(245, 158, 11, .28);
+    }
+
+    .impact-level-badge.high {
+      background: rgba(16, 185, 129, .1);
+      color: #34d399;
+      border-color: rgba(16, 185, 129, .28);
+    }
+
+    .impact-level-badge.level-up {
+      animation: badgePulse 0.5s ease;
+    }
+
+    @keyframes badgePulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.08);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .message {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #bae6fd;
+      line-height: 1.65;
+      margin-bottom: .8rem;
+      min-height: 2.5rem;
+      transition: opacity 0.4s ease;
+    }
+
+    .counterR {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: .8rem;
+    }
+
+    .counterI {
+      text-align: center;
+    }
+
+    .count {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: #7dd3fc;
+      line-height: 1;
+    }
+
+    .total {
+      font-family: 'Cinzel', serif;
+      font-size: .48rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: #4a7a94;
+      margin-top: .2rem;
+    }
+
+    .restbutton {
+      background: transparent;
+      color: #4a7a94;
+      border: 1px solid rgba(125, 211, 252, 0.1);
+      font-family: 'Cinzel', serif;
+      font-size: .55rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: .45rem 1.1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: color .25s, border-color .25s, background .25s;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .restbutton:hover {
+      color: #f87171;
+      border-color: rgba(239, 68, 68, .35);
+      background: rgba(239, 68, 68, .06);
+    }
+
+    .restbutton svg {
+      width: 11px;
+      height: 11px;
+      opacity: 0.7;
+    }
+
+    .oceanBox {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin-top: 1rem;
+      padding: .75rem 1rem;
+      background: rgba(125, 211, 252, 0.04);
+      border: 1px solid rgba(125, 211, 252, 0.09);
+      border-radius: 10px;
+      transition: background 0.7s ease, border-color 0.7s ease;
+    }
+
+    .oceanBox.impact-low {
+      background: rgba(239, 68, 68, 0.05);
+      border-color: rgba(239, 68, 68, 0.12);
+    }
+
+    .oceanBox.impact-mid {
+      background: rgba(245, 158, 11, 0.05);
+      border-color: rgba(245, 158, 11, 0.12);
+    }
+
+    .oceanBox.impact-high {
+      background: rgba(16, 185, 129, 0.05);
+      border-color: rgba(16, 185, 129, 0.12);
+    }
+
+    .oceanBoxicon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .oceanBoxtext {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .9rem;
+      font-style: italic;
+      color: #94b8cc;
+      line-height: 1.5;
+    }
+
+    .actiongrid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+      margin: 0 0 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .actiongrid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .actiongrid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card {
+      background: rgba(3, 13, 26, 0.78);
+      border: 1px solid rgba(125, 211, 252, 0.11);
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      backdrop-filter: blur(16px);
+      position: relative;
+      user-select: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 15%;
+      right: 15%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+      z-index: 1;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(125, 211, 252, 0.3);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(125, 211, 252, 0.05);
+    }
+
+    .card.selected {
+      border-color: rgba(125, 211, 252, 0.65);
+      background: rgba(14, 116, 144, 0.2);
+      box-shadow: 0 0 30px rgba(14, 116, 144, 0.3);
+      transform: translateY(-5px);
+    }
+
+    .card .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(125, 211, 252, 0.18);
+      transform: scale(0);
+      animation: rippleAnimation 0.55s linear;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    @keyframes rippleAnimation {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    .card .tick {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #0e7490;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+      color: white;
+      opacity: 0;
+      transform: scale(0.4);
+      transition: opacity 0.25s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 2;
+      box-shadow: 0 0 12px rgba(14, 116, 144, 0.6);
+    }
+
+    .card.selected .tick {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .cardimg {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.08);
+    }
+
+    .cardimg-placeholder::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 30%, rgba(125, 211, 252, 0.04) 50%, transparent 70%);
+      background-size: 200% 200%;
+      animation: shimmer 4s ease infinite;
+    }
+
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    .card-icon-svg {
+      width: 42px;
+      height: 42px;
+      opacity: 0.7;
+      filter: drop-shadow(0 0 10px rgba(125, 211, 252, 0.35));
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .card:hover .card-icon-svg {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+
+    .cardLebel {
+      font-family: 'Cinzel', serif;
+      font-size: .44rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: #4a7a94;
+      padding-left: 110px;
+    }
+
+    .cardBody {
+      padding: 1rem 1.2rem 1.3rem;
+    }
+
+    .cardTitle {
+      font-family: 'Cinzel', serif;
+      font-size: .76rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #e8f4f8;
+      margin-bottom: .4rem;
+    }
+
+    .cardDescription {
+      font-size: .82rem;
+      color: #94b8cc;
+      line-height: 1.55;
+      margin-bottom: .8rem;
+    }
+
+    .impactPoints {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-family: 'Cinzel', serif;
+      font-size: .55rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      background: rgba(14, 116, 144, 0.15);
+      border: 1px solid rgba(125, 211, 252, 0.18);
+      border-radius: 20px;
+      padding: .18rem .7rem;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .card.selected .impactPoints {
+      background: rgba(14, 116, 144, 0.35);
+      border-color: rgba(125, 211, 252, 0.45);
+    }
+
+    .pts-toast {
+      position: fixed;
+      pointer-events: none;
+      z-index: 9999;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #7dd3fc;
+      text-shadow: 0 0 20px rgba(125, 211, 252, 0.6);
+      animation: ptsFloat 1s ease forwards;
+    }
+
+    .pts-toast.neg {
+      color: #f87171;
+      text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+
+    @keyframes ptsFloat {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(0.8);
+      }
+    }
+
+    .card {
+      animation: cardEntry 0.5s ease both;
+    }
+
+    .card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.19s;
+    }
+
+    .card:nth-child(4) {
+      animation-delay: 0.26s;
+    }
+
+    .card:nth-child(5) {
+      animation-delay: 0.33s;
+    }
+
+    .card:nth-child(6) {
+      animation-delay: 0.40s;
+    }
+
+    @keyframes cardEntry {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .bart {
+      width: 100%;
+      height: 6px;
+      background: rgba(125, 211, 252, 0.08);
+      border-radius: 3px;
+      margin-top: 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .barF {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #ef4444, #f59e0b 35%, #10b981);
+      width: 0%;
+      transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 0 10px rgba(125, 211, 252, 0.35);
+    }
+
+    .bart::before {
+      content: '';
+      position: absolute;
+      left: 29.4%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      z-index: 1;
+    }
+
+    .bart::after {
+      content: '';
+      position: absolute;
+      left: 64.7%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.12);
+      z-index: 1;
+    }
+
+    .eyebrow {
+      font-family: 'Cinzel', 'serif';
+      font-size: clamp(0.48rem, 0.9vw, 0.68rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      opacity: 0.8;
+    }
+
+
+    .text-serif {
+      font-family: 'Cormorant Garamond', 'serif';
+      font-size: 1.15rem;
+      font-style: italic;
+      color: #bae6fd;
+    }
+  </style>
+</head>
+
+<body class="bg-low">
+  <img src="assets/bg_low.png" class="scene-bg" id="sceneBg"
+    alt="Ocean state background — changes based on your impact score">
+    <header>
+      <nav>
+        <section class="logo-area">
+          <section class="logo-circle"></section>
+          <section class="logo-text">
+            <h1>Echoes From The Deep</h1>
+            <p>SDG 14 · Life Below Water</p>
+          </section>
+        </section>
+        <section class="nav-links">
+          <a href="home.html">Home</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="ais.html" class="active">Action Impact Simulator</a>
+          <a href="feedback.html">Feedback</a>
+          <a href="team.html">Team</a>
+          <a href="profile.html">Profile</a>
+          <a href="sitemap.html">Sitemap</a>
+        </section>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <div class="page-hero-content">
+            <span class="eyebrow">Act IV · The Turning Point</span>
+            <h1 class="hero-title">
+              Your Actions.<br><em>Their Ocean.</em>
+            </h1>
+            <div class="divider-line"></div>
+            <p class="text-serif" style="max-width:520px;">
+              Every choice you make changes what the ocean becomes.<br>
+              Select the actions you take — watch the water respond.
+            </p>
+          </div>
+        </div>
+      </section>
+        <div class="container">
+          <div class="feed" id="feed" role="region">
+            <div class="inside">
+              <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;flex-wrap:wrap;">
+                <div style="text-align:center;min-width:100px;">
+                  <div class="score" id="score">0</div>
+                  <div class="label">Impact Score</div>
+                  <div class="bart" style="margin-top:.8rem;">
+                    <div class="barF" id="progressFill"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="impact-level-badge none" id="level">Awaiting Your Choices</div>
+                  <p class="message" id="message">
+                    The ocean is listening. Select actions below to begin.
+                  </p>
+                  <div class="counterR">
+                    <div class="counterI">
+                      <div class="count" id="selcount">0</div>
+                      <div class="total">Actions Selected</div>
+                    </div>
+                    <div class="counterI">
+                      <div class="count">6</div>
+                      <div class="total">Total Available</div>
+                    </div>
+                    <button class="restbutton" id="restbutton" onclick="resetall()">
+                      <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 6a4 4 0 1 1 1 2.7" stroke="currentColor" stroke-width="1.4"
+                          stroke-linecap="round" />
+                        <path d="M2 9V6.5h2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                      Reset
+                    </button>
+                  </div>
+                  <div class="oceanBox" id="oceanState">
+                    <span class="oceanBoxicon" id="oceanI">🌊</span>
+                    <span class="oceanBoxtext" id="oceant">
+                      The ocean is dark and heavy with waste. It needs your help.
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <div class="actiongrid" role="group">
+              <div class="card" id="card1" onclick="toggle(1, event)" role="checkbox">
+                <div class="tick">✓</div>
+                <img src="assets/plastic.png" class="cardimg" alt="Single use plastic bottles on a beach">
+                <span class="cardLebel">Plastic Reduction</span>
+                <div class="cardBody">
+                  <h3 class="cardTitle">Reduce Single Use Plastic</h3>
+                  <p class="cardDescription">Switch to reusable bags, bottles and containers. Over 8 million tonnes of
+                    plastic enter the ocean every year.</p>
+                  <span class="impactPoints">● 3 pts</span>
+                </div>
+              </div>
+              <div class="card" id="card2" onclick="toggle(2, event)" role="checkbox">
+                <div class="tick">✓</div>
+                <img src="assets/beach_clean.png" class="cardimg" alt="Volunteers cleaning a beach">
+                <span class="cardLebel">Beach Clean</span>
+                <div class="cardBody">
+                  <h3 class="cardTitle">Join a Beach Clean</h3>
+                  <p class="cardDescription">Volunteer at a local beach clean event. Direct action that removes waste
+                    from coastlines and prevents it reaching the sea.</p>
+                  <span class="impactPoints">● 4 pts</span>
+                </div>
+              </div>
+              <div class="card" id="card3" onclick="toggle(3, event)" role="checkbox">
+                <div class="tick">✓</div>
+                <img src="assets/sunscreen.png" class="cardimg" alt="Reef safe sunscreen on a sunny beach">
+                <span class="cardLebel">Reef Safe Sunscreen</span>
+                <div class="cardBody">
+                  <h3 class="cardTitle">Use Reef Safe Sunscreen</h3>
+                  <p class="cardDescription">Chemical sunscreens contain oxybenzone which bleaches coral reefs. Switch
+                    to mineral based zinc oxide alternatives.</p>
+                  <span class="impactPoints">● 2 pts</span>
+                </div>
+              </div>
+              <div class="card" id="card4" onclick="toggle(4, event)" role="checkbox">
+                <div class="tick">✓</div>
+                <img src="assets/seafood.png" class="cardimg" alt="Sustainable seafood at a market">
+                <span class="cardLebel">Sustainable Seafood</span>
+                <div class="cardBody">
+                  <h3 class="cardTitle">Choose Sustainable Seafood</h3>
+                  <p class="cardDescription">Look for the MSC blue label when buying fish. Overfishing has depleted 90%
+                    of large fish populations since 1950.</p>
+                  <span class="impactPoints">● 3 pts</span>
+                </div>
+              </div>
+              <div class="card" id="card5" onclick="toggle(5, event)" role="checkbox">
+                <div class="tick">✓</div>
+                <img src="assets/charity.png" class="cardimg" alt="Ocean conservation volunteers">
+                <span class="cardLebel">Ocean Charities</span>
+                <div class="cardBody">
+                  <h3 class="cardTitle">Support Ocean Charities</h3>
+                  <p class="cardDescription">Donate to or volunteer with organisations like Surfers Against Sewage,
+                    Ocean Conservancy, or WWF ocean programmes.</p>
+                  <span class="impactPoints">● 3 pts</span>
+                </div>
+              </div>
+              <div class="card" id="card6" onclick="toggle(6, event)" role="checkbox">
+                <div class="tick">✓</div>
+                <img src="assets/awareness.png" class="cardimg"
+                  alt="Person sharing ocean awareness on social media">
+                <span class="cardLebel">Spread Awareness</span>
+                <div class="cardBody">
+                  <h3 class="cardTitle">Spread Ocean Awareness</h3>
+                  <p class="cardDescription">Share facts, sign petitions, and talk to friends about ocean issues. Mass
+                    awareness is what drives policy change globally.</p>
+                  <span class="impactPoints">● 2 pts</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+    </main>
+    <a href="#" class="goup">↑</a>
+    <script src="scripts/ais.js"></script>
+</body>
+
+</html>
