@@ -35,25 +35,46 @@
         </header>
 
         <main>
-            <div class="feedback_title">Feedback</div>
-            <div class="cards_container">
-                <select class="sort_dropdown">
-                    <option>Sorted by...</option>
-                    <option>Newsest</option>
-                    <option>Top Rated</option>
-                    <option>Student Friendly</option>
-                    <option>Popular</option>
-                </select>
-            <div class="container1">
+            <!--Hero-->
+            <section class="page-hero">
+                    <div class="page-hero-content">
+                        <span class="eyebrow">Act V · Voices From The Shore</span>
+                        <h1 class="hero-title">Your Words.<br><em>Our Mission.</em></h1>
+                        <div class="divider-line"></div>
+                        <p class="text-serif" style="max-width:520px;">
+                            Explore programs, read community voices,<br>and share your own experience with the deep.
+                        </p>
+                    </div>
+            </section>
 
-                <div class="card_grid">
-                    <div class="card">
+            <!--Programs-->
+            <section class="page-section">
+                
+                    <div class="glass-panel">
+                        <div class="sort-row">
+                            <select class="sort-select" id="sortSelect" aria-label="Sort programs">
+                                <option>Sort by…</option>
+                                <option>Newest</option>
+                                <option>Top Rated</option>
+                                <option>Student Friendly</option>
+                                <option>Popular</option>
+                            </select>
+                        </div>
+
+                        <div class="panel-inner" style="padding-top:0.4rem; padding-bottom:0.6rem;">
+                            <div class="section-label">Explore Programs</div>
+                        </div>
+
+                        <div class="container">
+                        <div class="card_grid">
+
+                        <div class="card">
                         <img src="../assets/feedback_volunteering.png" alt="Image of program opportunity">
                         <h3>Volunteer</h3>
                         <p>Answering the ocean is call starts with direct action. From moonlit beach cleanups that remove "ghost" plastic to citizen science projects tracking reef health, volunteers act as the first line of defense. By rescuing wildlife or managing invasive species, you move beyond just listening to the warnings and become a physical force for restoration.</p>
-                        <div class ="button_group">
-                            <button>Learn More</button>
-                            <button>Join</button>
+                        <div class ="card-actions">
+                            <button class="btn-ghost">Learn More</button>
+                            <button class="btn-solid">Join</button>
                         </div>
                     </div>
 
@@ -61,9 +82,9 @@
                         <img src="../assets/feedback_studentActions.png" alt="Image of program opportunity">
                         <h3>Student Actions</h3>
                         <p>Students represent the intellectual spark needed to decode the ocean’s complex echoes. By leading campus plastic-free initiatives and conducting localized research, young advocates turn passion into documented evidence. These actions prove that the next generation is ready to rewrite the future of our waters through creative science and organized clubs.</p>
-                        <div class ="button_group">
-                            <button>Learn More</button>
-                            <button>Join</button>
+                        <div class ="card-actions">
+                            <button class="btn-ghost">Learn More</button>
+                            <button class="btn-solid">Join</button>
                         </div>
                     </div>
 
@@ -71,9 +92,9 @@
                         <img src="../assets/feedback_compaigns.png" alt="Image of program opportunity">
                         <h3>Compaigns</h3>
                         <p>Campaigns serve as a megaphone for the ocean is silent messages, turning individual concern into collective power. By advocating for plastic bans and marine protected areas, we ensure these warnings reach policymakers. Whether through public education or promoting sustainable seafood, these initiatives ensure the sea is voice is no longer ignored.</p>
-                        <div class ="button_group">
-                            <button>Learn More</button>
-                            <button>Join</button>
+                        <div class ="card-actions">
+                            <button class="btn-ghost">Learn More</button>
+                            <button class="btn-solid">Join</button>
                         </div>
                     </div>
 
@@ -81,19 +102,22 @@
                         <img src="../assets/feedback_community.png" alt="Image of program opportunity">
                         <h3>Community</h3>
                         <p>Community projects are the heartbeat of long-term healing, blending local tradition with environmental science. By restoring vital mangrove "cradles" and seagrass meadows, coastal communities build natural shields against warming tides. These collaborative efforts prove that when we listen to the ocean together, we can create a sustainable harmony between people and the sea.</p>
-                        <div class ="button_group">
-                            <button>Learn More</button>
-                            <button>Join</button>
+                        <div class ="card-actions">
+                            <button class="btn-ghost">Learn More</button>
+                            <button class="btn-solid">Join</button>
                         </div>
+                    </div>
                     </div>
 
                 </div>
 
             </div>
-            </div>
+            </section>
 
-            <div class="review_container">
             <!--Review Section-->
+            <section class="page-section" style="padding-top:0;">
+            <div class="glass-panel">
+
             <!--Overall rating-->
             <div class="overall_rating">
                 <div class="big_score">9.6</div>
@@ -116,7 +140,7 @@
                     <div class="reviewer_info">
                         <span class="reviwer_name">Maya, Volunteer Sentinel</span>  |   12 March 2026
                     </div>
-                    <button>9/10</button>
+                    <span class="score-badge">9/10</span>
                 </div>
             </div>
 
@@ -131,7 +155,7 @@
                     <div class="reviewer_info">
                         <span class="reviwer_name">Liam, Marine Biology Student</span>  |   10 Jan 2026
                     </div>
-                    <button>6/10</button>
+                    <span class="score-badge">6/10</span>
                 </div>
             </div>
 
@@ -146,7 +170,7 @@
                     <div class="reviewer_info">
                         <span class="reviwer_name">Kavi, Community Project Member</span>    |   05 March 2026
                     </div>
-                    <button>7/10</button>
+                    <span class="score-badge">7/10</span>
                 </div>
             </div>
 
@@ -161,7 +185,7 @@
                     <div class="reviewer_info">
                         <span class="reviwer_name">Sarah, Student Advocate</span>    |   09 Jan 2026
                     </div>
-                    <button>8/10</button>
+                    <span class="score-badge">8/10</span>
                 </div>
             </div>
 
@@ -176,7 +200,7 @@
                     <div class="reviewer_info">
                         <span class="reviwer_name">Tuan, Conservation Volunteer</span>    |   05 March 2026
                     </div>
-                    <button>7/10</button>
+                    <span class="score-badge">7/10</span>
                 </div>
             </div>
 
@@ -191,14 +215,21 @@
                     <div class="reviewer_info">
                         <span class="reviwer_name">Elena, Citizen Scientist</span>    |   30 March 2026
                     </div>
-                    <button>9/10</button>
+                    <span class="score-badge">9/10</span>
                 </div>
             </div>
 
             </div>
             </div>
+            
+            
+            </section>
 
             <!--Feedback Form-->
+            <section class="page-section" style="padding-top:0;">
+                
+                    <div class="glass-panel">
+
             <form class="feedback_form" id="feedbackForm" novalidate>
 
                 <fieldset>
@@ -254,11 +285,15 @@
                 <div class="success_message" id="success_message">Thank you for your feedback!</div>
 
             </form>
+            </div>
+        
+        </section>
 
             
         </main>
 
         <!--Feedback JavaScript-->
         <script src="scripts/feedback.js"></script>
+        <a href="#" class="goup" aria-label="Back to top">↑</a>
     </body>
 </html>
