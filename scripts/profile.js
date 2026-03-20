@@ -6,6 +6,7 @@ let profile = {
     role:"",
     issue:"",
     animal:"",
+    activity:"",
     goal:"",
     volunteer:"",
     awareness:"",
