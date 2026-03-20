@@ -104,8 +104,18 @@ function createCreateButton() {
 
 //Function to save the profiles 
 function saveProfile() {
+    // array to store photos
+    const photos = [
+        "assets/sample.png",
+        "assets/sample1.png",
+        "assets/sample6.png"
+    ]
+
     const newProfile = {...profile}; 
-    newProfile.photo = "assets/sample.png"; 
+
+    //Random photo picker
+    const randomPhoto = Math.floor(Math.random() * photos.length); //Gets the index
+    newProfile.photo = photos[randomPhoto];
 
     // Replace "Not Mentioned" with empty string
     for(let key in newProfile){
