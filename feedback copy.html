@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback — Echoes From The Deep</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── Page background ── */
+    body {
+      background: #03080f;
+      color: #e8f4f8;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* fixed ocean BG image */
+    .scene-bg {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      opacity: 0.55;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Shared container ── */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+    }
+
+    /* ── Page hero ── */
+    .page-hero {
+      background: rgba(3, 13, 26, 0.7);
+      border-bottom: 1px solid rgba(125, 211, 252, 0.12);
+      padding: 3.5rem 0 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(125,211,252,0.25) 40%, rgba(125,211,252,0.25) 60%, transparent);
+    }
+
+    .eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(0.48rem, 0.9vw, 0.68rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      opacity: 0.8;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: #e8f4f8;
+      margin-bottom: 1rem;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: #7dd3fc;
+    }
+
+    .divider-line {
+      width: 48px;
+      height: 1px;
+      background: rgba(125, 211, 252, 0.35);
+      margin: 1.2rem 0;
+    }
+
+    .text-serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #bae6fd;
+      line-height: 1.65;
+      max-width: 520px;
+    }
+
+    /* ── Glass panel (matches .feed in ais.html) ── */
+    .glass-panel {
+      background: rgba(3, 13, 26, 0.85);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(125, 211, 252, 0.14);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04);
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .glass-panel::after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: rgba(125, 211, 252, 0.3);
+      border-radius: 18px 0 0 18px;
+    }
+
+    .panel-inner {
+      padding: 2rem 2.4rem;
+    }
+
+    /* ── Section label ── */
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #4a7a94;
+      margin-bottom: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(125, 211, 252, 0.1);
+    }
+
+    /* ── Program cards ── */
+    .sort-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.08);
+    }
+
+    .sort-select {
+      background: rgba(3, 13, 26, 0.9);
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      border-radius: 20px;
+      color: #7dd3fc;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.45rem 1.2rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s, border-color 0.2s;
+      appearance: none;
+    }
+
+    .sort-select:focus {
+      outline: none;
+      border-color: #7dd3fc;
+      box-shadow: 0 0 8px rgba(125, 211, 252, 0.25);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+      padding: 1.8rem 2rem;
+    }
+
+    @media (max-width: 640px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+
+    .prog-card {
+      background: rgba(3, 13, 26, 0.7);
+      border: 1px solid rgba(125, 211, 252, 0.12);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
+      animation: cardEntry 0.5s ease both;
+    }
+
+    .prog-card:nth-child(1) { animation-delay: 0.05s; }
+    .prog-card:nth-child(2) { animation-delay: 0.12s; }
+    .prog-card:nth-child(3) { animation-delay: 0.19s; }
+    .prog-card:nth-child(4) { animation-delay: 0.26s; }
+
+    @keyframes cardEntry {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .prog-card:hover {
+      border-color: rgba(125, 211, 252, 0.35);
+      box-shadow: 0 6px 28px rgba(0,0,0,0.4), 0 0 0 1px rgba(125,211,252,0.08);
+      transform: translateY(-2px);
+    }
+
+    .prog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    .prog-card:hover img { opacity: 1; }
+
+    .prog-card-body {
+      padding: 1.1rem 1.3rem 1.3rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .prog-card-tag {
+      font-family: 'Cinzel', serif;
+      font-size: 0.52rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #4a7a94;
+    }
+
+    .prog-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: #bae6fd;
+      margin: 0;
+    }
+
+    .prog-card p {
+      font-size: 0.82rem;
+      color: rgba(232, 244, 248, 0.6);
+      line-height: 1.5;
+      margin: 0;
+      flex: 1;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 0.7rem;
+      margin-top: 0.6rem;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(125, 211, 252, 0.22);
+      border-radius: 20px;
+      color: #7dd3fc;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.45rem 1.1rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+    }
+
+    .btn-ghost:hover {
+      border-color: #7dd3fc;
+      box-shadow: 0 0 10px rgba(125, 211, 252, 0.3);
+      transform: scale(1.04);
+    }
+
+    .btn-solid {
+      background: rgba(125, 211, 252, 0.1);
+      border: 1px solid rgba(125, 211, 252, 0.35);
+      border-radius: 20px;
+      color: #7dd3fc;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.45rem 1.1rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .btn-solid:hover {
+      background: rgba(125, 211, 252, 0.18);
+      box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
+      transform: scale(1.04);
+    }
+
+    /* ── Overall Rating ── */
+    .overall-rating {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      padding: 1.8rem 2.4rem;
+      border-bottom: 1px solid rgba(125, 211, 252, 0.08);
+    }
+
+    .big-score {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem;
+      font-weight: 300;
+      line-height: 1;
+      color: #7dd3fc;
+      text-shadow: 0 0 40px rgba(125, 211, 252, 0.3);
+    }
+
+    .rating-label {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      color: #bae6fd;
+      margin-bottom: 0.3rem;
+    }
+
+    .review-count {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      color: #4a7a94;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Review cards ── */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      padding: 1.6rem 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .review-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 580px) {
+      .review-grid { grid-template-columns: 1fr; }
+    }
+
+    .review-card {
+      background: rgba(3, 13, 26, 0.6);
+      border: 1px solid rgba(125, 211, 252, 0.1);
+      border-radius: 12px;
+      padding: 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      transition: border-color 0.3s, transform 0.25s;
+    }
+
+    .review-card:hover {
+      border-color: rgba(125, 211, 252, 0.25);
+      transform: translateY(-2px);
+    }
+
+    .review-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: #bae6fd;
+      margin: 0;
+    }
+
+    .review-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      color: rgba(232, 244, 248, 0.65);
+      line-height: 1.6;
+      margin: 0;
+      flex: 1;
+    }
+
+    .review-text a {
+      color: rgba(125, 211, 252, 0.7);
+      text-decoration: none;
+      font-size: 0.75rem;
+      transition: color 0.2s;
+    }
+
+    .review-text a:hover { color: #7dd3fc; }
+
+    .review-divider {
+      border: none;
+      border-top: 1px solid rgba(125, 211, 252, 0.08);
+      margin: 0;
+    }
+
+    .review-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .reviewer-info {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.72rem;
+      color: #4a7a94;
+      line-height: 1.4;
+    }
+
+    .reviewer-name {
+      display: block;
+      color: rgba(232, 244, 248, 0.6);
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+
+    .score-badge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-weight: 300;
+      color: #7dd3fc;
+      background: rgba(125, 211, 252, 0.08);
+      border: 1px solid rgba(125, 211, 252, 0.2);
+      border-radius: 20px;
+      padding: 0.2rem 0.8rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── Feedback Form ── */
+    .feedback-form-wrap {
+      padding: 2.2rem 2.4rem 2.4rem;
+    }
+
+    fieldset {
+      border: 1px solid rgba(125, 211, 252, 0.12);
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 1.4rem;
+    }
+
+    legend {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #7dd3fc;
+      padding: 0 0.6rem;
+    }
+
+    label {
+      display: block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #4a7a94;
+      margin-top: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    label:first-of-type { margin-top: 0; }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      background: rgba(3, 13, 26, 0.8);
+      border: 1px solid rgba(125, 211, 252, 0.15);
+      border-radius: 8px;
+      color: #e8f4f8;
+      padding: 0.65rem 0.9rem;
+      font-size: 0.88rem;
+      font-family: 'DM Sans', sans-serif;
+      box-sizing: border-box;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none;
+      border-color: rgba(125, 211, 252, 0.45);
+      box-shadow: 0 0 0 3px rgba(125, 211, 252, 0.08);
+    }
+
+    textarea { resize: vertical; min-height: 100px; }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(74, 122, 148, 0.6);
+      font-style: italic;
+    }
+
+    select option {
+      background: #03080f;
+      color: #e8f4f8;
+    }
+
+    .error {
+      color: #f87171;
+      font-size: 0.72rem;
+      font-family: 'DM Sans', sans-serif;
+      display: block;
+      margin-top: 0.3rem;
+    }
+
+    #char_count {
+      font-size: 0.65rem;
+      color: rgba(125, 211, 252, 0.5);
+      float: right;
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.8rem;
+    }
+
+    .btn-submit {
+      background: rgba(125, 211, 252, 0.1);
+      border: 1px solid rgba(125, 211, 252, 0.4);
+      border-radius: 20px;
+      color: #7dd3fc;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.8rem 2.2rem;
+      cursor: pointer;
+      transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+    }
+
+    .btn-submit:hover {
+      background: rgba(125, 211, 252, 0.18);
+      box-shadow: 0 0 18px rgba(125, 211, 252, 0.35);
+      transform: scale(1.04);
+    }
+
+    .btn-reset {
+      background: transparent;
+      border: 1px solid rgba(125, 211, 252, 0.15);
+      border-radius: 20px;
+      color: #4a7a94;
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 0.8rem 2.2rem;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, transform 0.15s;
+    }
+
+    .btn-reset:hover {
+      border-color: rgba(125, 211, 252, 0.3);
+      color: #7dd3fc;
+      transform: scale(1.04);
+    }
+
+    .success-message {
+      display: none;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: #34d399;
+      text-align: center;
+      margin-top: 1.2rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Go up ── */
+    a.goup {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 42px;
+      height: 42px;
+      background: rgba(3, 13, 26, 0.9);
+      border: 1px solid rgba(125, 211, 252, 0.22);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7dd3fc;
+      font-size: 1.1rem;
+      text-decoration: none;
+      z-index: 50;
+      transition: background 0.25s, transform 0.25s;
+    }
+
+    a.goup:hover {
+      background: rgba(125, 211, 252, 0.12);
+      transform: translateY(-3px);
+    }
+
+    /* page sections spacing */
+    .page-section {
+      padding: 2.5rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ocean background image (same pattern as ais.html) -->
+  <img src="assets/bg_image.jpeg" class="scene-bg" alt="Ocean background" onerror="this.style.display='none'">
+
+  <header>
+    <nav>
+      <section class="logo-area">
+        <section class="logo-circle"></section>
+        <section class="logo-text">
+          <h1>Echoes From The Deep</h1>
+          <p>SDG 14 · Life Below Water</p>
+        </section>
+      </section>
+      <section class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="ais.html">Action Impact Simulator</a>
+        <a href="feedback.html" class="active">Feedback</a>
+        <a href="team.html">Team</a>
+        <a href="profile.html">Profile</a>
+        <a href="sitemap.html">Sitemap</a>
+      </section>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ── -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Act V · Voices From The Shore</span>
+        <h1 class="hero-title">Your Words.<br><em>Our Mission.</em></h1>
+        <div class="divider-line"></div>
+        <p class="text-serif">
+          Explore programs, read community voices,<br>and share your own experience with the deep.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Programs ── -->
+    <section class="page-section">
+      <div class="container">
+        <div class="glass-panel">
+          <div class="sort-row">
+            <select class="sort-select" id="sortSelect" aria-label="Sort programs">
+              <option>Sort by…</option>
+              <option>Newest</option>
+              <option>Top Rated</option>
+              <option>Student Friendly</option>
+              <option>Popular</option>
+            </select>
+          </div>
+
+          <div class="panel-inner" style="padding-top:0.4rem; padding-bottom:0.6rem;">
+            <div class="section-label">Explore Programs</div>
+          </div>
+
+          <div class="card-grid">
+
+            <div class="prog-card">
+              <img src="assets/feedback_volunteering.png" alt="Volunteer program">
+              <div class="prog-card-body">
+                <span class="prog-card-tag">Shoreline · Monthly</span>
+                <h3>Volunteer</h3>
+                <p>Join hands-on ocean clean-up missions, restoring coastlines one tide at a time.</p>
+                <div class="card-actions">
+                  <button class="btn-ghost">Learn More</button>
+                  <button class="btn-solid">Join</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-card">
+              <img src="assets/feedback_studentActions.png" alt="Student actions program">
+              <div class="prog-card-body">
+                <span class="prog-card-tag">Academic · Open</span>
+                <h3>Student Actions</h3>
+                <p>Harness the power of research, advocacy, and campus mobilisation for SDG 14.</p>
+                <div class="card-actions">
+                  <button class="btn-ghost">Learn More</button>
+                  <button class="btn-solid">Join</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-card">
+              <img src="assets/feedback_compaigns.png" alt="Campaigns program">
+              <div class="prog-card-body">
+                <span class="prog-card-tag">Policy · Ongoing</span>
+                <h3>Campaigns</h3>
+                <p>Amplify your voice through data-driven campaigns that reach lawmakers and the public.</p>
+                <div class="card-actions">
+                  <button class="btn-ghost">Learn More</button>
+                  <button class="btn-solid">Join</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="prog-card">
+              <img src="assets/feedback_community.png" alt="Community program">
+              <div class="prog-card-body">
+                <span class="prog-card-tag">Local · Year-round</span>
+                <h3>Community</h3>
+                <p>Build intergenerational bonds while weaving traditional wisdom into modern reef restoration.</p>
+                <div class="card-actions">
+                  <button class="btn-ghost">Learn More</button>
+                  <button class="btn-solid">Join</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Reviews ── -->
+    <section class="page-section" style="padding-top:0;">
+      <div class="container">
+        <div class="glass-panel">
+
+          <!-- Overall rating -->
+          <div class="overall-rating">
+            <div class="big-score">9.6</div>
+            <div>
+              <div class="rating-label">Excellent</div>
+              <div class="review-count">Based on 1,456 reviews</div>
+            </div>
+          </div>
+
+          <div class="panel-inner" style="padding-top:1.2rem; padding-bottom:0.2rem;">
+            <div class="section-label">Community Voices</div>
+          </div>
+
+          <div class="review-grid">
+
+            <div class="review-card">
+              <h4>A Night I Will Never Forget</h4>
+              <p class="review-text">
+                Participating in the Shoreline Cleanup was eye-opening. We worked under the moonlight, and seeing the sheer amount of ghost nets we recovered was sobering. You don't realize how much damage is hidden in the dark until you start pulling it out.
+                <a href="#">See more.</a>
+              </p>
+              <hr class="review-divider">
+              <div class="review-footer">
+                <div class="reviewer-info">
+                  <span class="reviewer-name">Maya, Volunteer Sentinel</span>
+                  12 March 2026
+                </div>
+                <span class="score-badge">9/10</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <h4>Translating the Silence</h4>
+              <p class="review-text">
+                As a student, I joined the Acoustic Mapping project. It was haunting to see ship engines drowning out whale calls on our monitors. It turned a massive, abstract problem into something I could actually see and document.
+                <a href="#">See more.</a>
+              </p>
+              <hr class="review-divider">
+              <div class="review-footer">
+                <div class="reviewer-info">
+                  <span class="reviewer-name">Liam, Marine Biology Student</span>
+                  10 Jan 2026
+                </div>
+                <span class="score-badge">6/10</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <h4>Community at the Core</h4>
+              <p class="review-text">
+                I helped with the Coastal Breakwater build last month. Having elders share traditional ways to protect the shore while we integrated new reef technology felt like building a future for our village and the sea.
+                <a href="#">See more.</a>
+              </p>
+              <hr class="review-divider">
+              <div class="review-footer">
+                <div class="reviewer-info">
+                  <span class="reviewer-name">Kavi, Community Project Member</span>
+                  05 March 2026
+                </div>
+                <span class="score-badge">7/10</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <h4>Empowered to Act</h4>
+              <p class="review-text">
+                The 'Whale is Warning' campaign gave me a platform I didn't know I had. Sharing noise pollution data with local policymakers—and seeing them listen because we had the evidence—was incredibly empowering.
+                <a href="#">See more.</a>
+              </p>
+              <hr class="review-divider">
+              <div class="review-footer">
+                <div class="reviewer-info">
+                  <span class="reviewer-name">Sarah, Student Advocate</span>
+                  09 Jan 2026
+                </div>
+                <span class="score-badge">8/10</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <h4>Seeing the Light</h4>
+              <p class="review-text">
+                Volunteering for the Coral Restoration project was beautiful. Planting glowing cyan coral fragments onto bleached areas felt like literally bringing colour back to life. Hard work, but the fulfilment is indescribable.
+                <a href="#">See more.</a>
+              </p>
+              <hr class="review-divider">
+              <div class="review-footer">
+                <div class="reviewer-info">
+                  <span class="reviewer-name">Tuan, Conservation Volunteer</span>
+                  05 March 2026
+                </div>
+                <span class="score-badge">7/10</span>
+              </div>
+            </div>
+
+            <div class="review-card">
+              <h4>More Than Just a Program</h4>
+              <p class="review-text">
+                I joined 'Echoes' looking for a way to help, but I found a family. The staff are so supportive and working by the sea at night is magical. The best way to gain hands-on experience while acting on SDG 14 goals.
+                <a href="#">See more.</a>
+              </p>
+              <hr class="review-divider">
+              <div class="review-footer">
+                <div class="reviewer-info">
+                  <span class="reviewer-name">Elena, Citizen Scientist</span>
+                  30 March 2026
+                </div>
+                <span class="score-badge">9/10</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Feedback Form ── -->
+    <section class="page-section" style="padding-top:0;">
+      <div class="container">
+        <div class="glass-panel">
+          <div class="panel-inner" style="padding-bottom:0.2rem;">
+            <div class="section-label">Share Your Experience</div>
+          </div>
+
+          <form class="feedback-form-wrap" id="feedbackForm" novalidate>
+
+            <fieldset>
+              <legend>Personal Details</legend>
+
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" placeholder="Senilka Perera">
+              <span class="error" id="fullname_error"></span>
+
+              <label for="email">Email Address</label>
+              <input type="email" id="email" placeholder="senilka.perera@example.com">
+              <span class="error" id="email_error"></span>
+
+              <label for="telephone">Telephone</label>
+              <input type="tel" id="telephone" placeholder="077 123 4567">
+              <span class="error" id="telephone_error"></span>
+
+              <label for="address">Address</label>
+              <textarea id="address" placeholder="123 Main Street"></textarea>
+              <span class="error" id="address_error"></span>
+            </fieldset>
+
+            <fieldset>
+              <legend>Feedback Details</legend>
+
+              <label for="category">Category</label>
+              <select id="category">
+                <option value="">Select a category…</option>
+                <option>Volunteering</option>
+                <option>Student Actions</option>
+                <option>Campaigns</option>
+                <option>Community</option>
+              </select>
+              <span class="error" id="category_error"></span>
+
+              <label for="date">Date of Experience</label>
+              <input type="date" id="date">
+              <span class="error" id="date_error"></span>
+
+              <label for="datetime">Preferred Contact Time</label>
+              <input type="datetime-local" id="datetime">
+
+              <label for="message">
+                Comment
+                <span id="char_count">300 characters remaining</span>
+              </label>
+              <textarea id="message" maxlength="300" placeholder="Write your feedback here…"></textarea>
+              <span class="error" id="message_error"></span>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit" class="btn-submit">Submit</button>
+              <button type="reset" class="btn-reset">Reset</button>
+            </div>
+
+            <div class="success-message" id="success_message">
+              The ocean has heard you. Thank you for your words.
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a href="#" class="goup" aria-label="Back to top">↑</a>
+
+  <script>
+    // Character counter
+    const msg = document.getElementById('message');
+    const charCount = document.getElementById('char_count');
+    if (msg && charCount) {
+      msg.addEventListener('input', () => {
+        const rem = 300 - msg.value.length;
+        charCount.textContent = rem + ' characters remaining';
+      });
+    }
+  </script>
+  <script src="scripts/feedback.js"></script>
+</body>
+</html>
