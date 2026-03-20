@@ -46,3 +46,18 @@ a:focus rect {
     opacity: 1;
     outline: none;
 }
+
+.mobile-svg{
+    display:none;
+}
+
+@media (max-width: 768px) {
+    .desktop-svg{
+        display:none
+    }
+
+    .mobile-svg {
+        display: block;
+        margin: 40px auto;
+    }
+}
