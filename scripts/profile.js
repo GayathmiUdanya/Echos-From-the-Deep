@@ -278,7 +278,6 @@ function createProfile() {
 
 function step1() {
     let name = "";
-    let username = "";
     let age = "";
     let country = "";
     let role = "";
