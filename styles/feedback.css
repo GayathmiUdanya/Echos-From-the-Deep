@@ -1,5 +1,8 @@
 body{
     background-image:url("../assets/feedback_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     color:#e8f4f8;
     font-family:'Cinzel', serif;
 }
