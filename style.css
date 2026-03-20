@@ -119,7 +119,7 @@ nav {
     text-align: center;
 }
 
-.go-top {
+.goup {
     position: fixed;
     bottom: 2rem;
     right: 2rem;
@@ -139,7 +139,7 @@ nav {
     z-index: 50;
 }
 
-.go-top:hover {
+.goup:hover {
     background: var(--slate);
     transform: translateY(-3px);
     color: var(--foam);
