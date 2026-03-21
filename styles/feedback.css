@@ -90,9 +90,10 @@ html {
 }
 
 /*Explore Programs Section*/
-/*Background*/
 .page_section {
     padding: 2.5rem 0; /*top and bottom padding*/
+    max-width: 1160px;
+    margin:0 auto;
 }
 
 .glass_panel{
@@ -254,11 +255,11 @@ html {
     overflow-y:scroll;
 }
 
-/*Review Section*/
+/*-------------------Review Section--------------------------*/
 .overall_rating{
-    display: flex; /*aligning the cards*/
+    display:flex; /*aligning the cards*/
     flex-direction: row;
-    margin: 20px auto;
+    margin: 20px;
     width: auto;
     padding: 15px;
     background-color:rgb(13,27,42,0.9); 
@@ -288,12 +289,14 @@ html {
 
 /*Individual Rating*/
 .review_layout{
-    display: flex; /*Aligning the cards*/
-    flex-wrap: wrap;
-    gap:10px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr); /*two columns*/
+    max-width: 1000px;
+    gap: 16px;
+    justify-content: center;
     margin: 20px auto;
-    width:auto;
 }
+
 .review_card{
     padding: 15px;
     flex: 1 1 250px;
