@@ -17,17 +17,20 @@ body{
     justify-content:center;
     align-items:center;
     gap:10px;
-    margin-top:20px;
+    margin-top:50px;
 }
 
 .page-sub{
-    color:rgba(201, 169, 110, 0.75);
+    color:rgb(201, 169, 110);
     font-style: italic;
     font-size: 15px;
 }
 
 
-
+.sitemap-wrapper{
+    max-width:80%;
+    margin:32px auto;
+}
 
 /* ── SVG Node Styles ── */
 .box-rect {
@@ -38,7 +41,7 @@ body{
 }
 
 .node-text {
-    font-family: 'Cinzel', serif;
+
     font-size: 13px;
     font-weight: 600;
     fill: #c8e8f0;
@@ -47,8 +50,7 @@ body{
 }
 
 .node-sub {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 9.5px;
+    font-size: 9px;
     fill: rgba(148, 216, 213, 0.45);
     text-anchor: middle;
     letter-spacing: 0.06em;
@@ -78,10 +80,17 @@ body{
     stroke-dasharray: 5 3;
 }
 
-.active-text { fill: #94d8d5; }
-.active-sub  { fill: rgba(148, 216, 213, 0.7) !important; }
+.active-text {
+    fill: #94d8d5; 
+}
 
-.node-group { cursor: pointer; }
+.active-sub  { 
+    fill: rgba(148, 216, 213, 0.7) !important; 
+}
+
+.node-group {
+     cursor: pointer; 
+}
 
 .node-group:hover .box-rect,
 .node-group:hover .root-rect,
@@ -92,7 +101,9 @@ body{
     fill-opacity: 1;
 }
 
-.node-group:hover .node-text { fill: #d4f0f0; }
+.node-group:hover .node-text {
+    fill: #d4f0f0; 
+}
 
 .svg-link:focus .box-rect,
 .svg-link:focus .root-rect,
@@ -104,5 +115,20 @@ a:focus .box-rect {
 }
 
 /* ── Visibility ── */
-.desktop-map { display: block; }
-.mobile-map  { display: none; }
+.desktop-map {
+    display: block; 
+}
+
+.mobile-map  {
+    display: none; 
+}
+
+@media (max-width: 760px) {
+
+    main {
+        padding: 40px 16px 60px;
+    }
+
+    .desktop-map { display: none; }
+    .mobile-map  { display: block; }
+}
