@@ -161,3 +161,23 @@ button:hover {
     font-variant: small-caps;
     line-height: 1.5; 
 }
+
+.btn_role {
+    background: rgba(125, 211, 252, 0.1);
+    border: 1px solid rgba(125, 211, 252, 0.35);
+    border-radius: 20px;
+    color: #7dd3fc;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+}
+
+.btn_role:hover {
+    background: rgba(125, 211, 252, 0.18);
+    box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
+    transform: scale(1.04);
+}
