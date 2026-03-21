@@ -70,7 +70,7 @@ button:hover {
     transform: translateY(-10px);
     transition: 0.2s;
     border:3px solid #4A86A3;
-    box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
+    box-shadow:0 10px 25px rgba(75, 145, 180, 0.3);
     
 }
 
@@ -107,12 +107,12 @@ button:hover {
 }
 
 .profile-photo {
-    width: 100%;
-    max-width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 10px;
-    display: block;
+    width:100%;
+    max-width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:10px;
+    display:block;
     padding-bottom:15px;
 
 }
@@ -125,29 +125,28 @@ button:hover {
 
 
 .details p:first-child {
-    width: 90px; /* fixed width for labels */
-    font-weight: bold;
+    width:90px; /* fixed width for labels */
+    font-weight:bold;
 }   
 
 .details p:last-child {
-    flex: 1; 
+    flex:1; 
 }
 
-/* User Profile Builder */
 
 /* User Profile Builder */
 
 #profileBuilder {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
-    margin-top: 30px;
-    width: 80%;
-    background-color: #081B2B;
+    align-items:center;
+    gap:20px;
+    padding:20px;
+    margin-top:30px;
+    width:80%;
+    background-color:#081B2B;
     opacity: 0.9;
-    border-radius: 10px;
+    border-radius:10px;
     /* Hidden cuz its appearing in the profiles page -> since theres a div in the html */
     display:none; 
 
@@ -155,10 +154,13 @@ button:hover {
 }
 
 #profileBuilder h1 {
-    font-size: 25px;
-    font-weight: 700;
+    font-size:25px;
+    font-weight:700;
     padding-bottom:0;
+}
 
+#profileBuilder p{
+    font-style:italic;
 }
 
 /* Progress bar */
@@ -176,7 +178,7 @@ button:hover {
     height:100%;
     background-color:#4b91b4;
     width:0%;
-    transition: width 0.3s ease-in-out;
+    transition:width 0.3s ease-in-out;
 }
 
 .profile{
@@ -199,8 +201,8 @@ button:hover {
 }
 
 .profile-section:hover {
-    transform: translateY(-6px) scale(1.01);
-    box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
+    transform:translateY(-6px) scale(1.01);
+    box-shadow:0 10px 25px rgba(75, 145, 180, 0.3);
 }
 
 .profile-row{
