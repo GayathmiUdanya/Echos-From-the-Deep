@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Font-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
+        
         <title>Feedback Page</title>
 
         <!--Global CSS-->
@@ -12,26 +15,26 @@
         <!--Feedback CSS-->
         <link rel="stylesheet" href="styles/feedback.css">
     </head>
+
     <body>
-        <img src="assets/feedback_bg.png" class="scene-bg" alt="Ocean background" onerror="this.style.display='none'">
         <header>
             <nav>
-                <div class="logo-area">
-                    <div class="logo-circle"></div>
-                    <div class="logo-text">
-                        <h1>Echoes From The Deep</h1>
-                        <p>SDG 14 · Life Below Water</p>
-                    </div>
+            <div class="logo-area">
+                <div class="logo-circle"></div>
+                <div class="logo-text">
+                    <h1>Echoes From The Deep</h1>
+                    <p>SDG 14 · Life Below Water</p>
                 </div>
-                <div class="nav-links">
-                    <a href="home.html">Home</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="ais.html">Action Impact Simulator</a>
-                    <a href="feedback.html" class="active">Feedback</a>
-                    <a href="team.html">Team</a>
-                    <a href="profile.html">Profile</a>
-                    <a href="sitemap.html">Sitemap</a>
-                </div>
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Impact Simulator</a>
+                <a href="feedback.html" class="active">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="profile.html">Profile</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
             </nav>
             
             <nav class="side-nav">
@@ -39,28 +42,27 @@
                 <a href="#reviewSection">Reviews</a>
                 <a href="#feedbackSection">Feedback</a>
             </nav>
-            
         </header>
         
         <main>
             <!--Hero-->
             <section class="page-hero">
+                <img src="assets/feedback_bg.png" class="scene-bg" alt="Ocean background" onerror="this.style.display='none'">
                     <div class="page-hero-content">
-                        <span class="eyebrow">Act V · Voices From The Shore</span>
+                        <span class="page_subheading">Act V · Voices From The Shore</span>
                         <h1 class="hero-title">Your Words.<br><em>Our Mission.</em></h1>
-                        <div class="divider-line"></div>
-                        <p class="text-serif" style="max-width:520px;">
+                        <p class="text-serif">
                             Explore programs, read community voices,<br>and share your own experience with the deep.
                         </p>
                     </div>
             </section>
 
             <!--Programs-->
-            <section id="programSection" class="page-section">
+            <section id="programSection" class="page_section">
                 
-                    <div class="glass-panel">
-                        <div class="sort-row">
-                            <select class="sort-select" id="sortSelect" aria-label="Sort programs">
+                    <div class="glass_panel">
+                        <div class="sort_row">
+                            <select class="sort_select" id="sortSelect" aria-label="Sort programs">
                                 <option>Sort by…</option>
                                 <option>Newest</option>
                                 <option>Top Rated</option>
