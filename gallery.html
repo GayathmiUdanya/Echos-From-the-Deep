@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
+
     <title>Gallery</title>
 
     <!--Global CSS-->
@@ -112,7 +116,7 @@
             font-family: var(--font-family);
             background-color: var(--bg-color);
             color: var(--text-color);
-            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('assets/hero.jpeg');
+            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('../assets/hero.jpeg');
         }
 
         /* Layout Grid */
@@ -229,6 +233,7 @@
         }
     </style>
 </head>
+
 <body>
     <section class="hero">
     <header>
@@ -253,11 +258,23 @@
     </header>
 
 <main>
+    <!--Hero-->
+    <section class="page_hero">
+        <div class="page_hero_content">
+            <span class="page_subheading">Act III · Visions From The Deep</span>
+            <h1 class="hero_title">The Gallery.<br><em>The Story.</em></h1>
+            <p class="text_serif">
+                Each image is a warning, a wonder, and a call.<br>
+                Witness what lies beneath the surface.
+            </p>
+        </div>
+    </section>
+
     <section class="dashboard-container">
 
         <section class="card">
             <section class="card-image-wrapper">
-				<img src="assets/Whale’s Warning.png" class="card-image">
+				<img src="../assets/Whale’s Warning.png" class="card-image">
             </section>
             <section class="card-content">
                 <h2>Whale is Warning</h2>
@@ -267,7 +284,7 @@
 
         <section class="card">
             <section class="card-image-wrapper">
-				<img src="assets/Ghost Nets.png" class="card-image"> 
+				<img src="../assets/Ghost Nets.png" class="card-image"> 
             </section>
             <section class="card-content">
 				<h2>Ghost Nets</h2>
@@ -277,7 +294,7 @@
 
         <section class="card">
             <section class="card-image-wrapper">
-				<img src="assets/Bleached Reefs.png" class="card-image">    
+				<img src="../assets/Bleached Reefs.png" class="card-image">    
             </section>
             <section class="card-content">
 				<h2>Bleached Reefs</h2>
@@ -287,7 +304,7 @@
 
         <section class="card">
             <section class="card-image-wrapper">
-				<img src="assets/A Call to Action.png" class="card-image">
+				<img src="../assets/A Call to Action.png" class="card-image">
             </section>
             <section class="card-content">
 				<h2>A Call to Action</h2>
