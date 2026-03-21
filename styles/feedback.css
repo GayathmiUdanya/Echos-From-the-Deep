@@ -1,24 +1,27 @@
-body{
-    background-image:url("../assets/feedback_bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+html,body{
+    background-color: #0a1a2a; 
     color:#e8f4f8;
     font-family:'Cinzel', serif;
 }
 
-.scene-bg {
+.scene_bg {
     position: fixed;
-    inset: 0; /*stretches to fill all four edges of the parent*/
+    inset: 0; /*Stretches to fill all four edges of the parent*/
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     z-index: 0;
+    opacity: 0.55;
 }
 
-/*Side Navigation*/
-.side-nav{
+/*To ensure the content sits on top of the background image*/
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/*(Right Side) Section Navigation*/
+.side_nav{
     position: absolute;
     right: 1.5rem;
     top: 13rem;  /*Adjust this to move it up or down*/
@@ -28,7 +31,7 @@ body{
     z-index: 10;
 }
 
-.side-nav a {
+.side_nav a {
     text-decoration: none;
     background-color: none;
     color: #c6a810;
@@ -37,18 +40,22 @@ body{
     transition: color 0.2s;
 }
 
-.side-nav a:hover {
+.side_nav a:hover {
     transform: scale(1.3);
 }
 
+/*Smooth scrolling for down to a section in the web page*/
+html {
+    scroll-behavior: smooth;
+}
+
 /*Top Left Phrasing*/
-.page-hero-content {
+.page_hero_content {
     position: relative;
     z-index: 1;
 }
 
-.page-hero {
-    border-bottom: 1px solid rgba(125, 211, 252, 0.12);
+.page_hero {
     padding: 3.5rem 0 2rem;
     position: relative;
     min-height: 38vh;
@@ -64,14 +71,14 @@ body{
     display: block;
 }
 
-.hero-title{
+.hero_title{
     font-family: 'Cinzel', serif;
     font-size: clamp(2rem, 2vw, 2rem); /*the font states consistance regardless of the screen size*/
     font-weight: 600;
     color: rgba(255, 255, 255, 0.9);
 }
 
-.text-serif{
+.text_serif{
     font-size: 1.1rem;
     font-family: serif;
     font-style: italic;
@@ -127,27 +134,29 @@ body{
     box-shadow: 0 0 8px rgba(125, 211, 252, 0.25);
 }
 
-/*Explore Program Mini heading*/
+/*Sectional (Explore Program, Reviews, Form) Mini heading*/
 .panel_inner {
     padding: 2rem 2.4rem;
     padding-top:0.4rem; 
-    padding-bottom:0.6rem;
+    padding-bottom:0.1rem;
 }
 
 .section_label {
     font-family: 'Cinzel', serif;
-    font-size: 0.62rem;
+    font-size: 0.82rem;
     letter-spacing: 0.28em;
     text-transform: uppercase;
     color: #4a7a94;
-    margin-bottom: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
     display: flex;
-    align-items: center;
+    align-items: center; /*Makes the line that appers after to be vertically centered*/
     gap: 0.8rem;
 }
 
+/*Draws a thin line after the "section_label" content*/
 .section_label::after {
-    content: '';
+    content: ''; /*Empty since we dont want to write anything, and just need a line*/
     flex: 1;
     height: 1px;
     background: rgba(125, 211, 252, 0.1);
@@ -232,79 +241,9 @@ body{
     transform: scale(1.04);
 }
 
-
-.card_font{
-    font-size:18px;
-}
-
 .card p{
     font-family:serif;
     font-size:18px;
-}
-
-
-
-html {
-    scroll-behavior: smooth;
-}
-
-.scene-bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    opacity: 0.55;
-}
-
-main {
-    position: relative;
-    z-index: 1;
-}
-
-
-.score-badge {
-    color: #7dd3fc;
-    background: rgba(125, 211, 252, 0.08);
-    border: 1px solid rgba(125, 211, 252, 0.2);
-    border-radius: 20px;
-    padding: 0.2rem 0.8rem;
-    font-size: 1rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-a.goup {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 42px;
-    height: 42px;
-    background: rgba(3, 13, 26, 0.9);
-    border: 1px solid rgba(125, 211, 252, 0.22);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #7dd3fc;
-    font-size: 1.1rem;
-    text-decoration: none;
-    z-index: 50;
-    transition: background 0.25s, transform 0.25s;
-}
-
-a.goup:hover {
-    background: rgba(125, 211, 252, 0.12);
-    transform: translateY(-3px);
-}
-
-.review_footer {
-    display: flex;
-    flex-direction: row;            
-    align-items: center;            
-    justify-content: space-between; 
-    gap: 8px;
 }
 
 /*Scrolling feature for the content cards*/
@@ -313,8 +252,7 @@ a.goup:hover {
     overflow-y:scroll;
 }
 
-
-
+/*Review Section*/
 .overall_rating{
     display: flex; /*aligning the cards*/
     flex-direction: row;
@@ -346,6 +284,7 @@ a.goup:hover {
     margin: 0;
 }
 
+/*Individual Rating*/
 .review_layout{
     display: flex; /*Aligning the cards*/
     flex-wrap: wrap;
@@ -362,22 +301,67 @@ a.goup:hover {
     font-family:'Lora', serif;
 }
 
-.review_card h4,
 .review_card p{
     margin:0;
 }
 
-hr{
+.card_font{
+    font-size:18px;
+}
+
+.review_text a {
+    color: rgba(125, 211, 252, 0.7);
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: color 0.2s;
+}
+
+.review_text a:hover { 
+    color: #7dd3fc; 
+}
+
+.review_card hr{
     margin: 8px 0;
     border:none;
     border-top: 1px solid #abb5c0;
 }
 
-a{
-    text-decoration:none;
+.review_footer {
+    display: flex;
+    flex-direction: row;            
+    align-items: center;            
+    justify-content: space-between; 
+    gap: 8px;
 }
 
-/*Form Styling*/
+.reviewer_info {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #4a7a94;
+    line-height: 1.4;
+}
+
+.reviewer_name {
+    display: block;
+    color: rgba(232, 244, 248, 0.6);
+    font-weight: 500;
+    margin-bottom: 0.1rem;
+}
+
+.score_badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #7dd3fc;
+    background: rgba(125, 211, 252, 0.08);
+    border: 1px solid rgba(125, 211, 252, 0.2);
+    border-radius: 20px;
+    padding: 0.2rem 0.8rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/*Form Section*/
 .error{
     color: #ff6b6b;
     font-size: 12px;
