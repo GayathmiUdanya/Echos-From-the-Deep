@@ -99,7 +99,7 @@ function createCreateButton() {
 
     btn.addEventListener("click", createProfile);
 
-    main.prepend(btn);
+    main.prepend(btn); //adds the button to the top of the page
 }
 
 
@@ -123,7 +123,7 @@ function saveProfile() {
         if(newProfile[key] === "Not Mentioned") newProfile[key] = "";
     }
 
-    sampleProfiles.unshift(newProfile); 
+    sampleProfiles.unshift(newProfile); //adds the profile to the begining 
 
     // Clear the sample container
     const container = document.getElementById("sample-data-container");
@@ -146,7 +146,7 @@ function saveProfile() {
 
 //Function to reset the profile builder 
 function clearProfile() {
-    if (!confirm("Are you sure you want to reset your profile?")) return; //If true this stops the function, false -> Resets the profile
+    if (!confirm("Are you sure you want to reset your profile?")) return; //If the user clicks "Cancel", stop the function; otherwise, continue to reset the profile
 
     profile = {
         name:"",
