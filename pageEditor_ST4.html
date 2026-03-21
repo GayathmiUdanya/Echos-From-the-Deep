@@ -47,16 +47,72 @@
             <section>
                 <h2 id="profile">Profile Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                    <ul>
+                        <li><code>&lt;div id="sample-data-container"&gt;</code> holds dynamic profile cards.</li>
+                        <li><code>&lt;div id="profileBuilder"&gt;</code> holds the interactive profile builder.</li>
+                        <li><code>profile</code> stores the current profile data.</li>
+                        <li><code>sampleProfiles</code> is an array of pre-filled profiles.</li>
+                        <li><code>renderSampleData()</code> displays sample profiles, clearing the container first, looping through <code>sampleProfiles</code>, and generating cards while skipping empty fields.</li>
+                        <li><code>createCreateButton()</code> adds a "Create New Profile" button that triggers <code>createProfile()</code> when clicked, and is prepended to the page.</li>
+                        <li><code>saveProfile()</code> saves a new profile with a random photo, replaces skipped fields with empty strings, prepends it to <code>sampleProfiles</code>, clears and hides the builder, and re-renders the profiles.</li>
+                        <li><code>clearProfile()</code> resets the builder after confirmation, sets fields to "Not Added Yet," and resets the progress bar.</li>
+                        <li><code>createProfile()</code> shows the builder with steps, progress bar, fields, and a Save button.</li>
+                        <li><code>step1()</code> collects basic info (name, age, country, role).</li>
+                        <li><code>step2()</code> collects interests (issue, animal, activity).</li>
+                        <li><code>step3()</code> collects goals and actions (goal, volunteer, awareness).</li>
+                        <li><code>updateProgress()</code> calculates filled fields and updates the progress bar.</li>
+                        <li><code>renderProfile()</code> updates displayed fields with current <code>profile</code> values, leaving blanks if empty.</li>
+                    </ul>
+
+                    <p><strong>Sample Profile Cards:</strong></p>
+                    <ul>
+                        <li><code>#sample-data-container</code> is a responsive 3-column grid with gaps and width control.</li>
+                        <li><code>.sample-data</code> cards are flex columns with padding, dark background, rounded corners, and hover effects (transform, border, shadow).</li>
+                        <li><code>.name</code> is bolded.</li>
+                        <li><code>.header</code> contains <code>.country</code> and <code>.role</code> badges with distinct border colors (<code>#ef4444</code> and <code>#f59e0b</code>) and background.</li>
+                        <li><code>.profile-photo</code> ensures images fit, maintain aspect ratio, and are rounded.</li>
+                        <li><code>.details</code> displays label-value pairs horizontally, with bold labels of fixed width.</li>
+                    </ul>
+
+                    <p><strong>Profile Builder (<code>#profileBuilder</code>):</strong></p>
+                    <ul>
+                        <li>Hidden by default (<code>display: none</code>) and styled as a flex column with padding, rounded corners, dark background, and opacity.</li>
+                        <li><code>&lt;h1&gt;</code> is larger and bold.</li>
+                    </ul>
+
+                    <p><strong>Progress Bar:</strong></p>
+                    <ul>
+                        <li><code>.progressContainer</code> defines a bordered container for the progress bar with rounded corners.</li>
+                        <li><code>.progressBar</code> fills the container width based on completion and transitions smoothly.</li>
+                    </ul>
+
+                    <p><strong>Profile Sections:</strong></p>
+                    <ul>
+                        <li><code>.profile</code> is a vertical flex container for sections.</li>
+                        <li><code>.profile-section</code> has borders, padding, rounded corners, hover effects, and is hidden initially.</li>
+                        <li><code>.profile-row</code> aligns labels and values horizontally with a bottom border; labels have fixed width and bold font.</li>
+                        <li><code>.save</code> button container is hidden initially.</li>
+                    </ul>
+
+                    <p><strong>Interactions:</strong></p>
+                    <ul>
+                        <li>Hovering over cards or profile sections triggers subtle transformations and shadows to indicate interactivity.</li>
+                        <li>Progress bars animate width changes smoothly as the user fills profile fields.</li>
+                    </ul>
                     
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <ul>
+                            <li>Semantic HTML elements like <code>h1</code>, <code>h3</code>, <code>p</code>, and <code>button</code> are used for clear structure and screen reader support.</li>
+                            <li>All buttons and interactive elements have visible labels, hover/focus states, and sufficient color contrast for readability.</li>
+                            <li>Images include <code>alt</code> text to describe profile photos.</li>
+                            <li>The progress bar provides both visual and text indicators to clearly show completion status.</li>
+                        </ul>
                     
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                     <h3>Link to the page</h3>
-                        <p><a href="profile.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="profile.html">Profile Page</a></p>
             </section>
 
             <section>
@@ -245,30 +301,11 @@
         <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
                 <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 1</li>
-                <ul>
-                        <li><a href="#home">Home page </a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#content">Content</a></li>
-                    </ul>
-                <li>Student 2</li>
-                <ul> 
-                    <li><a href="#">Splash Screen</a></li>
-                    <li><a href="#">Action Impact Simulator</a></li>
-                    <li><a href="#">Content</a></li>
-                </ul>
-                    
-                <li>Student 3</li>
-                    <ul>
-                        <li><a href="#">Feedback</a> </li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Content</a></li>
-                    </ul>
                 <li>Student 4</li>
                     <ul>
-                        <li><a href="#">User Profile </a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Content</a></li>
+                        <li><a href="#profile">User Profile </a></li>
+                        <li><a href="#sitemap">Sitemap</a></li>
+                        <li><a href="#content">Content</a></li>
                     </ul>
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>

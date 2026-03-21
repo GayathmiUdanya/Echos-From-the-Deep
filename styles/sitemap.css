@@ -1,5 +1,6 @@
 body{
-    background-image: url('../assets/bg_image.jpeg');
+    background-image: url('../assets/hero.jpeg');
+    background-size: cover;
     color:#e8f4f8;
     font-family:'Cinzel', serif;
 }
