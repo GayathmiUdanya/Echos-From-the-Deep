@@ -3,10 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--Font-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
-
     <title>Gallery</title>
 
     <!--Global CSS-->
@@ -18,6 +14,16 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        .scene_bg {
+            position: fixed;
+            inset: 0; /*Stretches to fill all four edges of the parent*/
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 0.55;
         }
 		
         :root {
@@ -42,7 +48,10 @@
             -webkit-backdrop-filter: blur(14px);
             border-bottom: 1px solid var(--white-10);
         }
-		
+		nav {
+            position: relative;
+            z-index: 10;
+        }
         .logo-area {
             display: flex;
             align-items: center;
@@ -58,7 +67,10 @@
             opacity: 0.85;
             flex-shrink: 0;
         }
-		
+		main {
+            position: relative;
+            z-index: 1;
+        }
         .logo-text h1 {
             font-size: 0.85rem;
             font-weight: 600;
@@ -110,14 +122,15 @@
             --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body {
+        
+body,html{
+    background-color: #0a1a2a; 
+    color:#e8f4f8;
+    font-family:'Cinzel', serif;
+    position: relative;
             margin: 0;
             padding: 0;
-            font-family: var(--font-family);
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('../assets/hero.jpeg');
-        }
+}
 
         /* Layout Grid */
         .dashboard-container {
@@ -127,6 +140,8 @@
             max-width: 1000px;
             justify-content: center;
             margin:20px auto;
+            position: relative;
+            z-index: 1;
         }
 
 
@@ -233,8 +248,9 @@
         }
     </style>
 </head>
-
 <body>
+    <img src="assets/feedback_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+
     <section class="hero">
     <header>
         <nav>
@@ -258,84 +274,71 @@
     </header>
 
 <main>
-    <!--Hero-->
-    <section class="page_hero">
-        <div class="page_hero_content">
-            <span class="page_subheading">Act III · Visions From The Deep</span>
-            <h1 class="hero_title">The Gallery.<br><em>The Story.</em></h1>
-            <p class="text_serif">
-                Each image is a warning, a wonder, and a call.<br>
-                Witness what lies beneath the surface.
-            </p>
-        </div>
-    </section>
+    <div  class="dashboard-container">
 
-    <section class="dashboard-container">
-
-        <section class="card">
-            <section class="card-image-wrapper">
-				<img src="../assets/Whale’s Warning.png" class="card-image">
-            </section>
-            <section class="card-content">
+        <div  class="card">
+            <div  class="card-image-wrapper">
+				<img src="assets/Whale’s Warning.png" class="card-image">
+            </div >
+            <div  class="card-content">
                 <h2>Whale is Warning</h2>
                 <span class="card-description">A massive, shadowy cargo ship looms on the surface, its hull cutting through the water. It blasts a harsh, jagged red sound wave downward. This invasive noise collides with the delicate blue echoes of a distressed mother whale and her calf, distorting their song into fractured shapes.</span>
-            </section>
-        </section>
+            </div >
+        </div >
 
-        <section class="card">
-            <section class="card-image-wrapper">
-				<img src="../assets/Ghost Nets.png" class="card-image"> 
-            </section>
-            <section class="card-content">
+        <div  class="card">
+            <div  class="card-image-wrapper">
+				<img src="assets/Ghost Nets.png" class="card-image"> 
+            </div >
+            <div  class="card-content">
 				<h2>Ghost Nets</h2>
                 <span class="card-description">A massive, forgotten "ghost net" drifts like a giant, suffocating spiderweb. It is tangled over ancient, silent rock formations</span>
-            </section>
-        </section>
+            </div >
+        </div >
 
-        <section class="card">
-            <section class="card-image-wrapper">
-				<img src="../assets/Bleached Reefs.png" class="card-image">    
-            </section>
-            <section class="card-content">
+        <div  class="card">
+            <div  class="card-image-wrapper">
+				<img src="assets/Bleached Reefs.png" class="card-image">    
+            </div >
+            <div  class="card-content">
 				<h2>Bleached Reefs</h2>
                 <span class="card-description">The environmental collapse hits the coral reefs. We focus on a coral garden that is rapidly dying. What was once vibrant is now a ghostly, skeletal white. The warming water has driven away all life.</span>
-            </section>
-        </section>
+            </div >
+        </div >
 
-        <section class="card">
-            <section class="card-image-wrapper">
-				<img src="../assets/A Call to Action.png" class="card-image">
-            </section>
-            <section class="card-content">
+        <div  class="card">
+            <div  class="card-image-wrapper">
+				<img src="assets/A Call to Action.png" class="card-image">
+            </div >
+            <div  class="card-content">
 				<h2>A Call to Action</h2>
                 <span class="card-description">Action is taken. Returning underwater, we see a team of divers. Crucially, they are led by the young character from the cliffside.</span>
-            </section>
-        </section>
+            </div >
+        </div >
 
-		<section class="card">
-            <section class="card-image-wrapper">
+		<div  class="card">
+            <div  class="card-image-wrapper">
             <img src="assets/Listening to the Echoes.png" class="card-image">
-            </section>
-            <section class="card-content">
+            </div >
+            <div  class="card-content">
 				<h2>Listening to the Echoes</h2>
                 <span class="card-description">The ocean is not silent; it is a symphony of soft, glowing sound. We observe this magical, aquatic language as it travels through the dark water.</span>
-            </section>
-        </section>
+            </div >
+        </div >
        
-		<section class="card">
-            <section class="card-image-wrapper">
+		<div  class="card">
+            <div  class="card-image-wrapper">
              <img src="assets/Restored Echoes.jpeg" class="card-image">
-            </section>
-            <section class="card-content">
+            </div >
+            <div  class="card-content">
 				<h2>Restored Echoes</h2>
                 <span class="card-description">The healthy, swirling blue bioluminescent sound echoes have returned, merging with organized, structural melodies. The ocean is quiet and in harmony, the warnings having been answered.</span>
-            </section>
-        </section>
+            </div >
+        </div >
     </section>
-</section>
+</div >
 </main>
-<!--Back to top-->
-<a href="#" class="back_to_top" aria-label="Back to top">↑</a>
+<a href="#" class="goup" aria-label="Back to top">↑</a>
 </body>
 
 </html> 
