@@ -89,17 +89,25 @@ button:hover {
 .team_members{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center; 
     align-items: flex-start; /*Stops the cards from streching each other*/
+    border-top: 1px solid rgba(125, 211, 252, 0.15);  /* ← add this */
+    padding-top: 3rem;
 }
 
+.student:hover img {
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
+    border-radius: 5px;
+}
 .student{
     width: 300px;
     padding: 20px;
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 2px solid #1e3a5f;
+    border-top: 3px solid rgba(125, 211, 252, 0.5);
     text-align: center;
     color: #d0dce8; 
     overflow: visible; 
@@ -120,6 +128,7 @@ button:hover {
     cursor:pointer; 
     z-index: 10;
     position: relative; 
+    width: 360px; 
 }
 
 /*Hides the DETAILS by default*/
@@ -127,6 +136,8 @@ button:hover {
     display: none; 
     text-align: left; 
     margin-top: 5px;
+    border-top: 1px solid rgba(125, 211, 252, 0.2);   /* ← add this */
+    padding-top: 12px;                                  /* ← and this */
 }
 
 /*Shows the DETAILS on hover or focus*/
@@ -180,4 +191,14 @@ button:hover {
     background: rgba(125, 211, 252, 0.18);
     box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
     transform: scale(1.04);
+}
+main {
+    padding-bottom: 4rem;
+}
+
+.student h3 {
+    margin: 12px 0 8px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: #e8f4f8;
 }
