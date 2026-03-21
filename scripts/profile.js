@@ -29,7 +29,7 @@ const sampleProfiles = [
     },
 
     {
-        name: "Jane Smith",
+        name: "Cleo Satori",
         age: 70,
         country: "USA",
         role: "Researcher",
@@ -43,7 +43,7 @@ const sampleProfiles = [
     },
 
     {
-        name: "John Doe",
+        name: "Jane Smith",
         age: 25,
         country: "UK",
         role: "Ocean Enthusiast",
