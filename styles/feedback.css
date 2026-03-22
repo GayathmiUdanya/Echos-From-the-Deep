@@ -23,8 +23,6 @@ main {
 }
 
 /*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
-
-
 .page_subheading{
     font-family: 'Cinzel', serif;
     font-size: clamp(0.65rem, 0.65vw, 0.65rem);
@@ -169,8 +167,20 @@ html {
     border-radius: 5px;
 }
 
-.cardheading_font{
-    font-size:20px;
+.card p.cardheading_font{
+    font-family:'Cinzel', serif;
+    text-transform: uppercase;
+    font-size: .76rem;
+    letter-spacing: .1em;
+    color: #e8f4f8;
+    margin-bottom: .4rem;
+}   
+
+.card p.carddescription_font{
+    font-size: .82rem;
+    color: #94b8cc;
+    line-height: 1.55;
+    margin-bottom: .8rem;
 }
 
 .cardbutton_actions {
@@ -245,7 +255,8 @@ html {
 }
 
 .big_score{
-    font-size:50px;
+    font-size: 3rem;
+    letter-spacing: 0.1em;
     font-weight:bold;
     font-family:'Cinzel', serif;
     margin-left: 30px;
@@ -256,12 +267,16 @@ html {
     font-weight:bold;
     font-family:'Cinzel', serif;
     margin: 0;
+    font-size: 2rem;
+    letter-spacing: 0.1em;
 }
 
 .review_count{
     font-size:15px;
     font-family:'Cinzel', serif;
     margin: 0;
+    font-size: 0.76rem;
+    letter-spacing: 0.1em;
 }
 
 /*Individual Rating*/
@@ -288,7 +303,19 @@ html {
 }
 
 .card_font{
-    font-size:18px;
+    font-family:'Cinzel', serif;
+    text-transform: uppercase;
+    font-size: .76rem;
+    letter-spacing: .1em;
+    color: #e8f4f8;
+    margin-bottom: .4rem;
+} 
+
+.review_text {
+    font-size: .82rem;
+    color: #94b8cc;
+    line-height: 1.55;
+    margin-bottom: .8rem;
 }
 
 .review_text a {
@@ -317,10 +344,11 @@ html {
 }
 
 .reviewer_info {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     color: #4a7a94;
     line-height: 1.4;
+    font-weight: 400;
 }
 
 .reviewer_name {
@@ -343,7 +371,7 @@ html {
     flex-shrink: 0;
 }
 
-/*Form Section*/
+/*------------------Form Section-----------------------*/
 .error{
     color: #ff6b6b;
     font-size: 12px;
@@ -384,7 +412,8 @@ fieldset {
 legend {
     color: #7089f0;
     font-family: 'Cinzel', serif;
-    font-size: 16px;
+    text-transform: uppercase;
+    font-size: 1em;
     font-weight: bold;
     letter-spacing: 2px;
     padding: 0 10px;
@@ -393,11 +422,20 @@ legend {
 label {
     display: block;
     color: #d0dce8;
-    font-size: 13px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    margin-top: 12px;
-    letter-spacing: 1px;
+    margin-top: .8rem;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    font-size: .85rem;
+    letter-spacing: .1em;
+    color: #e8f4f8;
+    margin-bottom: .4rem;
+}
+
+.review_text {
+    font-size: .82rem;
+    color: #94b8cc;
+    line-height: 1.55;
+    margin-bottom: .8rem;
 }
 
 input,
