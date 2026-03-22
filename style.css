@@ -385,6 +385,7 @@ footer {
       font-size: 1.15rem;
       font-style: italic;
       color: #bae6fd;
+      max-width:520px;
     }
     .updevider{
     width: 40px;
