@@ -1,0 +1,288 @@
+/* GLOBAL CSS */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --teal: #49aec0;
+    --teal-dark: #37909f;
+    --white: #ffffff;
+    --white-60: rgba(255, 255, 255, 0.6);
+    --white-20: rgba(255, 255, 255, 0.2);
+    --white-10: rgba(255, 255, 255, 0.1);
+    --nav-bg: rgba(255, 255, 255, 0.12);
+    --bg-color: #0b111a;
+    --card-bg: #111a27;
+    --text-color: #d1d9e2;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url('hero.jpeg');
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+html,body{
+    background-color: #0a1a2a; 
+    color:#e8f4f8;
+    font-family:'Cinzel', serif;
+    position: relative;
+}
+
+/*-----------------------------Background Image---------------------------------------*/
+.scene_bg {
+    position: fixed;
+    inset: 0; /*Stretches to fill all four edges of the parent*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+/*To ensure the content sits on top of the background image*/
+main {
+    position: relative;
+    z-index: 1;
+}
+
+
+/*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
+.page_hero_content {
+    position: relative;
+    z-index: 1;
+}
+
+.page_hero {
+    padding: 3.5rem 0 2rem;
+    position: relative;
+    min-height: 38vh;
+    margin-left: 50px;
+}
+
+.page_subheading{
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.65rem, 0.65vw, 0.65rem);
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    color: rgba(10, 30, 50, 0.9);
+    display: block;
+}
+
+.hero_title{
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 2vw, 2rem); /*the font states consistance regardless of the screen size*/
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.text_serif{
+    font-size: 1.1rem;
+    font-family: serif;
+    font-style: italic;
+    color:rgba(255, 255, 255, 0.5);
+    line-height: 1.65;
+    max-width:520px;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--nav-bg);
+    padding: 16px 60px;       
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--white-10);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-area { display: flex; align-items: center; gap: 12px; }
+.logo-circle {
+    width: 36px; height: 36px; border-radius: 50%;
+    border: 2px solid var(--teal);
+    background: radial-gradient(circle at 40% 40%, var(--teal), transparent 70%);
+}
+
+.logo-text h1 { font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: #fff; }
+.logo-text p { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.7; }
+
+.nav-links { display: flex; gap: 4px; }
+.nav-links a {
+    text-decoration: none; color: var(--white); font-size: 10px;
+    text-transform: uppercase; letter-spacing: 1.5px; padding: 7px 14px;
+    border-radius: 5px; opacity: 0.7; transition: 0.2s;
+}
+.nav-links a.active { opacity: 1; background: var(--white-20); }
+
+/* GALLERY GRID */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #1f2d42;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Styling for visual cue */
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content { padding: 20px; }
+.card-content h2 { font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+.card-description { font-size: 0.85rem; line-height: 1.5; color: var(--text-color); }
+
+/* EXTENDED VIEW (MODAL) */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #111a27;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 900px;
+    width: 100%;
+    position: relative;
+    border: 1px solid var(--teal);
+    text-align: center;
+}
+
+.modal-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 35px; color: white; cursor: pointer;
+}
+
+/* USER CUSTOMIZATION STYLES */
+.custom-controls {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    border-top: 1px solid #2d3e50;
+    padding-top: 20px;
+}
+
+.btn-custom {
+    padding: 10px 20px;
+    background: var(--teal);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* JavaScript Toggled Classes */
+.alt-font-active { font-family: 'Playfair Display', serif !important; }
+.alt-color-active { background-color: #f0f4f8 !important; color: #1a2a3a !important; }
+.alt-color-active h2, .alt-color-active p { color: #1a2a3a !important; }
+
+.back-to-top {
+    position: fixed;		 
+    bottom: 20px; 
+    right: 20px;
+    width: 45px;			 
+    height: 45px; 
+    border-radius: 50%;
+    background: var(--teal); 
+    color: white;
+    font-size:25px;
+    text-decoration: none;	 
+    display: flex;
+    align-items: center; 	 
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* FOOTER STYLES */
+footer {
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--white-10);
+    padding: 30px 60px;
+    margin-top: 50px;
+    background: var(--nav-bg);
+    color: var(--white-60);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--teal);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.student-details {
+    text-align: right;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .student-details {
+        text-align: center;
+    }
+}
