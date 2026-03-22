@@ -91,15 +91,14 @@ function renderSampleData() {
 }
 
 function createCreateButton() {
-    const main = document.querySelector("main");
-
+    const sampcontainer = document.querySelector(".sampcontainer");//CHANGED RKYYYY
     const btn = document.createElement("button");
     btn.id = "createProfileBtn";
     btn.textContent = "Create New Profile";
 
     btn.addEventListener("click", createProfile);
 
-    main.prepend(btn); //adds the button to the top of the page
+    sampcontainer.prepend(btn); //CHANGED RKYYY
 }
 
 

@@ -11,12 +11,12 @@ p{
     font-size:13px;
 }
 
-h1{
+/* h1{
     font-size:16px;
     font-weight:400;
-}
+} */
 
-main{
+.sampcontainer{
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -25,7 +25,10 @@ main{
     border-radius:20px;
 
 }
-
+#createProfileBtn {
+    display: block;
+    margin: 0 auto 20px auto;
+}
 button {
     padding: 10px 20px;
     font-size: 16px;
@@ -42,19 +45,6 @@ button:hover {
     box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
 }
 
-/*Top Left Phrasing*/
-.page_hero_content {
-    position: relative;
-    z-index: 1;
-}
-
-.page_hero {
-    padding: 3.5rem 0 2rem;
-    position: relative;
-    min-height: 38vh;
-    margin-left: 50px;
-}
-
 .page_subheading{
     font-family: 'Cinzel', serif;
     font-size: clamp(0.65rem, 0.65vw, 0.65rem);
@@ -64,21 +54,6 @@ button:hover {
     display: block;
 }
 
-.hero_title{
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 2vw, 2rem); /*the font states consistance regardless of the screen size*/
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.text_serif{
-    font-size: 1.1rem;
-    font-family: serif;
-    font-style: italic;
-    color:rgba(255, 255, 255, 0.5);
-    line-height: 1.65;
-    max-width:520px;
-}
 
 #sample-data-container {
     display:grid;
@@ -289,19 +264,6 @@ button:hover {
         padding: 10px;
     }
 
-    .page_hero {
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .hero_title {
-        font-size: 1.6rem;
-    }
-
-    .text_serif {
-        font-size: 0.95rem;
-    }
-
     #sample-data-container {
         grid-template-columns: 1fr; /* 1 card */
         gap: 20px;
@@ -324,10 +286,6 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-
-    .hero_title {
-        font-size: 1.4rem;
-    }
 
     .page_subheading {
         font-size: 0.55rem;

@@ -22,17 +22,7 @@ main {
 }
 
 /*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
-.page_hero_content {
-    position: relative;
-    z-index: 1;
-}
 
-.page_hero {
-    padding: 3.5rem 0 2rem;
-    position: relative;
-    min-height: 38vh;
-    margin-left: 100px;
-}
 
 .page_subheading{
     font-family: 'Cinzel', serif;
@@ -43,21 +33,6 @@ main {
     display: block;
 }
 
-.hero_title{
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 2vw, 2rem); /*the font states consistance regardless of the screen size*/
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.text_serif{
-    font-size: 1.1rem;
-    font-family: serif;
-    font-style: italic;
-    color:rgba(255, 255, 255, 0.5);
-    line-height: 1.65;
-    max-width:520px;
-}
 
 /*--------------------------------------------------Team Member Details-------------------------------------------*/
 .team_members{
