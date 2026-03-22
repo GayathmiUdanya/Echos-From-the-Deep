@@ -93,8 +93,7 @@ button:hover {
     gap: 20px;
     justify-content: center; 
     align-items: flex-start; /*Stops the cards from streching each other*/
-    border-top: 1px solid rgba(125, 211, 252, 0.15);  /* ← add this */
-    padding-top: 3rem;
+    padding-top: 0.5rem;
 }
 
 .student:hover img {
@@ -145,8 +144,6 @@ button:hover {
 .student:focus .details{
     display: block; 
 }
-
-
 
 .row{
     display:flex;

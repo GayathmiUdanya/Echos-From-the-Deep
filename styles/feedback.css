@@ -21,7 +21,7 @@ main {
     z-index: 1;
 }
 
-/*(Right Side) Section Navigation*/
+/*(Right Side)Internal Section Navigation*/
 .side_nav{
     position: absolute;
     right: 1.5rem;
