@@ -93,7 +93,7 @@ main {
     transition: all 0.3s ease;
 }
 
-.student h3 {
+.student_name {
     margin: 12px 0 8px;
     font-size: 1rem;
     letter-spacing: 0.08em;
