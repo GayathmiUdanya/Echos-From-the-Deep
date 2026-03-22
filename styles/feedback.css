@@ -75,7 +75,7 @@ main {
 
 .side_nav a {
     text-decoration: none;
-    background-color: none;
+    background-color: transparent;
     color: #c6a810;
     font-size: 0.75rem;
     letter-spacing: 0.2em;
@@ -91,8 +91,6 @@ main {
 html {
     scroll-behavior: smooth;
 }
-
-
 
 /*Explore Programs Section*/
 .page_section {
