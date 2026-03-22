@@ -3,127 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--Font-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <title>Gallery</title>
-
-    <!--Global CSS-->
-    <link rel="stylesheet" href="style.css">
-
-        .scene_bg {
-            position: fixed;
-            inset: 0; 
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-            opacity: 0.55;
-        }
-		
-        :root {
-            --teal: #49aec0;
-            --teal-dark: #37909f;
-            --white: #ffffff;
-            --white-60: rgba(255, 255, 255, 0.6);
-            --white-20: rgba(255, 255, 255, 0.2);
-            --white-10: rgba(255, 255, 255, 0.1);
-            --nav-bg: rgba(255, 255, 255, 0.12);
-            --font-body: 'Montserrat', sans-serif;
-            --font-serif: 'Playfair Display', serif;
-        }
-		
-		nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 60px;
-            background: var(--nav-bg);
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1px solid var(--white-10);
-        }
-		nav {
-            position: relative;
-            z-index: 10;
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-		
-        .logo-circle {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 2px solid var(--teal);
-            background: radial-gradient(circle at 40% 40%, var(--teal), transparent 70%);
-            opacity: 0.85;
-            flex-shrink: 0;
-        }
-		main {
-            position: relative;
-            z-index: 1;
-        }
-        .logo-text h1 {
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            line-height: 1.2;
-        }
-		
-        .logo-text p {
-            font-size: 9px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            opacity: 0.7;
-            margin-top: 2px;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-size: 10px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            padding: 7px 14px;
-            border-radius: 5px;
-            opacity: 0.7;
-            transition: opacity 0.2s, background 0.2s;
-        }
-        .nav-links a:hover {
-            opacity: 1;
-            background: var(--white-10);
-        }
-        .nav-links a.active {
-            opacity: 1;
-            background: var(--white-20);
-        }
-		
-        /* Global Reset & Body Styles */
-        :root {
-            --bg-color: #0b111a;
-            --card-bg: #111a27;
-            --text-color: #d1d9e2;
-            --text-color-light: #7a8ba3;
-            --badge-bg: #1e3a5f;
-            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles/gallery.css">
+  
 </head>
-
 <body>
-    <!--Background Image-->
-    <img src="assets/gallery_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
-        
+    <img src="assets/feedback_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+    
     <header>
         <nav>
             <div class="logo-area">
@@ -133,32 +21,32 @@
                     <p>SDG 14 · Life Below Water</p>
                 </div>
             </div>
-
             <div class="nav-links">
                 <a href="home.html">Home</a>
-                <a href="gallery.html" class="active">Gallery</a> 
+                <a href="gallery.html" class="active">Gallery</a>
                 <a href="ais.html">Action Impact Simulator</a>
                 <a href="feedback.html">Feedback</a>
                 <a href="team.html">Team</a>
                 <a href="profile.html">Profile</a>
                 <a href="sitemap.html">Sitemap</a>
-            </div>	
+            </div>
         </nav>
     </header>
 
-    <main>
-        <div class="pageup">
-            <div class="container">
-            <div class="upcontent">
-                <span class="updescription">Act III · Windows To The Deep</span>
-                <h1 class="uptittle">See The Ocean.<br><em>Feel The Truth.</em></h1>
-                <div class="updevider"></div>
-                <p class="text-serif">
-                    A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
-                </p>
-            </div>
-            </div>
+<main>
+
+    <section class="page_hero">
+    <img src="assets/gallery_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+        <div class="page_hero_content">
+            <span class="page_subheading">Act III · Windows To The Deep</span>
+            <h1 class="hero_title">See The Ocean.<br><em>Feel The Truth.</em></h1>
+            <p class="text_serif">
+                A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
+            </p>
         </div>
+    </section>
+
+    <div  class="dashboard-container">
 
         <div  class="card">
             <div  class="card-image-wrapper">
@@ -197,8 +85,8 @@
             <div  class="card-content">
 				<h2>A Call to Action</h2>
                 <span class="card-description">Action is taken. Returning underwater, we see a team of divers. Crucially, they are led by the young character from the cliffside.</span>
-            </div>
-        </div>
+            </div >
+        </div >
 
 		<div  class="card">
             <div  class="card-image-wrapper">
@@ -207,8 +95,8 @@
             <div  class="card-content">
 				<h2>Listening to the Echoes</h2>
                 <span class="card-description">The ocean is not silent; it is a symphony of soft, glowing sound. We observe this magical, aquatic language as it travels through the dark water.</span>
-            </div>
-        </div>
+            </div >
+        </div >
        
 		<div  class="card">
             <div  class="card-image-wrapper">
@@ -224,33 +112,12 @@
 <script href="scripts/gallery.js"></script>
 <a href="#" class="goup" aria-label="Back to top">↑</a>
 
-    <!--JavaScript Part(Change this comment)-->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content" id="modalTarget">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <img id="modalImg" src="#" alt="" class="modal-image">
-            <div id="modalTitle"></div>
-            <div id="modalDesc"></div>
-            
-            <div class="custom-controls">
-                <button class="btn-custom" id="btnFont">Change Font</button>
-                <button class="btn-custom" id="btnColor">Change Colour Scheme</button>
-            </div>
-        </div>
-    </div>
-
-    <!--Back to top-->
-    <a href="#" class="back_to_top" aria-label="Back to top">↑</a>
-
-    <!--Gallery JavaScript-->
-    <script src="scripts/gallery.js"></script>
-
-    <!--Footer-->
+    <!-- Footer -->
 	<footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="page-editor.html">Page Editor</a>
-                <a href="https://validator.w3.org/">Validation Page</a>
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <a href="validation_ST1.html">Validation Page</a>
                 <a href="accessibility.html">Accessibility Compliance</a>
             </div>
 
@@ -262,4 +129,5 @@
         </div>
     </footer>
 </body>
+
 </html>
