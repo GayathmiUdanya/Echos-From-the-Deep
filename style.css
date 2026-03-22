@@ -23,7 +23,7 @@ html, body {
     color: var(--white);
 }
 
-
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
