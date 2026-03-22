@@ -3,24 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--Font-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <title>Gallery</title>
-
-    <!--Global CSS-->
-    <link rel="stylesheet" href="style.css">
-
-    <!--Gallery CSS-->
+    <!-- Global CSS -->
     <link rel="stylesheet" href="styles/gallery.css">
-
+  
 </head>
-
 <body>
-    <!--Background Image-->
-    <img src="assets/gallery_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
-        
+    <img src="assets/feedback_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+    
     <header>
         <nav>
             <div class="logo-area">
@@ -30,49 +21,32 @@
                     <p>SDG 14 · Life Below Water</p>
                 </div>
             </div>
-
             <div class="nav-links">
                 <a href="home.html">Home</a>
-                <a href="gallery.html" class="active">Gallery</a> 
+                <a href="gallery.html" class="active">Gallery</a>
                 <a href="ais.html">Action Impact Simulator</a>
                 <a href="feedback.html">Feedback</a>
                 <a href="team.html">Team</a>
                 <a href="profile.html">Profile</a>
                 <a href="sitemap.html">Sitemap</a>
-            </div>	
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section class="pageup">
-            <div class="container">
-            <div class="upcontent">
-                <span class="updescription">Act III · Windows To The Deep</span>
-                <h1 class="uptittle">See The Ocean.<br><em>Feel The Truth.</em></h1>
-                <div class="updevider"></div>
-                <p class="text-serif">
-                    A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
-                </p>
-            </div>
-        </div>
-        </section>
-        
-        <div class="dashboard-container">
-            <div class="card">
-                <img src="assets/gallery_whalewarning.png" alt="Cargo ship noise waves hitting whales" class="card-image">
-                <div class="card-content">
-                    <h2>Whale Warning</h2>
-                    <p class="card-description">A massive cargo ship blasts harsh red sound waves, distorting the delicate blue echoes of a mother whale and her calf.</p>
-                </div>
-            </div>
+<main>
 
-            <div class="card">
-                <img src="assets/gallery_ghostnets.png" alt="Discarded fishing net on sea floor" class="card-image">
-                <div class="card-content">
-                    <h2>Ghost Nets</h2>
-                    <p class="card-description">A massive, forgotten "ghost net" drifts like a giant, suffocating spiderweb over ancient rock formations.</p>
-                </div>
-            </div>
+    <section class="page_hero">
+    <img src="assets/gallery_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+        <div class="page_hero_content">
+            <span class="page_subheading">Act III · Windows To The Deep</span>
+            <h1 class="hero_title">See The Ocean.<br><em>Feel The Truth.</em></h1>
+            <p class="text_serif">
+                A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
+            </p>
+        </div>
+    </section>
+
+    <div  class="dashboard-container">
 
         <div  class="card">
             <div  class="card-image-wrapper">
@@ -111,8 +85,8 @@
             <div  class="card-content">
 				<h2>A Call to Action</h2>
                 <span class="card-description">Action is taken. Returning underwater, we see a team of divers. Crucially, they are led by the young character from the cliffside.</span>
-            </div>
-        </div>
+            </div >
+        </div >
 
 		<div  class="card">
             <div  class="card-image-wrapper">
@@ -121,8 +95,8 @@
             <div  class="card-content">
 				<h2>Listening to the Echoes</h2>
                 <span class="card-description">The ocean is not silent; it is a symphony of soft, glowing sound. We observe this magical, aquatic language as it travels through the dark water.</span>
-            </div>
-        </div>
+            </div >
+        </div >
        
 		<div  class="card">
             <div  class="card-image-wrapper">
@@ -138,33 +112,12 @@
 <script href="scripts/gallery.js"></script>
 <a href="#" class="goup" aria-label="Back to top">↑</a>
 
-    <!--JavaScript Part(Change this comment)-->
-    <div id="galleryModal" class="modal">
-        <div class="modal-content" id="modalTarget">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <img id="modalImg" src="#" alt="" class="modal-image">
-            <div id="modalTitle"></div>
-            <div id="modalDesc"></div>
-            
-            <div class="custom-controls">
-                <button class="btn-custom" id="btnFont">Change Font</button>
-                <button class="btn-custom" id="btnColor">Change Colour Scheme</button>
-            </div>
-        </div>
-    </div>
-
-    <!--Back to top-->
-    <a href="#" class="back_to_top" aria-label="Back to top">↑</a>
-
-    <!--Gallery JavaScript-->
-    <script src="scripts/gallery.js"></script>
-
-    <!--Footer-->
+    <!-- Footer -->
 	<footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="page-editor.html">Page Editor</a>
-                <a href="https://validator.w3.org/">Validation Page</a>
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <a href="validation_ST1.html">Validation Page</a>
                 <a href="accessibility.html">Accessibility Compliance</a>
             </div>
 
@@ -176,4 +129,5 @@
         </div>
     </footer>
 </body>
+
 </html>
