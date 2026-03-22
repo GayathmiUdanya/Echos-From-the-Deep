@@ -5,6 +5,12 @@ body,html{
     position: relative;
 }
 
+/*add space at the end of the main section*/
+main {
+    padding-bottom: 4rem;
+}
+
+/*Background Image*/
 .scene_bg {
     position: fixed;
     inset: 0; /*Stretches to fill all four edges of the parent*/
@@ -15,18 +21,8 @@ body,html{
     opacity: 0.55;
 }
 
-/*Top Left Phrasing*/
-.page_hero_content {
-    position: relative;
-    z-index: 1;
-}
+/*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
 
-.page_hero {
-    padding: 3.5rem 0 2rem;
-    position: relative;
-    min-height: 38vh;
-    margin-left: 100px;
-}
 
 .page_subheading{
     font-family: 'Cinzel', serif;
@@ -37,55 +33,8 @@ body,html{
     display: block;
 }
 
-.hero_title{
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 2vw, 2rem); /*the font states consistance regardless of the screen size*/
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-}
 
-.text_serif{
-    font-size: 1.1rem;
-    font-family: serif;
-    font-style: italic;
-    color:rgba(255, 255, 255, 0.5);
-    line-height: 1.65;
-    max-width:520px;
-}
-
-img {
-    font-size: 12px;
-}
-
-button {
-    padding: 10px 15px;
-    font-size: 10px;
-    font-weight: bold;
-    font-family:'Cinzel', serif;
-    background-color:#241f1f;
-    border: 2px solid #4b91b4;
-    color:  #4b91b4;
-    opacity:0.9;
-    border-radius: 10px;
-    cursor: pointer; 
-}
-
-button:hover {
-    box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
-}
-
-.team_details_title{
-    padding: 15px;
-    background-color:rgb(13,27,42,0.9); 
-    border: 2px solid #1e3a5f;
-    border-radius: 10px;
-    font-size: 30px;
-    text-align: center;
-    color: #d0dce8; 
-    margin: 20px auto 20px auto;
-    width: fit-content;
-}
-
+/*--------------------------------------------------Team Member Details-------------------------------------------*/
 .team_members{
     display: flex;
     flex-direction: row;
@@ -93,14 +42,10 @@ button:hover {
     gap: 20px;
     justify-content: center; 
     align-items: flex-start; /*Stops the cards from streching each other*/
-    border-top: 1px solid rgba(125, 211, 252, 0.15);  /* ← add this */
-    padding-top: 3rem;
+    padding-top: 0.5rem;
 }
 
-.student:hover img {
-    box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
-    border-radius: 5px;
-}
+/*Student Card profile details*/
 .student{
     width: 300px;
     padding: 20px;
@@ -123,6 +68,18 @@ button:hover {
     transition: all 0.3s ease;
 }
 
+.student_name {
+    margin: 12px 0 8px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: #e8f4f8;
+}
+
+.student:hover img {
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
+    border-radius: 5px;
+}
+
 .student:hover {
     transform: scale(1.05); /*Image will be slightly bigger*/
     cursor:pointer; 
@@ -136,8 +93,8 @@ button:hover {
     display: none; 
     text-align: left; 
     margin-top: 5px;
-    border-top: 1px solid rgba(125, 211, 252, 0.2);   /* ← add this */
-    padding-top: 12px;                                  /* ← and this */
+    border-top: 1px solid rgba(125, 211, 252, 0.2);   
+    padding-top: 12px;                                  
 }
 
 /*Shows the DETAILS on hover or focus*/
@@ -146,34 +103,11 @@ button:hover {
     display: block; 
 }
 
-
-
-.row{
-    display:flex;
-    align-items: flex-start;
-    margin-bottom: 14px;
-}
-
-.label{
-    color: #d0dce8;
-    font-weight: bold; 
-    font-variant: small-caps;
-    min-width: 120px; /*Ensures that the values are aliged*/
-    flex-shrink:0; /*Makes sure the content doesnt skrink to fit*/
-}
-
-.value_group{
-    display:flex;
-    flex-direction: column; 
-}
-
-.value{
-    color: #d0dce8; 
-    font-variant: small-caps;
-    line-height: 1.5; 
-}
-
+/*Role "button"*/
 .btn_role {
+    display: block;
+    margin: 0 auto;
+    max-width: 150px;
     background: rgba(125, 211, 252, 0.1);
     border: 1px solid rgba(125, 211, 252, 0.35);
     border-radius: 20px;
@@ -192,13 +126,32 @@ button:hover {
     box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
     transform: scale(1.04);
 }
-main {
-    padding-bottom: 4rem;
+
+/*Flexboxes for the detailed content section*/
+.row{
+    display:flex;
+    align-items: flex-start;
+    margin-bottom: 14px;
 }
 
-.student h3 {
-    margin: 12px 0 8px;
-    font-size: 1rem;
-    letter-spacing: 0.08em;
-    color: #e8f4f8;
+/*Content heading for the student details section*/
+.label{
+    color: #d0dce8;
+    font-weight: bold; 
+    font-variant: small-caps;
+    min-width: 120px; /*Ensures that the values are aliged*/
+    flex-shrink:0; /*Makes sure the content doesnt skrink to fit*/
+}
+
+/*Grouping content description for the student details section*/
+.value_group{
+    display:flex;
+    flex-direction: column; 
+}
+
+/*Content description for the student details section*/
+.value{
+    color: #d0dce8; 
+    font-variant: small-caps;
+    line-height: 1.5; 
 }

@@ -5,6 +5,7 @@ html,body{
     position: relative;
 }
 
+/*-----------------------------Background Image---------------------------------------*/
 .scene_bg {
     position: fixed;
     inset: 0; /*Stretches to fill all four edges of the parent*/
@@ -21,7 +22,19 @@ main {
     z-index: 1;
 }
 
-/*(Right Side) Section Navigation*/
+/*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
+
+
+.page_subheading{
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.65rem, 0.65vw, 0.65rem);
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    color: rgba(10, 30, 50, 0.9);
+    display: block;
+}
+
+/*(Right Side)Internal Section Navigation*/
 .side_nav{
     position: absolute;
     right: 1.5rem;
@@ -35,7 +48,7 @@ main {
 
 .side_nav a {
     text-decoration: none;
-    background-color: none;
+    background-color: transparent;
     color: #c6a810;
     font-size: 0.75rem;
     letter-spacing: 0.2em;
@@ -50,44 +63,6 @@ main {
 /*Smooth scrolling for down to a section in the web page*/
 html {
     scroll-behavior: smooth;
-}
-
-/*Top Left Phrasing*/
-.page_hero_content {
-    position: relative;
-    z-index: 1;
-}
-
-.page_hero {
-    padding: 3.5rem 0 2rem;
-    position: relative;
-    min-height: 38vh;
-    margin-left: 50px;
-}
-
-.page_subheading{
-    font-family: 'Cinzel', serif;
-    font-size: clamp(0.65rem, 0.65vw, 0.65rem);
-    font-weight: 800;
-    letter-spacing: 0.3em;
-    color: rgba(10, 30, 50, 0.9);
-    display: block;
-}
-
-.hero_title{
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2rem, 2vw, 2rem); /*the font states consistance regardless of the screen size*/
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.text_serif{
-    font-size: 1.1rem;
-    font-family: serif;
-    font-style: italic;
-    color:rgba(255, 255, 255, 0.5);
-    line-height: 1.65;
-    max-width:520px;
 }
 
 /*Explore Programs Section*/
@@ -251,7 +226,7 @@ html {
 }
 
 /*Scrolling feature for the content cards*/
-.container{
+.container_grid{
     height:690px;
     overflow-y:scroll;
 }
