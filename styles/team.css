@@ -1,7 +1,56 @@
-body{
-    background-image:url("../assets/hero.jpeg");
+body,html{
+    background-color: #0a1a2a; 
     color:#e8f4f8;
     font-family:'Cinzel', serif;
+    position: relative;
+}
+
+.scene_bg {
+    position: fixed;
+    inset: 0; /*Stretches to fill all four edges of the parent*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.55;
+}
+
+/*Top Left Phrasing*/
+.page_hero_content {
+    position: relative;
+    z-index: 1;
+}
+
+.page_hero {
+    padding: 3.5rem 0 2rem;
+    position: relative;
+    min-height: 38vh;
+    margin-left: 100px;
+}
+
+.page_subheading{
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.65rem, 0.65vw, 0.65rem);
+    font-weight: 800;
+    letter-spacing: 0.3em;
+    color: rgba(10, 30, 50, 0.9);
+    display: block;
+}
+
+.hero_title{
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 2vw, 2rem); /*the font states consistance regardless of the screen size*/
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.text_serif{
+    font-size: 1.1rem;
+    font-family: serif;
+    font-style: italic;
+    color:rgba(255, 255, 255, 0.5);
+    line-height: 1.65;
+    max-width:520px;
 }
 
 img {
@@ -25,7 +74,6 @@ button:hover {
     box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
 }
 
-
 .team_details_title{
     padding: 15px;
     background-color:rgb(13,27,42,0.9); 
@@ -41,17 +89,25 @@ button:hover {
 .team_members{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center; 
     align-items: flex-start; /*Stops the cards from streching each other*/
+    border-top: 1px solid rgba(125, 211, 252, 0.15);  /* ← add this */
+    padding-top: 3rem;
 }
 
+.student:hover img {
+    box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
+    border-radius: 5px;
+}
 .student{
-    width: 350px;
-    padding: 10px;
+    width: 300px;
+    padding: 20px;
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 2px solid #1e3a5f;
+    border-top: 3px solid rgba(125, 211, 252, 0.5);
     text-align: center;
     color: #d0dce8; 
     overflow: visible; 
@@ -61,7 +117,7 @@ button:hover {
 
 .student img{
     width: 100%;
-    height: 300px;
+    height: 250px;
     object-fit: cover; /*Ensures that the images will fits in the frame*/
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -72,6 +128,7 @@ button:hover {
     cursor:pointer; 
     z-index: 10;
     position: relative; 
+    width: 360px; 
 }
 
 /*Hides the DETAILS by default*/
@@ -79,6 +136,8 @@ button:hover {
     display: none; 
     text-align: left; 
     margin-top: 5px;
+    border-top: 1px solid rgba(125, 211, 252, 0.2);   /* ← add this */
+    padding-top: 12px;                                  /* ← and this */
 }
 
 /*Shows the DETAILS on hover or focus*/
@@ -112,4 +171,34 @@ button:hover {
     color: #d0dce8; 
     font-variant: small-caps;
     line-height: 1.5; 
+}
+
+.btn_role {
+    background: rgba(125, 211, 252, 0.1);
+    border: 1px solid rgba(125, 211, 252, 0.35);
+    border-radius: 20px;
+    color: #7dd3fc;
+    font-family: 'Cinzel', serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
+}
+
+.btn_role:hover {
+    background: rgba(125, 211, 252, 0.18);
+    box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
+    transform: scale(1.04);
+}
+main {
+    padding-bottom: 4rem;
+}
+
+.student h3 {
+    margin: 12px 0 8px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: #e8f4f8;
 }

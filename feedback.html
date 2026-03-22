@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Font-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
+        
         <title>Feedback Page</title>
 
         <!--Global CSS-->
@@ -12,236 +15,259 @@
         <!--Feedback CSS-->
         <link rel="stylesheet" href="styles/feedback.css">
     </head>
+
     <body>
-        <img src="assets/feedback_bg.png" class="scene-bg" alt="Ocean background" onerror="this.style.display='none'">
+        <!--Background Image-->
+        <img src="assets/feedback2_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+        
         <header>
             <nav>
-                <div class="logo-area">
-                    <div class="logo-circle"></div>
-                    <div class="logo-text">
-                        <h1>Echoes From The Deep</h1>
-                        <p>SDG 14 · Life Below Water</p>
-                    </div>
+            <div class="logo-area">
+                <div class="logo-circle"></div>
+                <div class="logo-text">
+                    <h1>Echoes From The Deep</h1>
+                    <p>SDG 14 · Life Below Water</p>
                 </div>
-                <div class="nav-links">
-                    <a href="home.html">Home</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="ais.html">Action Impact Simulator</a>
-                    <a href="feedback.html" class="active">Feedback</a>
-                    <a href="team.html">Team</a>
-                    <a href="profile.html">Profile</a>
-                    <a href="sitemap.html">Sitemap</a>
-                </div>
+            </div>
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Impact Simulator</a>
+                <a href="feedback.html" class="active">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="profile.html">Profile</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
             </nav>
             
-            <nav class="side-nav">
+            <nav class="side_nav">
                 <a href="#programSection">Programs</a>
                 <a href="#reviewSection">Reviews</a>
                 <a href="#feedbackSection">Feedback</a>
             </nav>
-            
         </header>
         
         <main>
             <!--Hero-->
-            <section class="page-hero">
-                    <div class="page-hero-content">
-                        <span class="eyebrow">Act V · Voices From The Shore</span>
-                        <h1 class="hero-title">Your Words.<br><em>Our Mission.</em></h1>
-                        <div class="divider-line"></div>
-                        <p class="text-serif" style="max-width:520px;">
+            <section class="page_hero">
+                    <div class="page_hero_content">
+                        <span class="page_subheading">Act V · Voices From The Shore</span>
+                        <h1 class="hero_title">Your Words.<br><em>Our Mission.</em></h1>
+                        <p class="text_serif">
                             Explore programs, read community voices,<br>and share your own experience with the deep.
                         </p>
                     </div>
             </section>
 
             <!--Programs-->
-            <section id="programSection" class="page-section">
+            <section id="programSection" class="page_section">
                 
-                    <div class="glass-panel">
-                        <div class="sort-row">
-                            <select class="sort-select" id="sortSelect" aria-label="Sort programs">
-                                <option>Sort by…</option>
-                                <option>Newest</option>
-                                <option>Top Rated</option>
-                                <option>Student Friendly</option>
-                                <option>Popular</option>
-                            </select>
-                        </div>
+                <div class="glass_panel">
 
-                        <div class="panel-inner" style="padding-top:0.4rem; padding-bottom:0.6rem;">
-                            <div class="section-label">Explore Programs</div>
-                        </div>
+                    <!--Sort By Filter-->
+                    <div class="sort_row">
+                        <select class="sort_select" id="sortSelect" aria-label="Sort programs">
+                            <option>Sort by…</option>
+                            <option>Newest</option>
+                            <option>Top Rated</option>
+                            <option>Student Friendly</option>
+                            <option>Popular</option>
+                        </select>
+                    </div>
 
-                        <div class="container">
-                        <div class="card_grid">
+                    <!--Explore Program Heading-->
+                    <div class="panel_inner">
+                        <div class="section_label">Explore Programs</div>
+                    </div>
 
-                        <div class="card">
+                    <!---Program Explore Cards-->
+                    <div class="container">
+                    <div class="card_grid">
+
+                    <div class="card">
                         <img src="assets/feedback_volunteering.png" alt="Image of program opportunity">
-                        <h1 class="volunteer_font">Volunteer</h1>
+                        <p class="cardheading_font">Volunteer</p>
                         <p>Answering the ocean is call starts with direct action. From moonlit beach cleanups that remove "ghost" plastic to citizen science projects tracking reef health, volunteers act as the first line of defense. By rescuing wildlife or managing invasive species, you move beyond just listening to the warnings and become a physical force for restoration.</p>
-                        <div class ="card-actions">
-                            <button class="btn-ghost">Learn More</button>
-                            <button class="btn-solid">Join</button>
+                        <div class ="cardbutton_actions">
+                            <button class="btn_lm">Learn More</button>
+                            <button class="btn_join">Join</button>
                         </div>
                     </div>
 
                     <div class="card">
                         <img src="assets/feedback_studentActions.png" alt="Image of program opportunity">
-                        <h1 class="volunteer_font">Student Actions</h1>
+                        <p class="cardheading_font">Student Actions</p>
                         <p>Students represent the intellectual spark needed to decode the ocean’s complex echoes. By leading campus plastic-free initiatives and conducting localized research, young advocates turn passion into documented evidence. These actions prove that the next generation is ready to rewrite the future of our waters through creative science and organized clubs.</p>
-                        <div class ="card-actions">
-                            <button class="btn-ghost">Learn More</button>
-                            <button class="btn-solid">Join</button>
+                        <div class ="cardbutton_actions">
+                            <button class="btn_lm">Learn More</button>
+                            <button class="btn_join">Join</button>
                         </div>
                     </div>
 
                     <div class="card">
                         <img src="assets/feedback_compaigns.png" alt="Image of program opportunity">
-                        <h1 class="volunteer_font">Campaigns</h1>
+                        <p class="cardheading_font">Campaigns</p>
                         <p>Campaigns serve as a megaphone for the ocean is silent messages, turning individual concern into collective power. By advocating for plastic bans and marine protected areas, we ensure these warnings reach policymakers. Whether through public education or promoting sustainable seafood, these initiatives ensure the sea is voice is no longer ignored.</p>
-                        <div class ="card-actions">
-                            <button class="btn-ghost">Learn More</button>
-                            <button class="btn-solid">Join</button>
+                        <div class ="cardbutton_actions">
+                            <button class="btn_lm">Learn More</button>
+                            <button class="btn_join">Join</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="assets/feedback_globalpolicy.png" alt="Image of program opportunity">
+                        <p class="cardheading_font">Global Policy</p>
+                        <p>Policy shifts create the legal framework that allows the ocean’s voice to be heard in the halls of power. By pushing for international treaties that regulate deep-sea mining and advocating for "Blue Carbon" credits, global strategists turn environmental necessity into binding law. These efforts ensure that the protection of our waters isn't just a local preference, but a global mandate that holds industries and nations accountable for the health of the high seas.</p>
+                        <div class ="cardbutton_actions">
+                            <button class="btn_lm">Learn More</button>
+                            <button class="btn_join">Join</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <img src="assets/feedback_innovators.png" alt="Image of program opportunity">
+                        <p class="cardheading_font">Innovation & Tech</p>
+                        <p>Innovators provide the tools to translate the ocean is silent distress into actionable data. By developing low-cost sensors to monitor acidification or engineering biodegradable alternatives to single-use plastics, tech-driven minds bridge the gap between problem and solution. These actions demonstrate that human ingenuity can be recalibrated to serve the sea, turning the tide through sustainable design and smart engineering.</p>
+                        <div class ="cardbutton_actions">
+                            <button class="btn_lm">Learn More</button>
+                            <button class="btn_join">Join</button>
                         </div>
                     </div>
 
                     <div class="card">
                         <img src="assets/feedback_community.png" alt="Image of program opportunity">
-                        <h1 class="volunteer_font">Community</h1>
+                        <p class="cardheading_font">Community</p>
                         <p>Community projects are the heartbeat of long-term healing, blending local tradition with environmental science. By restoring vital mangrove "cradles" and seagrass meadows, coastal communities build natural shields against warming tides. These collaborative efforts prove that when we listen to the ocean together, we can create a sustainable harmony between people and the sea.</p>
-                        <div class ="card-actions">
-                            <button class="btn-ghost">Learn More</button>
-                            <button class="btn-solid">Join</button>
+                        <div class ="cardbutton_actions">
+                            <button class="btn_lm">Learn More</button>
+                            <button class="btn_join">Join</button>
                         </div>
-                    </div>
                     </div>
 
                 </div>
 
-            </div>
             </section>
 
             <!--Review Section-->
-            <section id="reviewSection" class="page-section" style="padding-top:0;">
-            <div class="glass-panel">
-            <div class="panel-inner" style="padding-top:0.4rem; padding-bottom:0.6rem;">
-                <div class="section-label">Reviews</div>
-            </div>
-
-            <!--Overall rating-->
-            <div class="overall_rating">
-                <div class="big_score">9.6</div>
-                <div>
-                    <div class="rating_label">Excellent</div>
-                    <div class="review_count">Based on 1,456 reviews</div>
-                </div>
-            </div>
-
-            <!--Individual Rating-->
-            <div class="review_layout">
-            <div class="review_card">
-                <h1 class= "card_font">A Night I Will Never Forget</h1>
-                <p class="review_text">
-                    Participating in the Shoreline Cleanup was eye-opening. We worked under the moonlight, and seeing the sheer amount of ghost nets we recovered was sobering. You don't realize how much damage is hidden in the dark until you start pulling it out. I left feeling like I finally understood what the ocean has been trying to tell us.
-                    <a href="#">See more.</a>
-                </p>
-                <hr>
-                <div class="review_footer">
-                    <div class="reviewer_info">
-                        <span class="reviwer_name">Maya, Volunteer Sentinel</span>  |   12 March 2026
+            <section id="reviewSection" class="page_section">
+                <div class="glass_panel">
+                    <div class="panel_inner">
+                        <div class="section_label">Reviews</div>
                     </div>
-                    <span class="score-badge">9/10</span>
-                </div>
-            </div>
 
-            <div class="review_card">
-                <h1 class="card_font">Translating the Silence</h1>
-                <p class="review_text">
-                    As a student, I joined the Acoustic Mapping project. It was haunting to see the sound visualizations of ship engines drowning out the whale calls on our monitors. It turned a massive, abstract problem into something I could actually see and document. This program is essential for anyone who wants to use science for real change.
-                    <a href="#">See more.</a>
-                </p>
-                <hr>
-                <div class="review_footer">
-                    <div class="reviewer_info">
-                        <span class="reviwer_name">Liam, Marine Biology Student</span>  |   10 Jan 2026
+                    <!--Overall rating-->
+                    <div class="overall_rating">
+                        <div class="big_score">9.6</div>
+                        <div>
+                            <div class="rating_label">Excellent</div>
+                            <div class="review_count">Based on 1,456 reviews</div>
+                        </div>
                     </div>
-                    <span class="score-badge">6/10</span>
-                </div>
-            </div>
 
-            <div class="review_card">
-                <h1 class="card_font">Community at the Core</h1>
-                <p class="review_text">
-                    I helped with the Coastal Breakwater build last month. What struck me was the intergenerational effort—having the elders show us traditional ways to protect the shore while we integrated new reef technology. It felt less like a 'chore' and more like we were building a future for our village and the sea.
-                    <a href="#">See more.</a>
-                </p>
-                <hr>
-                <div class="review_footer">
-                    <div class="reviewer_info">
-                        <span class="reviwer_name">Kavi, Community Project Member</span>    |   05 March 2026
+                    <!--Individual Rating-->
+                    <div class="review_layout">
+                        <div class="review_card">
+                            <p class= "card_font">A Night I Will Never Forget</p>
+                            <p class="review_text">
+                                Participating in the Shoreline Cleanup was eye-opening. We worked under the moonlight, and seeing the sheer amount of ghost nets we recovered was sobering. You don't realize how much damage is hidden in the dark until you start pulling it out. I left feeling like I finally understood what the ocean has been trying to tell us.
+                                <a href="#">See more.</a>
+                            </p>
+                            <hr>
+                            <div class="review_footer">
+                                <div class="reviewer_info">
+                                    <span class="reviwer_name">Maya, Volunteer Sentinel</span>  |   12 March 2026
+                                </div>
+                                <span class="score_badge">9/10</span>
+                            </div>
+                        </div>
+
+                        <div class="review_card">
+                            <p class="card_font">Translating the Silence</p>
+                            <p class="review_text">
+                                As a student, I joined the Acoustic Mapping project. It was haunting to see the sound visualizations of ship engines drowning out the whale calls on our monitors. It turned a massive, abstract problem into something I could actually see and document. This program is essential for anyone who wants to use science for real change.
+                                <a href="#">See more.</a>
+                            </p>
+                            <hr>
+                            <div class="review_footer">
+                                <div class="reviewer_info">
+                                    <span class="reviwer_name">Liam, Marine Biology Student</span>  |   10 Jan 2026
+                                </div>
+                                <span class="score_badge">6/10</span>
+                            </div>
+                        </div>
+
+                        <div class="review_card">
+                            <p class="card_font">Community at the Core</p>
+                            <p class="review_text">
+                                I helped with the Coastal Breakwater build last month. What struck me was the intergenerational effort—having the elders show us traditional ways to protect the shore while we integrated new reef technology. It felt less like a 'chore' and more like we were building a future for our village and the sea.
+                                <a href="#">See more.</a>
+                            </p>
+                            <hr>
+                            <div class="review_footer">
+                                <div class="reviewer_info">
+                                    <span class="reviwer_name">Kavi, Community Project Member</span>    |   05 March 2026
+                                </div>
+                                <span class="score_badge">7/10</span>
+                            </div>
+                        </div>
+
+                        <div class="review_card">
+                            <p class="card_font">Empowered to Act</p>
+                            <p class="review_text">
+                                The 'Whale is Warning' campaign gave me a platform I didn't know I had. Sharing the data we collected about noise pollution with local policymakers was intimidating at first, but seeing them actually listen because we had the evidence was incredibly empowering. We aren't just 'listening' anymore; we're speaking up. 
+                                <a href="#">See more.</a>
+                            </p>
+                            <hr>
+                            <div class="review_footer">
+                                <div class="reviewer_info">
+                                    <span class="reviwer_name">Sarah, Student Advocate</span>    |   09 Jan 2026
+                                </div>
+                                <span class="score_badge">8/10</span>
+                            </div>
+                        </div>
+
+                        <div class="review_card">
+                            <p class="card_font">Seeing the Light</p>
+                            <p class="review_text">
+                                Volunteering for the Coral Restoration project was a beautiful experience. Planting those glowing cyan coral fragments onto the grey, bleached areas felt like we were literally bringing the color back to life. It is hard work, but the sense of fulfillment when you see the reef start to pulse again is indescribable.
+                                <a href="#">See more.</a>
+                            </p>
+                            <hr>
+                            <div class="review_footer">
+                                <div class="reviewer_info">
+                                    <span class="reviwer_name">Tuan, Conservation Volunteer</span>    |   05 March 2026
+                                </div>
+                                <span class="score_badge">7/10</span>
+                            </div>
+                        </div>
+
+                        <div class="review_card">
+                            <p class="card_font">More Than Just a Program</p>
+                            <p class="review_text">
+                                I joined the 'Echoes' initiative looking for a way to help, but I found a family. The staff at the research station are so supportive and the atmosphere—working by the sea at night—is magical. It is the best way to gain hands-on experience while actually doing something about the SDG Life Underwater goals. 
+                                <a href="#">See more.</a>
+                            </p>
+                            <hr>
+                            <div class="review_footer">
+                                <div class="reviewer_info">
+                                    <span class="reviwer_name">Elena, Citizen Scientist</span>    |   30 March 2026
+                                </div>
+                                <span class="score_badge">9/10</span>
+                            </div>
+                        </div>
+
                     </div>
-                    <span class="score-badge">7/10</span>
-                </div>
-            </div>
 
-            <div class="review_card">
-                <h1 class="card_font">Empowered to Act</h1>
-                <p class="review_text">
-                    The 'Whale is Warning' campaign gave me a platform I didn't know I had. Sharing the data we collected about noise pollution with local policymakers was intimidating at first, but seeing them actually listen because we had the evidence was incredibly empowering. We aren't just 'listening' anymore; we're speaking up. 
-                    <a href="#">See more.</a>
-                </p>
-                <hr>
-                <div class="review_footer">
-                    <div class="reviewer_info">
-                        <span class="reviwer_name">Sarah, Student Advocate</span>    |   09 Jan 2026
-                    </div>
-                    <span class="score-badge">8/10</span>
                 </div>
-            </div>
-
-            <div class="review_card">
-                <h1 class="card_font">Seeing the Light</h1>
-                <p class="review_text">
-                    Volunteering for the Coral Restoration project was a beautiful experience. Planting those glowing cyan coral fragments onto the grey, bleached areas felt like we were literally bringing the color back to life. It is hard work, but the sense of fulfillment when you see the reef start to pulse again is indescribable.
-                    <a href="#">See more.</a>
-                </p>
-                <hr>
-                <div class="review_footer">
-                    <div class="reviewer_info">
-                        <span class="reviwer_name">Tuan, Conservation Volunteer</span>    |   05 March 2026
-                    </div>
-                    <span class="score-badge">7/10</span>
-                </div>
-            </div>
-
-            <div class="review_card">
-                <h1 class="card_font">More Than Just a Program</h1>
-                <p class="review_text">
-                    I joined the 'Echoes' initiative looking for a way to help, but I found a family. The staff at the research station are so supportive and the atmosphere—working by the sea at night—is magical. It is the best way to gain hands-on experience while actually doing something about the SDG Life Underwater goals. 
-                    <a href="#">See more.</a>
-                </p>
-                <hr>
-                <div class="review_footer">
-                    <div class="reviewer_info">
-                        <span class="reviwer_name">Elena, Citizen Scientist</span>    |   30 March 2026
-                    </div>
-                    <span class="score-badge">9/10</span>
-                </div>
-            </div>
-
-            </div>
-            </div>
-            
             
             </section>
 
             <!--Feedback Form-->
-            <div id="feedbackSection" class="page-section" style="padding-top:0;">
-            <div class="glass-panel">
+            <div id="feedbackSection" class="page_section" style="padding-top:0;">
+            <div class="glass_panel">
 
-            <div class="panel-inner" style="padding-top:0.4rem; padding-bottom:0.6rem;">
-                <div class="section-label">FeedBack</div>
+            <div class="panel_inner">
+                <div class="section_label">FeedBack</div>
             </div>
 
             <form class="feedback_form" id="feedbackForm" novalidate>
@@ -302,7 +328,9 @@
             </div>
             </div>
         </main>
-        <a href="#" class="goup" aria-label="Back to top">↑</a>
+
+        <!--Back to top-->
+        <a href="#" class="back_to_top" aria-label="Back to top">↑</a>
 
         <!--Feedback JavaScript-->
         <script src="scripts/feedback.js"></script>
