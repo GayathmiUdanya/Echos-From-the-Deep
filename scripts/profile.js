@@ -29,8 +29,8 @@ const sampleProfiles = [
     },
 
     {
-        name: "Cleo Satori",
-        age: 22,
+        name: "Marina Perera",
+        age: 32,
         country: "USA",
         role: "Researcher",
         issue: "Plastic Pollution",
@@ -43,7 +43,7 @@ const sampleProfiles = [
     },
 
     {
-        name: "Jane Smith",
+        name: "Cleo Satori",
         age: 25,
         country: "UK",
         role: "Ocean Enthusiast",
