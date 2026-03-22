@@ -16,6 +16,7 @@
     --font-serif: 'Playfair Display', serif;
 }
 
+
 html, body {
     height: 100%;
     font-family: var(--font-body);
@@ -286,4 +287,57 @@ a.back_to_top{
 a.back_to_top:hover {
     background: rgba(125, 211, 252, 0.12);
     transform: translateY(-3px);
+}
+
+/* FOOTER STYLES */
+footer {
+    backdrop-filter: blur(14px);
+    border-top: 1px solid var(--white-10);
+    padding: 30px 60px;
+    margin-top: 50px;
+    background: var(--nav-bg);
+    color: var(--white-60);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: var(--teal);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
+
+.student-details {
+    text-align: right;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .student-details {
+        text-align: center;
+    }
 }
