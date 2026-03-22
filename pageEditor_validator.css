@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background-image: url('assets/hero_bg.png');
+    background-image: url('assets/hero.jpeg');
     background-size: cover;
     background-attachment: fixed;
 }
