@@ -29,13 +29,6 @@ body {
     min-height: 100vh;
 }
 
-html,body{
-    background-color: #0a1a2a; 
-    color:#e8f4f8;
-    font-family:'Cinzel', serif;
-    position: relative;
-}
-
 /*-----------------------------Background Image---------------------------------------*/
 .scene_bg {
     position: fixed;
