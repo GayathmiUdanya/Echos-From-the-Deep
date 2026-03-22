@@ -1,7 +1,7 @@
 body{
     background-image: url('../assets/hero.jpeg');
     background-size: cover;
-    background-repeat: repeat;
+    background-attachment: fixed;
     color:#e8f4f8;
     font-family:'Cinzel', serif;
 }

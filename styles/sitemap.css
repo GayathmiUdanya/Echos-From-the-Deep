@@ -1,6 +1,7 @@
 body{
-    background-image: url('../assets/hero.jpeg');
+    background-image: url('../assets/sitemap_bg.png');
     background-size: cover;
+    background-attachment: fixed;
     color:#e8f4f8;
     font-family:'Cinzel', serif;
 }
@@ -14,10 +15,10 @@ body{
 .page-header{
     display:flex;
     flex-direction:column;
-    justify-content:center;
-    align-items:center;
+    align-items:left;
     gap:10px;
     margin-top:50px;
+    margin-left:150px;
 }
 
 .page-sub{
@@ -30,6 +31,10 @@ body{
 .sitemap-wrapper{
     max-width:80%;
     margin:32px auto;
+    background-color: #081B2B;
+    opacity:0.9;
+    border:1px solid #4A86A3;
+    border-radius:10px;
 }
 
 /* ── SVG Node Styles ── */

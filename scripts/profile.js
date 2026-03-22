@@ -30,7 +30,7 @@ const sampleProfiles = [
 
     {
         name: "Cleo Satori",
-        age: 70,
+        age: 22,
         country: "USA",
         role: "Researcher",
         issue: "Plastic Pollution",
