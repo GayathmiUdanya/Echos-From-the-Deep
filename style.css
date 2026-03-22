@@ -19,7 +19,7 @@
 
 html, body {
     height: 100%;
-    font-family: var(--font-body);
+    font-family: var(--font-body) !important;
     color: var(--white);
 }
 
@@ -367,12 +367,12 @@ footer {
     }
 
     .uptittle{
-    font-family:  'Montserrat', sans-serif;
+    font-family:  'Montserrat', sans-serif !important;
     font-weight: bold;
     color: rgba(255, 255, 255, 0.9);
     }
     .updescription {
-      font-family: 'Cinzel', 'serif';
+      font-family: 'Cinzel', 'serif'!important;
       font-size: clamp(0.48rem, 0.9vw, 0.68rem);
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -381,10 +381,11 @@ footer {
     }
 
     .text-serif {
-      font-family: 'Cormorant Garamond', 'serif';
-      font-size: 1.15rem;
-      font-style: italic;
-      color: #bae6fd;
+      font-family: 'Cormorant Garamond', 'serif'!important;
+      font-size: 1.15rem !important;
+      font-style: italic !important;
+      color: #bae6fd !important;
+      max-width:520px !important;
     }
     .updevider{
     width: 40px;
