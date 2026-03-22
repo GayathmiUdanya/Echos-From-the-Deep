@@ -3,15 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
-    <title>Gallery</title>
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="styles/gallery.css">
-  
-</head>
-<body>
-    <img src="assets/feedback_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
     
+    <!--Font-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
+    
+    <title>Gallery</title>
+
+    <!--Global CSS-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--Gallery CSS-->
+    <link rel="stylesheet" href="styles/gallery.css">
+    <style>
+        /* Modal Overlay */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Box */
+.modal-content {
+    position: relative;
+    background: #111a27;
+    border: 1px solid #49aec0;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 30px;
+    box-shadow: 0 0 40px rgba(73, 174, 192, 0.3);
+}
+
+/* Modal Image */
+.modal-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    object-fit: cover;
+    max-height: 460px;
+}
+
+/* Title & Description */
+#modalTitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+#modalDesc {
+    font-size: 0.9rem;
+    color: #d1d9e2;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    font-size: 1.6rem;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #49aec0;
+}
+
+/* Customization Buttons */
+.custom-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn-custom {
+    background: transparent;
+    border: 1px solid #49aec0;
+    color: #49aec0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+.btn-custom:hover {
+    background: rgba(73, 174, 192, 0.15);
+}
+.alt-font-active {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+.alt-color-active {
+    background: #0a2a1a !important;
+    color: #a8f0c6 !important;
+    border-color: #2ecc71 !important;
+}
+    </style>
+
+</head>
+
+<body>
+    <img src="assets/gallery_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+        
     <header>
         <nav>
             <div class="logo-area">
@@ -21,72 +124,67 @@
                     <p>SDG 14 · Life Below Water</p>
                 </div>
             </div>
+
             <div class="nav-links">
                 <a href="home.html">Home</a>
-                <a href="gallery.html" class="active">Gallery</a>
+                <a href="gallery.html" class="active">Gallery</a> 
                 <a href="ais.html">Action Impact Simulator</a>
                 <a href="feedback.html">Feedback</a>
                 <a href="team.html">Team</a>
                 <a href="profile.html">Profile</a>
                 <a href="sitemap.html">Sitemap</a>
-            </div>
+            </div>	
         </nav>
     </header>
 
-<main>
-
-    <section class="page_hero">
-    <img src="assets/gallery_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
-        <div class="page_hero_content">
-            <span class="page_subheading">Act III · Windows To The Deep</span>
-            <h1 class="hero_title">See The Ocean.<br><em>Feel The Truth.</em></h1>
-            <p class="text_serif">
-                A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
-            </p>
+    <main>
+        <section class="pageup">
+            <div class="container">
+            <div class="upcontent">
+                <span class="updescription">Act III · Windows To The Deep</span>
+                <h1 class="uptittle">See The Ocean.<br><em>Feel The Truth.</em></h1>
+                <div class="updevider"></div>
+                <p class="text-serif">
+                    A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
+                </p>
+            </div>
         </div>
-    </section>
+        </section>
+        
+        <div class="dashboard-container">
+            <div class="card">
+                <img src="assets/gallery_whalewarning.png" alt="Cargo ship noise waves hitting whales" class="card-image">
+                <div class="card-content">
+                    <h2>Whale Warning</h2>
+                    <p class="card-description">A massive cargo ship blasts harsh red sound waves, distorting the delicate blue echoes of a mother whale and her calf.</p>
+                </div>
+            </div>
 
-    <div  class="dashboard-container">
+            <div class="card">
+                <img src="assets/gallery_ghostnets.png" alt="Discarded fishing net on sea floor" class="card-image">
+                <div class="card-content">
+                    <h2>Ghost Nets</h2>
+                    <p class="card-description">A massive, forgotten "ghost net" drifts like a giant, suffocating spiderweb over ancient rock formations.</p>
+                </div>
+            </div>
 
-        <div  class="card">
-            <div  class="card-image-wrapper">
-				<img src="assets/gallery_bg1.png" class="card-image">
-            </div >
-            <div  class="card-content">
-                <h2>Whale is Warning</h2>
-                <span class="card-description">A massive, shadowy cargo ship looms on the surface, its hull cutting through the water. It blasts a harsh, jagged red sound wave downward. This invasive noise collides with the delicate blue echoes of a distressed mother whale and her calf, distorting their song into fractured shapes.</span>
-            </div >
-        </div >
-
-        <div  class="card">
-            <div  class="card-image-wrapper">
-				<img src="assets/gallery_bg2.png" class="card-image"> 
-            </div >
-            <div  class="card-content">
-				<h2>Ghost Nets</h2>
-                <span class="card-description">A massive, forgotten "ghost net" drifts like a giant, suffocating spiderweb. It is tangled over ancient, silent rock formations</span>
-            </div >
-        </div >
-
-        <div  class="card">
-            <div  class="card-image-wrapper">
-				<img src="assets/gallery_bg3.png" class="card-image">    
-            </div >
-            <div  class="card-content">
-				<h2>Bleached Reefs</h2>
-                <span class="card-description">The environmental collapse hits the coral reefs. We focus on a coral garden that is rapidly dying. What was once vibrant is now a ghostly, skeletal white. The warming water has driven away all life.</span>
-            </div >
-        </div >
-
-        <div  class="card">
-            <div  class="card-image-wrapper">
-				<img src="assets/gallery_bg4.png" class="card-image">
-            </div >
-            <div  class="card-content">
+            <div class="card">
+                <img src="assets/gallery_bleachedreefs.png" alt="White skeletal coral reef" class="card-image">
+                <div class="card-content">
+                    <h2>Bleached Reefs</h2>
+                    <p class="card-description">A coral garden rapidly dying; what was once vibrant is now a ghostly, skeletal white due to warming waters.</p>
+                </div>
+            </div>
+            
+			<div class="card">
+            <div class="card-image-wrapper">
+			<img src="assets/gallery_acalltoaction.png" alt="A Call to Action" class="card-image">
+            </div>
+            <div class="card-content">
 				<h2>A Call to Action</h2>
                 <span class="card-description">Action is taken. Returning underwater, we see a team of divers. Crucially, they are led by the young character from the cliffside.</span>
-            </div >
-        </div >
+            </div>
+        </div>
 
 		<div  class="card">
             <div  class="card-image-wrapper">
@@ -95,8 +193,8 @@
             <div  class="card-content">
 				<h2>Listening to the Echoes</h2>
                 <span class="card-description">The ocean is not silent; it is a symphony of soft, glowing sound. We observe this magical, aquatic language as it travels through the dark water.</span>
-            </div >
-        </div >
+            </div>
+        </div>
        
 		<div  class="card">
             <div  class="card-image-wrapper">
@@ -109,19 +207,43 @@
         </div >
 </div >
 </main>
-<script href="scripts/gallery.js"></script>
 <a href="#" class="goup" aria-label="Back to top">↑</a>
 
-    <!-- Footer -->
+<!--JavaScript Part(Change this comment)-->
+<div id="galleryModal" class="modal">
+    <div class="modal-content" id="modalTarget">
+        <span class="close-btn" id="closeModal">&times;</span>
+        <img id="modalImg" src="#" alt="" class="modal-image">
+        <div id="modalTitle"></div>
+        <div id="modalDesc"></div>
+        
+        <div class="custom-controls">
+            <button class="btn-custom" id="btnFont">Change Font</button>
+            <button class="btn-custom" id="btnColor">Change Colour Scheme</button>
+        </div>
+        </div>
+    </div>
+    
+    <!--Back to top-->
+    <a href="#" class="back_to_top" aria-label="Back to top">↑</a>
+    
+    
+    <!--Footer-->
 	<footer>
         <div class="footer-content">
             <div class="footer-links">
+<<<<<<< HEAD
+                <a href="page-editor.html">Page Editor</a>
+                <a href="https://validator.w3.org/">Validation Page</a>
+                <a href="accessibility.html">Accessibility Compliance</a>
+=======
                 <a href="pageEditor_ST1.html">Page Editor</a>
                 <a href="validation_ST1.html">Validation Page</a>
                 <a href="pageEditor_ST1.html#home#accessibility">Accessibility</a>
                 <a href="pageEditor_ST1.html#compliance">Compliance</a>
+>>>>>>> d955ba5577b3ac9aae237d911f6e303fd050555b
             </div>
-
+            
             <div class="student-details">
                 <p>Developed by: Kulith Silva</p>
                 <p>Student ID: 21819126</p>
@@ -129,7 +251,6 @@
             </div>
         </div>
     </footer>
-    
 </body>
-
+<script src="scripts/gallery.js"></script>
 </html>
