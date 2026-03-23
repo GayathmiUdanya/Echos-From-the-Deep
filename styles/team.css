@@ -21,16 +21,6 @@ main {
     opacity: 0.55;
 }
 
-/*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
-.page-subheading{
-    font-family: 'Cinzel', serif;
-    font-size: clamp(0.65rem, 0.65vw, 0.65rem);
-    font-weight: 800;
-    letter-spacing: 0.3em;
-    color: rgba(10, 30, 50, 0.9);
-    display: block;
-}
-
 /*--------------------------------------------------Team Member Details-------------------------------------------*/
 .team-members{
     display: flex;
@@ -62,10 +52,11 @@ main {
     height: 250px;
     object-fit: cover; /*Ensures that the images will fits in the frame*/
     border-radius: 5px;
-    transition: all 0.3s ease;
 }
 
 .student-name {
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
     margin: 12px 0 8px;
     font-size: 1rem;
     letter-spacing: 0.08em;
@@ -87,9 +78,14 @@ main {
 
 /*Hides the DETAILS by default*/
 .student .details{
+    font-family:'Montserrat', sans-serif;
+    font-size: .84rem;
+    letter-spacing: .1em;
+    color: #94b8cc;
     display: none; 
     text-align: left; 
-    margin-top: 5px;
+    margin-top: .5rem;
+    margin-bottom: .8rem;
     border-top: 1px solid rgba(125, 211, 252, 0.2);   
     padding-top: 12px;                                  
 }
@@ -110,10 +106,10 @@ main {
     border-radius: 20px;
     color: #7dd3fc;
     font-family: 'Cinzel', serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
     text-transform: uppercase;
-    padding: 0.45rem 1.1rem;
+    font-size: .58rem;
+    letter-spacing: .18em;
+    padding: .45rem 1.1rem;
     cursor: pointer;
     transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
 }
@@ -128,14 +124,14 @@ main {
 .row{
     display:flex;
     align-items: flex-start;
-    margin-bottom: 14px;
+    margin-bottom: .15rem;
 }
 
 /*Content heading for the student details section*/
 .label{
     color: #d0dce8;
     font-weight: bold; 
-    font-variant: small-caps;
+    font-variant: uppercase;
     min-width: 120px; /*Ensures that the values are aliged*/
     flex-shrink:0; /*Makes sure the content doesnt skrink to fit*/
 }
