@@ -230,11 +230,15 @@ html {
     box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
     transform: scale(1.04);
 }
-
+/*-----------------------------------------*/
 .card p {
-    font-family:serif;
-    font-size:18px;
+    font-family:'Montserrat', sans-serif;
+    font-size: .82rem;
+    color: #94b8cc;
+    line-height: 1.55;
+    margin-bottom: .8rem;
 }
+/*------------------------------------------*/
 
 /*Scrolling feature for the content cards*/
 .container-grid {
