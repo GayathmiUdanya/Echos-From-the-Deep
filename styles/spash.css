@@ -56,8 +56,6 @@ html, body {
   pointer-events: none;
 }
 
-
-
 .moonHalo {
   position: absolute;
   z-index: 5;
@@ -223,7 +221,6 @@ h1 em {
   text-shadow: 0 0 16px rgba(0, 229, 200, 0.7);
 }
 
-
 .info-panel {
   position: absolute;
   bottom: 1.2rem;
@@ -298,6 +295,7 @@ h1 em {
     border-color: rgba(125, 211, 252, 0.35);
     background: rgba(125, 211, 252, 0.12);
 }
+
 .skip-btn {
     display: inline-flex;
     align-items: center;

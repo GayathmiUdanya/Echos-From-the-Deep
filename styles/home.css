@@ -1,7 +1,17 @@
-    *, *::before, *::after {
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+.scene_bg {
+    position: fixed;
+    inset: 0; /*Stretches to fill all four edges of the parent*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 1;
 }
 
 :root {
@@ -14,43 +24,13 @@
     --nav-bg: rgba(255, 255, 255, 0.12);
     --font-body: 'Montserrat', sans-serif;
     --font-serif: 'Playfair Display', serif;
+    
 }
 
 html, body {
     height: 100%;
     font-family: var(--font-body);
     color: var(--white);
-}
-
-.hero{
-    height:100vh;
-    width:100%;
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    overflow:hidden;
-    background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)), url("../assets/hero.jpeg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 20, 35, 0.35) 0%,
-        rgba(0, 10, 20, 0.15) 50%,
-        rgba(0, 10, 25, 0.55) 100%
-    );
-    z-index: 1;
-}
-
-.hero > * {
-    position: relative;
-    z-index: 2;
 }
 
 nav {
@@ -128,11 +108,11 @@ nav {
 }
 
 .sdg-label {
-    font-size: 10px;
+    font-size: 15px;
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 24px;
-    opacity: 0.85;
+    opacity: 0.88;
 }
 
 .title {
@@ -140,6 +120,7 @@ nav {
     font-size: 100px;
     line-height: 1.02;
     font-weight: 400;
+    opacity: 0.88;
 }
 
 .title span {
@@ -226,3 +207,90 @@ nav {
     50%       { transform: translateX(-50%) translateY(6px); }
 }
 
+/* Layout Grid */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: repeat(4, 5fr);
+    gap: 30px;
+    max-width: 1200px;
+    justify-content: center;
+    margin:150px auto 50px auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Card Styling */
+.card {
+    background-color: #3b4960;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #1f2d42;
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+/* Image Section and Placeholder */
+.card-image-wrapper {
+    width: 100%;
+    height: 300px;
+    background-color: #333; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/*Images*/
+.card-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+	background-size: 10% 100%;
+}
+
+/* Styling for when images are missing */
+.card-image-wrapper::after {
+    position: absolute;
+    color: #555;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+/* Content Section */
+.card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Category Label */
+.category-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+/* Title */
+.card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+}
+
+/* Description Body */
+.card-description {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    line-height: 1.5;
+    margin-bottom: 15px;
+    flex-grow: 1; 
+}
