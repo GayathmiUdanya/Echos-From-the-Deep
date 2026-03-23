@@ -25,11 +25,12 @@ p{
     border-radius:20px;
 
 }
-#createProfileBtn {
+#createProfileBtn{
     display: block;
     margin: 0 auto 20px auto;
 }
-button {
+
+button{
     padding: 10px 20px;
     font-size: 16px;
     background-color: #0a1f35;
@@ -41,11 +42,11 @@ button {
     font-family:'Cinzel', serif;
 }
 
-button:hover {
+button:hover{
     box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
 }
 
-#sample-data-container {
+#sample-data-container{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
@@ -53,7 +54,7 @@ button:hover {
     width:80%
 }
 
-.sample-data {
+.sample-data{
     display:flex;
     flex-direction:column;
     gap:2px;
@@ -69,7 +70,7 @@ button:hover {
     margin:3px;
 }
 
-.sample-data:hover {
+.sample-data:hover{
     transform: translateY(-10px);
     transition: 0.2s;
     border:3px solid #4A86A3;
@@ -85,7 +86,7 @@ button:hover {
     font-weight:400;
 }
 
-.header {
+.header{
     display:flex;
     flex-direction:row;
     gap:15px;
@@ -93,25 +94,25 @@ button:hover {
 }
 
 .country,
-.role {
+.role{
     border-radius:18px;
     padding:0px 10px;
     font-size:12px;
 }
 
-.country {
+.country{
     border:2px solid #ef4444;
     background-color:#241f1f;
     color:#ef4444;
 }
 
-.role {
+.role{
     border:2px solid #f59e0b;
     background-color:#241f1f;
     color:#f59e0b;
 }
 
-.profile-photo {
+.profile-photo{
     width:100%;
     max-width:100%;
     height:250px;
@@ -128,18 +129,17 @@ button:hover {
     font-family:serif;
 }
 
-
-.details p:first-child {
+.details p:first-child{
     width:90px; /* fixed width for labels */
     font-weight:bold;
 }   
 
-.details p:last-child {
+.details p:last-child{
     flex:1; 
 }
 
 /* User Profile Builder */
-#profileBuilder {
+#profileBuilder{
     display: flex;
     flex-direction: column;
     align-items:center;
@@ -154,7 +154,7 @@ button:hover {
     display:none; 
 }
 
-#profileBuilder h1 {
+#profileBuilder h1{
     font-size:25px;
     font-weight:700;
     padding-bottom:0;
@@ -165,7 +165,7 @@ button:hover {
 }
 
 /* Progress bar */
-.progressContainer {
+.progressContainer{
     width:100%;
     max-width:500px;
     height:10px;
@@ -175,7 +175,7 @@ button:hover {
     margin-top:10px;
 }
 
-.progressBar {
+.progressBar{
     height:100%;
     background-color:#4b91b4;
     width:0%;
@@ -188,7 +188,7 @@ button:hover {
     gap:20px;
 }
 
-.profile-section {
+.profile-section{
     border: 2px solid #4b91b4;
     margin-bottom:20px;
     padding:20px;
@@ -201,7 +201,7 @@ button:hover {
     display:none;
 }
 
-.profile-section:hover {
+.profile-section:hover{
     transform:translateY(-6px) scale(1.01);
     box-shadow:0 10px 25px rgba(75, 145, 180, 0.3);
 }
@@ -220,7 +220,7 @@ button:hover {
     font-weight:bold;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px){
 
     main {
         margin: 20px;
@@ -245,7 +245,7 @@ button:hover {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
     main {
         margin: 10px;
@@ -273,7 +273,7 @@ button:hover {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px){
 
     .profile-photo {
         height: 180px;
