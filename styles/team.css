@@ -5,13 +5,13 @@ body,html{
     position: relative;
 }
 
-/*add space at the end of the main section*/
+/*Add space at the end of the main section*/
 main {
     padding-bottom: 4rem;
 }
 
 /*Background Image*/
-.scene_bg {
+.scene-bg {
     position: fixed;
     inset: 0; /*Stretches to fill all four edges of the parent*/
     width: 100%;
@@ -22,9 +22,7 @@ main {
 }
 
 /*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
-
-
-.page_subheading{
+.page-subheading{
     font-family: 'Cinzel', serif;
     font-size: clamp(0.65rem, 0.65vw, 0.65rem);
     font-weight: 800;
@@ -33,9 +31,8 @@ main {
     display: block;
 }
 
-
 /*--------------------------------------------------Team Member Details-------------------------------------------*/
-.team_members{
+.team-members{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -68,7 +65,7 @@ main {
     transition: all 0.3s ease;
 }
 
-.student_name {
+.student-name {
     margin: 12px 0 8px;
     font-size: 1rem;
     letter-spacing: 0.08em;
@@ -104,7 +101,7 @@ main {
 }
 
 /*Role "button"*/
-.btn_role {
+.btn-role {
     display: block;
     margin: 0 auto;
     max-width: 150px;
@@ -121,7 +118,7 @@ main {
     transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
 }
 
-.btn_role:hover {
+.btn-role:hover {
     background: rgba(125, 211, 252, 0.18);
     box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
     transform: scale(1.04);
@@ -144,7 +141,7 @@ main {
 }
 
 /*Grouping content description for the student details section*/
-.value_group{
+.value-group{
     display:flex;
     flex-direction: column; 
 }

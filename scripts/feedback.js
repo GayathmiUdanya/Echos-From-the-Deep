@@ -25,36 +25,36 @@ form.addEventListener("submit",(e)=>{
 
     //Full Name
     const fullname = document.getElementById("fullname").value.trim();
-    fullname == "" ? showError("fullname_error", "Full Name is required"): clearError("fullname_error");
+    fullname == "" ? showError("fullname-error", "Full Name is required"): clearError("fullname_error");
 
     //Email 
     const email = document.getElementById("email").value.trim();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //to checck if a string matches a specific format 
-    !emailRegex.test(email) ? showError("email_error", "Enter a valid email") : clearError("email_error");
+    !emailRegex.test(email) ? showError("email-error", "Enter a valid email") : clearError("email_error");
 
     //Telephone
     const tel = document.getElementById("tel").value.trim();
-    tel == "" ? showError("tel_error", "Telephone Number is required") : clearError("tel_error");
+    tel == "" ? showError("tel-error", "Telephone Number is required") : clearError("tel_error");
 
     // Address
     const address = document.getElementById("address").value.trim();
-    address === "" ? showError("address_error", "Address is required") : clearError("address_error");
+    address === "" ? showError("address-error", "Address is required") : clearError("address_error");
 
     // Category
     const category = document.getElementById("category").value;
-    category === "" ? showError("category_error", "Please select a category") : clearError("category_error");
+    category === "" ? showError("category-error", "Please select a category") : clearError("category_error");
 
     // Date
     const date = document.getElementById("date").value;
-    date === "" ? showError("date_error", "Please select a date") : clearError("date_error");
+    date === "" ? showError("date-error", "Please select a date") : clearError("date_error");
 
     // Message
     const msg = document.getElementById("message").value.trim();
-    msg === "" ? showError("message_error", "Message cannot be empty") : clearError("message_error");
+    msg === "" ? showError("message-error", "Message cannot be empty") : clearError("message_error");
 
     //Show success if all info is valid 
     if(valid){
-        document.getElementById("success_message").style.display = "block";
+        document.getElementById("success-message").style.display = "block";
         form.reset();
         charCount.textContent = "300 Characters Remaining"
     }

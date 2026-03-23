@@ -1,4 +1,5 @@
-html,body{
+html,
+body {
     background-color: #0a1a2a; 
     color:#e8f4f8;
     font-family:'Cinzel', serif;
@@ -6,7 +7,7 @@ html,body{
 }
 
 /*-----------------------------Background Image---------------------------------------*/
-.scene_bg {
+.scene-bg {
     position: fixed;
     inset: 0; /*Stretches to fill all four edges of the parent*/
     width: 100%;
@@ -23,7 +24,7 @@ main {
 }
 
 /*--------------------------------Top Left - Web Page Heading and Phrasing----------------------------------------*/
-.page_subheading{
+.page-subheading {
     font-family: 'Cinzel', serif;
     font-size: clamp(0.65rem, 0.65vw, 0.65rem);
     font-weight: 800;
@@ -33,7 +34,7 @@ main {
 }
 
 /*(Right Side)Internal Section Navigation*/
-.side_nav{
+.side-nav {
     position: absolute;
     right: 1.5rem;
     top: 9rem;  /*Adjust this to move it up or down*/
@@ -44,7 +45,7 @@ main {
     z-index: 10;
 }
 
-.side_nav a {
+.side-nav a {
     text-decoration: none;
     background-color: transparent;
     color: #c6a810;
@@ -54,7 +55,7 @@ main {
     font-weight: 500;
 }
 
-.side_nav a:hover {
+.side-nav a:hover {
     transform: scale(1.3);
 }
 
@@ -64,13 +65,13 @@ html {
 }
 
 /*Explore Programs Section*/
-.page_section {
+.page-section {
     padding: 2.5rem 0; /*top and bottom padding*/
     max-width: 1160px;
     margin:0 auto;
 }
 
-.glass_panel{
+.glass-panel {
     background: rgba(3, 13, 26, 0.85);
     backdrop-filter: blur(28px);
     border: 1px solid rgba(125, 211, 252, 0.14);
@@ -82,7 +83,7 @@ html {
 }
 
 /*Filter - Sort By Feature(not responsive)*/
-.sort_row {
+.sort-row {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -90,7 +91,7 @@ html {
     border-bottom: 1px solid rgba(125, 211, 252, 0.08);
 }
 
-.sort_select {
+.sort-select {
     background: rgba(3, 13, 26, 0.9);
     border: 1px solid rgba(125, 211, 252, 0.2);
     border-radius: 20px;
@@ -105,20 +106,20 @@ html {
     appearance: none;
 }
 
-.sort_select:focus {
+.sort-select:focus {
     outline: none;
     border-color: #7dd3fc;
     box-shadow: 0 0 8px rgba(125, 211, 252, 0.25);
 }
 
 /*Sectional (Explore Program, Reviews, Form) Mini heading*/
-.panel_inner {
+.panel-inner {
     padding: 2rem 2.4rem;
     padding-top:0.4rem; 
     padding-bottom:0.1rem;
 }
 
-.section_label {
+.section-label {
     font-family: 'Cinzel', serif;
     font-size: 0.82rem;
     letter-spacing: 0.28em;
@@ -132,7 +133,7 @@ html {
 }
 
 /*Draws a thin line after the "section_label" content*/
-.section_label::after {
+.section-label::after {
     content: ''; /*Empty since we dont want to write anything, and just need a line*/
     flex: 1;
     height: 1px;
@@ -141,7 +142,7 @@ html {
 
 /*Explore Program - Cards*/
 /*Ensures the cards sit beside another, and wrap on a small screen*/
-.card_grid{
+.card-grid {
     display:grid;
     grid-template-columns: repeat(2, 1fr); /*two columns*/
     max-width: 1000px;
@@ -150,7 +151,7 @@ html {
     margin: 20px auto;
 }
 
-.card{
+.card {
     display: flex; /*aligning the cards*/
     flex-direction: column;
     padding: 15px;
@@ -167,7 +168,7 @@ html {
     border-radius: 5px;
 }
 
-.card p.cardheading_font{
+.card p.cardheading-font {
     font-family:'Cinzel', serif;
     text-transform: uppercase;
     font-size: .76rem;
@@ -176,7 +177,7 @@ html {
     margin-bottom: .4rem;
 }   
 
-.card p.carddescription_font{
+.card p.carddescription-font {
     font-size: .82rem;
     color: #94b8cc;
     line-height: 1.55;
@@ -190,7 +191,7 @@ html {
 }
 
 /*Learn More and Join "buttons"*/
-.btn_lm {
+.btn-lm {
     background: transparent;
     border: 1px solid rgba(125, 211, 252, 0.22);
     border-radius: 20px;
@@ -204,13 +205,13 @@ html {
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
 }
 
-.btn_lm:hover {
+.btn-lm:hover {
     border-color: #7dd3fc;
     box-shadow: 0 0 10px rgba(125, 211, 252, 0.3);
     transform: scale(1.04);
 }
 
-.btn_join {
+.btn-join {
     background: rgba(125, 211, 252, 0.1);
     border: 1px solid rgba(125, 211, 252, 0.35);
     border-radius: 20px;
@@ -224,25 +225,25 @@ html {
     transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
 }
 
-.btn_join:hover {
+.btn-join:hover {
     background: rgba(125, 211, 252, 0.18);
     box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
     transform: scale(1.04);
 }
 
-.card p{
+.card p {
     font-family:serif;
     font-size:18px;
 }
 
 /*Scrolling feature for the content cards*/
-.container_grid{
+.container-grid {
     height:690px;
     overflow-y:scroll;
 }
 
 /*-------------------Review Section--------------------------*/
-.overall_rating{
+.overall-rating {
     display:flex; /*aligning the cards*/
     flex-direction: row;
     margin: 20px;
@@ -254,7 +255,7 @@ html {
     gap:35px;
 }
 
-.big_score{
+.big-score {
     font-size: 3rem;
     letter-spacing: 0.1em;
     font-weight:bold;
@@ -262,7 +263,7 @@ html {
     margin-left: 30px;
 }
 
-.rating_label{
+.rating-label {
     font-size:40px;
     font-weight:bold;
     font-family:'Cinzel', serif;
@@ -271,7 +272,7 @@ html {
     letter-spacing: 0.1em;
 }
 
-.review_count{
+.review-count {
     font-size:15px;
     font-family:'Cinzel', serif;
     margin: 0;
@@ -280,7 +281,7 @@ html {
 }
 
 /*Individual Rating*/
-.review_layout{
+.review-layout {
     display:grid;
     grid-template-columns: repeat(3, 1fr); /*two columns*/
     max-width: 1000px;
@@ -289,7 +290,7 @@ html {
     margin: 20px auto;
 }
 
-.review_card{
+.review-card {
     padding: 15px;
     flex: 1 1 250px;
     background-color:rgb(13,27,42,0.9); 
@@ -298,11 +299,11 @@ html {
     font-family:'Lora', serif;
 }
 
-.review_card p{
+.review-card p {
     margin:0;
 }
 
-.card_font{
+.card-font {
     font-family:'Cinzel', serif;
     text-transform: uppercase;
     font-size: .76rem;
@@ -311,31 +312,31 @@ html {
     margin-bottom: .4rem;
 } 
 
-.review_text {
+.review-text {
     font-size: .82rem;
     color: #94b8cc;
     line-height: 1.55;
     margin-bottom: .8rem;
 }
 
-.review_text a {
+.review-text a {
     color: rgba(125, 211, 252, 0.7);
     text-decoration: none;
     font-size: 0.75rem;
     transition: color 0.2s;
 }
 
-.review_text a:hover { 
+.review-text a:hover { 
     color: #7dd3fc; 
 }
 
-.review_card hr{
+.review-card hr {
     margin: 8px 0;
     border:none;
     border-top: 1px solid #abb5c0;
 }
 
-.review_footer {
+.review-footer {
     display: flex;
     flex-direction: row;            
     align-items: center;            
@@ -343,7 +344,7 @@ html {
     gap: 8px;
 }
 
-.reviewer_info {
+.reviewer-info {
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
     color: #4a7a94;
@@ -351,14 +352,14 @@ html {
     font-weight: 400;
 }
 
-.reviewer_name {
+.reviewer-name {
     display: block;
     color: rgba(232, 244, 248, 0.6);
     font-weight: 500;
     margin-bottom: 0.1rem;
 }
 
-.score_badge {
+.score-badge {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
     font-weight: 300;
@@ -379,7 +380,7 @@ html {
     margin-top: 4px;
 }
 
-.success_message {
+.success-message {
   display: none;
   color: #4caf50;
   font-size: 16px;
@@ -387,13 +388,13 @@ html {
   text-align: center;
 }
 
-#char_count {
+#char-count {
   font-size: 12px;
   color: #7089f0;
   float: right;
 }
 
-.feedback_form {
+.feedback-form {
     background-color: rgb(13,27,42,0.9);
     border: 2px solid #1e3a5f;
     border-radius: 10px;
@@ -431,7 +432,7 @@ label {
     margin-bottom: .4rem;
 }
 
-.review_text {
+.review-text {
     font-size: .82rem;
     color: #94b8cc;
     line-height: 1.55;
