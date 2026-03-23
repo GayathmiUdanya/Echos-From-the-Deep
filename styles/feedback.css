@@ -232,8 +232,11 @@ html {
 }
 
 .card p {
-    font-family:serif;
-    font-size:18px;
+    font-family:'Montserrat', sans-serif;
+    font-size: .82rem;
+    color: #94b8cc;
+    line-height: 1.55;
+    margin-bottom: .8rem;
 }
 
 /*Scrolling feature for the content cards*/
@@ -283,7 +286,7 @@ html {
 /*Individual Rating*/
 .review-layout {
     display:grid;
-    grid-template-columns: repeat(3, 1fr); /*two columns*/
+    grid-template-columns: repeat(3, 1fr); 
     max-width: 1000px;
     gap: 16px;
     justify-content: center;
@@ -313,10 +316,12 @@ html {
 } 
 
 .review-text {
+    font-family:'Montserrat', sans-serif;
     font-size: .82rem;
     color: #94b8cc;
     line-height: 1.55;
     margin-bottom: .8rem;
+    
 }
 
 .review-text a {
