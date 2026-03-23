@@ -74,7 +74,6 @@ button:hover {
     transition: 0.2s;
     border:3px solid #4A86A3;
     box-shadow:0 10px 25px rgba(75, 145, 180, 0.3);
-    
 }
 
 .name{
@@ -98,7 +97,6 @@ button:hover {
     border-radius:18px;
     padding:0px 10px;
     font-size:12px;
-    
 }
 
 .country {
@@ -121,7 +119,6 @@ button:hover {
     border-radius:10px;
     display:block;
     padding-bottom:15px;
-
 }
 
 .details{
@@ -277,11 +274,6 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-
-    .page_subheading {
-        font-size: 0.55rem;
-        letter-spacing: 0.2em;
-    }
 
     .profile-photo {
         height: 180px;
