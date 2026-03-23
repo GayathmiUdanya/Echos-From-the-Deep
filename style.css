@@ -18,27 +18,30 @@
     --font-serif: 'Playfair Display', serif;
 }
 
-    #scroller {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 2px;
-      width: 0%;
-      background: linear-gradient(90deg, #0e7490, #7dd3fc);
-      z-index: 1000;
-      pointer-events: none;
-      box-shadow: 0 0 8px rgba(125, 211, 252, .5);
-      transition: width .1s linear;
-    }
+#scroller {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(90deg, #0e7490, #7dd3fc);
+    z-index: 1000;
+    pointer-events: none;
+    box-shadow: 0 0 8px rgba(125, 211, 252, .5);
+    transition: width .1s linear;
+}
 
-html, body {
+html, 
+body {
     height: 100%;
     font-family: var(--font-body) !important;
     color: var(--white);
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 /* Navigation */
 nav {
     position: sticky;
