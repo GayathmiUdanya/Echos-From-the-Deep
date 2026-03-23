@@ -120,33 +120,6 @@ nav {
     text-align: center;
 }
 
-.goup {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 42px;
-    height: 42px;
-    background: var(--ocean);
-    border: var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--glow);
-    font-size: 1.1rem;
-    text-decoration: none;
-    box-shadow: var(--shadow-sm);
-    transition: background 0.25s ease, transform 0.25s ease;
-    z-index: 50;
-}
-
-.goup:hover {
-    background: var(--slate);
-    transform: translateY(-3px);
-    color: var(--foam);
-}
-
-
 .depth-bands {
     position: absolute;
     inset: 0;
