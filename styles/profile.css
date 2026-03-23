@@ -86,8 +86,6 @@ button:hover {
     font-weight:400;
 }
 
-
-
 .header {
     display:flex;
     flex-direction:row;
@@ -143,9 +141,7 @@ button:hover {
     flex:1; 
 }
 
-
 /* User Profile Builder */
-
 #profileBuilder {
     display: flex;
     flex-direction: column;
@@ -159,8 +155,6 @@ button:hover {
     border-radius:10px;
     /* Hidden cuz its appearing in the profiles page -> since theres a div in the html */
     display:none; 
-
-    
 }
 
 #profileBuilder h1 {
