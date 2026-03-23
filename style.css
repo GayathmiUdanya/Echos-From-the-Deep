@@ -1,4 +1,6 @@
-    *, *::before, *::after {
+*, 
+*::before, 
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -67,11 +69,13 @@ nav {
     opacity: 0.7;
     margin-top: 2px;
 }
+
 .nav-links {
     display: flex;
     align-items: center;
     gap: 4px;
 }
+
 .nav-links a {
     text-decoration: none;
     color: var(--white);
@@ -84,10 +88,12 @@ nav {
     opacity: 0.7;
     transition: opacity 0.2s, background 0.2s;
 }
+
 .nav-links a:hover {
     opacity: 1;
     background: var(--white-10);
 }
+
 .nav-links a.active {
     opacity: 1;
     background: var(--white-20);
@@ -119,33 +125,6 @@ nav {
     opacity: 1;
     text-align: center;
 }
-
-.goup {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 42px;
-    height: 42px;
-    background: var(--ocean);
-    border: var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--glow);
-    font-size: 1.1rem;
-    text-decoration: none;
-    box-shadow: var(--shadow-sm);
-    transition: background 0.25s ease, transform 0.25s ease;
-    z-index: 50;
-}
-
-.goup:hover {
-    background: var(--slate);
-    transform: translateY(-3px);
-    color: var(--foam);
-}
-
 
 .depth-bands {
     position: absolute;
@@ -265,7 +244,7 @@ nav {
 }
 
 /*Back to the top button*/
-a.back_to_top{
+a.back-to-top{
     position: fixed;
     bottom: 1.0rem;
     right: 1.5rem;
@@ -284,7 +263,7 @@ a.back_to_top{
     transition: background 0.25s, transform 0.25s;
 }
 
-a.back_to_top:hover {
+a.back-to-top:hover {
     background: rgba(125, 211, 252, 0.12);
     transform: translateY(-3px);
 }
@@ -342,56 +321,55 @@ footer {
     }
 }
 
-
 /* page up part */
-    .pageup {
-      background: var(--abyss);
-      border-bottom: 1px solid rgba(125, 211, 252, 0.12);
-      padding: 3.5rem 0 2rem;
-      position: relative;
-      overflow: hidden;
-      min-height: 38vh;
-      padding-bottom: 3rem;
-    }
+.pageup {
+    background: var(--abyss);
+    border-bottom: 1px solid rgba(125, 211, 252, 0.12);
+    padding: 3.5rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 38vh;
+    padding-bottom: 3rem;
+}
 
-    .upcontent {
-      position: relative;
-      z-index: 1;
-    }
+.upcontent {
+    position: relative;
+    z-index: 1;
+}
 
-    .container {
-      width: 100%;
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 clamp(1rem, 4vw, 2.5rem);
-    }
+.container {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 4vw, 2.5rem);
+}
 
-    .uptittle{
-    font-family:  'Montserrat', sans-serif !important;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.9);
-    }
-    .updescription {
-      font-family: 'Cinzel', 'serif'!important;
-      font-size: clamp(0.48rem, 0.9vw, 0.68rem);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: #7dd3fc;
-      opacity: 0.8;
-    }
+.uptittle{
+font-family:  'Montserrat', sans-serif !important;
+font-weight: bold;
+color: rgba(255, 255, 255, 0.9);
+}
+.updescription {
+    font-family: 'Cinzel', 'serif'!important;
+    font-size: clamp(0.48rem, 0.9vw, 0.68rem);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #7dd3fc;
+    opacity: 0.8;
+}
 
-    .text-serif {
-      font-family: 'Cormorant Garamond', 'serif'!important;
-      font-size: 1.15rem !important;
-      font-style: italic !important;
-      color: #bae6fd !important;
-      max-width:520px !important;
-    }
-    .updevider{
-    width: 40px;
-    height: 2px;
-    background: linear-gradient(90deg, #0e7490, #7dd3fc);
-    border-radius: 2px;
-    margin: 0.75rem 0;
-    }
-/* ------------------------------------------------------ */
+.text-serif {
+    font-family: 'Cormorant Garamond', 'serif'!important;
+    font-size: 1.15rem !important;
+    font-style: italic !important;
+    color: #bae6fd !important;
+    max-width:520px !important;
+}
+
+.updevider{
+width: 40px;
+height: 2px;
+background: linear-gradient(90deg, #0e7490, #7dd3fc);
+border-radius: 2px;
+margin: 0.75rem 0;
+}
