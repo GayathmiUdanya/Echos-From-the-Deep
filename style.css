@@ -36,7 +36,9 @@ html, body {
     font-family: var(--font-body) !important;
     color: var(--white);
 }
-
+html {
+    scroll-behavior: smooth;
+}
 /* Navigation */
 nav {
     position: sticky;
