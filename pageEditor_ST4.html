@@ -116,7 +116,7 @@
                         </ul>
                     
                     <h3>Link to th validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST4.html#profile">Validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST4.html#profile">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                     <h3>Link to the page</h3>
                         <p><a href="profile.html">Profile page</a></p>
@@ -125,7 +125,49 @@
             <section>
                 <h2 id="sitemap">Sitemap Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <ul>
+                            <li><code>viewBox</code> allows the diagram to scale proportionally across all screen sizes</li>
+                            
+                            <li>Two SVGs (<code>.desktop-map</code> and <code>.mobile-map</code>) are created instead of making one responsive</li>
+                            
+                            <li><code>&lt;g&gt;</code> groups SVG elements together</li>
+                            
+                            <li><code>&lt;a&gt;</code> tags make nodes functional with hyperlinks</li>
+                            
+                            <li><code>tabindex="0"</code> enables keyboard navigation</li>
+                            
+                            <li><code>&lt;title&gt;</code> inside each SVG <code>&lt;a&gt;</code> provides accessible descriptions</li>
+                            
+                            <li><code>&lt;defs&gt;</code> stores reusable elements like <code>&lt;marker&gt;</code> (arrowheads) and <code>&lt;linearGradient&gt;</code> (fills)</li>
+                            
+                            <li><code>&lt;marker orient="auto"&gt;</code> adds arrowheads to lines</li>
+                            
+                            <li><code>&lt;rect rx="10"&gt;</code> creates rounded node boxes</li>
+                            
+                            <li><code>&lt;line&gt;</code> draws connections between nodes</li>
+                            
+                            <li><code>&lt;circle&gt;</code> shows decorative junction points</li>
+                            
+                            <li><code>&lt;text&gt;</code> elements display titles and subtitles with hierarchy</li>
+                            
+                            <li><code>background-attachment: fixed</code> creates a parallax effect</li>
+                            
+                            <li><code>.sitemap-wrapper</code> centers the diagram with a dark semi-transparent panel and teal border</li>
+                            
+                            <li><code>.box-rect</code> uses smooth transition for hover animations</li>
+                            
+                            <li><code>.node-group:hover</code> ensures all node types respond consistently</li>
+                            
+                            <li><code>.root-rect</code>, <code>.home-rect</code>, <code>.active-rect</code> use distinct fills and strokes; active uses dashed stroke</li>
+                            
+                            <li><code>text-anchor: middle</code> centers labels in nodes</li>
+                            
+                            <li><code>.hero_title</code> uses <code>clamp()</code> for consistent font size across screens</li>
+                            
+                            <li><code>.svg-link:focus</code> adds a visible teal outline for keyboard focus</li>
+                            
+                            <li><code>.desktop-map</code> and <code>.mobile-map</code> toggle via media queries for responsive layouts</li>
+                        </ul>
 
                     <h3>Accessibility</h3>
                         <ul>
@@ -149,7 +191,7 @@
                         </ul>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST4.html#sitemap">Validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST4.html#sitemap">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                         
                     <h3>Link to the page</h3>
@@ -165,7 +207,7 @@
                         <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST4.html#content">Validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST4.html#content">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                         
                     <h3>Link to the page</h3>
