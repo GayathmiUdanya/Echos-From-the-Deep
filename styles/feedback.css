@@ -137,7 +137,7 @@ main {
 
 /*Scrolling feature for the content cards*/
 .container-grid {
-    height:690px;
+    height:700px;
     overflow-y:scroll;
 }
 
@@ -160,7 +160,7 @@ main {
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 2px solid #1e3a5f;
-    gap:20px;
+    /*gap:20px;*/
 }
 
 /*Explore Program - inidvidual card img*/
@@ -172,28 +172,29 @@ main {
 }
 
 /*Explore Program - card title*/
-.card p.cardheading-font {
+.card .cardheading-font {
     font-family:'Cinzel', serif;
     text-transform: uppercase;
     font-size: .76rem;
     letter-spacing: .1em;
     color: #e8f4f8;
-    margin-bottom: .1rem;
+    margin-top: 1.5rem;
+    margin-bottom: .8rem;
 }   
 
 /*Explore Program - card description text*/
-.card p.carddescription-font {
+.card .carddescription-font {
     font-size: .82rem;
     color: #94b8cc;
     line-height: 1.55;
-    margin-bottom: .8rem;
+    margin-bottom: .8em;
 }
 
 /*Learn More "button" | Join "button" (non responsive)*/
 .cardbutton_actions {
     display: flex; /*aligns the buttons side by side*/
     gap: 0.7rem;
-    margin-top: 0.6rem;
+    margin-top: 0.6em;
 }
 
 /*Learn More "button"*/
@@ -322,7 +323,8 @@ main {
     font-size: .76rem;
     letter-spacing: .1em;
     color: #e8f4f8;
-    margin-bottom: .4rem;
+    margin-top:.2rem;
+    margin-bottom: .8rem;
 } 
 
 /*review card descriptive text*/
