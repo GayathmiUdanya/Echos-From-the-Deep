@@ -51,19 +51,29 @@ button:hover{
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
     margin-top:30px;
-    width:80%
+    width:80%;
 }
 
 .sample-data{
     display:flex;
     flex-direction:column;
     gap:2px;
-    border-radius:10px;
+    /*border-radius:10px;*/
     padding:20px;
-    background-color:#081B2B;
+    /*background-color:#081B2B;*/
     opacity:0.9;
     cursor: pointer;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    /*width: 300px;
+    padding: 20px;*/
+    background-color:rgb(13,27,42,0.9); 
+    border-radius: 10px;
+    border: 2px solid #1e3a5f;
+    border-top: 3px solid rgba(125, 211, 252, 0.5);
+    color: #d0dce8; 
+    overflow: visible; 
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .sample-data p{
@@ -78,36 +88,46 @@ button:hover{
 }
 
 .name{
-    font-family:'Cinzel', serif;
-    font-weight:400;
+    /*font-family:'Cinzel', serif;
+    font-weight:400;*/
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    margin: 12px 0 8px;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    color: #e8f4f8;
 }
 
-.name h1{
+/*.name h1{
     font-weight:400;
 }
+*/
 
 .header{
     display:flex;
     flex-direction:row;
-    gap:15px;
+    gap:.5rem;
     margin:10px 0px;
+    font-family: 'Cinzel', serif;
+    text-transform: uppercase;
+    font-size: .58rem;
 }
 
 .country,
 .role{
-    border-radius:18px;
+    border-radius:20px;
     padding:0px 10px;
-    font-size:12px;
+    /*font-size:12px;*/
 }
 
 .country{
-    border:2px solid #ef4444;
+    border:1px solid #ef4444;
     background-color:#241f1f;
     color:#ef4444;
 }
 
 .role{
-    border:2px solid #f59e0b;
+    border:1px solid #f59e0b;
     background-color:#241f1f;
     color:#f59e0b;
 }
@@ -124,18 +144,24 @@ button:hover{
 
 .details{
     display:flex;
-    flex-direction: row;
+    flex-direction:row;
     color:#94b8cc;
-    font-family:serif;
+    /*font-family:serif;*/
+    font-family:'Cinzel', serif;
+    font-size: .84rem;
 }
 
 .details p:first-child{
     width:90px; /* fixed width for labels */
     font-weight:bold;
+    font-variant: uppercase;
+    color: #d0dce8;
 }   
 
 .details p:last-child{
     flex:1; 
+    font-variant: small-caps;
+    color: #d0dce8;
 }
 
 /* User Profile Builder */
