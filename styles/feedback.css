@@ -163,7 +163,7 @@ main {
     gap:20px;
 }
 
-/*Explore Program - inidvidual card's img*/
+/*Explore Program - inidvidual card img*/
 .card img {
     width: 100%; /*ensures that the img will fill the full width oof available space*/
     height: 250px;
@@ -178,7 +178,7 @@ main {
     font-size: .76rem;
     letter-spacing: .1em;
     color: #e8f4f8;
-    margin-bottom: .4rem;
+    margin-bottom: .1rem;
 }   
 
 /*Explore Program - card description text*/
@@ -316,7 +316,7 @@ main {
 }
 
 /*review card title*/
-.card-font {
+.review-card .review-cardheading {
     font-family:'Cinzel', serif;
     text-transform: uppercase;
     font-size: .76rem;
