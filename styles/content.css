@@ -44,7 +44,7 @@
       background: linear-gradient(160deg, rgba(0, 20, 18, .55) 0%, rgba(2, 28, 22, .40) 50%, rgba(0, 16, 14, .70) 100%);
     }
 
-    .tittle{
+    .title{
       position: relative;
       z-index: 10;
       height: 100vh;
@@ -56,7 +56,7 @@
       overflow: hidden;
     }
 
-    .tittledec {
+    .titledec {
       position: absolute;
       font-family: 'Cinzel', serif;
       font-size: clamp(8rem, 22vw, 18rem);
@@ -67,7 +67,7 @@
       pointer-events: none;
     }
 
-    .tittleact {
+    .title-act {
       font-family: 'Cinzel', serif;
       font-size: clamp(.48rem, .9vw, .65rem);
       letter-spacing: .5em;
@@ -77,7 +77,7 @@
       margin-bottom: 1rem;
     }
 
-    .tittlehead {
+    .title-head {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 5vw, 4.5rem);
       font-weight: 300;
@@ -87,12 +87,12 @@
       padding: 0 2rem;
     }
 
-    .tittlehead em {
+    .title-head em {
       font-style: italic;
       color: #7dd3fc;
     }
 
-    .tittletag {
+    .title-tag {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(.9rem, 1.6vw, 1.1rem);
       font-style: italic;
@@ -102,7 +102,7 @@
       padding: 0 2rem;
     }
 
-    .tittlestud {
+    .title-student{
       font-family: 'Cinzel', serif;
       font-size: .46rem;
       letter-spacing: .32em;
