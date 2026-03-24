@@ -37,7 +37,7 @@ main {
 
 /*Styles each student card*/
 .student{
-    width: 305px;
+    width: 310px;
     padding: 20px;
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
