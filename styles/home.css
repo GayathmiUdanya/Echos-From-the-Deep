@@ -252,8 +252,11 @@ nav {
     position: relative;
     scroll-snap-align: start;
     background: #1f2d42;
-    transition: transform 0.3s ease;
     margin-top: 10%;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.4s ease, width 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
 }
 
 /* The Large Featured Card */
@@ -318,3 +321,62 @@ nav {
     pointer-events: none;
 }
 
+
+
+/* Featured card hover */
+.card.featured:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Peek cards expand on hover */
+.card.peek:hover {
+    width: 220px;
+    opacity: 1;
+}
+
+.card.peek:hover .peek-img {
+    filter: grayscale(0%);
+}
+
+/* Overlay slides to bottom on expand */
+.peek-overlay {
+    transition: transform 0.4s ease, bottom 0.4s ease;
+}
+
+.card.peek:hover .peek-overlay {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+}
+
+.peek-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.peek-text h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.peek-text p {
+    color: #b3b3b3;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.card.peek:hover .peek-text {
+    opacity: 1;
+}
+
+.card.peek:hover .peek-overlay {
+    opacity: 0;
+}
