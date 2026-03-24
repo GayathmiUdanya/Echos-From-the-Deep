@@ -2,193 +2,549 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Echoes From The Deep — Act II</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <link
-  
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="styles/content.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes From The Deep — Act II</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="styles/content.css">
 </head>
 
 <body>
-  <header>
-    <nav>
-      <div class="logo-area">
-        <div class="logo-circle"></div>
-        <div class="logo-text">
-          <p>Echoes From The Deep</p>
-          <p>SDG 14 · Life Below Water</p>
-        </div>
-      </div>
-      <div class="nav-links">
-        <a href="home.html">Home</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="ais.html" class="active">Action Impact Simulator</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="team.html">Team</a>
-        <a href="profile.html">Profile</a>
-        <a href="sitemap.html">Sitemap</a>
-      </div>
-    </nav>
-  </header>
-  <div id="sonarpart" aria-hidden="true">
-    <div class="sonar" id="s1"></div>
-    <div class="sonar" id="s2"></div>
-    <div class="sonar" id="s3"></div>
-  </div>
-  <div id="scroller" aria-hidden="true"></div>
-  <div id="bg1" class="bg active" aria-hidden="true">
-    <img class="bimg" src="../assets/hero.jpeg" alt="" aria-hidden="true" onerror="this.style.display='none'">
-  </div>
-  <div id="bg2" class="bg" aria-hidden="true">
-    <img class="bimg" src="../assets/gallery_whalewarning.png" alt="" aria-hidden="true"
-      onerror="this.style.display='none'">
-  </div>
-  <div id="bg3" class="bg" aria-hidden="true">
-    <img class="bimg" src="../assets/awareness.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
-  </div>
-  <div id="bg4" class="bg" aria-hidden="true">
-    <img class="bimg" src="../assets/feedback_bg.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
-  </div>
+    <!-- navigation -->
+    <header>
+        <nav>
+            <div class="logo-area">
+                <div class="logo-circle"></div>
+                <div class="logo-text">
+                    <p>Echoes From The Deep</p>
+                    <p>SDG 14 · Life Below Water</p>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html" class="active">Action Impact Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="profile.html">Profile</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Animated riple effect -->
+    <div id="sonarpart" aria-hidden="true">
+        <div class="sonar" id="s1"></div>
+        <div class="sonar" id="s2"></div>
+        <div class="sonar" id="s3"></div>
+    </div>
+
+    <!--invisible marker used to scroll to the bottom of the page-->
+    <div id="scroller" aria-hidden="true"></div>
+
+    <!--background images for each chapter-->
+    <!--section 1 - introduction background-->
+    <div id="bg1" class="bg active" aria-hidden="true">
+        <img class="bimg" src="../assets/hero.jpeg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 2 - problem background-->
+    <div id="bg2" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentCard_ghostNets.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 3 - why background-->
+    <div id="bg3" class="bg" aria-hidden="true">
+        <img class="bimg" src="../assets/awareness.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 4 - impact background-->
+    <div id="bg4" class="bg" aria-hidden="true">
+        <img class="bimg" src="../assets/feedback_bg.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 5 - recommendations background-->
+    <div id="bg5" class="bg" aria-hidden="true">
+        <img class="bimg" src="../assets/contentRecommendations_bleachedReefs.png" alt="Image of Bleached Reefs - Recommendations" 
+        aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="chapters" id="top" data-bg="bg1">
+            <span class="chaptersTagg">Echoes From The Deep · A Four-Part Story · SDG 14</span>
+
+            <!-- Chapter heading -->
+            <h1>
+                The Silent Hunters<br>
+                <em>of the Deep</em>
+            </h1>
+
+            <!-- Chapter Description -->
+            <p class="chaptersDescription">
+                A relentless, man-made predator drifts through the ocean—abandoned ghost nets that continue killing long after they’re lost.
+            </p>
+
+            <!-- Chapter navigation -->
+            <div class="chaptrsnavii" role="navigation" aria-label="Story chapters">
+                <a href="#act1" class="chaptrnavii active">Act I · A World Drowning in Noise</a>
+                <a href="content_ST2.html" class="chaptrnavii">Act II · The Silent Hunters of the Deep</a>
+                <a href="content_ST3.html" class="chaptrnavii">Act III · The Fading Cities of the Sea</a>
+                <a href="content_ST4.html" class="chaptrnavii">Act IV · The Echo of Hope</a>
+            </div>
+
+            <!-- Scroll -->
+            <div class="scrolltext">
+                <span>Dive in</span>
+                <div class="scrollline"></div>
+            </div>
+        </section>
 
 
-  <main>
+        <section class="tittle" id="act1" data-bg="bg2">
+            <div class="tittledec">I</div>
+            <span class="tittleact">Act I · The Silent Hunters of the Deep</span>
 
-    <!-- Hero -->
-    <section class="chapters" id="top" data-bg="bg1">
-      <span class="chaptersTagg">Echoes From The Deep · A Four-Part Story · SDG 14</span>
-      <h1>The Silent Hunters<br><em>of the Deep</em></h1>
-      <p class="chaptersDescription">The ocean is not a silent victim — it is a resilient system sending us clear signals. The
-        echo of hope is already returning.</p>
-      <div class="chaptrsnavii" role="navigation" aria-label="Story chapters">
-        <a href="content_ST1.html" class="chaptrnavii active">Act I · A World Drowning in Noise</a>
-        <a href="content_ST2.html" class="chaptrnavii">Act II ·  The Silent Hunters of the Deep</a>
-        <a href="content_ST3.html" class="chaptrnavii">Act III · The Fading Cities of the Sea</a>
-        <a href="#act4" class="chaptrnavii">Act IV · The Echo of Hope</a>
-      </div>
-      <div class="scrolltext">
-        <span>Dive in</span>
-        <div class="scrollline"></div>
-      </div>
-    </section>
-    <section class="tittle" id="act4" data-bg="bg2">
-      <div class="tittledec">I</div>
-      <span class="tittleact">Act I · A World Drowning in Noise</span>
-      <h2 class="tittlehead">The Silent Hunters of the Deep:<br><em>The Echo of Hope</em></h2>
-      <p class="tittletag">The ocean is resilient — if we give it the chance to heal</p>
-      <span class="tittlestud">Kulith Silva · STUDENT 1</span>
-    </section>
-    <section class="content" id="ch1" data-ch="1">
-      <div class="contentcon">
-        <span class="contentdec">The Signal for Recovery</span>
-        <h2>The Ocean<br><em>Knows How to Heal</em></h2>
-        <p class="contentsub">Hook &amp; Introduction — the frequency of recovery</p>
-        <div class="contentline"></div>
-        <div class="stat-row">
-          <div class="stat-card">
-            <span class="stat-num">50%</span>
-            <span class="stat-lbl">Of Earth's oxygen produced by the ocean</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">463%</span>
-            <span class="stat-lbl">Fish biomass increase at Cabo Pulmo in 10 years</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">30×30</span>
-            <span class="stat-lbl">Global goal — protect 30% of oceans by 2030</span>
-          </div>
-        </div>
-        <p>The ocean is not a silent victim; it is a resilient system sending us clear signals. While the warnings of
-          noise, nets, and bleaching are dire, the "echoes" we receive today include a new frequency: <strong>the sound
-            of recovery</strong>. We are learning that if we stop the pressure, the ocean knows exactly how to heal
-          itself.</p>
-        <div class="quate">For decades, the damage to our oceans was "out of sight, out of mind." We assumed the deep was
-          too vast to break.</div>
-        <p>New technology — from satellite tracking to underwater hydrophones — now allows us to hear the ocean's
-          distress and respond in real-time. We are no longer guessing; we are <strong>listening</strong>.</p>
-        <p class="t2">Our Greatest Ally</p>
-        <p>A healthy ocean is our best defense against a changing climate. It produces half of the world's oxygen and
-          regulates the global temperature. Protecting the deep is not just an act of kindness toward nature; it is a
-          necessary act of self-preservation for the human race.</p>
-      </div>
-    </section>
-    <section class="content" id="ch2" data-ch="2" data-bg="bg3">
-      <div class="contentcon">
-        <span class="contentdec">The Miracle of Cabo Pulmo</span>
-        <h2>A Dead Reef<br><em>Came Back to Life</em></h2>
-        <p class="contentsub">Real impact — and the global 30×30 vision</p>
-        <div class="contentline"></div>
-        <div class="stat-row">
-          <div class="stat-card">
-            <span class="stat-num">1995</span>
-            <span class="stat-lbl">Year the Cabo Pulmo community banned all fishing</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">463%</span>
-            <span class="stat-lbl">Increase in total fish biomass within a decade</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-num">30%</span>
-            <span class="stat-lbl">Of world oceans targeted for protection by 2030</span>
-          </div>
-        </div>
-        <p>Cabo Pulmo National Park in Mexico serves as the ultimate proof of hope. After the local community recognised
-          their reef was dying and banned fishing in 1995, the results were miraculous. Within just ten years, the
-          reef's total fish biomass increased by a staggering <strong>463%</strong> (Aburto-Oropeza et al., 2011). The
-          "echo" returned, and a dead reef became one of the most robust marine reserves on Earth.</p>
-        <div class="quate">When we answer the call, the ocean answers back with life.</div>
-        <p class="t2">The 30×30 Vision</p>
-        <p>The global community is now pushing for the <strong>"30×30" goal</strong> — protecting 30% of the world's
-          oceans by 2030. By supporting Marine Protected Areas (MPAs) and reducing industrial pressure, we give the
-          ocean the space it needs to breathe. The warnings are clear, but so is the solution.</p>
-        <ul class="alist">
-          <li>Support and fund <strong>Marine Protected Areas</strong> in your region and internationally.</li>
-          <li>Advocate for the <strong>30×30 global target</strong> with your local representatives.</li>
-          <li>Reduce seafood consumption from unsustainable sources — choose MSC-certified products.</li>
-        </ul>
-        <div class="refferancee">
-          <h3>References</h3>
-          <ol>
-            <li>Aburto-Oropeza, O., et al. (2011) 'Large Recovery of Fish Biomass in a No-Take Marine Reserve', <em>PLoS
-                ONE</em>, 6(8). Available at: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316/"
-                target="_blank" rel="noopener">pmc.ncbi.nlm.nih.gov</a> (Accessed 22 March 2026).</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-    <section class="handoff" id="handoff" data-bg="bg4">
-      <span class="handofflebel">The echo has been heard</span>
-      <h2>The Ocean<br>is <em>Answering Back</em></h2>
-      <p>The signals were sent. We listened. Now the work begins — explore the full story from the beginning.</p>
-      <a href="content_ST1.html" class="nextbutton">Act I · The Ocean's Cry →</a>
-    </section>
+            <!-- Title heading -->
+            <h2 class="tittlehead">
+                Ghost Nets:<br>
+                <em>The Silent Hunters of the Deep</em>
+            </h2>
 
-  </main>
+            <!-- Title tagline -->
+            <p class="tittletag">Invisible killers of the ocean—ghost nets that trap, kill, and never let go.</p>
 
-  <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+            <!-- Student detials -->
+            <span class="tittlestud">Kulith Silva · STUDENT 1</span>
+        </section>
 
-    <!--Footer-->
-	<footer>
+        <!-- Content card 1 -->
+        <section class="content" id="ch1" data-ch="1">
+            <div class="contentcon">
+
+                <span class="contentdec">The Signal for Recovery</span>
+
+                <h2>
+                    The Ocean<br>
+                    <em>Knows How to Heal</em>
+                </h2>
+
+                <p class="contentsub">Hook &amp; Introduction — the frequency of recovery</p>
+
+                <div class="contentline"></div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-num">50%</span>
+                        <span class="stat-lbl">Of Earth's oxygen produced by the ocean</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">463%</span>
+                        <span class="stat-lbl">Fish biomass increase at Cabo Pulmo in 10 years</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">30×30</span>
+                        <span class="stat-lbl">Global goal — protect 30% of oceans by 2030</span>
+                    </div>
+                </div>
+
+                <p>
+                    The ocean is not a silent victim; it is a resilient system sending us clear signals.
+                    While the warnings of noise, nets, and bleaching are dire, the "echoes" we receive today
+                    include a new frequency: <strong>the sound of recovery</strong>.
+                    We are learning that if we stop the pressure, the ocean knows exactly how to heal itself.
+                </p>
+
+                <div class="quate">
+                    For decades, the damage to our oceans was "out of sight, out of mind."
+                    We assumed the deep was too vast to break.
+                </div>
+
+                <p>
+                    New technology — from satellite tracking to underwater hydrophones —
+                    now allows us to hear the ocean's distress and respond in real-time.
+                    We are no longer guessing; we are <strong>listening</strong>.
+                </p>
+
+                <p class="t2">Our Greatest Ally</p>
+
+                <p>
+                    A healthy ocean is our best defense against a changing climate.
+                    It produces half of the world's oxygen and regulates the global temperature.
+                    Protecting the deep is not just an act of kindness toward nature;
+                    it is a necessary act of self-preservation for the human race.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Content card 2 -->
+        <section class="content" id="ch2" data-ch="2" data-bg="bg3">
+            <div class="contentcon">
+
+                <span class="contentdec">The Miracle of Cabo Pulmo</span>
+
+                <h2>
+                    A Dead Reef<br>
+                    <em>Came Back to Life</em>
+                </h2>
+
+                <p class="contentsub">Real impact — and the global 30×30 vision</p>
+
+                <div class="contentline"></div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-num">1995</span>
+                        <span class="stat-lbl">Year the Cabo Pulmo community banned all fishing</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">463%</span>
+                        <span class="stat-lbl">Increase in total fish biomass within a decade</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">30%</span>
+                        <span class="stat-lbl">Of world oceans targeted for protection by 2030</span>
+                    </div>
+                </div>
+
+                <p>
+                    Cabo Pulmo National Park in Mexico serves as the ultimate proof of hope.
+                    After the local community recognised their reef was dying and banned fishing in 1995,
+                    the results were miraculous. Within just ten years, the reef's total fish biomass increased
+                    by a staggering <strong>463%</strong> (Aburto-Oropeza et al., 2011).
+                    The "echo" returned, and a dead reef became one of the most robust marine reserves on Earth.
+                </p>
+
+                <div class="quate">
+                    When we answer the call, the ocean answers back with life.
+                </div>
+
+                <p class="t2">The 30×30 Vision</p>
+
+                <p>
+                    The global community is now pushing for the <strong>"30×30" goal</strong> —
+                    protecting 30% of the world's oceans by 2030.
+                    By supporting Marine Protected Areas (MPAs) and reducing industrial pressure,
+                    we give the ocean the space it needs to breathe.
+                    The warnings are clear, but so is the solution.
+                </p>
+
+                <ul class="alist">
+                    <li>Support and fund <strong>Marine Protected Areas</strong> in your region and internationally.</li>
+                    <li>Advocate for the <strong>30×30 global target</strong> with your local representatives.</li>
+                    <li>Reduce seafood consumption from unsustainable sources — choose MSC-certified products.</li>
+                </ul>
+
+                <div class="refferancee">
+                    <h3>References</h3>
+                    <ol>
+                        <li>
+                            Aburto-Oropeza, O., et al. (2011) 'Large Recovery of Fish Biomass in a No-Take Marine Reserve',
+                            <em>PLoS ONE</em>, 6(8).
+                            Available at:
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316/" target="_blank" rel="noopener">
+                                pmc.ncbi.nlm.nih.gov
+                            </a>
+                            (Accessed 22 March 2026).
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Content card 3 -->
+        <section class="content" id="ch2" data-ch="2" data-bg="bg3">
+            <div class="contentcon">
+
+                <span class="contentdec">The Miracle of Cabo Pulmo</span>
+
+                <h2>
+                    A Dead Reef<br>
+                    <em>Came Back to Life</em>
+                </h2>
+
+                <p class="contentsub">Real impact — and the global 30×30 vision</p>
+
+                <div class="contentline"></div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-num">1995</span>
+                        <span class="stat-lbl">Year the Cabo Pulmo community banned all fishing</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">463%</span>
+                        <span class="stat-lbl">Increase in total fish biomass within a decade</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">30%</span>
+                        <span class="stat-lbl">Of world oceans targeted for protection by 2030</span>
+                    </div>
+                </div>
+
+                <p>
+                    Cabo Pulmo National Park in Mexico serves as the ultimate proof of hope.
+                    After the local community recognised their reef was dying and banned fishing in 1995,
+                    the results were miraculous. Within just ten years, the reef's total fish biomass increased
+                    by a staggering <strong>463%</strong> (Aburto-Oropeza et al., 2011).
+                    The "echo" returned, and a dead reef became one of the most robust marine reserves on Earth.
+                </p>
+
+                <div class="quate">
+                    When we answer the call, the ocean answers back with life.
+                </div>
+
+                <p class="t2">The 30×30 Vision</p>
+
+                <p>
+                    The global community is now pushing for the <strong>"30×30" goal</strong> —
+                    protecting 30% of the world's oceans by 2030.
+                    By supporting Marine Protected Areas (MPAs) and reducing industrial pressure,
+                    we give the ocean the space it needs to breathe.
+                    The warnings are clear, but so is the solution.
+                </p>
+
+                <ul class="alist">
+                    <li>Support and fund <strong>Marine Protected Areas</strong> in your region and internationally.</li>
+                    <li>Advocate for the <strong>30×30 global target</strong> with your local representatives.</li>
+                    <li>Reduce seafood consumption from unsustainable sources — choose MSC-certified products.</li>
+                </ul>
+
+                <div class="refferancee">
+                    <h3>References</h3>
+                    <ol>
+                        <li>
+                            Aburto-Oropeza, O., et al. (2011) 'Large Recovery of Fish Biomass in a No-Take Marine Reserve',
+                            <em>PLoS ONE</em>, 6(8).
+                            Available at:
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316/" target="_blank" rel="noopener">
+                                pmc.ncbi.nlm.nih.gov
+                            </a>
+                            (Accessed 22 March 2026).
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Content card 4 -->
+        <section class="content" id="ch2" data-ch="2" data-bg="bg3">
+            <div class="contentcon">
+
+                <span class="contentdec">The Miracle of Cabo Pulmo</span>
+
+                <h2>
+                    A Dead Reef<br>
+                    <em>Came Back to Life</em>
+                </h2>
+
+                <p class="contentsub">Real impact — and the global 30×30 vision</p>
+
+                <div class="contentline"></div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-num">1995</span>
+                        <span class="stat-lbl">Year the Cabo Pulmo community banned all fishing</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">463%</span>
+                        <span class="stat-lbl">Increase in total fish biomass within a decade</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">30%</span>
+                        <span class="stat-lbl">Of world oceans targeted for protection by 2030</span>
+                    </div>
+                </div>
+
+                <p>
+                    Cabo Pulmo National Park in Mexico serves as the ultimate proof of hope.
+                    After the local community recognised their reef was dying and banned fishing in 1995,
+                    the results were miraculous. Within just ten years, the reef's total fish biomass increased
+                    by a staggering <strong>463%</strong> (Aburto-Oropeza et al., 2011).
+                    The "echo" returned, and a dead reef became one of the most robust marine reserves on Earth.
+                </p>
+
+                <div class="quate">
+                    When we answer the call, the ocean answers back with life.
+                </div>
+
+                <p class="t2">The 30×30 Vision</p>
+
+                <p>
+                    The global community is now pushing for the <strong>"30×30" goal</strong> —
+                    protecting 30% of the world's oceans by 2030.
+                    By supporting Marine Protected Areas (MPAs) and reducing industrial pressure,
+                    we give the ocean the space it needs to breathe.
+                    The warnings are clear, but so is the solution.
+                </p>
+
+                <ul class="alist">
+                    <li>Support and fund <strong>Marine Protected Areas</strong> in your region and internationally.</li>
+                    <li>Advocate for the <strong>30×30 global target</strong> with your local representatives.</li>
+                    <li>Reduce seafood consumption from unsustainable sources — choose MSC-certified products.</li>
+                </ul>
+
+                <div class="refferancee">
+                    <h3>References</h3>
+                    <ol>
+                        <li>
+                            Aburto-Oropeza, O., et al. (2011) 'Large Recovery of Fish Biomass in a No-Take Marine Reserve',
+                            <em>PLoS ONE</em>, 6(8).
+                            Available at:
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316/" target="_blank" rel="noopener">
+                                pmc.ncbi.nlm.nih.gov
+                            </a>
+                            (Accessed 22 March 2026).
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Content card 5 -->
+        <section class="content" id="ch2" data-ch="2" data-bg="bg3">
+            <div class="contentcon">
+
+                <span class="contentdec">The Miracle of Cabo Pulmo</span>
+
+                <h2>
+                    A Dead Reef<br>
+                    <em>Came Back to Life</em>
+                </h2>
+
+                <p class="contentsub">Real impact — and the global 30×30 vision</p>
+
+                <div class="contentline"></div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-num">1995</span>
+                        <span class="stat-lbl">Year the Cabo Pulmo community banned all fishing</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">463%</span>
+                        <span class="stat-lbl">Increase in total fish biomass within a decade</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">30%</span>
+                        <span class="stat-lbl">Of world oceans targeted for protection by 2030</span>
+                    </div>
+                </div>
+
+                <p>
+                    Cabo Pulmo National Park in Mexico serves as the ultimate proof of hope.
+                    After the local community recognised their reef was dying and banned fishing in 1995,
+                    the results were miraculous. Within just ten years, the reef's total fish biomass increased
+                    by a staggering <strong>463%</strong> (Aburto-Oropeza et al., 2011).
+                    The "echo" returned, and a dead reef became one of the most robust marine reserves on Earth.
+                </p>
+
+                <div class="quate">
+                    When we answer the call, the ocean answers back with life.
+                </div>
+
+                <p class="t2">The 30×30 Vision</p>
+
+                <p>
+                    The global community is now pushing for the <strong>"30×30" goal</strong> —
+                    protecting 30% of the world's oceans by 2030.
+                    By supporting Marine Protected Areas (MPAs) and reducing industrial pressure,
+                    we give the ocean the space it needs to breathe.
+                    The warnings are clear, but so is the solution.
+                </p>
+
+                <ul class="alist">
+                    <li>Support and fund <strong>Marine Protected Areas</strong> in your region and internationally.</li>
+                    <li>Advocate for the <strong>30×30 global target</strong> with your local representatives.</li>
+                    <li>Reduce seafood consumption from unsustainable sources — choose MSC-certified products.</li>
+                </ul>
+
+                <div class="refferancee">
+                    <h3>References</h3>
+                    <ol>
+                        <li>
+                            Aburto-Oropeza, O., et al. (2011) 'Large Recovery of Fish Biomass in a No-Take Marine Reserve',
+                            <em>PLoS ONE</em>, 6(8).
+                            Available at:
+                            <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316/" target="_blank" rel="noopener">
+                                pmc.ncbi.nlm.nih.gov
+                            </a>
+                            (Accessed 22 March 2026).
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="handoff" id="handoff" data-bg="bg4">
+            <span class="handofflebel">The echo has been heard</span>
+
+            <h2>
+                The Ocean<br>
+                is <em>Answering Back</em>
+            </h2>
+
+            <p>
+                The signals were sent. We listened. Now the work begins — explore the full story from the beginning.
+            </p>
+
+            <a href="content_ST1.html" class="nextbutton">Act I · The Ocean's Cry →</a>
+        </section>
+
+    </main>
+
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Footer -->
+    <footer>
         <div class="footer-content">
+
             <div class="footer-links">
                 <a href="pageEditor_ST1.html">Page Editor</a>
                 <a href="validation_ST1.html">Validation Page</a>
                 <a href="pageEditor_ST1.html#home-a11y">Accessibility</a>
                 <a href="pageEditor_ST1.html#compliance">Compliance</a>
             </div>
-            
+
             <div class="student-details">
                 <p>Developed by: Kulith Silva</p>
                 <p>Student ID: 21819126</p>
                 <p>&copy; 2026 Echoes From The Deep</p>
             </div>
+
         </div>
     </footer>
-  <script src="scripts/content.js"></script>
+
+    <script src="scripts/content.js"></script>
+
 </body>
 
 </html>
