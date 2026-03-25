@@ -1,7 +1,7 @@
 
 var scrollBar = document.getElementById('scroller');
 var sections  = Array.from(document.querySelectorAll('[data-bg]'));
-var bgs = ['bg1','bg2','bg3','bg4'].reduce(function(o,k) {
+var bgs = ['bg1','bg2','bg3','bg4','bg5','bg6'].reduce(function(o,k) {
   o[k] = document.getElementById(k); return o;
 }, {});
 var activeBg = 'bg1', bgLocked = false;
