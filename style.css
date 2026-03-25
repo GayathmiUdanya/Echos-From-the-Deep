@@ -36,6 +36,7 @@ body {
     height: 100%;
     font-family: var(--font-body) !important;
     color: var(--white);
+    padding-top: 50px;
 }
 
 html {
@@ -44,8 +45,10 @@ html {
 
 /* Navigation */
 nav {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
     z-index: 100;
     display: flex;
     justify-content: space-between;
@@ -56,6 +59,7 @@ nav {
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--white-10);
+    
 }
 
 .logo-area {
@@ -119,6 +123,26 @@ nav {
     background: var(--white-20);
 }
 
+@media (max-width: 768px) {
+
+    nav {
+        padding: 12px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+        padding: 6px 10px;
+    }
+
+}
 @keyframes bounce {
     0%, 100% { transform: translateX(-50%) translateY(0);   }
     50%       { transform: translateX(-50%) translateY(6px); }
@@ -332,13 +356,29 @@ footer {
 }
 
 @media (max-width: 768px) {
+
+    footer {
+        padding: 20px 20px;
+        font-size: 10px;
+    }
+
     .footer-content {
         flex-direction: column;
+        align-items: center;
         text-align: center;
+        gap: 16px;
     }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
     .student-details {
         text-align: center;
     }
+
 }
 
 /* page up part */
