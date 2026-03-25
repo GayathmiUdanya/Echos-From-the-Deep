@@ -112,9 +112,10 @@ aside li{
 .stud {
     text-align: center;
     line-height: 2;
-    /*background-color: #cbccc2ef;*/
+    background-color: #cbccc2ef;
     color: rgb(252, 246, 246);
     margin-top: 8px;
+    z-index: 1;
 }
 
 .top {
