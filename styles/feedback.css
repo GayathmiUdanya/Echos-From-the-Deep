@@ -6,38 +6,38 @@ body {
     position: relative;
 }
 
-/*----------------------------------------------------------------------------------Background Image--------------------------------------------------------------------*/
-/*Background Image*/
+/*---------------------------------------------------------------------------------- Background Image --------------------------------------------------------------------*/
+/* Background image */
 .scene-bg {
-    position: fixed; /*BG stays in place when scrolling*/
-    inset: 0; /*Stretches to fill all four edges of the parent*/
+    position: fixed; /* BG stays in place when scrolling*/
+    inset: 0; /* Stretches to fill all four edges of the parent*/
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    opacity: 0.55; /*makes it semi-tranparent so the text is readable*/
+    opacity: 0.55; /* Makes it semi-tranparent so the text is readable */
 }
 
-/*To ensure the content sits on top of the background image*/
+/* To ensure the content sits on top of the background image */
 main {
     position: relative;
     z-index: 1;
 }
 
-/*-------------------------------------------------------------------------------Internal Navigation--------------------------------------------------------------------*/
-/*position the NAV on the rught side of the page*/
+/*------------------------------------------------------------------------------- Internal Navigation --------------------------------------------------------------------*/
+/* Position the NAV on the rught side of the page */
 .side-nav {
     position: absolute;
     right: 1.5rem;
-    top: 9rem;  /*Adjust this to move it up or down*/
+    top: 9rem;  /* Adjust this to move it up or down */
     right: 12rem;
     display: flex;
-    flex-direction: column; /*stacks the links vertically*/
+    flex-direction: column; /* Stacks the links vertically */
     gap: 1rem;
     z-index: 10;
 }
 
-/*Styles each NAV link*/
+/* Styles each NAV link */
 .side-nav a {
     text-decoration: none;
     background-color: transparent;
@@ -48,20 +48,20 @@ main {
     font-weight: 500;
 }
 
-/*Enlarges the link on hover*/
+/* Enlarges the link on hover */
 .side-nav a:hover {
     transform: scale(1.3);
 }
 
-/*---------------------------------------------------------------------Program Containers-------------------------------------------------------------------------------*/
-/*Sectional containers*/
+/*--------------------------------------------------------------------- Program Containers -------------------------------------------------------------------------------*/
+/* Sectional containers */
 .page-section {
-    padding: 2.5rem 0; /*top and bottom padding*/
+    padding: 2.5rem 0; /* Top and bottom padding */
     max-width: 1160px;
-    margin:0 auto; /*centers the section*/
+    margin:0 auto; /* Centers the section */
 }
 
-/*Glass Background panel*/
+/* Glass background panel */
 .glass-panel {
     background: rgba(3, 13, 26, 0.85);
     backdrop-filter: blur(28px);
@@ -73,14 +73,14 @@ main {
     margin-bottom: 2rem;
 }
 
-/*Sectional (Explore Program, Reviews, Form) Mini heading*/
+/* Sectional (Explore Program, Reviews, Form) mini heading */
 .panel-inner {
     padding: 2rem 2.4rem;
     padding-top:0.4rem; 
     padding-bottom:0.1rem;
 }
 
-/*Sectional heading with a line extended to the right*/
+/* Sectional heading with a line extended to the right */
 .section-label {
     font-family: 'Cinzel', serif;
     font-size: 0.82rem;
@@ -90,29 +90,29 @@ main {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     display: flex;
-    align-items: center; /*Makes the line that appers after to be vertically centered*/
+    align-items: center; /* Makes the line that appers after to be vertically centered */
     gap: 0.8rem;
 }
 
-/*Draws a thin line after the sectional heading */
+/* Draws a thin line after the sectional heading */
 .section-label::after {
-    content: ''; /*Empty since we dont want to write anything, and just need a line*/
-    flex: 1; /*streches to fill the remaining space*/
+    content: ''; /* Empty since we dont want to write anything, and just need a line */
+    flex: 1; /* Streches to fill the remaining space */
     height: 1px;
     background: rgba(125, 211, 252, 0.1);
 }
 
-/*---------------------------------------------------------------------Explore Programs Section-------------------------------------------------------------------------*/
-/*Filter - Sort By Feature(not responsive)*/
+/*--------------------------------------------------------------------- Explore Programs Section -------------------------------------------------------------------------*/
+/* Filter - SORT BY feature (not responsive) */
 .sort-row {
-    display: flex; /*position the SORT BY dropdown to the right*/
+    display: flex; /* Position the SORT BY dropdown to the right */
     align-items: center;
     justify-content: flex-end;
     padding: 1rem 2rem;
     border-bottom: 1px solid rgba(125, 211, 252, 0.08);
 }
 
-/*Styles the sort dropdown*/
+/* Styles the sort dropdown */
 .sort-select {
     background: rgba(3, 13, 26, 0.9);
     border: 1px solid rgba(125, 211, 252, 0.2);
@@ -125,45 +125,44 @@ main {
     padding: 0.45rem 1.2rem;
     cursor: pointer;
     transition: box-shadow 0.2s, border-color 0.2s;
-    appearance: none; /*removes the default browser dropdown arrow*/
+    appearance: none; /* Removes the default browser dropdown arrow */
 }
 
-/*Adds a glow when the dropdown is focused*/
+/* Adds a glow when the dropdown is focused */
 .sort-select:focus {
     outline: none;
     border-color: #7dd3fc;
     box-shadow: 0 0 8px rgba(125, 211, 252, 0.25);
 }
 
-/*Scrolling feature for the content cards*/
+/* Scrolling feature for the content cards */
 .container-grid {
     height:700px;
     overflow-y:scroll;
 }
 
-/*Explore Program - Cards*/
-/*Ensures the cards sit beside another, and wrap on a small screen*/
+/* Explore Program - cards */
+/* Ensures the cards sit beside another, and wrap on a small screen */
 .card-grid {
     display:grid;
-    grid-template-columns: repeat(2, 1fr); /*two columns*/
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
     max-width: 1000px;
     gap: 16px;
     justify-content: center;
     margin: 20px auto;
 }
 
-/*Explore Program - inidvidual card*/
+/* Explore Program - inidvidual card */
 .card {
-    display: flex; /*aligning the cards*/
+    display: flex; /* Aligning the cards */
     flex-direction: column;
     padding: 15px;
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 2px solid #1e3a5f;
-    /*gap:20px;*/
 }
 
-/*Explore Program - inidvidual card img*/
+/* Explore Program - inidvidual card img */
 .card img {
     width: 100%; /*ensures that the img will fill the full width oof available space*/
     height: 250px;
@@ -182,7 +181,7 @@ main {
     margin-bottom: .8rem;
 }   
 
-/*Explore Program - card description text*/
+/* Explore Program - card description text */
 .card .carddescription-font {
     font-size: .82rem;
     color: #94b8cc;
@@ -190,14 +189,14 @@ main {
     margin-bottom: .8em;
 }
 
-/*Learn More "button" | Join "button" (non responsive)*/
+/* LEARN MORE "button" | JOIN "button" (non responsive) */
 .cardbutton_actions {
-    display: flex; /*aligns the buttons side by side*/
+    display: flex; /* Aligns the buttons side by side */
     gap: 0.7rem;
     margin-top: 0.6em;
 }
 
-/*Learn More "button"*/
+/*LEARN MORE "button"*/
 .btn-lm {
     background: transparent;
     border: 1px solid rgba(125, 211, 252, 0.22);
@@ -212,14 +211,14 @@ main {
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
 }
 
-/*Adds a glow to Learn More "button" when hovered above*/
+/* Adds a glow to LEARN MORE "button" when hovered above */
 .btn-lm:hover {
     border-color: #7dd3fc;
     box-shadow: 0 0 10px rgba(125, 211, 252, 0.3);
     transform: scale(1.04);
 }
 
-/*Join "button"*/
+/* JOIN "button" */
 .btn-join {
     background: rgba(125, 211, 252, 0.1);
     border: 1px solid rgba(125, 211, 252, 0.35);
@@ -234,14 +233,14 @@ main {
     transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
 }
 
-/*Adds a glow to Join "button" when hovered above*/
+/* Adds a glow to JOIN "button" when hovered above */
 .btn-join:hover {
     background: rgba(125, 211, 252, 0.18);
     box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
     transform: scale(1.04);
 }
 
-/*Default paragraph styling in Explore Program cards*/
+/* Default paragraph styling in Explore Program cards */
 .card p {
     font-family:'Montserrat', sans-serif;
     font-size: .82rem;
@@ -250,10 +249,10 @@ main {
     margin-bottom: .8rem;
 }
 
-/*---------------------------------------------------------------------------------------Review Section-----------------------------------------------------------------*/
-/*Overal rating (summary of all reviews) container*/
+/*--------------------------------------------------------------------------------------- Review Section -----------------------------------------------------------------*/
+/* Overal rating (summary of all reviews) container */
 .overall-rating {
-    display:flex; /*aligning the cards*/
+    display:flex; /* Aligning the cards */
     flex-direction: row;
     margin: 20px;
     width: auto;
@@ -264,7 +263,7 @@ main {
     gap:35px;
 }
 
-/*Overall calulated review rating score(9.6)*/
+/* Overall calulated review rating score (9.6) */
 .big-score {
     font-size: 3rem;
     letter-spacing: .1em;
@@ -273,7 +272,7 @@ main {
     margin-left: 30px;
 }
 
-/*Overall calulated review rating label (EXCELLENT)*/
+/* Overall calulated review rating label (EXCELLENT) */
 .rating-label {
     font-family:'Cinzel', serif;
     font-weight:bold;
@@ -282,7 +281,7 @@ main {
     margin: 0;
 }
 
-/*Based on x amount of reviews text*/
+/* Based on x amount of reviews text */
 .review-count {
     font-size:15px;
     font-family:'Cinzel', serif;
@@ -291,17 +290,17 @@ main {
     letter-spacing: .1em;
 }
 
-/*REVIEW - Individual Rating Container */
+/* REVIEW - Individual Rating Container */
 .review-layout {
     display:grid;
-    grid-template-columns: repeat(3, 1fr); /*3columns*/
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
     max-width: 1000px;
     gap: 16px;
     justify-content: center;
     margin: 20px auto;
 }
 
-/*REVIEW - Individual Rating card*/
+/* REVIEW - individual rating card */
 .review-card {
     font-family:'Lora', serif;
     padding: 15px;
@@ -311,12 +310,12 @@ main {
     border: 3px solid #1e3a5f;
 }
 
-/*Default paragraphs inside review cards */
+/* Default paragraphs inside review cards */
 .review-card p {
-    margin:0; /*removes the default margins*/
+    margin:0; /* Removes the default margins */
 }
 
-/*review card title*/
+/* Review card title */
 .review-card .review-cardheading {
     font-family:'Cinzel', serif;
     text-transform: uppercase;
@@ -327,7 +326,7 @@ main {
     margin-bottom: .8rem;
 } 
 
-/*review card descriptive text*/
+/* Review card descriptive text */
 .review-text {
     font-family:'Montserrat', sans-serif;
     font-size: .82rem;
@@ -336,27 +335,27 @@ main {
     margin-bottom: .8rem; 
 }
 
-/*review card descriptive text's SEE MORE text*/
+/* Review card descriptive text's SEE MORE text */
 .review-text a {
     color: rgba(125, 211, 252, 0.7);
-    text-decoration: none; /* remove the underlining from the links*/
+    text-decoration: none; /* Remove the underlining from the links */
     font-size: .75rem;
     transition: color 0.2s;
 }
 
-/*brightnes the SEE MORE link when u hover above it*/
+/* Brightnes the SEE MORE link when u hover above it */
 .review-text a:hover { 
     color: #7dd3fc; 
 }
 
-/*Review card divider for the description and reviewer info*/
+/* Review card divider for the description and reviewer info */
 .review-card hr {
     margin: 8px 0;
     border:none;
     border-top: 1px solid #abb5c0;
 }
 
-/*Reviewer details container(Name, Date, Rating score container)*/
+/* Reviewer details container(Name, Date, Rating score container) */
 .review-footer {
     display: flex;
     flex-direction: row;            
@@ -365,7 +364,7 @@ main {
     gap: 8px;
 }
 
-/*Reviewer name and date container*/
+/* Reviewer name and date container */
 .reviewer-info {
     font-family: 'Inter', sans-serif;
     font-size: 0.72rem;
@@ -374,7 +373,7 @@ main {
     font-weight: 400;
 }
 
-/*Reviewer name*/
+/* Reviewer name */
 .reviewer-name {
     display: block;
     color: rgba(232, 244, 248, 0.6);
@@ -382,7 +381,7 @@ main {
     margin-bottom: 0.1rem;
 }
 
-/*Reviewer rating score*/
+/* Reviewer rating score */
 .score-badge {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
@@ -396,8 +395,8 @@ main {
     flex-shrink: 0;
 }
 
-/*---------------------------------------------------------------------------Form Section-------------------------------------------------------------------------------*/
-/*Error message*/
+/*--------------------------------------------------------------------------- Form Section -------------------------------------------------------------------------------*/
+/* Error message */
 .error{
     color: #ff6b6b;
     font-size: 12px;
@@ -405,7 +404,7 @@ main {
     margin-top: 4px;
 }
 
-/*success message*/
+/* Success message */
 .success-message {
   display: none;
   color: #4caf50;
@@ -414,14 +413,14 @@ main {
   text-align: center;
 }
 
-/*Character counter*/
+/* Character counter */
 #char-count {
   font-size: 12px;
   color: #7089f0;
   float: right;
 }
 
-/*Form container*/
+/* Form container */
 .feedback-form {
     background-color: rgb(13,27,42,0.9);
     border: 2px solid #1e3a5f;
@@ -431,7 +430,7 @@ main {
     margin: 20px auto;
 }
 
-/*Form sectional container(PERSONAL DETAILS & FEEDBACK DETAILS*/
+/* Form sectional container(PERSONAL DETAILS & FEEDBACK DETAILS) */
 fieldset {
     border: 2px solid #1e3a5f;
     border-radius: 10px;
@@ -439,7 +438,7 @@ fieldset {
     margin: 20px auto;
 }
 
-/*form title*/
+/* Form title */
 legend {
     color: #7089f0;
     font-family: 'Cinzel', serif;
@@ -450,7 +449,7 @@ legend {
     padding: 0 10px;
 }
 
-/*form label*/
+/* Form label */
 label {
     display: block;
     color: #d0dce8;
@@ -463,7 +462,7 @@ label {
     margin-bottom: .4rem;
 }
 
-/*form text*/
+/* Form text */
 .review-text {
     font-size: .82rem;
     color: #94b8cc;
@@ -471,7 +470,7 @@ label {
     margin-bottom: .8rem;
 }
 
-/*Shared styling for all form controls*/
+/* Shared styling for all form controls */
 input,
 select,
 textarea {
@@ -487,7 +486,7 @@ textarea {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-/*Highlights the active field when clicked or tabbed into*/
+/* Highlights the active field when clicked or tabbed into  */
 input:focus,
 select:focus,
 textarea:focus {
@@ -496,25 +495,25 @@ textarea:focus {
     box-shadow: 0px 0px 8px #7089f0;
 }
 
-/*Restricts textarea resizing*/
+/* Restricts textarea resizing */
 textarea {
-    resize: vertical; /*only allows vertical resizing so it doesn't break the form layout*/
+    resize: vertical; /* Only allows vertical resizing so it doesn't break the form layout */
     min-height: 100px;
 }
 
-/*dropdown options*/
+/* Dropdown options */
 select option {
     background-color: rgb(13,27,42);
     color: #d0dce8;
 }
 
-/*Styles the hint text shown inside empty inputs before the user types*/
+/* Styles the hint text shown inside empty inputs before the user types */
 input::placeholder,
 textarea::placeholder {
     color: #4a6080;
 }
 
-/*SUBMIT button | RESET button*/
+/* SUBMIT button and RESET button */
 button[type="submit"],
 button[type="reset"]{
     display: block;
@@ -532,7 +531,7 @@ button[type="reset"]{
     transition: box-shadow 0.2s, transform 0.2s;
 }
 
-/*Highlights the active field when hovered above*/
+/* Highlights the active field when hovered above */
 button[type="submit"]:hover,
 button[type="reset"]:hover{
     box-shadow: 0px 0px 12px #7089f0;
