@@ -11,6 +11,7 @@ p{
     font-size:13px;
 }
 
+/* Sample data container */
 .sampcontainer h1{
     font-size:16px;
     font-weight:700;
@@ -23,8 +24,9 @@ p{
     padding:20px;
     margin:30px 50px;
     border-radius:20px;
-
 }
+
+/* Create new profile button */
 #createProfileBtn{
     display: block;
     margin: 0 auto 20px auto;
@@ -46,6 +48,8 @@ button:hover{
     box-shadow: 0 10px 25px rgba(75, 145, 180, 0.3);
 }
 
+
+/* Data container */
 #sample-data-container{
     display:grid;
     grid-template-columns: repeat(3, 1fr);
@@ -58,14 +62,9 @@ button:hover{
     display:flex;
     flex-direction:column;
     gap:2px;
-    /*border-radius:10px;*/
     padding:20px;
-    /*background-color:#081B2B;*/
     opacity:0.9;
     cursor: pointer;
-    /*overflow: hidden;*/
-    /*width: 300px;
-    padding: 20px;*/
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
     border: 2px solid #1e3a5f;
@@ -88,8 +87,6 @@ button:hover{
 }
 
 .name{
-    /*font-family:'Cinzel', serif;
-    font-weight:400;*/
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
     margin: 12px 0 8px;
@@ -98,11 +95,7 @@ button:hover{
     color: #e8f4f8;
 }
 
-/*.name h1{
-    font-weight:400;
-}
-*/
-
+/* Country and role */
 .header{
     display:flex;
     flex-direction:row;
@@ -132,6 +125,7 @@ button:hover{
     color:#f59e0b;
 }
 
+/* User photo */
 .profile-photo{
     width:100%;
     max-width:100%;
@@ -142,11 +136,11 @@ button:hover{
     padding-bottom:15px;
 }
 
+/* User details */
 .details{
     display:flex;
     flex-direction:row;
     color:#94b8cc;
-    /*font-family:serif;*/
     font-family:'Cinzel', serif;
     font-size: .84rem;
 }
@@ -246,6 +240,7 @@ button:hover{
     font-weight:bold;
 }
 
+/* Desktop */
 @media (max-width: 1024px){
 
     main {
@@ -271,6 +266,7 @@ button:hover{
     }
 }
 
+/* Tab */
 @media (max-width: 768px){
 
     main {
@@ -299,6 +295,7 @@ button:hover{
     }
 }
 
+/* Mobile */
 @media (max-width: 480px){
 
     .profile-photo {
