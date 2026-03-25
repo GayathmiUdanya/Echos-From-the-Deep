@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,9 +15,11 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+
 main {
     flex: 3;
 }
+
 aside {
     position: sticky;
     flex: 1;
@@ -28,10 +29,10 @@ aside {
     padding-right: 1rem;
 }
 
-
 h2{
     color: #333;
 }
+
 main section {
     background: #061828;
     border: 1px solid rgba(125, 211, 252, 0.12);
@@ -110,9 +111,9 @@ aside li{
 
 .stud {
     text-align: center;
-    line-height: 0;
-    background-color: #cbccc2ef;
-    color: white;
+    line-height: 2;
+    /*background-color: #cbccc2ef;*/
+    color: rgb(252, 246, 246);
     margin-top: 8px;
 }
 
@@ -140,7 +141,6 @@ aside li{
 img{
     width: 90%;
 }
-
 
 table {
     width: 100%;
@@ -207,7 +207,6 @@ ul.top-level-ul {
 }
 
 /* Direct <li> children = group labels (Student 1, Student 2 …) */
-
 ul.top-level-ul > li {
     font-family: 'Cinzel', serif;
     font-size: 0.48rem;
@@ -221,7 +220,6 @@ ul.top-level-ul > li {
 }
 
 /* Labels that are also links (Challenges, Compliance, etc.) */
-
 ul.top-level-ul > li > a {
     font-family: 'DM Sans', sans-serif;
     font-size: 0.82rem;
@@ -236,7 +234,6 @@ ul.top-level-ul > li > a:hover {
 }
 
 /* Nested <ul> inside top-level-ul = page link groups */
-
 ul.top-level-ul ul {
     list-style: none;
     padding: 0;
