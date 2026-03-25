@@ -35,6 +35,11 @@ main {
     gap: 1rem;
     z-index: 10;
     padding: 1.2rem 1.8rem;
+    border-radius: 12px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.12);
+
 }
 
 /* Styles each NAV link */
