@@ -4,9 +4,10 @@
     box-sizing: border-box;
 }
 
+/** Background Image Styling */
 .scene_bg {
     position: fixed;
-    inset: 0; /*Stretches to fill all four edges of the parent*/
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -14,6 +15,7 @@
     opacity: 1;
 }
 
+/* CSS Variables */
 :root {
     --teal: #49aec0;
     --teal-dark: #37909f;
@@ -27,12 +29,14 @@
     
 }
 
+/* Global Reset & Body Styles */
 html, body {
     height: 100%;
     font-family: var(--font-body);
     color: var(--white);
 }
 
+/* Navigation */
 nav {
     display: flex;
     justify-content: space-between;
@@ -44,12 +48,14 @@ nav {
     border-bottom: 1px solid var(--white-10);
 }
 
+/* Logo Area */
 .logo-area {
     display: flex;
     align-items: center;
     gap: 12px;
 }
 
+/* Logo Circle */
 .logo-circle {
     width: 36px;
     height: 36px;
@@ -60,6 +66,7 @@ nav {
     flex-shrink: 0;
 }
 
+/* Logo Text */
 .logo-text h1 {
     font-size: 0.85rem;
     font-weight: 600;
@@ -68,6 +75,7 @@ nav {
     line-height: 1.2;
 }
 
+/* Logo Subtext */
 .logo-text p {
     font-size: 9px;
     letter-spacing: 1.5px;
@@ -75,11 +83,15 @@ nav {
     opacity: 0.7;
     margin-top: 2px;
 }
+
+/* Navigation Links */
 .nav-links {
     display: flex;
     align-items: center;
     gap: 4px;
 }
+
+/* Navigation Link Styles */
 .nav-links a {
     text-decoration: none;
     color: var(--white);
@@ -92,14 +104,20 @@ nav {
     opacity: 0.7;
     transition: opacity 0.2s, background 0.2s;
 }
+
+/* Navigation Link Hover */
 .nav-links a:hover {
     opacity: 1;
     background: var(--white-10);
 }
+
+/* Active Link */
 .nav-links a.active {
     opacity: 1;
     background: var(--white-20);
 }
+
+/* Hero Section */
 .hero-content {
     margin-top: auto;
     margin-bottom: auto;
@@ -107,6 +125,14 @@ nav {
     padding-top: 40px;
 }
 
+/* SDG Label */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
 .sdg-label {
     font-size: 15px;
     letter-spacing: 4px;
@@ -115,6 +141,7 @@ nav {
     opacity: 0.88;
 }
 
+/* Hero Title and Description */
 .title {
     font-family: var(--font-serif);
     font-size: 100px;
@@ -138,11 +165,15 @@ nav {
     line-height: 1.65;
     opacity: 0.9;
 }
+
+/* Button Container */
 .btn-container {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
 }
+
+/* Button Styles */
 .btn {
     padding: 14px 34px;
     text-decoration: none;
@@ -179,6 +210,8 @@ nav {
     border-color: var(--white);
     transform: translateY(-2px);
 }
+
+/* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
     bottom: 32px;
@@ -197,6 +230,7 @@ nav {
     animation: bounce 2s infinite ease-in-out;
 }
 
+/* Scroll Indicator Arrow */
 .scroll-indicator .arrow {
     font-size: 20px;
     line-height: 1;
@@ -209,88 +243,176 @@ nav {
 
 /* Layout Grid */
 .dashboard-container {
-    display: grid;
-    grid-template-columns: repeat(4, 5fr);
-    gap: 30px;
-    max-width: 1200px;
+    max-width: 1000px;
     justify-content: center;
-    margin:150px auto 50px auto;
-    position: relative;
-    z-index: 1;
+    margin:10px auto;
+}
+/* Container for the horizontal scroll */
+.dashboard-wrapper {
+    padding: 40px;
+    background: #1f2d42;
 }
 
-/* Card Styling */
+.section-title {
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+}
+
+.dashboard-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.dashboard-container::-webkit-scrollbar {
+    display: none; 
+}
+
+/* Base Card Styling */
 .card {
-    background-color: #3b4960;
+    flex-shrink: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    scroll-snap-align: start;
+    background: #1f2d42;
+    margin-top: 10%;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.4s ease, width 0.4s ease, opacity 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* The Large Featured Card */
+.card.featured {
+    width: 500px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Card Text */
+.card.featured .card-image-wrapper {
+    height: 70%;
+    width: 100%;
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid #1f2d42;
-    display: flex;
-    flex-direction: column;
-	justify-content: center;
-    align-items: center;
-    transition: transform 0.3s;
 }
 
-/* Image Section and Placeholder */
-.card-image-wrapper {
+/* Card Image Size */
+.card.featured .card-image {
     width: 100%;
-    height: 300px;
-    background-color: #333; 
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-/*Images*/
-.card-image {
-    width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
-    display: block;
-	background-size: 10% 100%;
 }
 
-/* Styling for when images are missing */
-.card-image-wrapper::after {
+/* Text inside Featured card */
+.card.featured h3 {
+    color: white;
+    margin: 10px 0 10px 0;
+    font-size: 25px;
+}
+
+/* Description Text */
+.card.featured p {
+    color: #b3b3b3;
+    font-size: 15px;
+    margin: 10px;
+}
+
+/* The Narrow Side Cards */
+.card.peek {
+    width: 85px;
+    height: 350px;
+    opacity: 0.7;
+}
+
+/* peek cards */
+.peek-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(50%);
+}
+
+.peek-overlay {
     position: absolute;
-    color: #555;
-    font-size: 10px;
-    text-transform: uppercase;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg); 
+    white-space: nowrap;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    pointer-events: none;
 }
 
-/* Content Section */
-.card-content {
-    padding: 20px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+/* Featured card hover */
+.card.featured:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Category Label */
-.category-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 8px;
+/* Peek cards expand on hover */
+.card.peek:hover {
+    width: 220px;
+    opacity: 1;
 }
 
-/* Title */
-.card-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 12px;
-    letter-spacing: 0.05em;
+.card.peek:hover .peek-img {
+    filter: grayscale(0%);
 }
 
-/* Description Body */
-.card-description {
-    font-size: 0.85rem;
-    color: var(--text-color);
+/* Overlay slides to bottom on expand */
+.peek-overlay {
+    transition: transform 0.4s ease, bottom 0.4s ease;
+}
+
+/*Peek card hover effect for overlay */
+.card.peek:hover .peek-overlay {
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+}
+
+/*Peek card text */
+.peek-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Text inside peek cards */
+.peek-text h3 {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Description text inside peek cards */
+.peek-text p {
+    color: #b3b3b3;
+    font-size: 11px;
     line-height: 1.5;
-    margin-bottom: 15px;
-    flex-grow: 1; 
+}
+
+/* Show text on peek card hover */
+.card.peek:hover .peek-text {
+    opacity: 1;
+}
+
+/* Hide overlay on peek card hover */
+.card.peek:hover .peek-overlay {
+    opacity: 0;
 }

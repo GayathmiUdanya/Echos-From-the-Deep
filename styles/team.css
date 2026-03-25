@@ -3,41 +3,40 @@ html{
     background-color: #0a1a2a; 
     color:#e8f4f8;
     font-family:'Cinzel', serif;
-    /*position: relative;*/
 }
 
 main {
-    padding-bottom: 4rem;/*Adds space at the end of the main section*/
+    padding-bottom: 4rem; /* Adds space at the end of the main section */
     position: relative;
-    z-index: 1; /*the content sits above the img*/
+    z-index: 1; /* The content sits above the img */
 }
 
-/*Background Image*/
+/* Background Image */
 .scene-bg {
-    position: fixed; /*BG stays in place when scrolling*/
-    inset: 0; /*Stretches to fill all four edges of the parent*/
+    position: fixed; /* BgImg stays in place when scrolling */
+    inset: 0; /* Stretches to fill all four edges of the parent */
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
-    opacity: 0.55; /*makes it semi-tranparent so the text is readable*/
+    opacity: 0.55; /* Makes it semi-tranparent so the text is readable */
 }
 
-/*--------------------------------------------------------------------------Team Member Details-------------------------------------------------------------------------*/
-/*Team Member cards "container" */
+/*-------------------------------------------------------------------------- Team Member Details -------------------------------------------------------------------------*/
+/* Team Member cards "container" */
 .team-members{
     display: flex;
-    flex-direction: row; /*orders the team cards in a row*/
-    flex-wrap: wrap; /*wraps (go to the next row) when the team cards are in a smaller screen*/
+    flex-direction: row; /* Orders the team cards in a row */
+    flex-wrap: wrap; /* Wraps (go to the next row) when the team cards are in a smaller screen */
     gap: 20px;
     justify-content: center; 
-    align-items: flex-start; /*Stops the cards from streching to match the tallest card*/
+    align-items: flex-start; /* Stops the cards from streching to match the tallest card */
     padding-top: 0.5rem;
 }
 
-/*Styles each student card*/
+/* Styles each student card */
 .student{
-    width: 300px;
+    width: 310px;
     padding: 20px;
     background-color:rgb(13,27,42,0.9); 
     border-radius: 10px;
@@ -50,29 +49,29 @@ main {
     position: relative;
 }
 
-/*The card enlarges to show the 'interactivity'*/
+/* The card enlarges to show the "interactivity" */
 .student:hover {
     cursor:pointer; 
-    z-index: 10; /* Ensures the expanded cards sits above the other cards*/
+    z-index: 10; /* Ensures the expanded cards sits above the other cards */
     position: relative; 
-    width: 400px; /*more space to show the details*/
+    width: 400px; /* More space to show the details */
 }
 
-/*Displays the img for the teammate card*/
+/* Displays the img for the teammate card */
 .student img{
     width: 100%;
     height: 250px;
-    object-fit: cover; /*Ensures that the images will fits in the frame*/
+    object-fit: cover; /* Ensures that the images will fits in the frame */
     border-radius: 5px;
 }
 
-/*Image glows when hovered above*/
+/* Image glows when hovered above */
 .student:hover img {
     box-shadow: 0 0 20px rgba(125, 211, 252, 0.3);
     border-radius: 5px;
 }
 
-/*Student name text*/
+/* Student name text */
 .student-name {
     font-family: 'Cinzel', serif;
     text-transform: uppercase;
@@ -82,9 +81,9 @@ main {
     color: #e8f4f8;
 }
 
-/*Hides the DETAILS by default*/
+/* Hides the DETAILS by default */
 .student .details{
-    display: none; /*Hides the DETAILS of the teammate until user interactes with it*/
+    display: none; /* Hides the DETAILS of the teammate until user interactes with it */
     text-align: left;  
     font-family:'Cinzel', serif;
     color: #94b8cc;
@@ -96,13 +95,13 @@ main {
     padding-top: 12px;                                
 }
 
-/*Shows the DETAILS on hover or focus*/
+/* Shows the DETAILS on hover or focus */
 .student:hover .details,
 .student:focus .details{
     display: block; 
 }
 
-/*Role "button"*/
+/* Role "button" */
 .btn-role {
     display: block;
     margin: 0 auto;
@@ -120,36 +119,36 @@ main {
     transition: box-shadow 0.2s, background 0.2s, transform 0.15s;
 }
 
-/*The role 'button' glows when hovered above*/
+/* The role "button" glows when hovered above */
 .btn-role:hover {
     background: rgba(125, 211, 252, 0.18);
     box-shadow: 0 0 14px rgba(125, 211, 252, 0.35);
     transform: scale(1.04);
 }
 
-/*Flexboxes for the detailed content section*/
+/* Flexboxes for the detailed content section */
 .row{
     display:flex;
     align-items: flex-start;
     margin-bottom: .15rem;
 }
 
-/*Content heading for the student details section*/
+/* Content heading for the student details section */
 .label{
     color: #d0dce8;
     font-weight: bold; 
     text-transform: uppercase;
-    min-width: 150px; /*Ensures that the VALUES are aliged*/
-    flex-shrink:0; /*Makes sure the content doesnt skrink to fit - Maintains the consistency even in a different display size*/
+    min-width: 150px; /* Ensures that the VALUES are aliged */
+    flex-shrink:0; /* Makes sure the content doesnt skrink to fit - Maintains the consistency even in a different display size */
 }
 
-/*Grouping content description for the student details section*/
+/* Grouping content description for the student details section */
 .value-group{
     display:flex;
     flex-direction: column;
 }
 
-/*Content description for the student details section*/
+/* Content description for the student details section */
 .value{
     color: #d0dce8; 
     font-variant: small-caps;

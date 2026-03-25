@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Act II</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="styles/content.css">
+</head>
+
+<body>
+    <!-- navigation -->
+    <header>
+        <nav>
+            <div class="logo-area">
+                <div class="logo-circle"></div>
+                <div class="logo-text">
+                    <p>Echoes From The Deep</p>
+                    <p>SDG 14 · Life Below Water</p>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Impact Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="profile.html">Profile</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Animated riple effect -->
+    <div id="sonarpart" aria-hidden="true">
+        <div class="sonar" id="s1"></div>
+        <div class="sonar" id="s2"></div>
+        <div class="sonar" id="s3"></div>
+    </div>
+
+    <!--invisible marker used to scroll to the bottom of the page-->
+    <div id="scroller" aria-hidden="true"></div>
+
+    <!--background images for each chapter-->
+    <!--section 1 - introduction background-->
+    <div id="bg1" class="bg active" aria-hidden="true">
+        <img class="bimg" src="../assets/hero.jpeg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 2 - intro background-->
+    <div id="bg2" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentIntro_ghostNets.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 3 - problem background-->
+    <div id="bg3" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentProblem_ghostNets.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 4 - Why background-->
+    <div id="bg4" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentWhy_ghostNets.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 5 - Impact background-->
+    <div id="bg5" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentImpact_ghostNets.png" alt="Image of Bleached Reefs - Recommendations"
+            aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!--section 6 - recommendations background-->
+    <div id="bg6" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentRecommendations_ghostNets.png" alt="#"
+            aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="chapters" id="top" data-bg="bg1">
+            <span class="chaptersTagg">Echoes From The Deep · A Four-Part Story · SDG 14</span>
+
+            <!-- Chapter heading -->
+            <h1>
+                Ocean in Crisis:<br>
+                <em>A World at the Brinke</em>
+            </h1>
+
+            <!-- Chapter Description -->
+            <p class="chaptersDescription">
+                Four stories. One dying ocean. A warning we can no longer ignore.
+            </p>
+
+            <!-- Chapter navigation -->
+            <div class="chaptrsnavii" role="navigation" aria-label="Story chapters">
+                <a href="content_ST4.html" class="chaptrnavii">Act I · A World Drowning in Noise</a>
+                <a href="#act2" class="chaptrnavii active">Act II · The Silent Hunters of the Deep</a>
+                <a href="content_ST3.html" class="chaptrnavii">Act III · The Fading Cities of the Sea</a>
+                <a href="content_ST2.html" class="chaptrnavii">Act IV · The Echo of Hope</a>
+            </div>
+
+            <!-- Scroll -->
+            <div class="scrolltext">
+                <span>Dive in</span>
+                <div class="scrollline"></div>
+            </div>
+        </section>
+
+        <section class="title" id="act2" data-bg="bg2">
+            <div class="titledec">II</div>
+            <span class="title-act">Act 4 ·  The Whale’s Warning: A World Drowning in Noise</span>
+
+            <!-- Title heading -->
+            <h2 class="title-head">
+                Ghost Nets:<br>
+                <em>The Silent Hunters of the Deep</em>
+            </h2>
+
+            <!-- Title tagline -->
+            <p class="title-tag">When nets are left behind, the ocean keeps killing long after we’re gone.</p>
+
+            <!-- Student details -->
+            <span class="title-student">Kulith Silva · STUDENT 1</span>
+        </section>
+
+        <!-- Content card 1 (hook)-->
+        <section class="content" id="ch1" data-ch="1">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">The Predators That Never Sleep</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    Not alive,<br>
+                    <em>yet it hunts without end.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">Introduction — signals of a resilient sea</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <!-- Content -->
+                <p>
+                    Picture a hunter in the ocean who <strong>never gets tired</strong>, <strong>never needs to eat</strong>, and <strong>never grows old</strong>. 
+                    This hunter is not a giant fish or a shark. 
+                    It is not made of muscle and bone, nor is it made of metal; it is made of <strong>plastic and nylon</strong>. 
+                    These are called <strong>ghost nets</strong>.
+                </p>
+                <div class="quate">
+                    A net once used to fish becomes a hunter that never stops.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Content card 2 (problem intro) -->
+        <section class="content" id="ch2" data-ch="2" data-bg="bg3">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">The Immortal Menace</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    Built to last forever,<br>
+                    <em>designed to destroy forever.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">How modern materials turned fishing nets into permanent ocean threats.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <p>
+                    The biggest problem with these nets is that they are <strong>immortal</strong>. 
+                    In the old days, fishing nets were made of <strong>natural materials</strong> such as wood, cotton, or rope. 
+                    If those nets were lost, they would eventually <strong>rot and return to the environment</strong>. 
+                    But today, nets are made of <strong>very strong plastic</strong>. 
+                    This plastic is <strong>designed to never break</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content card 3 (why it matters)-->
+        <section class="content" id="ch3" data-ch="3" data-bg="bg4">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">The Deadliest Plastic</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    The most dangerous plastic isn’t swallowed—<em>it traps and kills.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">Ghost nets silently entangle marine life, making escape nearly impossible.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <p>
+                    Many people say that <strong>plastic bags and straws are bad for the ocean</strong>. 
+                    However, <strong>ghost nets are the most dangerous type of plastic in the ocean</strong>. 
+                    The World Wildlife Fund (2025) reports that these <strong>"immortal menaces"</strong> harm 
+                    <strong>over 66% of marine mammal species and all species of sea turtles</strong>. 
+                    A ghost net is not just debris—it is a <strong>trap</strong>, while a plastic bag is usually swallowed by mistake. 
+                    These nets have created a danger that is <strong>almost impossible to see and even harder to escape</strong>.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Content card 4 (Impact)-->
+        <section class="content" id="ch4" data-ch="4" data-bg="bg5">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">The Cycle of the Garbage Patch</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    Ghost nets don’t just trap fish<br>
+                    <em>they suffocate the ocean’s homes.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">From coral reefs to the Garbage Patch, these nets keep killing in a never-ending cycle.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-num">70–86%</span>
+                        <span class="stat-lbl">Microplastics from nets</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-lbl">Nets keep killing</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">1+ year</span>
+                        <span class="stat-lbl">Coral smothered & resurfaced</span>
+                    </div>
+                </div>
+
+            <p>
+                These nets do more than just catch fish. They ruin the ocean's <strong>"homes"</strong>. 
+                A heavy net that falls on a <strong>coral reef</strong> acts like a <strong>heavy blanket</strong>, 
+                keeping the coral from getting the <strong>sunlight it needs to live</strong>. 
+                It can also <strong>break the coral into smaller pieces</strong>. 
+                A net can get so full of dead fish that it sinks to the bottom. 
+                The net gets light again as the fish rot, and <strong>it comes back up to the surface and starts killing again</strong>. 
+                In the <strong>Great Pacific Garbage Patch</strong>, fishing-related gear makes up a staggering 
+                <strong>70% to 86% of floating microplastics by weight</strong> (Ocean Conservancy, 2024).
+            </p>
+
+                <div class="quate">
+                    Invisible, immortal, and relentless—the ocean’s silent predator.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Content card 5 (what can be done)-->
+        <section class="content" id="ch5" data-ch="6" data-bg="bg7">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">Breaking the Invisible Web</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    When humans act,<br>
+                    <em>the ocean can heal.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">By redesigning nets and cleaning up the ocean, we can stop ghost nets from killing endlessly.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <p>
+                    The whole world needs to work together to stop these <strong>"silent hunters"</strong>. 
+                    Some people are making parts of the nets out of <strong>special materials</strong> that 
+                    <strong>break down or melt in saltwater after a few months</strong>. 
+                    These parts will break if a trap is lost, allowing <strong>animals to swim to safety</strong>. 
+                    This means that the <strong>"hunter"</strong> finally stops hunting when the fisherman leaves. 
+                    We can make the ocean a <strong>safe place for animals again</strong> by cleaning up the nets and using <strong>better tools</strong>.
+                </p>
+
+                <div class="quate">
+                    The ocean doesn’t forget what we leave behind—every net we abandon can keep hunting long after we’re gone.
+                </div>
+
+                <div class="refferancee">
+                    <h3>References</h3>
+                        <ol>
+                            <li>
+                                Ocean Conservancy (2024) <strong>Ghost Gear Facts & Figures</strong>. 
+                                Available at: 
+                                <a href="https://oceanconservancy.org/wp-content/uploads/2025/09/GGGI-Fact-Sheet-UPDATED-8.24.pdf" target="_blank" rel="noopener">
+                                    oceanconservancy.org
+                                </a> 
+                                (Accessed 22 March 2026).
+                            </li>
+                            <li>
+                                World Wildlife Fund (WWF) (2025) <strong>Stop Ghost Gear: The most deadly form of marine plastic debris</strong>. 
+                                Available at: 
+                                <a href="https://wwfwhales.org/news-stories/stop-ghost-gear-wwf-report" target="_blank" rel="noopener">
+                                    wwfwhales.org
+                                </a> 
+                                (Accessed 22 March 2026).
+                            </li>
+                        </ol>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Handoff Section -->
+        <section class="handoff" id="handoff" data-bg="bg4">
+
+        <!-- Handoff Section - Container Heading-->
+        <span class="handofflebel">The Ocean Answered Back</span>
+        
+        <!-- Handoff Section - Container Sub Heading-->
+        <h2>
+            Bleached Reefs:<br>
+            <em>The Fading Cities of the Sea</em>
+        </h2>
+
+        <!-- Handoff Section - Tag line  -->
+        <p>Coral reefs — the ocean's great cities — are going silent
+        </p>
+
+        <!-- Handoff Section - Link for the next content page -->
+        <a href="content_ST3.html" class="nextbutton">Act III · The Fading Cities of the Sea →</a>
+        </section>
+    </main>
+
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <a href="validation_ST1.html">Validation Page</a>
+                <a href="pageEditor_ST1.html#home-a11y">Accessibility</a>
+                <a href="pageEditor_ST1.html#compliance">Compliance</a>
+            </div>
+
+            <div class="student-details">
+                <p>Developed by: Kulith Silva</p>
+                <p>Student ID: 21819126</p>
+                <p>&copy; 2026 Echoes From The Deep</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="scripts/content.js"></script>
+
+</body>
+
+</html>

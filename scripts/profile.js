@@ -59,13 +59,19 @@ const sampleProfiles = [
 
 //Function to display user profiles 
 function renderSampleData() {
+
+    //Getting the container where profile cards will be displayed
     const container = document.getElementById("sample-data-container");
     container.innerHTML = ""; // clear first
 
+    //looping through each profile in the sampleProfiles array
     sampleProfiles.forEach(profile => {
+        //create a new div element for each profile cards
         const card = document.createElement("div");
         card.classList.add("sample-data");
 
+
+        // Insert HTML content into the card using template literals
         card.innerHTML = `
             <img src="${profile.photo}" alt="${profile.name}" class="profile-photo">
             <div class="header">
@@ -86,19 +92,31 @@ function renderSampleData() {
             ${profile.awareness ? `<div class="details"><p>Awareness :</p><p>${profile.awareness}</p></div>` : ""}
         `;
 
+        // Add the completed card to the container in the DOM
         container.appendChild(card);
     });
 }
 
+//Function to create and add a button 
 function createCreateButton() {
-    const sampcontainer = document.querySelector(".sampcontainer");//CHANGED RKYYYY
+
+    // Select the container where the button will be placed
+    const sampcontainer = document.querySelector(".sampcontainer");
+
+     // Create a new button element
     const btn = document.createElement("button");
+
+    // Assign an ID to the button (For styling)
     btn.id = "createProfileBtn";
+
+    //Text content of the button
     btn.textContent = "Create New Profile";
 
+    //Event listener that calls the createProfile function when clicked
     btn.addEventListener("click", createProfile);
 
-    sampcontainer.prepend(btn); //CHANGED RKYYY
+    //Adds the button at the begining of the container
+    sampcontainer.prepend(btn); 
 }
 
 
@@ -295,6 +313,9 @@ function step1() {
     // Required fields 
     while(!name) {
         let input = prompt("What is your name?");
+
+        //Checks if the user skipped it
+        //trim() removes white spaces (if the user enters " " -> counts as empty input)
         if(input === null || input.trim() === "") {
             alert("Name is required!");
         } else {
@@ -372,8 +393,12 @@ function step3() {
 
 //progress bar
 function updateProgress() {
+
+    //Variable to count the filled number of fields
     let filled = 0;
+    //Loops through each key in the profile obj
     for(let key in profile){
+        // Check if the field has a value AND is not "Not Mentioned"
         if(profile[key] && profile[key] !== "Not Mentioned"){
             filled++;
         }
@@ -387,9 +412,14 @@ function updateProgress() {
 
 //profile builder 
 function renderProfile() {
+    // List of profile fields to display on the page
     const fields = ["name","age","country","role","issue","animal","activity","goal","volunteer","awareness"];
+    // Loop through each field
     fields.forEach(f => {
         const el = document.getElementById(f);
+
+        // Display the value if it exists and is not just empty spaces
+        // Otherwise, display an empty string (hide empty fields)
         el.textContent = profile[f] && profile[f].trim() !== "" ? profile[f] : "";
     });
 }

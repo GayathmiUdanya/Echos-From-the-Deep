@@ -23,16 +23,15 @@
     }
 
     .feed {
-      background: rgba(3, 13, 26, 0.85);
-      backdrop-filter: blur(28px);
-      -webkit-backdrop-filter: blur(28px);
+      background: rgba(1, 8, 20, .62);
+      backdrop-filter: blur(18px);
       border: 1px solid rgba(125, 211, 252, 0.14);
       border-radius: 18px;
       padding: 0;
       margin-bottom: 2rem;
       overflow: hidden;
       transition: border-color 0.7s ease, box-shadow 0.7s ease;
-      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      box-shadow: 0 8px 48px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(125, 211, 252, .06);
       position: relative;
     }
 
@@ -692,68 +691,67 @@
               </div>
             </div>
             <div class="actiongrid" role="group">
-              <div class="card" id="card1" onclick="toggle(1, event)" role="checkbox">
+              <div class="card" id="card1" onclick="toggle(1, event)" role="checkbox" aria-checked="false">
                 <div class="tick">✓</div>
                 <img src="assets/plastic.png" class="cardimg" alt="Single use plastic bottles on a beach">
                 <span class="cardLebel">Plastic Reduction</span>
                 <div class="cardBody">
-                  <h3 class="cardTitle">Reduce Single Use Plastic</h3>
+                  <h2 class="cardTitle">Reduce Single Use Plastic</h2>
                   <p class="cardDescription">Switch to reusable bags, bottles and containers. Over 8 million tonnes of
                     plastic enter the ocean every year.</p>
                   <span class="impactPoints">● 3 pts</span>
                 </div>
               </div>
-              <div class="card" id="card2" onclick="toggle(2, event)" role="checkbox">
+              <div class="card" id="card2" onclick="toggle(2, event)" role="checkbox" aria-checked="false">
                 <div class="tick">✓</div>
                 <img src="assets/beach_clean.png" class="cardimg" alt="Volunteers cleaning a beach">
                 <span class="cardLebel">Beach Clean</span>
                 <div class="cardBody">
-                  <h3 class="cardTitle">Join a Beach Clean</h3>
+                  <h2 class="cardTitle">Join a Beach Clean</h2>
                   <p class="cardDescription">Volunteer at a local beach clean event. Direct action that removes waste
                     from coastlines and prevents it reaching the sea.</p>
                   <span class="impactPoints">● 4 pts</span>
                 </div>
               </div>
-              <div class="card" id="card3" onclick="toggle(3, event)" role="checkbox">
+              <div class="card" id="card3" onclick="toggle(3, event)" role="checkbox" aria-checked="false">
                 <div class="tick">✓</div>
                 <img src="assets/sunscreen.png" class="cardimg" alt="Reef safe sunscreen on a sunny beach">
                 <span class="cardLebel">Reef Safe Sunscreen</span>
                 <div class="cardBody">
-                  <h3 class="cardTitle">Use Reef Safe Sunscreen</h3>
+                  <h2 class="cardTitle">Use Reef Safe Sunscreen</h2>
                   <p class="cardDescription">Chemical sunscreens contain oxybenzone which bleaches coral reefs. Switch
                     to mineral based zinc oxide alternatives.</p>
                   <span class="impactPoints">● 2 pts</span>
                 </div>
               </div>
-              <div class="card" id="card4" onclick="toggle(4, event)" role="checkbox">
+              <div class="card" id="card4" onclick="toggle(4, event)" role="checkbox" aria-checked="false">
                 <div class="tick">✓</div>
                 <img src="assets/seafood.png" class="cardimg" alt="Sustainable seafood at a market">
                 <span class="cardLebel">Sustainable Seafood</span>
                 <div class="cardBody">
-                  <h3 class="cardTitle">Choose Sustainable Seafood</h3>
+                  <h2 class="cardTitle">Choose Sustainable Seafood</h2>
                   <p class="cardDescription">Look for the MSC blue label when buying fish. Overfishing has depleted 90%
                     of large fish populations since 1950.</p>
                   <span class="impactPoints">● 3 pts</span>
                 </div>
               </div>
-              <div class="card" id="card5" onclick="toggle(5, event)" role="checkbox">
+              <div class="card" id="card5" onclick="toggle(5, event)" role="checkbox" aria-checked="false">
                 <div class="tick">✓</div>
                 <img src="assets/charity.png" class="cardimg" alt="Ocean conservation volunteers">
                 <span class="cardLebel">Ocean Charities</span>
                 <div class="cardBody">
-                  <h3 class="cardTitle">Support Ocean Charities</h3>
+                  <h2 class="cardTitle">Support Ocean Charities</h2>
                   <p class="cardDescription">Donate to or volunteer with organisations like Surfers Against Sewage,
                     Ocean Conservancy, or WWF ocean programmes.</p>
                   <span class="impactPoints">● 3 pts</span>
                 </div>
               </div>
-              <div class="card" id="card6" onclick="toggle(6, event)" role="checkbox">
+              <div class="card" id="card6" onclick="toggle(6, event)" role="checkbox" aria-checked="false">
                 <div class="tick">✓</div>
                 <img src="assets/awareness.png" class="cardimg" alt="Spread Ocean Awareness on social media">
-                  alt="Person sharing ocean awareness on social media">
                 <span class="cardLebel">Spread Awareness</span>
                 <div class="cardBody">
-                  <h3 class="cardTitle">Spread Ocean Awareness</h3>
+                  <h2 class="cardTitle">Spread Ocean Awareness</h2>
                   <p class="cardDescription">Share facts, sign petitions, and talk to friends about ocean issues. Mass
                     awareness is what drives policy change globally.</p>
                   <span class="impactPoints">● 2 pts</span>
@@ -767,7 +765,6 @@
 
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 
-  <!-- Footer -->
 	<footer>
         <div class="footer-content">
             <div class="footer-links">

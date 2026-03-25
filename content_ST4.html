@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACT I</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="styles/content.css">
+</head>
+
+<body>
+    <!-- navigation -->
+    <header>
+        <nav>
+            <div class="logo-area">
+                <div class="logo-circle"></div>
+                <div class="logo-text">
+                    <p>Echoes From The Deep</p>
+                    <p>SDG 14 · Life Below Water</p>
+                </div>
+            </div>
+
+            <div class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ais.html">Action Impact Simulator</a>
+                <a href="feedback.html">Feedback</a>
+                <a href="team.html">Team</a>
+                <a href="profile.html">Profile</a>
+                <a href="sitemap.html">Sitemap</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Animated riple effect -->
+    <div id="sonarpart" aria-hidden="true">
+        <div class="sonar" id="s1"></div>
+        <div class="sonar" id="s2"></div>
+        <div class="sonar" id="s3"></div>
+    </div>
+
+    <!-- Invisible marker used to scroll to the bottom of the page-->
+    <div id="scroller" aria-hidden="true"></div>
+
+    <!-- Background images for each chapter-->
+    <!-- Opening page -->
+    <div id="bg1" class="bg active" aria-hidden="true">
+        <img class="bimg" src="../assets/hero.jpeg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Section 1 - Introduction Background-->
+    <div id="bg2" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentIntro_whaleWatching.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Section 2 - Problem Background-->
+    <div id="bg3" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentProblem_whaleWatching.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Section 3 - why It Matters  Background-->
+    <div id="bg4" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentWhy_whaleWatching.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Section 4 - Impact Background-->
+    <div id="bg5" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentImpact_whaleWatching.png" alt="Image of Bleached Reefs - Recommendations"
+            aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <!-- Section 5 - Recommendations Background-->
+    <div id="bg6" class="bg" aria-hidden="true">
+        <img class="bimg" src="assets/contentRecommendations_whaleWatching.png" alt="#"
+            aria-hidden="true" onerror="this.style.display='none'">
+    </div>
+
+    <main>
+
+        <!-- Hero -->
+        <section class="chapters" id="top" data-bg="bg1">
+            <span class="chaptersTagg">Echoes From The Deep · A Four-Part Story · SDG 14</span>
+
+            <!-- Chapter heading -->
+            <h1>
+                Ocean in Crisis:<br>
+                <em>A World at the Brinke</em>
+            </h1>
+
+            <!-- Chapter Description -->
+            <p class="chaptersDescription">
+                Four stories. One dying ocean. A warning we can no longer ignore.
+            </p>
+
+            <!-- Chapter navigation -->
+            <div class="chaptrsnavii" role="navigation" aria-label="Story chapters">
+                <a href="#act1" class="chaptrnavii active">Act I · A World Drowning in Noise</a>
+                <a href="content_ST1.html" class="chaptrnavii">Act II · The Silent Hunters of the Deep</a>
+                <a href="content_ST3.html" class="chaptrnavii">Act III · The Fading Cities of the Sea</a>
+                <a href="#content_ST2.html" class="chaptrnavii">Act IV · The Echo of Hope</a>
+            </div>
+
+            <!-- Scroll -->
+            <div class="scrolltext">
+                <span>Dive in</span>
+                <div class="scrollline"></div>
+            </div>
+        </section>
+
+        <section class="title" id="act1" data-bg="bg2">
+            <div class="titledec">I</div>
+            <span class="title-act">Act 4 ·  The Whale’s Warning: A World Drowning in Noise</span>
+
+            <!-- Title heading -->
+            <h2 class="title-head">
+                The Whale’s Warning:<br>
+                <em>A World Drowning in Noise</em>
+            </h2>
+
+            <!-- Title tagline -->
+            <p class="title-tag">When the ocean grows loud, whales lose their way, their voice, and their chance to survive.</p>
+
+            <!-- Student details -->
+            <span class="title-student">Gayathmi Udanya · STUDENT 4</span>
+        </section>
+
+        <!-- Content card 1 (hook)-->
+        <section class="content" id="ch1" data-ch="1">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">The Symphony of the Abyss</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    When we listen,<br>
+                    <em>the ocean begins to heal.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">Introduction — signals of a resilient sea</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <!-- Content -->
+                <p>
+                    Unlike the land, in the deep dark ocean <strong>light does not travel far</strong>. 
+                    In the deep water, <strong>light is a luxury</strong> only a few can enjoy and use because there are places in the ocean where <strong>light doesn’t even exist</strong>. 
+                    Humans get their vision from light, however deep sea creatures like whales count on <strong>low-frequency sounds</strong>. 
+                    Those harmonies are their <strong>version of light</strong>. 
+                    These songs help whales <strong>find food for their survival</strong>, <strong>locate mates</strong>, and <strong>stay connected with their group</strong>.
+                </p>
+                <div class="quate">
+                    For generations, we ignored the ocean’s warning signs, trusting it was too vast to fail.”
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Content card 2 (problem intro) -->
+        <section class="content" id="ch2" data-ch="2" data-bg="bg3">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">The Wall of Sound</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    Louder seas,<br>
+                    <em>endangered lives.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">The rising roar of human activity and its toll on whales.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <!--Content-->
+                <p>
+                    The ocean is believed to be a <strong>silent, peaceful place</strong>. 
+                    A few decades ago it was exactly what it was believed it was. 
+                    However, as of now the <strong>peace of the ocean is destroyed by human activities</strong>. 
+                    The sounds whales use to navigate their lives are <strong>disrupted by these activities</strong>. 
+                    These <strong>low-frequency sounds</strong> get interrupted by <strong>massive cargo ships, sonar, and seismic waves</strong>, 
+                    which makes the ocean <strong>dramatically louder</strong>. 
+                    The <strong>noise pollution</strong> caused by such things puts the lives of whales in a <strong>survival crisis</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- Content card 3 (why it matters)-->
+        <section class="content" id="ch3" data-ch="3" data-bg="bg4">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">The Survival Crisis</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    Auditory chaos beneath the waves.
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">Auditory masking: the invisible threat to whale survival.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <p>
+                    When the ocean becomes <strong>too loud</strong>, whales experience what scientists call <strong>“auditory masking”</strong>. 
+                    According to <strong>NOAA Fisheries (2024)</strong>, whales use <strong>sound as a biological sonar</strong> to find food. 
+                    When the ocean becomes too loud, the <strong>distance at which a whale can communicate or find prey shrinks from hundreds of miles to just a few</strong>.
+                </p>
+
+
+                <div class="refferancee">
+                    <h3>References</h3>
+                    <ol>
+                        <li>
+                            NOAA Fisheries (2024) 'Why Can’t Killer Whales Find and Capture Food? The Ocean Is too Noisy'. 
+                            Available at: 
+                            <a href="https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy" target="_blank" rel="noopener">
+                                fisheries.noaa.gov
+                            </a>
+                            (Accessed 22 March 2026).
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Content card 4 (Impact)-->
+        <section class="content" id="ch4" data-ch="4" data-bg="bg5">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">Hunting in a Storm</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    Human clamor,<br>
+                    <em>whale hunger.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">Noise pollution turning the hunt into a struggle for survival.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <div class="stat-row">
+                    <div class="stat-card">
+                        <span class="stat-num">32×</span>
+                        <span class="stat-lbl">Ocean noise ↑50 yrs</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">90%</span>
+                        <span class="stat-lbl">Communication lost</span>
+                    </div>
+
+                    <div class="stat-card">
+                        <span class="stat-num">↓50%</span>
+                        <span class="stat-lbl">Noise ↓ slow zones</span>
+                    </div>
+                </div>
+
+                <p>
+                    The research stated in the book <strong>Reducing vessel noise increases foraging in endangered killer whales</strong>, 
+                    Rob Williams shows that <strong>female killer whales often forgo hunting entirely in noisy conditions</strong> 
+                    to avoid wasting energy on unsuccessful attempts. 
+                    While <strong>male whales try to push through</strong>, they <strong>waste significantly more energy searching for food with less success</strong>. 
+                    The noise does not only make their lives miserable, it even <strong>starves them</strong>.
+                </p>
+
+                <div class="quate">
+                    When we answer the call, the ocean answers back with life.
+                </div>
+
+                
+                <div class="refferancee">
+                    <h3>References</h3>
+                    <ol>
+                        <li>
+                            Tennessen, J.B., et al. (2024) 'Vessel noise levels drive foraging responses in endangered killer whales', 
+                            <em>Biological Conservation</em>.
+                        </li>
+                    </ol>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Content card 5 (what can be done)-->
+        <section class="content" id="ch5" data-ch="6" data-bg="bg7">
+            <div class="contentcon">
+
+                <!-- Content subheading (main) -->
+                <span class="contentdec">Clearing the Acoustic Fog</span>
+
+                <!-- Content tagline -->
+                <h2>
+                    Slow down,<br>
+                    <em>save the whales.</em>
+                </h2>
+
+                <!-- Content Subheading -->
+                <p class="contentsub">Lowering human noise gives whales a fighting chance.</p>
+
+                <!-- Content Line -->
+                <div class="contentline"></div>
+
+                <p>
+                    We believe that to mitigate these issues, <strong>governments and other authorities</strong> who are responsible for such matters should <strong>implement mandatory slow zones in critical habitats</strong>. 
+                    <strong>Implementing slow zones will reduce the noise underwater</strong>. 
+                    By <strong>lowering human-created noise</strong>, it is possible to <strong>restore clearer communication lines for whales</strong> which will <strong>support their survival</strong>.
+                </p>
+
+                <div class="quate">
+                    When we quiet the oceans, we give whales a chance to speak, to hunt, and to survive.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Handoff Section -->
+        <section class="handoff" id="handoff" data-bg="bg4">
+
+        <!-- Handoff Section - Container Heading-->
+        <span class="handofflebel">The Ocean Answered Back</span>
+        
+        <!-- Handoff Section - Container Sub Heading-->
+        <h2>
+            Ghost Nets:<br>
+            <em>The Silent Hunters of the Deep</em>
+        </h2>
+
+        <!-- Handoff Section - Tag line  -->
+        <p>When nets are left behind,<br>the ocean keeps killing long after we’re gone.
+        </p>
+
+        <!-- Handoff Section - Link for the next content page -->
+        <a href="content_ST1.html" class="nextbutton">Act II · The Silent Hunters of the Deep →</a>
+        </section>
+    </main>
+
+    <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+
+            <div class="footer-links">
+                <a href="pageEditor_ST1.html">Page Editor</a>
+                <a href="validation_ST1.html">Validation Page</a>
+                <a href="pageEditor_ST1.html#home-a11y">Accessibility</a>
+                <a href="pageEditor_ST1.html#compliance">Compliance</a>
+            </div>
+
+            <div class="student-details">
+                <p>Developed by: Kulith Silva</p>
+                <p>Student ID: 21819126</p>
+                <p>&copy; 2026 Echoes From The Deep</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="scripts/content.js"></script>
+
+</body>
+</html>
