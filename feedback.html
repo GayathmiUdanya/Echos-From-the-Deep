@@ -1,4 +1,4 @@
-<!--Feedback Page-->
+<!-- Feedback Page -->
 <!DOCTYPE html>
 <html lang ="en">
 
@@ -6,23 +6,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--Font-->
+        <!-- Font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap" >
         
         <title>Feedback Page</title>
 
-        <!--Global CSS-->
+        <!-- Global CSS -->
         <link rel="stylesheet" href="style.css">
-
-        <!--Feedback CSS-->
+        <!-- Feedback CSS -->
         <link rel="stylesheet" href="styles/feedback.css">
     </head>
 
     <body>
-        <!--Background Image-->
+        <!-- Background Image -->
         <img src="assets/feedback_bg.png" class="scene-bg" alt="Ocean background" onerror="this.style.display='none'">
         
         <header>
+            <!-- Navigation -->
             <nav>
             <div class="logo-area">
                 <div class="logo-circle"></div>
@@ -42,6 +42,7 @@
             </div>
             </nav>
             
+            <!-- Internal navigation -->
             <nav class="side-nav">
                 <a href="#programSection">Programs</a>
                 <a href="#reviewSection">Reviews</a>
@@ -50,26 +51,40 @@
         </header>
         
         <main>
-            <!--Hero-->
+
+            <!-- Hero -->
             <section class="pageup">
                 <div class="container">
                     <div class="upcontent">
+
+                        <!-- Hero mini heading -->
                         <span class="updescription">Act V · Voices From The Shore</span>
-                        <h1 class="uptittle">Your Words.<br><em>Our Mission.</em></h1>
+
+                        <!-- Hero heading -->
+                        <h1 class="uptittle">
+                            Your Words.<br>
+                            <em>Our Mission.</em>
+                        </h1>
+
+                        <!-- Divider line -->
                         <div class="updevider"></div>
+
+                        <!-- Hero tagline -->
                         <p class="text-serif">
                             Explore programs, read community voices,<br>and share your own experience with the deep.
                         </p>
+
                     </div>
                 </div>
             </section>
 
-            <!--Programs-->
+            <!-- Explore Programs Section -->
             <div id="programSection" class="page-section">
-                
+
+                <!-- Glass Panel -->
                 <div class="glass-panel">
 
-                    <!--Sort By Filter-->
+                    <!-- Sort By Filter -->
                     <div class="sort-row">
                         <select class="sort-select" id="sortSelect" aria-label="Sort programs">
                             <option>Sort by…</option>
@@ -80,17 +95,17 @@
                         </select>
                     </div>
 
-                    <!--Explore Program Heading (Sectional Heading)-->
+                    <!-- Explore Program Heading (Sectional Heading) -->
                     <div class="panel-inner">
                         <div class="section-label">Explore Programs</div>
                     </div>
 
-                    <!--Program Explore Cards-->
+                    <!-- Program Explore Cards -->
                     <div class="container-grid">
 
                         <div class="card-grid">
                         
-                            <!--Volunteer Card (Explore Program)-->
+                            <!-- Volunteer Card (Explore Program) -->
                             <div class="card">
                                 <img src="assets/feedback_volunteering.png" alt="Image of program opportunity" class="card-image">
                                 <p class="cardheading-font">Volunteer</p>
@@ -101,7 +116,7 @@
                                 </div>
                             </div>
 
-                            <!--Student Actions Card (Explore Program)-->
+                            <!-- Student Actions Card (Explore Program) -->
                             <div class="card">
                                 <img src="assets/feedback_studentActions.png" alt="Image of program opportunity" class="card-image">
                                 <p class="cardheading-font">Student Actions</p>
@@ -112,7 +127,7 @@
                                 </div>
                             </div>
 
-                            <!--Campaign Card (Explore Program)-->
+                            <!-- Campaign Card (Explore Program) -->
                             <div class="card">
                                 <img src="assets/feedback_compaigns.png" alt="Image of program opportunity" class="card-image">
                                 <p class="cardheading-font">Campaigns</p>
@@ -134,7 +149,7 @@
                                 </div>
                             </div>
                             
-                            <!--Innovation & Tech Card (Explore Program)-->
+                            <!-- Innovation & Tech Card (Explore Program) -->
                             <div class="card">
                                 <img src="assets/feedback_innovators.png" alt="Image of program opportunity" class="card-image">
                                 <p class="cardheading-font">Innovation & Tech</p>
@@ -145,7 +160,7 @@
                                 </div>
                             </div>
 
-                            <!--Community Card (Explore Program)-->
+                            <!-- Community Card (Explore Program) -->
                             <div class="card">
                                 <img src="assets/feedback_community.png" alt="Image of program opportunity" class="card-image">
                                 <p class="cardheading-font">Community</p>
@@ -164,17 +179,18 @@
 
             </div>
 
-            <!--Review Section-->
+            <!-- Review Section -->
             <div id="reviewSection" class="page-section">
 
+                <!-- Glass Panel -->
                 <div class="glass-panel">
 
-                    <!--Reviews Heading (Sectional Heading)-->
+                    <!-- Reviews Heading (Sectional Heading) -->
                     <div class="panel-inner">
                         <div class="section-label">Reviews</div>
                     </div>
 
-                    <!--Overall rating-->
+                    <!-- Overall Rating -->
                     <div class="overall-rating">
                         <div class="big-score">9.6</div>
                         <div>
@@ -183,10 +199,10 @@
                         </div>
                     </div>
 
-                    <!--Individual Rating-->
+                    <!-- Individual Rating -->
                     <div class="review-layout">
 
-                        <!--Review Card-->
+                        <!-- Review Card -->
                         <div class="review-card">
                             <p class= "review-cardheading">A Night I Will Never Forget</p>
                             <p class="review-text">
@@ -202,7 +218,7 @@
                             </div>
                         </div>
 
-                        <!--Review Card-->
+                        <!-- Review Card -->
                         <div class="review-card">
                             <p class="review-cardheading">Translating the Silence</p>
                             <p class="review-text">
@@ -218,7 +234,7 @@
                             </div>
                         </div>
 
-                        <!--Review Card-->
+                        <!-- Review Card -->
                         <div class="review-card">
                             <p class="review-cardheading">Community at the Core</p>
                             <p class="review-text">
@@ -234,7 +250,7 @@
                             </div>
                         </div>
 
-                        <!--Review Card-->
+                        <!-- Review Card -->
                         <div class="review-card">
                             <p class="review-cardheading">Empowered to Act</p>
                             <p class="review-text">
@@ -250,7 +266,7 @@
                             </div>
                         </div>
 
-                        <!--Review Card-->
+                        <!-- Review Card -->
                         <div class="review-card">
                             <p class="review-cardheading">Seeing the Light</p>
                             <p class="review-text">
@@ -266,7 +282,7 @@
                             </div>
                         </div>
 
-                        <!--Review Card-->
+                        <!-- Review Card -->
                         <div class="review-card">
                             <p class="review-cardheading">More Than Just a Program</p>
                             <p class="review-text">
@@ -288,19 +304,21 @@
             
             </div>
 
-            <!--Feedback Form-->
+            <!-- Feedback Form Section -->
             <div id="feedbackSection" class="page-section" style="padding-top:0;">
 
+                <!-- Glass Panel -->
                 <div class="glass-panel">
 
-                    <!--Feedback Heading (Sectional Heading)-->
+                    <!-- Feedback Heading (Sectional Heading) -->
                     <div class="panel-inner">
                         <div class="section-label">FeedBack</div>
                     </div>
 
-                    <!--Form-->
+                    <!-- Form -->
                     <form class="feedback-form" id="feedbackForm" novalidate>
 
+                        <!-- Personal Details Fieldset -->
                         <fieldset>
                             <legend>Personal Details</legend>
 
@@ -321,6 +339,7 @@
                             <span class="error" id="address-error"></span>
                         </fieldset>
 
+                        <!-- Feedback Details Fieldset -->
                         <fieldset>
                             <legend>Feedback Details</legend>
 
@@ -350,9 +369,12 @@
                             <span class="error" id="message-error"></span>
                         </fieldset>
 
+                        <!-- Form SUBMIT Button -->
                         <button type="submit">Submit</button>
+                        <!-- Form RESET Button -->
                         <button type="reset">Reset</button>
 
+                        <!-- Success Message -->
                         <div class="success-message" id="success-message">Thank you for your feedback!</div>
 
                     </form>
