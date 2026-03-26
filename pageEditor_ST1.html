@@ -36,7 +36,7 @@
     </header>
 
     <section class="stud">
-        <h2>Kulith Silva,  Deep Dive Devs, Student 01</h2>
+        <h2>Kulith Silva, Deep Dive Devs, Student 01</h2>
     </section>
 
     <div class="container">
@@ -45,6 +45,7 @@
             <section>
                 <h2 id="home">Home Page</h2>
                     <h3>Technical Description</h3>
+                        <h3>HTML Technical Description</h3>
                         <ul>
                             <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> handle the primary site navigation and branding logo</li>
 
@@ -63,7 +64,10 @@
                             <li><code>@keyframes bounce</code> powers the scroll indicator's vertical animation</li>
 
                             <li><code>backdrop-filter</code> creates a modern glassmorphism effect on the navigation bar</li>
+                        </ul> 
 
+                    <h3>CSS Technical Description</h3>
+                        <ul>
                             <li><code>*</code>, <code>*::before</code>, and <code>*::after</code> use <code>box-sizing: border-box</code> to simplify layout calculations</li>
 
                             <li><code>.scene_bg</code> uses <code>position: fixed</code> and <code>inset: 0</code> to create a static, full-screen background layer</li>
@@ -83,8 +87,8 @@
                             <li><code>.card.peek:hover</code> triggers a <code>width</code> expansion from 85px to 220px to reveal hidden content</li>
 
                             <li><code>.peek-overlay</code> uses <code>transform: rotate(-90deg)</code> to display text vertically on unexpanded cards</li>
-                        </ul> 
-
+                        </ul>   
+                         
                     <h3 id="home-a11y">Accessibility</h3>
                         <ul>
                             <li><code>lang="en"</code> on the <code>&lt;html&gt;</code> tag ensures screen readers use correct pronunciation</li>
@@ -125,45 +129,62 @@
                         </ul>
 
                     <h3>Link to the validation page</h3> 
-                        <p><a href="validation_ST1.html#home">Validation page</a></p>
+                        <p><a href="validation_ST1.html#home">Validation Page</a></p>
 
                     <h3>Link to the page</h3>
-                        <p><a href="home.html">Home page</a></p>
+                        <p><a href="home.html">Home Page</a></p>
             </section>
 
             <section>
                 <h2 id="gallery">Gallery Page</h2>
                     <h3>Technical Description</h3>
+                        <h3>HTML Technical Description</h3>
                         <ul>
-                            <li><code>&lt;nav class="nav-links"&gt;</code> manages the site's primary navigation and page states.</li>
+                            <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> handle the primary semantic landmarks for improved SEO and document structure</li>
+                            
+                            <li><code>Google Fonts</code> (Cinzel, Playfair Display, JetBrains Mono) are imported to create a specific atmospheric hierarchy for typography</li>
+                            
+                            <li><code>.scene_bg</code> uses an <code>onerror</code> attribute to hide the hero background if the image asset fails to load</li>
+                            
+                            <li><code>.nav-links</code> contains anchor tags and an <code>.active</code> class to handle multi-page navigation and current location highlighting</li>
+                            
+                            <li><code>.hero-content</code> (pageup) serves as the landing introduction using <code>&lt;span&gt;</code>, <code>&lt;h1&gt;</code>, and <code>&lt;p&gt;</code> to establish the narrative</li>
+                            
+                            <li><code>.dashboard-container</code> implements a gallery grid housing <code>.card</code> components with images, headings, and descriptions</li>
+                            
+                            <li><code>#galleryModal</code> serves as an interactive hidden div with customization buttons for user-end font and color schemes</li>
 
-                            <li><code>&lt;div class="dashboard-container"&gt;</code> implements the CSS Grid system for the 3-column gallery.</li>
+                            <li><code>&lt;footer&gt;</code> contains project metadata, developer details, and accessibility links.</li>
+                        </ul>
 
-                            <li><code>&lt;div class="card"&gt;</code> acts as a flexbox container for image assets and text metadata.</li>
+                    <h3>CSS Technical Description</h3>
+                        <ul>
+                            <li><code>:root</code> stores global design tokens like --teal, --card-bg, and typography variables.</li>
 
-                            <li><code>&lt;div id="galleryModal"&gt;</code> serves as the dynamic UI overlay for expanded content.</li>
+                            <li><code>*::before, *::after</code> ensures a consistent CSS box model and resets default browser margins.</li>
 
-                            <li><code>&lt;footer&gt;</code> holds student identification, project copyright, and administrative links.</li>
+                            <li><code>.dashboard-container</code> uses grid-template-columns to manage the responsive 3-column layout.</li>
 
-                            <li><code>:root</code> defines the central theme palette and typography variables.</li>
+                            <li><code>.card-image</code> utilizes object-fit: cover to maintain image aspect ratios within fixed containers.</li>
 
-                            <li><code>.scene_bg</code> uses object-fit: cover and fixed positioning for an immersive background.</li>
+                            <li><code>@media (max-width: 768px)</code> triggers the mobile-friendly single-column view.</li>
 
-                            <li><code>.card:hover</code> applies a translateY transform to provide interactive depth.</li>
+                            <li><code>.alt-font-active</code> and <code>.alt-color-active</code> provide the logic for user-driven theme overrides.</li>
+                        </ul>
 
-                            <li><code>@media</code> queries handle the transition from 3-column to 1-column responsive layouts.</li>
+                        <h3>JavaScript Technical Description</h3>
+                        <ul>
+                            <li><code>cards</code> is a NodeList used to attach event listeners to every gallery item.</li>
 
-                            <li><code>.alt-font-active</code> forces a monospaced font override using !important priority.</li>
+                            <li><code>mouseenter</code> and <code>mouseleave</code> events handle the dynamic "lift" and border-color animations.</li>
 
-                            <li><code>querySelectorAll('.card')</code> selects all gallery items to attach event listeners.</li>
+                            <li><code>imgSource</code> and <code>altText</code> are variables used to capture data from a clicked card for the modal.</li>
 
-                            <li><code>mouseenter / mouseleave</code> dynamically updates border colors and positioning.</li>
+                            <li><code>modal.style.display</code> toggles the visibility of the expanded view between flex and none.</li>
 
-                            <li><code>modal.style.display</code> controls the visibility state of the expanded image view.</li>
+                            <li><code>classList.toggle</code> is used to apply or remove accessibility themes on the modalTarget.</li>
 
-                            <li><code>classList.toggle</code> enables the "Change Font" and "Change Colour" accessibility features.</li>
-
-                            <li><code>window.onclick</code> detects clicks outside the modal to trigger the close logic.</li>
+                            <li><code>window.addEventListener('click')</code> allows users to close the modal by clicking outside the content box.</li>
                         </ul>
 
                     <h3 id="gallery-a11y">Accessibility</h3>
@@ -194,7 +215,7 @@
                         </ul>
 
                     <h3>Link to the validation page</h3> 
-                        <p><a href="validation_ST1.html#gallery">Validation page</a></p> 
+                        <p><a href="validation_ST1.html#gallery">Validation Page</a></p> 
 
 
                     <h3>Link to the page</h3>
@@ -279,12 +300,12 @@
 
                     <h3>Link to the validation page</h3> 
                         <p>
-                            <a href="validation_ST1.html#content">Validation page</a>
+                            <a href="validation_ST1.html#content">Validation Page</a>
                         </p> 
 
                     <h3>Link to the page</h3>
                         <p>
-                            <a href="content_ST1.html">Content page</a>
+                            <a href="content_ST1.html">Content Page</a>
                         </p>
             </section>
 
@@ -320,7 +341,7 @@
             </section>
 
             <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
 
                         <table >
     
@@ -360,7 +381,7 @@
                                 <tr>
                                     <td>3</td>
                                     <td>24 Feb 2026</td>
-                                    <td>Online</td>
+                                    <td>Physical</td>
                                     <td>Assign roles</td>
                                     <td>Yes</td>
                                     <td>Took part in role allocation and accepted assigned responsibilities</td>
@@ -396,7 +417,7 @@
                                 <tr>
                                     <td>7</td>
                                     <td>19 March 2026</td>
-                                    <td>Online</td>
+                                    <td>Physical</td>
                                     <td>Progress review</td>
                                     <td>Yes</td>
                                     <td>Shared progress updates and discussed next steps</td>
@@ -451,10 +472,31 @@
 
             <section>
                 <h2 id="ref">References</h2>
-                
                     <ul class="ref">
-                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
-                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
+                        <li>
+                            Global Ghost Gear Initiative (2024) <em>Underwater Plastic Pollution: A Global Challenge.</em>
+                            Available at: 
+                            <a href="https://www.ghostgear.org/resources" target="_blank" rel="noopener">
+                                www.ghostgear.org
+                            </a> 
+                            (Accessed 22 March 2026).
+                        </li>
+                        <li>
+                            Ocean Conservancy (2024) <em>Understanding the reasons behind marine ghost gear.</em>
+                            Available at: 
+                            <a href="https://oceanconservancy.org/wp-content/uploads/2025/09/GGGI-Fact-Sheet-UPDATED-8.24.pdf" target="_blank" rel="noopener">
+                                www.oceanconservancy.org
+                            </a> 
+                            (Accessed 22 March 2026).
+                        </li>
+                        <li>
+                            World Wildlife Fund (2025) <em>Understanding the how to stop ghost gear.</em>
+                            Available at: 
+                            <a href="https://wwfwhales.org/news-stories/stop-ghost-gear-wwf-report" target="_blank" rel="noopener">
+                                www.wwfwhales.org
+                            </a> 
+                            (Accessed 22 March 2026).
+                        </li>
                     </ul>
             </section>
 
