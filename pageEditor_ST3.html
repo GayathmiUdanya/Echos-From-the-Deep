@@ -42,7 +42,7 @@
     <div class="container">
         <!-- Main content area -->
         <main>
-            
+
             <section>
                 <h2 id="feedback">Feedback Page</h2>
                     <h3>Technical Description</h3>
@@ -151,7 +151,34 @@
 
                                 <li><code>#char-count</code> uses <code>float: right</code> to push the character counter to the right side of the comment label, keeping it visually associated with the field without disrupting the label text.</li>
                             </ul>
-                    
+
+                        <h3>JS Technical Description</h3>
+                            <ul>
+                                <li><code>document.getElementById()</code> is used to select form elements such as inputs, error messages, and the character counter.</li>
+
+                                <li><code>addEventListener("input")</code> listens for user typing in the message field to update the character count in real time.</li>
+
+                                <li><code>message.value.length</code> calculates the number of characters entered in the textarea.</li>
+
+                                <li><code>textContent</code> dynamically updates the displayed remaining character count.</li>
+
+                                <li><code>addEventListener("submit")</code> detects when the form is submitted and runs validation logic.</li>
+
+                                <li><code>event.preventDefault()</code> stops the default form submission to allow custom validation.</li>
+
+                                <li><code>showError()</code> function displays error messages and sets a validation flag to false.</li>
+
+                                <li><code>clearError()</code> removes error messages when input becomes valid.</li>
+
+                                <li><code>trim()</code> removes extra whitespace from user input before validation.</li>
+
+                                <li><code>regular expressions (RegEx)</code> are used to validate inputs such as name, email, telephone, and address formats.</li>
+
+                                <li><code>conditional (ternary) operators</code> are used to perform validation checks and display appropriate messages.</li>
+
+                                <li><code>form.reset()</code> clears all input fields after successful submission and resets the character counter.</li>
+                            </ul>
+                        
                     <h3 id="feedback-a11y">Accessibility</h3>
                         <ul>
                             <li><code>&lt;html lang="en"&gt;</code> declares the document language so screen readers pronounce the content correctly and apply appropriate pronunciation rules.</li>
