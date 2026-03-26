@@ -1,65 +1,65 @@
-let currentBg = 'assets/bg_low.png';
-let prevLevel = 'none';
-const cardData = {
+let currentBg = 'assets/bg_low.png'; // default background
+let prevLevel = 'none'; // to track level changes for animation
+const cardData = { // assigning point values to each card
     1: { pts: 3 },
     2: { pts: 4 },
     3: { pts: 2 },
     4: { pts: 3 },
-    5: { pts: 3 },
+    5: { pts: 3 }, 
     6: { pts: 2 }
-};
-const selected = {};
-function spawnRipple(card, e) {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const size = Math.max(rect.width, rect.height) * 1.2;
-    const ripple = document.createElement('span');
-    ripple.className = 'ripple';
-    ripple.style.cssText = `width:${size}px;height:${size}px;left:${x - size / 2}px;top:${y - size / 2}px;`;
-    card.appendChild(ripple);
-    setTimeout(() => ripple.remove(), 600);
+}; 
+const selected = {}; // tracking selected cards
+function spawnRipple(card, e) { // creates a ripple effect on card click
+    const rect = card.getBoundingClientRect(); // get card position and size
+    const x = e.clientX - rect.left; // calculate click position relative to card
+    const y = e.clientY - rect.top; // calculate click position relative to card
+    const size = Math.max(rect.width, rect.height) * 1.2; // size of ripple based on card size
+    const ripple = document.createElement('span'); // create ripple element
+    ripple.className = 'ripple'; // assign ripple class for styling
+    ripple.style.cssText = `width:${size}px;height:${size}px;left:${x - size / 2}px;top:${y - size / 2}px;`; // position and size ripple
+    card.appendChild(ripple); // add ripple to card
+    setTimeout(() => ripple.remove(), 600); // remove ripple after animation
 }
-function spawnToast(pts, adding, cardEl) {
-    const rect = cardEl.getBoundingClientRect();
-    const toast = document.createElement('div');
-    toast.className = 'pts-toast' + (adding ? '' : ' neg');
-    toast.textContent = (adding ? '+' : '−') + pts + ' pts';
-    toast.style.cssText = `left:${rect.left + rect.width / 2 - 30}px;top:${rect.top + rect.height / 2 - 20}px;`;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.remove(), 1000);
+function spawnToast(pts, adding, cardEl) { // creates a toast notification for points added or removed9
+    const rect = cardEl.getBoundingClientRect(); // get card position and size for toast placement
+    const toast = document.createElement('div');// create toast element
+    toast.className = 'pts-toast' + (adding ? '' : ' neg'); // assign toast class and negative class if points are being removed
+    toast.textContent = (adding ? '+' : '−') + pts + ' pts'; // set toast text to show points added or removed
+    toast.style.cssText = `left:${rect.left + rect.width / 2 - 30}px;top:${rect.top + rect.height / 2 - 20}px;`;// position toast near the card
+    document.body.appendChild(toast); // add toast to the document
+    setTimeout(() => toast.remove(), 1000); // remove toast after animation
 }
-function toggle(id, e) {
-    const card = document.getElementById('card' + id);
-    if (e) spawnRipple(card, e);
-    const adding = !selected[id];
-    if (selected[id]) {
+function toggle(id, e) { // handles card selection and updates feedback
+    const card = document.getElementById('card' + id); // get card element by id
+    if (e) spawnRipple(card, e); // trigger ripple effect on click
+    const adding = !selected[id]; // determine if points are being added or removed based on current selection state
+    if (selected[id]) { // if card is currently selected, deselect it and mark points as being removed
         selected[id] = false;
         card.classList.remove('selected');
     } else {
         selected[id] = true;
         card.classList.add('selected');
     }
-    spawnToast(cardData[id].pts, adding, card);
-    updateFeedback();
+    spawnToast(cardData[id].pts, adding, card); // show toast notification for points change
+    updateFeedback(); // update feedback panel based on new selection state
 }
-function calcScore() {
-    let total = 0;
-    for (const id in selected) {
-        if (selected[id]) total += cardData[id].pts;
+function calcScore() { // calculates total score based on selected cards
+    let total = 0; // initialize total score
+    for (const id in selected) { // iterate through selected cards
+        if (selected[id]) total += cardData[id].pts; // add points for each selected card
     }
-    return total;
+    return total; // return total score
 }
-function countSelected() {
-    return Object.values(selected).filter(Boolean).length;
+function countSelected() { // counts how many cards are currently selected
+    return Object.values(selected).filter(Boolean).length; // count and return number of true values in selected object
 }
-const backgrounds = {
+const backgrounds = { // mapping of impact levels to background images
     none: 'assets/bg_low.png',
     low: 'assets/bg_low.png',
     mid: 'assets/bg_mid.png',
     high: 'assets/bg_high.png'
 };
-const messages = {
+const messages = {// feedback messages and labels for each impact level
     none: {
         badge: 'none',
         label: 'Awaiting Your Choices',
@@ -89,65 +89,65 @@ const messages = {
         icon: '🐬'
     }
 };
-function updateFeedback() {
-    const score = calcScore();
-    const count = countSelected();
+function updateFeedback() { // updates the feedback panel based on current score and selection
+    const score = calcScore(); // calculate current score based on selected cards
+    const count = countSelected(); // count how many cards are currently selected
 
     let level;
-    if (score === 0) level = 'none';
+    if (score === 0) level = 'none'; // determine impact level based on score thresholds
     else if (score <= 5) level = 'low';
     else if (score <= 11) level = 'mid';
     else level = 'high';
 
-    const data = messages[level];
-    const scoreEl = document.getElementById('score');
-    scoreEl.classList.remove('pop');
+    const data = messages[level]; // get feedback data for current impact level
+    const scoreEl = document.getElementById('score'); // get score element to update points display
+    scoreEl.classList.remove('pop'); // reset pop animation
     void scoreEl.offsetWidth; // reflow
-    scoreEl.classList.add('pop');
-    scoreEl.textContent = score;
-    scoreEl.className = 'score pop' + (level !== 'none' ? ' impact-' + level : '');
-    const pct = Math.min((score / 17) * 100, 100);
-    document.getElementById('progressFill').style.width = pct + '%';
-    const badge = document.getElementById('level');
-    badge.textContent = data.label;
-    badge.className = 'impact-level-badge ' + (level === 'none' ? 'none' : level);
-    if (level !== prevLevel) {
+    scoreEl.classList.add('pop');// trigger pop animation for score change
+    scoreEl.textContent = score; // update score display with current points
+    scoreEl.className = 'score pop' + (level !== 'none' ? ' impact-' + level : ''); // update score class for color change based on impact level
+    const pct = Math.min((score / 17) * 100, 100); // calculate percentage for progress bar (assuming 17 is max score)
+    document.getElementById('progressFill').style.width = pct + '%'; // update progress bar fill based on score percentage
+    const badge = document.getElementById('level'); // get badge element to update impact level display
+    badge.textContent = data.label; // update badge text to show current impact level label
+    badge.className = 'impact-level-badge ' + (level === 'none' ? 'none' : level); // update badge class for styling based on impact level
+    if (level !== prevLevel) { // if impact level has changed, trigger level-up animation on badge
         badge.classList.add('level-up');
         setTimeout(() => badge.classList.remove('level-up'), 600);
     }
-    const msgEl = document.getElementById('message');
-    if (level !== prevLevel) {
+    const msgEl = document.getElementById('message'); // get message element to update feedback message
+    if (level !== prevLevel) { // if impact level has changed, fade out old message and fade in new message for smoother transition
         msgEl.style.opacity = '0';
-        setTimeout(() => { msgEl.textContent = data.message; msgEl.style.opacity = '1'; }, 220);
+        setTimeout(() => { msgEl.textContent = data.message; msgEl.style.opacity = '1'; }, 220); // delay message update to allow fade-out before changing text and fading back in
     } else {
-        msgEl.textContent = data.message;
+        msgEl.textContent = data.message;// if level hasn't changed, just update message text without animation
     }
-    document.getElementById('selcount').textContent = count;
-    document.getElementById('oceanI').textContent = data.icon;
-    document.getElementById('oceant').textContent = data.ocean;
-    const oceanState = document.getElementById('oceanState');
-    oceanState.className = 'oceanBox' + (level !== 'none' ? ' impact-' + level : '');
-    const panel = document.getElementById('feed');
-    panel.className = 'feed' + (level !== 'none' ? ' impact-' + level : '');
-    const newSrc = backgrounds[level];
-    if (currentBg !== newSrc) {
+    document.getElementById('selcount').textContent = count; // update selected count display
+    document.getElementById('oceanI').textContent = data.icon;  // update ocean icon based on impact level
+    document.getElementById('oceant').textContent = data.ocean;  // update ocean description text based on impact level
+    const oceanState = document.getElementById('oceanState'); // get ocean state element to update background and styling based on impact level
+    oceanState.className = 'oceanBox' + (level !== 'none' ? ' impact-' + level : ''); // update ocean state class for styling
+    const panel = document.getElementById('feed'); // get feedback panel element to update background and styling based on impact level
+    panel.className = 'feed' + (level !== 'none' ? ' impact-' + level : ''); // update feedback panel class for styling
+    const newSrc = backgrounds[level];// get new background source based on impact level
+    if (currentBg !== newSrc) { // if background has changed, update background image with fade transition
         currentBg = newSrc;
-        const bg = document.getElementById('sceneBg');
-        bg.style.opacity = '0';
+        const bg = document.getElementById('sceneBg'); // get background image element to update source
+        bg.style.opacity = '0'; // fade out current background before changing source
         setTimeout(() => {
-            bg.src = newSrc;
-            bg.style.opacity = '1';
+            bg.src = newSrc; // change background image source
+            bg.style.opacity = '1'; // fade in new background after changing source
         }, 500);
     }
 
-    prevLevel = level;
+    prevLevel = level; // update previous level to current level for next update comparison
 }
-function resetall() {
+function resetall() { // resets all selections and updates feedback to initial state
     for (const id in cardData) {
         selected[id] = false;
-        const card = document.getElementById('card' + id);
-        card.classList.remove('selected');
+        const card = document.getElementById('card' + id); //  get card element by id to remove selected class
+        card.classList.remove('selected'); // deselect card visually
     }
-    updateFeedback();
+    updateFeedback(); // update feedback panel to reflect reset state
 }
-updateFeedback();
+updateFeedback(); // initial feedback update to set everything to default state on page load
