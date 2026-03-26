@@ -13,7 +13,7 @@ const form = document.getElementById("feedbackForm"); // Grabs the from element
 
 form.addEventListener("submit",(e)=>{
     e.preventDefault(); // Stops the page from refreshing
-    let valid =true; // Assumes the form has valid details until it runs in to an error
+    let valid = true; // Assumes the form has valid details until it runs in to an error
 
     // Helps to show clear error messages
     function showError(id,msg){

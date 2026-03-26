@@ -28,13 +28,18 @@ main {
 /* Position the NAV on the rught side of the page */
 .side-nav {
     position: absolute;
-    right: 1.5rem;
-    top: 9rem;  /* Adjust this to move it up or down */
-    right: 12rem;
+    top: 1rem;  /* Adjust this to move it up or down */
+    right: 2rem;
     display: flex;
     flex-direction: column; /* Stacks the links vertically */
     gap: 1rem;
     z-index: 10;
+    padding: 1.2rem 1.8rem;
+    border-radius: 12px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    background: rgba(255, 255, 255, 0.12);
+
 }
 
 /* Styles each NAV link */
@@ -63,13 +68,13 @@ main {
 
 /* Glass background panel */
 .glass-panel {
+    position: relative;
     background: rgba(3, 13, 26, 0.85);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+    overflow: hidden;
     backdrop-filter: blur(28px);
     border: 1px solid rgba(125, 211, 252, 0.14);
     border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.45);
-    position: relative;
     margin-bottom: 2rem;
 }
 
