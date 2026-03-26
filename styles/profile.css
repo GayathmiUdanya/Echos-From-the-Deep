@@ -144,6 +144,10 @@ button:hover{
     font-size: .84rem;
 }
 
+.details p{
+    font-size: 0.89rem;
+}
+
 .details p:first-child{
     width:90px; /* fixed width for labels */
     font-weight:bold;
