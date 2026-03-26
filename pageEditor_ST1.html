@@ -48,48 +48,244 @@
             <section>
                 <h2 id="home">Home Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
-                    
+                        <ul>
+                            <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> handle the primary site navigation and branding logo</li>
+
+                            <li><code>.nav-links</code> contains anchor tags for multi-page navigation</li>
+
+                            <li><code>.scene_bg</code> uses an <code>onerror</code> attribute to hide the hero image if the file fails to load</li>
+
+                            <li><code>.hero-content</code> serves as the landing introduction with CTA buttons</li>
+
+                            <li><code>.dashboard-container</code> implements a horizontal scroll layout using <code>overflow-x: auto</code></li>
+
+                            <li><code>.card.peek</code> components use nested structures for interactive hover expansion</li>
+
+                            <li><code>:root</code> variables define a centralized color palette and typography</li>
+
+                            <li><code>@keyframes bounce</code> powers the scroll indicator's vertical animation</li>
+
+                            <li><code>backdrop-filter</code> creates a modern glassmorphism effect on the navigation bar</li>
+
+                            <li><code>*</code>, <code>*::before</code>, and <code>*::after</code> use <code>box-sizing: border-box</code> to simplify layout calculations</li>
+
+                            <li><code>.scene_bg</code> uses <code>position: fixed</code> and <code>inset: 0</code> to create a static, full-screen background layer</li>
+
+                            <li><code>:root</code> defines CSS variables for <code>--teal</code>, <code>--font-body</code>, and <code>--nav-bg</code> for global consistency</li>
+
+                            <li><code>backdrop-filter: blur(14px)</code> is applied to the <code>&lt;nav&gt;</code> for a glassmorphism design effect</li>
+
+                            <li><code>.logo-circle</code> uses a <code>radial-gradient</code> to generate a custom-styled brand icon</li>
+
+                            <li><code>.btn-fill</code> and <code>.btn-outline</code> use <code>transition</code> and <code>transform</code> for smooth hover interactions</li>
+
+                            <li><code>@keyframes bounce</code> creates the vertical animation for the <code>.scroll-indicator</code> element</li>
+
+                            <li><code>.dashboard-container</code> uses <code>display: flex</code> and <code>scroll-snap-type: x mandatory</code> for a horizontal gallery</li>
+
+                            <li><code>.card.peek:hover</code> triggers a <code>width</code> expansion from 85px to 220px to reveal hidden content</li>
+
+                            <li><code>.peek-overlay</code> uses <code>transform: rotate(-90deg)</code> to display text vertically on unexpanded cards</li>
+                        </ul> 
+
                     <h3 id="home-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
-                    
+                        <ul>
+                            <li><code>lang="en"</code> on the <code>&lt;html&gt;</code> tag ensures screen readers use correct pronunciation</li>
+
+                            <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> act as semantic landmarks</li>
+
+                            <li><code>alt</code> attributes on all images provide descriptive text for visually impaired users</li>
+
+                            <li><code>class="active"</code> provides a clear structural indicator of the user's current location</li>
+
+                            <li><code>&lt;h1&gt;</code> through <code>&lt;h3&gt;</code> tags establish a clear heading hierarchy</li>
+
+                            <li><code>display=swap</code> on Google Fonts prevents invisible text during font loading</li>
+
+                            <li><code>pointer-events: none</code> on overlays ensures they don't block link interactions</li>
+
+                            <li><code>transform</code> and <code>opacity</code> changes provide non-color feedback for interaction</li>
+
+                            <li><code>meta name="viewport"</code> ensures the site is responsive and zoomable on mobile</li>
+
+                            <li><code>color: var(--white)</code> ensures high contrast readability against the dark ocean-themed background</li>
+
+                            <li><code>.nav-links a:hover</code> uses <code>background: var(--white-10)</code> to provide a clear visual focus state</li>
+
+                            <li><code>.nav-links a.active</code> uses <code>background: var(--white-20)</code> for structural location identification</li>
+
+                            <li><code>letter-spacing</code> on uppercase text improves readability for users with visual processing needs</li>
+
+                            <li><code>.scroll-indicator</code> uses motion as a non-text cue to signal that more content is available below</li>
+
+                            <li><code>scrollbar-width: none</code> hides the scrollbar while <code>overflow-x: auto</code> maintains keyboard scrolling</li>
+
+                            <li><code>transition: opacity 0.4s ease</code> prevents jarring visual changes when expanding content cards</li>
+
+                            <li><code>pointer-events: none</code> on <code>.peek-overlay</code> prevents decorative text from blocking mouse clicks</li>
+
+                            <li><code>font-family: var(--font-body)</code> defaults to <code>sans-serif</code> for maximum character legibility</li>
+                        </ul>
+
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST1.html#home">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST1.html#home">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                     <h3>Link to the page</h3>
-                        <p><a href="home.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="home.html">Home page</a></p>
             </section>
 
             <section>
                 <h2 id="gallery">Gallery Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <ul>
+                            <li><code>&lt;nav class="nav-links"&gt;</code> manages the site's primary navigation and page states.</li>
+
+                            <li><code>&lt;div class="dashboard-container"&gt;</code> implements the CSS Grid system for the 3-column gallery.</li>
+
+                            <li><code>&lt;div class="card"&gt;</code> acts as a flexbox container for image assets and text metadata.</li>
+
+                            <li><code>&lt;div id="galleryModal"&gt;</code> serves as the dynamic UI overlay for expanded content.</li>
+
+                            <li><code>&lt;footer&gt;</code> holds student identification, project copyright, and administrative links.</li>
+
+                            <li><code>:root</code> defines the central theme palette and typography variables.</li>
+
+                            <li><code>.scene_bg</code> uses object-fit: cover and fixed positioning for an immersive background.</li>
+
+                            <li><code>.card:hover</code> applies a translateY transform to provide interactive depth.</li>
+
+                            <li><code>@media</code> queries handle the transition from 3-column to 1-column responsive layouts.</li>
+
+                            <li><code>.alt-font-active</code> forces a monospaced font override using !important priority.</li>
+
+                            <li><code>querySelectorAll('.card')</code> selects all gallery items to attach event listeners.</li>
+
+                            <li><code>mouseenter / mouseleave</code> dynamically updates border colors and positioning.</li>
+
+                            <li><code>modal.style.display</code> controls the visibility state of the expanded image view.</li>
+
+                            <li><code>classList.toggle</code> enables the "Change Font" and "Change Colour" accessibility features.</li>
+
+                            <li><code>window.onclick</code> detects clicks outside the modal to trigger the close logic.</li>
+                        </ul>
 
                     <h3 id="gallery-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <ul>
+                            <li><code>&lt;html lang="en"&gt;</code> defines the base language to ensure screen readers use correct pronunciation.</li>
+
+                            <li><code>&lt;main&gt;</code> and <code>&lt;nav&gt;</code> provide ARIA landmarks, allowing users to jump directly to specific sections.</li>
+
+                            <li><code>aria-label="Back to top"</code> provides a clear text description for the symbolic "↑" link for non-visual users.</li>
+
+                            <li><code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> group related navigation and metadata for a logical page hierarchy.</li>
+
+                            <li><code>alt</code> attributes on all images (e.g., "Discarded fishing net") provide critical visual context to screen reader users.</li>
+
+                            <li><code>opacity: 0.55</code> on the background image maintains a high contrast ratio between the text and the scenery.</li>
+
+                            <li><code>line-height: 1.6</code> in the modal text prevents crowding, making long descriptions easier for users with cognitive impairments to read.</li>
+
+                            <li><code>cursor: pointer</code> and <code>:hover</code> states give immediate visual feedback that an element is interactive.</li> 
+
+                            <li><code>btnFont</code> toggles a monospaced font, which is often easier for users with dyslexia or reading difficulties to process.</li>
+
+                            <li><code>btnColor</code> switches to a high-contrast scheme, assisting users with color blindness or light sensitivity.</li>
+
+                            <li><code>overflow-y: auto</code> ensures that the modal remains fully scrollable for users on small screens or with high browser zoom.</li>
+
+                            <li><code>onerror="this.style.display='none'"</code> hides broken images to prevent screen reader confusion and maintain a clean layout.</li>
+                        </ul>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST1.html#gallery">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST1.html#gallery">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
-                        
+
                     <h3>Link to the page</h3>
-                        <p><a href="gallery.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="gallery.html">Gallery Page</a></p>
             </section>
 
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <ul>
+                            <li><code>&lt;html lang="en"&gt;</code> specifies the primary language for the document</li>
+
+                            <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> define the semantic navigation area</li>
+
+                            <li><code>&lt;div id="sonarpart"&gt;</code> holds the dynamic sonar ripple elements</li>
+
+                            <li><code>&lt;div class="bg"&gt;</code> acts as a fixed layer for smooth background transitions</li>
+
+                            <li><code>&lt;section data-bg&gt;</code> identifies the background to trigger for specific content</li>
+
+                            <li><code>&lt;div class="contentcon"&gt;</code> contains the interactive story cards</li>
+                            
+                            <li><code>&lt;div class="stat-row"&gt;</code> organizes the Cabo Pulmo recovery statistics</li>
+
+                            <li><code>&lt;a class="back-to-top"&gt;</code> provides a shortcut to the page header</li>
+
+                            <li><code>bgs</code> is an object that stores references to all background elements</li>
+                            
+                            <li><code>activeBg</code> stores the ID of the background currently being displayed</li>
+
+                            <li><code>bgLocked</code> is a boolean that prevents overlapping transitions</li>
+
+                            <li><code>switchBg()</code> manages the opacity and z-index of background layers</li>
+
+                            <li><code>onScroll()</code> calculates re	ading progress and the nearest active section</li>
+
+                            <li><code>triggerSonarPing()</code> restarts the sonar animations when scrolling stops</li>
+
+                            <li><code>IntersectionObserver</code> triggers the fade-in effect for content cards</li>
+
+                            <li><code>backdrop-filter</code> creates the glass-morphism effect on content containers</li>
+
+                            <li><code>clamp()</code> ensures fluid typography across different screen sizes</li>
+
+                            <li><code>@keyframes lineDrop</code> handles the vertical scanning animation</li>
+
+                            <li><code>@keyframes sonarRing</code> controls the expanding ripple visual effect</li>
+
+                            <li><code>passive: true</code> optimizes scroll performance for mobile devices</li>
+                        </ul>
 
                     <h3 id="content-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <ul>
+                            <li><code>&lt;html lang="en"&gt;</code> helps screen readers use correct pronunciation</li>
+
+                            <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> act as semantic landmarks</li>
+
+                            <li><code>aria-hidden="true"</code> hides decorative ripples and backgrounds from assistive tech</li>
+
+                            <li><code>aria-label="Story chapters"</code> provides a meaningful label for the act navigation</li>
+
+                            <li><code>aria-label="Back to top"</code> describes the purpose of the ↑ anchor link</li>
+
+                            <li><code>alt=""</code> on background images ensures they are ignored by screen readers</li>
+
+                            <li><code>class="chaptrnavii active"</code> provides clear visual identification of the current act</li>
+
+                            <li><code>&lt;ol&gt;</code> and <code>&lt;li&gt;</code> are used for references to maintain a logical reading order</li>
+
+                            <li><code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code> tags provide structural emphasis for text-to-speech</li>
+
+                            <li><code>High contrast</code> between text and backgrounds improves readability</li>
+
+                            <li><code>backdrop-filter: blur()</code> ensures text remains legible over background images</li>
+
+                            <li><code>display=swap</code> on Google Fonts prevents invisible text during font loading</li>
+
+                            <li><code>passive: true</code> on scroll listeners ensures the UI stays responsive</li>
+
+                            <li><code>&lt;h1&gt;</code> through <code>&lt;h3&gt;</code> maintain a proper heading hierarchy for navigation</li>
+                        </ul>    
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST1.html#content">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <p><a href="validation_ST1.html#content">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="content_ST1.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="content_ST1.html">Content page</a></p>
             </section>
 
             <section>
