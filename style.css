@@ -301,15 +301,16 @@ a.back-to-top{
     align-items: center;
     justify-content: center;
     color: #7dd3fc;
-    font-size: 1.1rem;
+    font-size: 2.4rem;
     text-decoration: none;
     z-index: 50;
+
     transition: background 0.25s, transform 0.25s;
 }
 
 a.back-to-top:hover {
     background: rgba(125, 211, 252, 0.12);
-    transform: translateY(-3px);
+    transform: translateY(-5px);
 }
 
 /* FOOTER STYLES */
