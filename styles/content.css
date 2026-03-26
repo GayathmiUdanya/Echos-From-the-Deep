@@ -407,45 +407,6 @@ body {
   color: rgba(255, 255, 255, .8);
 }
 
-
-
-
-
-
-
-
-/* what are these forrrr */
-
-.tc-line-bot {
-  width: 1px;
-  height: 60px;
-  background: linear-gradient(180deg, rgba(125, 211, 252, .35), transparent);
-  margin-top: 2.5rem;
-  animation: lineDrop 2.5s ease-in-out infinite;
-}
-
-@keyframes lineDrop {
-  0% {
-    transform: scaleY(0);
-    transform-origin: top;
-    opacity: 0;
-  }
-
-  35% {
-    opacity: 1;
-  }
-
-  70% {
-    transform: scaleY(1);
-  }
-
-  100% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-    opacity: 0;
-  }
-}
-
 /* ── Stat Row ── */
 .stat-row {
   display: grid;
