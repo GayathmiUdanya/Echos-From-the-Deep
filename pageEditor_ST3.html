@@ -42,115 +42,143 @@
     <div class="container">
         <!-- Main content area -->
         <main>
+
             <section>
                 <h2 id="feedback">Feedback Page</h2>
                     <h3>Technical Description</h3>
-                        <h3>HTML Technical Description</h3>
+                    <h3>HTML Technical Description</h3>
+                        <ul>
+                            <li><code>&lt;html lang="en"&gt;</code> declares the document language so screen readers pronounce the content correctly.</li>
+
+                            <li><code>&lt;meta charset="UTF-8"&gt;</code> sets the character encoding to support a wide range of characters and symbols.</li>
+
+                            <li><code>&lt;meta name="viewport"&gt;</code> makes the page responsive by matching the layout width to the device screen at a 1:1 zoom scale.</li>
+
+                            <li><code>&lt;link rel="stylesheet"&gt;</code> is used four times — once for Google Fonts loading Cinzel, Playfair Display, JetBrains Mono, and Inter, once for the global <code>style.css</code>, and once for the page-specific <code>feedback.css</code>.</li>
+
+                            <li><code>&lt;img class="scene-bg"&gt;</code> places the background image directly in the body so it can be positioned and layered using CSS rather than being set as a CSS background property.</li>
+
+                            <li><code>onerror="this.style.display='none'"</code> hides the background image element if it fails to load, so the broken image icon does not appear to the user.</li>
+
+                            <li><code>class="active"</code> is applied to the Feedback nav link to visually indicate the current page to the user.</li>
+
+                            <li><code>&lt;div class="side-nav"&gt;</code> provides an internal navigation panel with anchor links that jump to the Programs, Reviews, and Feedback sections of the page, allowing users to skip straight to the part they need.</li>
+
+                            <li><code>id="programSection"</code>, <code>id="reviewSection"</code>, and <code>id="feedbackSection"</code> are placed on each major section so the side nav anchor links have targets to scroll to.</li>
+
+                            <li><code>&lt;em&gt;</code> inside the hero heading wraps <em>Our Mission.</em> — beyond just making it italic visually, it carries semantic emphasis so screen readers stress that text when reading aloud.</li>
+
+                            <li><code>&lt;select&gt;</code> with <code>&lt;option&gt;</code> elements is used for the Sort By dropdown, giving users a controlled set of choices rather than a free text input.</li>
+
+                            <li><code>aria-label="Sort programs"</code> is added to the sort dropdown since it has no visible <code>&lt;label&gt;</code> element paired with it, giving screen readers a meaningful description of its purpose.</li>
+
+                            <li><code>&lt;div class="card-grid"&gt;</code> contains the six program cards, each built with a <code>&lt;div class="card"&gt;</code> holding an image, heading, description, and two action buttons.</li>
+
+                            <li><code>&lt;button class="btn-lm"&gt;</code> and <code>&lt;button class="btn-join"&gt;</code> use proper <code>&lt;button&gt;</code> tags rather than styled divs, making them naturally focusable and announced correctly by screen readers.</li>
+
+                            <li><code>&lt;div class="review-layout"&gt;</code> holds the six review cards, each using a <code>&lt;div class="review-card"&gt;</code> with a heading, review text, <code>&lt;hr&gt;</code> divider, and a footer showing the reviewer name, date, and score badge.</li>
+
+                            <li><code>&lt;hr&gt;</code> inside each review card acts as a visual divider between the review text and the reviewer details footer.</li>
+
+                            <li><code>&lt;span class="reviewer-name"&gt;</code> and <code>&lt;span class="score-badge"&gt;</code> use inline <code>&lt;span&gt;</code> tags to style small pieces of text — the reviewer name and score — without breaking the surrounding layout.</li>
+
+                            <li><code>&lt;form id="feedbackForm" novalidate&gt;</code> wraps the feedback form and <code>novalidate</code> disables browser default validation so JavaScript handles it instead, giving more control over error messages.</li>
+
+                            <li><code>&lt;fieldset&gt;</code> is used twice — once for Personal Details and once for Feedback Details — to group related form fields together, making the form easier to read and navigate.</li>
+
+                            <li><code>&lt;legend&gt;</code> gives each fieldset a visible title that screen readers announce when the user enters that group of fields.</li>
+
+                            <li><code>&lt;label for="fullname"&gt;</code> and equivalent labels are paired with every input using the <code>for</code> attribute, linking them so clicking the label focuses the correct field.</li>
+
+                            <li><code>input type="text"</code>, <code>type="email"</code>, <code>type="tel"</code>, and <code>type="date"</code> use specific input types to trigger appropriate keyboards on mobile and provide context about the expected data to the browser and screen readers.</li>
+
+                            <li><code>&lt;span class="error" id="fullname-error"&gt;</code> sits beside each input so JavaScript can inject error messages directly next to the relevant field, making it clear to the user which field has an issue.</li>
+
+                            <li><code>maxlength="300"</code> on the comment textarea limits input to 300 characters, paired with a live <code>&lt;span id="char-count"&gt;</code> counter so users can see how much space remains.</li>
+
+                            <li><code>&lt;button type="submit"&gt;</code> and <code>&lt;button type="reset"&gt;</code> use proper semantic button types so the form submits and resets correctly, and both are naturally keyboard accessible.</li>
+
+                            <li><code>&lt;div class="success-message"&gt;</code> is hidden by default and shown by JavaScript after a successful form submission to confirm to the user that their feedback was received.</li>
+
+                            <li><code>&lt;script src="scripts/feedback.js"&gt;</code> is placed at the bottom of the body so the HTML loads fully before the JavaScript runs, avoiding issues with scripts trying to access elements that have not yet been rendered.</li>
+                        </ul>
+
+                        <h3>CSS Technical Description</h3>
                             <ul>
-                                <li><code>&lt;html lang="en"&gt;</code> declares the document language so screen readers pronounce the content correctly.</li>
+                                <li><code>position: fixed</code> on <code>.scene-bg</code> keeps the background image stationary while the user scrolls, creating a parallax-like effect.</li>
 
-                                <li><code>&lt;meta charset="UTF-8"&gt;</code> sets the character encoding to support a wide range of characters and symbols.</li>
+                                <li><code>inset: 0</code> stretches the background image to cover all four edges of the viewport without needing separate top, right, bottom, and left values.</li>
 
-                                <li><code>&lt;meta name="viewport"&gt;</code> makes the page responsive by matching the layout width to the device screen at a 1:1 zoom scale.</li>
+                                <li><code>opacity: 0.55</code> makes the background semi-transparent so the content and cards remain readable over it.</li>
 
-                                <li><code>&lt;link rel="stylesheet"&gt;</code> is used four times — once for Google Fonts loading Cinzel, Playfair Display, JetBrains Mono, and Inter, once for the global <code>style.css</code>, and once for the page-specific <code>feedback.css</code>.</li>
+                                <li><code>z-index</code> is used to layer elements correctly — the background sits at 0, the main content at 1, and the side nav at 10 so it always appears above other content.</li>
 
-                                <li><code>&lt;img class="scene-bg"&gt;</code> places the background image directly in the body so it can be positioned and layered using CSS rather than being set as a CSS background property.</li>
+                                <li><code>position: absolute</code> on <code>.side-nav</code> places it at a fixed position within the hero section, using <code>top</code> and <code>right</code> values to anchor it to the top right corner.</li>
 
-                                <li><code>onerror="this.style.display='none'"</code> hides the background image element if it fails to load, so the broken image icon does not appear to the user.</li>
+                                <li><code>backdrop-filter: blur(14px)</code> on <code>.side-nav</code> creates a frosted glass effect behind the navigation panel, letting the background show through while keeping the links readable.</li>
 
-                                <li><code>class="active"</code> is applied to the Feedback nav link to visually indicate the current page to the user.</li>
+                                <li><code>backdrop-filter: blur(28px)</code> on <code>.glass-panel</code> applies a stronger frosted glass effect to each major section container, giving the page a layered depth.</li>
 
-                                <li><code>&lt;div class="side-nav"&gt;</code> provides an internal navigation panel with anchor links that jump to the Programs, Reviews, and Feedback sections of the page, allowing users to skip straight to the part they need.</li>
+                                <li><code>background: rgba(3, 13, 26, 0.85)</code> on <code>.glass-panel</code> uses a semi-transparent dark fill so the background image is still slightly visible through each panel.</li>
 
-                                <li><code>id="programSection"</code>, <code>id="reviewSection"</code>, and <code>id="feedbackSection"</code> are placed on each major section so the side nav anchor links have targets to scroll to.</li>
+                                <li><code>.section-label::after</code> uses <code>content: ''</code> with <code>flex: 1</code> and a <code>height: 1px</code> border to draw a thin decorative line that stretches to fill the remaining space after the section heading.</li>
 
-                                <li><code>&lt;em&gt;</code> inside the hero heading wraps <em>Our Mission.</em> — beyond just making it italic visually, it carries semantic emphasis so screen readers stress that text when reading aloud.</li>
+                                <li><code>overflow-y: scroll</code> on <code>.container-grid</code> makes the program cards section independently scrollable, keeping the page layout contained rather than letting the cards push the page length excessively.</li>
 
-                                <li><code>&lt;select&gt;</code> with <code>&lt;option&gt;</code> elements is used for the Sort By dropdown, giving users a controlled set of choices rather than a free text input.</li>
+                                <li><code>display: grid</code> with <code>grid-template-columns: repeat(2, 1fr)</code> on <code>.card-grid</code> arranges the program cards in a two-column layout that distributes space evenly between cards.</li>
 
-                                <li><code>aria-label="Sort programs"</code> is added to the sort dropdown since it has no visible <code>&lt;label&gt;</code> element paired with it, giving screen readers a meaningful description of its purpose.</li>
+                                <li><code>display: grid</code> with <code>grid-template-columns: repeat(3, 1fr)</code> on <code>.review-layout</code> arranges the review cards in a three-column layout.</li>
 
-                                <li><code>&lt;div class="card-grid"&gt;</code> contains the six program cards, each built with a <code>&lt;div class="card"&gt;</code> holding an image, heading, description, and two action buttons.</li>
+                                <li><code>object-fit: cover</code> on <code>.card img</code> ensures program card images fill their container without stretching or distorting regardless of the original image dimensions.</li>
 
-                                <li><code>&lt;button class="btn-lm"&gt;</code> and <code>&lt;button class="btn-join"&gt;</code> use proper <code>&lt;button&gt;</code> tags rather than styled divs, making them naturally focusable and announced correctly by screen readers.</li>
+                                <li><code>appearance: none</code> on <code>.sort-select</code> removes the default browser dropdown arrow so custom styles can be applied consistently across browsers.</li>
 
-                                <li><code>&lt;div class="review-layout"&gt;</code> holds the six review cards, each using a <code>&lt;div class="review-card"&gt;</code> with a heading, review text, <code>&lt;hr&gt;</code> divider, and a footer showing the reviewer name, date, and score badge.</li>
+                                <li><code>box-sizing: border-box</code> on all inputs, selects, and textareas prevents them from overflowing their container when padding is added.</li>
 
-                                <li><code>&lt;hr&gt;</code> inside each review card acts as a visual divider between the review text and the reviewer details footer.</li>
+                                <li><code>resize: vertical</code> on <code>textarea</code> restricts resizing to the vertical direction only, so users cannot drag the textarea horizontally and break the form layout.</li>
 
-                                <li><code>&lt;span class="reviewer-name"&gt;</code> and <code>&lt;span class="score-badge"&gt;</code> use inline <code>&lt;span&gt;</code> tags to style small pieces of text — the reviewer name and score — without breaking the surrounding layout.</li>
+                                <li><code>transition</code> on <code>.btn-lm</code>, <code>.btn-join</code>, and the sort select smoothly animates the glow and scale effects when the user hovers over interactive elements.</li>
 
-                                <li><code>&lt;form id="feedbackForm" novalidate&gt;</code> wraps the feedback form and <code>novalidate</code> disables browser default validation so JavaScript handles it instead, giving more control over error messages.</li>
+                                <li><code>input:focus</code>, <code>select:focus</code>, and <code>textarea:focus</code> apply a purple border and box shadow to highlight the currently active form field, giving users a clear visual indicator of where they are in the form.</li>
 
-                                <li><code>&lt;fieldset&gt;</code> is used twice — once for Personal Details and once for Feedback Details — to group related form fields together, making the form easier to read and navigate.</li>
+                                <li><code>input::placeholder</code> and <code>textarea::placeholder</code> are styled with a muted colour <code>#4a6080</code> to make placeholder hint text visible but clearly distinct from actual user input.</li>
 
-                                <li><code>&lt;legend&gt;</code> gives each fieldset a visible title that screen readers announce when the user enters that group of fields.</li>
+                                <li><code>button[type="submit"]</code> and <code>button[type="reset"]</code> share the same style block so both buttons are consistent in size, colour, and hover behaviour without duplicating CSS rules.</li>
 
-                                <li><code>&lt;label for="fullname"&gt;</code> and equivalent labels are paired with every input using the <code>for</code> attribute, linking them so clicking the label focuses the correct field.</li>
+                                <li><code>.error</code> is styled in red <code>#ff6b6b</code> and set to <code>display: block</code> so error messages appear on their own line directly beneath the relevant field.</li>
 
-                                <li><code>input type="text"</code>, <code>type="email"</code>, <code>type="tel"</code>, and <code>type="date"</code> use specific input types to trigger appropriate keyboards on mobile and provide context about the expected data to the browser and screen readers.</li>
+                                <li><code>.success-message</code> is set to <code>display: none</code> by default and is shown by JavaScript after submission, confirming to the user that their feedback was received.</li>
 
-                                <li><code>&lt;span class="error" id="fullname-error"&gt;</code> sits beside each input so JavaScript can inject error messages directly next to the relevant field, making it clear to the user which field has an issue.</li>
-
-                                <li><code>maxlength="300"</code> on the comment textarea limits input to 300 characters, paired with a live <code>&lt;span id="char-count"&gt;</code> counter so users can see how much space remains.</li>
-
-                                <li><code>&lt;button type="submit"&gt;</code> and <code>&lt;button type="reset"&gt;</code> use proper semantic button types so the form submits and resets correctly, and both are naturally keyboard accessible.</li>
-
-                                <li><code>&lt;div class="success-message"&gt;</code> is hidden by default and shown by JavaScript after a successful form submission to confirm to the user that their feedback was received.</li>
-
-                                <li><code>&lt;script src="scripts/feedback.js"&gt;</code> is placed at the bottom of the body so the HTML loads fully before the JavaScript runs, avoiding issues with scripts trying to access elements that have not yet been rendered.</li>
+                                <li><code>#char-count</code> uses <code>float: right</code> to push the character counter to the right side of the comment label, keeping it visually associated with the field without disrupting the label text.</li>
                             </ul>
 
-                            <h3>CSS Technical Description</h3>
-                                <ul>
-                                    <li><code>position: fixed</code> on <code>.scene-bg</code> keeps the background image stationary while the user scrolls, creating a parallax-like effect.</li>
+                        <h3>JS Technical Description</h3>
+                            <ul>
+                                <li><code>document.getElementById()</code> is used to select form elements such as inputs, error messages, and the character counter.</li>
 
-                                    <li><code>inset: 0</code> stretches the background image to cover all four edges of the viewport without needing separate top, right, bottom, and left values.</li>
+                                <li><code>addEventListener("input")</code> listens for user typing in the message field to update the character count in real time.</li>
 
-                                    <li><code>opacity: 0.55</code> makes the background semi-transparent so the content and cards remain readable over it.</li>
+                                <li><code>message.value.length</code> calculates the number of characters entered in the textarea.</li>
 
-                                    <li><code>z-index</code> is used to layer elements correctly — the background sits at 0, the main content at 1, and the side nav at 10 so it always appears above other content.</li>
+                                <li><code>textContent</code> dynamically updates the displayed remaining character count.</li>
 
-                                    <li><code>position: absolute</code> on <code>.side-nav</code> places it at a fixed position within the hero section, using <code>top</code> and <code>right</code> values to anchor it to the top right corner.</li>
+                                <li><code>addEventListener("submit")</code> detects when the form is submitted and runs validation logic.</li>
 
-                                    <li><code>backdrop-filter: blur(14px)</code> on <code>.side-nav</code> creates a frosted glass effect behind the navigation panel, letting the background show through while keeping the links readable.</li>
+                                <li><code>event.preventDefault()</code> stops the default form submission to allow custom validation.</li>
 
-                                    <li><code>backdrop-filter: blur(28px)</code> on <code>.glass-panel</code> applies a stronger frosted glass effect to each major section container, giving the page a layered depth.</li>
+                                <li><code>showError()</code> function displays error messages and sets a validation flag to false.</li>
 
-                                    <li><code>background: rgba(3, 13, 26, 0.85)</code> on <code>.glass-panel</code> uses a semi-transparent dark fill so the background image is still slightly visible through each panel.</li>
+                                <li><code>clearError()</code> removes error messages when input becomes valid.</li>
 
-                                    <li><code>.section-label::after</code> uses <code>content: ''</code> with <code>flex: 1</code> and a <code>height: 1px</code> border to draw a thin decorative line that stretches to fill the remaining space after the section heading.</li>
+                                <li><code>trim()</code> removes extra whitespace from user input before validation.</li>
 
-                                    <li><code>overflow-y: scroll</code> on <code>.container-grid</code> makes the program cards section independently scrollable, keeping the page layout contained rather than letting the cards push the page length excessively.</li>
+                                <li><code>regular expressions (RegEx)</code> are used to validate inputs such as name, email, telephone, and address formats.</li>
 
-                                    <li><code>display: grid</code> with <code>grid-template-columns: repeat(2, 1fr)</code> on <code>.card-grid</code> arranges the program cards in a two-column layout that distributes space evenly between cards.</li>
+                                <li><code>conditional (ternary) operators</code> are used to perform validation checks and display appropriate messages.</li>
 
-                                    <li><code>display: grid</code> with <code>grid-template-columns: repeat(3, 1fr)</code> on <code>.review-layout</code> arranges the review cards in a three-column layout.</li>
-
-                                    <li><code>object-fit: cover</code> on <code>.card img</code> ensures program card images fill their container without stretching or distorting regardless of the original image dimensions.</li>
-
-                                    <li><code>appearance: none</code> on <code>.sort-select</code> removes the default browser dropdown arrow so custom styles can be applied consistently across browsers.</li>
-
-                                    <li><code>box-sizing: border-box</code> on all inputs, selects, and textareas prevents them from overflowing their container when padding is added.</li>
-
-                                    <li><code>resize: vertical</code> on <code>textarea</code> restricts resizing to the vertical direction only, so users cannot drag the textarea horizontally and break the form layout.</li>
-
-                                    <li><code>transition</code> on <code>.btn-lm</code>, <code>.btn-join</code>, and the sort select smoothly animates the glow and scale effects when the user hovers over interactive elements.</li>
-
-                                    <li><code>input:focus</code>, <code>select:focus</code>, and <code>textarea:focus</code> apply a purple border and box shadow to highlight the currently active form field, giving users a clear visual indicator of where they are in the form.</li>
-
-                                    <li><code>input::placeholder</code> and <code>textarea::placeholder</code> are styled with a muted colour <code>#4a6080</code> to make placeholder hint text visible but clearly distinct from actual user input.</li>
-
-                                    <li><code>button[type="submit"]</code> and <code>button[type="reset"]</code> share the same style block so both buttons are consistent in size, colour, and hover behaviour without duplicating CSS rules.</li>
-
-                                    <li><code>.error</code> is styled in red <code>#ff6b6b</code> and set to <code>display: block</code> so error messages appear on their own line directly beneath the relevant field.</li>
-
-                                    <li><code>.success-message</code> is set to <code>display: none</code> by default and is shown by JavaScript after submission, confirming to the user that their feedback was received.</li>
-
-                                    <li><code>#char-count</code> uses <code>float: right</code> to push the character counter to the right side of the comment label, keeping it visually associated with the field without disrupting the label text.</li>
-                                </ul>
-                    
+                                <li><code>form.reset()</code> clears all input fields after successful submission and resets the character counter.</li>
+                            </ul>
+                        
                     <h3 id="feedback-a11y">Accessibility</h3>
                         <ul>
                             <li><code>&lt;html lang="en"&gt;</code> declares the document language so screen readers pronounce the content correctly and apply appropriate pronunciation rules.</li>
@@ -206,88 +234,88 @@
             <section>
                 <h2 id="team">Team Page</h2>
                     <h3>Technical Description</h3>
-                        <h3>HTML Technical Description</h3>
-                            <ul>
-                                <li><code>&lt;meta charset="UTF-8"&gt;</code> sets the character encoding to support a wide range of characters and symbols.</li>
+                    <h3>HTML Technical Description</h3>
+                        <ul>
+                            <li><code>&lt;meta charset="UTF-8"&gt;</code> sets the character encoding to support a wide range of characters and symbols.</li>
 
-                                <li><code>&lt;meta name="viewport"&gt;</code> makes the page responsive by matching the layout width to the device screen at a 1:1 zoom scale.</li>
+                            <li><code>&lt;meta name="viewport"&gt;</code> makes the page responsive by matching the layout width to the device screen at a 1:1 zoom scale.</li>
 
-                                <li><code>&lt;link rel="stylesheet"&gt;</code> is used three times, for Google Fonts, the global <code>style.css</code>, and the page-specific <code>team.css</code>.</li>
+                            <li><code>&lt;link rel="stylesheet"&gt;</code> is used three times, for Google Fonts, the global <code>style.css</code>, and the page-specific <code>team.css</code>.</li>
 
-                                <li><code>&lt;img class="scene-bg"&gt;</code> places the background image directly in the body so it can be positioned and layered using CSS, rather than being set as a CSS background property.</li>
+                            <li><code>&lt;img class="scene-bg"&gt;</code> places the background image directly in the body so it can be positioned and layered using CSS, rather than being set as a CSS background property.</li>
 
-                                <li><code>onerror="this.style.display='none'"</code> hides the background image element if it fails to load, so the broken image icon does not appear.</li>
+                            <li><code>onerror="this.style.display='none'"</code> hides the background image element if it fails to load, so the broken image icon does not appear.</li>
 
-                                <li><code>&lt;nav&gt;</code> wraps the navigation links and logo, grouping them as a landmark so screen readers can jump to it directly.</li>
+                            <li><code>&lt;nav&gt;</code> wraps the navigation links and logo, grouping them as a landmark so screen readers can jump to it directly.</li>
 
-                                <li><code>class="active"</code> is applied to the Team page link in the <code>&lt;nav&gt;</code> to visually indicate the current page.</li>
+                            <li><code>class="active"</code> is applied to the Team page link in the <code>&lt;nav&gt;</code> to visually indicate the current page.</li>
 
-                                <li><code>&lt;section class="pageup"&gt;</code> contains the hero area at the top of the page, grouping the heading, content divider line, and tagline as a themed block.</li>
+                            <li><code>&lt;section class="pageup"&gt;</code> contains the hero area at the top of the page, grouping the heading, content divider line, and tagline as a themed block.</li>
 
-                                <li><code>&lt;article class="student"&gt;</code> wraps each team member card as each profile is a self-contained, independent piece of content, more semantic than a plain <code>&lt;div&gt;</code>.</li>
+                            <li><code>&lt;article class="student"&gt;</code> wraps each team member card as each profile is a self-contained, independent piece of content, more semantic than a plain <code>&lt;div&gt;</code>.</li>
 
-                                <li><code>&lt;div class="details"&gt;</code> groups the label-value rows inside each card and is hidden by default, only showing on hover or focus.</li>
+                            <li><code>&lt;div class="details"&gt;</code> groups the label-value rows inside each card and is hidden by default, only showing on hover or focus.</li>
 
-                                <li><code>&lt;div class="value-group"&gt;</code> wraps multiple values under one label, such as listing more than one page or contribution per student.</li>
+                            <li><code>&lt;div class="value-group"&gt;</code> wraps multiple values under one label, such as listing more than one page or contribution per student.</li>
 
-                                <li><code>&lt;a href="#" aria-label="Back to top"&gt;</code> provides a scroll-to-top button with a screen-reader-friendly label since the ↑ symbol has no readable text on its own.</li>
+                            <li><code>&lt;a href="#" aria-label="Back to top"&gt;</code> provides a scroll-to-top button with a screen-reader-friendly label since the ↑ symbol has no readable text on its own.</li>
 
-                                <li><code>&lt;footer&gt;</code> contains page editor links, validation links, and the student's details, clearly separating it from the main content.</li>
-                            </ul>
+                            <li><code>&lt;footer&gt;</code> contains page editor links, validation links, and the student's details, clearly separating it from the main content.</li>
+                        </ul>
 
-                        <h3>CSS Technical Description</h3>
-                            <ul>
-                                <li><code>position: fixed</code> on <code>.scene-bg</code> keeps the background image stationary while the user scrolls, creating a parallax-like effect meaning the background moves slower than the content on top as you scroll, creating a sense of depth.</li>
+                    <h3>CSS Technical Description</h3>
+                        <ul>
+                            <li><code>position: fixed</code> on <code>.scene-bg</code> keeps the background image stationary while the user scrolls, creating a parallax-like effect meaning the background moves slower than the content on top as you scroll, creating a sense of depth.</li>
 
-                                <li><code>inset: 0</code> stretches the background image to cover all four edges of the viewport without needing separate top, right, bottom, and left properties.</li>
+                            <li><code>inset: 0</code> stretches the background image to cover all four edges of the viewport without needing separate top, right, bottom, and left properties.</li>
 
-                                <li><code>opacity: 0.55</code> makes the background semi-transparent so the text and cards remain readable over it.</li>
+                            <li><code>opacity: 0.55</code> makes the background semi-transparent so the text and cards remain readable over it.</li>
 
-                                <li><code>z-index</code> is used to layer elements — the background sits at 0, the main content at 1, and hovered cards at 10 so they appear above neighbouring cards.</li>
+                            <li><code>z-index</code> is used to layer elements — the background sits at 0, the main content at 1, and hovered cards at 10 so they appear above neighbouring cards.</li>
 
-                                <li><code>object-fit: cover</code> on <code>.student img</code> ensures team member photos fill their frame without stretching or distorting regardless of the original image dimensions.</li>
+                            <li><code>object-fit: cover</code> on <code>.student img</code> ensures team member photos fill their frame without stretching or distorting regardless of the original image dimensions.</li>
 
-                                <li><code>.team-members</code> uses <code>display: flex</code> with <code>flex-wrap: wrap</code> to arrange cards in a row, automatically wrapping onto the next line on smaller screens.</li>
+                            <li><code>.team-members</code> uses <code>display: flex</code> with <code>flex-wrap: wrap</code> to arrange cards in a row, automatically wrapping onto the next line on smaller screens.</li>
 
-                                <li><code>align-items: flex-start</code> on <code>.team-members</code> prevents cards from stretching to match the tallest card in the row, keeping each card at its natural height.</li>
+                            <li><code>align-items: flex-start</code> on <code>.team-members</code> prevents cards from stretching to match the tallest card in the row, keeping each card at its natural height.</li>
 
-                                <li><code>transition: all 0.3s ease</code> on <code>.student</code> animates the card expansion smoothly when the user hovers over it.</li>
+                            <li><code>transition: all 0.3s ease</code> on <code>.student</code> animates the card expansion smoothly when the user hovers over it.</li>
 
-                                <li><code>.student:hover</code> increases the card width from 310px to 400px to make room for the expanded details.</li>
+                            <li><code>.student:hover</code> increases the card width from 310px to 400px to make room for the expanded details.</li>
 
-                                <li><code>.details</code> is set to <code>display: none</code> by default and changes to <code>display: block</code> on <code>:hover</code> and <code>:focus</code> so the profile information only appears when the user interacts with the card.</li>
+                            <li><code>.details</code> is set to <code>display: none</code> by default and changes to <code>display: block</code> on <code>:hover</code> and <code>:focus</code> so the profile information only appears when the user interacts with the card.</li>
 
-                                <li><code>min-width: 150px</code> on <code>.label</code> combined with <code>flex-shrink: 0</code> keeps all labels a consistent width so the detail rows stay aligned across every card.</li>
+                            <li><code>min-width: 150px</code> on <code>.label</code> combined with <code>flex-shrink: 0</code> keeps all labels a consistent width so the detail rows stay aligned across every card.</li>
 
-                                <li><code>.btn-role</code> uses <code>border-radius: 20px</code> to give the role badge a pill shape, and its <code>transition</code> property smoothly animates the glow and scale effect on hover.</li>
+                            <li><code>.btn-role</code> uses <code>border-radius: 20px</code> to give the role badge a pill shape, and its <code>transition</code> property smoothly animates the glow and scale effect on hover.</li>
 
-                                <li><code>box-shadow: 0 0 20px rgba(125, 211, 252, 0.3)</code> on <code>.student:hover img</code> adds a soft blue glow around the photo to give visual feedback on interaction.</li>
-                            </ul>
+                            <li><code>box-shadow: 0 0 20px rgba(125, 211, 252, 0.3)</code> on <code>.student:hover img</code> adds a soft blue glow around the photo to give visual feedback on interaction.</li>
+                        </ul>
 
                     <h3 id="team-a11y">Accessibility</h3>
-                            <ul>
-                                <li><code>&lt;html lang="en"&gt;</code> declares the document language so screen readers pronounce the content correctly and apply the right accent and pronunciation rules.</li>
+                        <ul>
+                            <li><code>&lt;html lang="en"&gt;</code> declares the document language so screen readers pronounce the content correctly and apply the right accent and pronunciation rules.</li>
 
-                                <li><code>&lt;em&gt;</code> on the hero heading wraps <em>Our Story.</em> Beyond just making it italic visually, it carries semantic emphasis so screen readers will stress that text when reading aloud, giving it more meaning than CSS italics alone.</li>
+                            <li><code>&lt;em&gt;</code> on the hero heading wraps <em>Our Story.</em> Beyond just making it italic visually, it carries semantic emphasis so screen readers will stress that text when reading aloud, giving it more meaning than CSS italics alone.</li>
 
-                                <li><code>alt="Image of the team member, Kulith Silva"</code> and equivalent alt text on every team member photo describes who is in the image for users who cannot see it, so screen readers can communicate the content meaningfully.</li>
+                            <li><code>alt="Image of the team member, Kulith Silva"</code> and equivalent alt text on every team member photo describes who is in the image for users who cannot see it, so screen readers can communicate the content meaningfully.</li>
 
-                                <li><code>alt="Ocean background"</code> on the background image describes the decorative image to screen readers, though it could also be given an empty <code>alt=""</code> since it is purely decorative and does not add informational value.</li>
+                            <li><code>alt="Ocean background"</code> on the background image describes the decorative image to screen readers, though it could also be given an empty <code>alt=""</code> since it is purely decorative and does not add informational value.</li>
 
-                                <li><code>onerror="this.style.display='none'"</code> hides the background image if it fails to load, so the broken image icon does not appear and the page still displays cleanly for all users.</li>
+                            <li><code>onerror="this.style.display='none'"</code> hides the background image if it fails to load, so the broken image icon does not appear and the page still displays cleanly for all users.</li>
 
-                                <li><code>tabindex="0"</code> is added to each <code>&lt;article class="student"&gt;</code> so keyboard users can tab through and focus each card without needing a mouse, which is important for users who rely on keyboard navigation.</li>
+                            <li><code>tabindex="0"</code> is added to each <code>&lt;article class="student"&gt;</code> so keyboard users can tab through and focus each card without needing a mouse, which is important for users who rely on keyboard navigation.</li>
 
-                                <li><code>:focus</code> is included alongside <code>:hover</code> in the CSS rules that reveal <code>.details</code>, ensuring that the profile information appears for keyboard users as well as mouse users.</li>
+                            <li><code>:focus</code> is included alongside <code>:hover</code> in the CSS rules that reveal <code>.details</code>, ensuring that the profile information appears for keyboard users as well as mouse users.</li>
 
-                                <li><code>&lt;a href="#top" aria-label="Back to top"&gt;↑&lt;/a&gt;</code> — the visible content is just an arrow symbol which a screen reader cannot meaningfully describe, so <code>aria-label="Back to top"</code> overrides what the screen reader announces, replacing the symbol with a clear text description so visually impaired users understand the purpose of the link.</li>
+                            <li><code>&lt;a href="#top" aria-label="Back to top"&gt;↑&lt;/a&gt;</code> — the visible content is just an arrow symbol which a screen reader cannot meaningfully describe, so <code>aria-label="Back to top"</code> overrides what the screen reader announces, replacing the symbol with a clear text description so visually impaired users understand the purpose of the link.</li>
 
-                                <li>Semantic elements — <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code> — act as landmarks that screen readers use to jump between sections of the page quickly.</li>
+                            <li>Semantic elements — <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code> — act as landmarks that screen readers use to jump between sections of the page quickly.</li>
 
-                                <li><code>class="active"</code> on the Team nav link gives a visual indicator of the current page, helping sighted users understand where they are in the site.</li>
+                            <li><code>class="active"</code> on the Team nav link gives a visual indicator of the current page, helping sighted users understand where they are in the site.</li>
 
-                                <li>High contrast text colours such as <code>#e8f4f8</code> and <code>#d0dce8</code> against the dark <code>#0a1a2a</code> background improve readability for users with low vision.</li>
-                            </ul>
+                            <li>High contrast text colours such as <code>#e8f4f8</code> and <code>#d0dce8</code> against the dark <code>#0a1a2a</code> background improve readability for users with low vision.</li>
+                        </ul>
 
                     <h3>Link to the validation page</h3> 
                         <p>
@@ -303,10 +331,117 @@
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                    <h3>HTML Technical Description</h3>
+                        <ul>
+                            <li><code>&lt;!DOCTYPE html&gt;</code> and <code>&lt;html lang="en"&gt;</code> define the document as HTML5 and set the language for accessibility and correct interpretation.</li>
+
+                            <li><code>&lt;meta charset="UTF-8"&gt;</code> ensures support for a wide range of characters and symbols.</li>
+
+                            <li><code>&lt;meta name="viewport"&gt;</code> enables responsive design by matching the layout to the device width.</li>
+
+                            <li><code>&lt;link rel="stylesheet"&gt;</code> imports external CSS files and Google Fonts to style the page.</li>
+
+                            <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> structure the navigation bar, improving usability and accessibility.</li>
+
+                            <li><code>&lt;main&gt;</code> wraps the primary content, helping screen readers identify the main section of the page.</li>
+
+                            <li><code>&lt;section&gt;</code> elements divide the page into logical content areas such as hero, content cards, and handoff.</li>
+
+                            <li><code>id</code> attributes (e.g., <code>#top</code>, <code>#act3</code>) are used for internal navigation and anchor linking.</li>
+
+                            <li><code>class</code> attributes are used to apply consistent styling and layout through CSS.</li>
+
+                            <li><code>data-*</code> attributes (e.g., <code>data-bg</code>, <code>data-ch</code>) store custom data used by JavaScript for dynamic behaviour.</li>
+
+                            <li><code>&lt;img&gt;</code> elements include <code>alt</code> text for accessibility and <code>onerror</code> to hide images if they fail to load.</li>
+
+                            <li><code>aria-hidden="true"</code> is used to hide decorative elements from screen readers.</li>
+
+                            <li><code>&lt;a&gt;</code> elements provide navigation between pages and within the page using anchor links.</li>
+
+                            <li><code>&lt;script src="..."&gt;</code> links an external JavaScript file, separating behaviour from structure.</li>
+
+                            <li><code>&lt;footer&gt;</code> contains additional navigation and student details, placed at the end of the page.</li>
+                        </ul>
+
+                    <h3>CSS Technical Description</h3>
+                        <ul>
+                            <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
+
+                            <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
+
+                            <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
+
+                            <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
+
+                            <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
+
+                            <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
+
+                            <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
+
+                            <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
+
+                            <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
+
+                            <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
+
+                            <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
+
+                            <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
+
+                            <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
+
+                            <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
+
+                            <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
+                        </ul>
+
+                    <h3>JS Technical Description</h3>
+                        <ul>
+                            <li><code>document.getElementById()</code> is used to select specific elements such as the scroll bar and sonar rings.</li>
+
+                            <li><code>document.querySelectorAll()</code> selects multiple elements (e.g., sections with <code>data-bg</code>) and converts them into an array using <code>Array.from()</code>.</li>
+
+                            <li><code>reduce()</code> is used to create an object mapping background IDs to their corresponding DOM elements for efficient access.</li>
+
+                            <li><code>switchBg()</code> function controls background transitions by adding and removing the <code>active</code> class.</li>
+
+                            <li><code>classList.add()</code> and <code>classList.remove()</code> dynamically update CSS classes to change styles and trigger animations.</li>
+
+                            <li><code>setTimeout()</code> is used to delay actions such as resetting <code>z-index</code> and controlling animation timing.</li>
+
+                            <li><code>window.addEventListener('scroll')</code> listens for scrolling to update the progress bar and trigger effects.</li>
+
+                            <li><code>window.pageYOffset</code> and document height calculations are used to determine scroll progress.</li>
+
+                            <li><code>getBoundingClientRect()</code> calculates the position of sections to detect which section is closest to the viewport centre.</li>
+
+                            <li><code>dataset</code> (e.g., <code>dataset.bg</code>) accesses custom HTML data attributes to control background switching.</li>
+
+                            <li><code>IntersectionObserver</code> detects when elements enter the viewport and adds a <code>visible</code> class for animations.</li>
+
+                            <li><code>addEventListener('load')</code> ensures initial functions run only after the page fully loads.</li>
+                        </ul>
 
                     <h3 id="content-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <ul>
+                            <li><code>lang="en"</code> defines the page language, helping screen readers use correct pronunciation.</li>
+
+                            <li><code>alt</code> attributes on images provide descriptions for visually impaired users.</li>
+
+                            <li><code>aria-hidden="true"</code> hides decorative elements (e.g., background images, sonar effects) from screen readers.</li>
+
+                            <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> create a semantic structure for easier navigation.</li>
+
+                            <li><code>aria-label</code> (e.g., "Back to top") gives meaningful descriptions to icons or non-text elements.</li>
+
+                            <li><code>&lt;a&gt;</code> links enable keyboard navigation between sections and pages.</li>
+
+                            <li><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> provide semantic emphasis, improving how screen readers interpret content.</li>
+
+                            <li><code>id</code> attributes allow users to jump to sections using anchor links, supporting keyboard navigation.</li>
+                        </ul>
 
                     <h3>Link to the validation page</h3> 
                         <p>
@@ -371,7 +506,6 @@
 
                         <li><code>Responsive design</code> is implemented using <code>flex-wrap: wrap</code> on the team page and <code>max-width</code> with <code>margin: auto</code> on the feedback page to ensure usability across devices.</li>
                     </ul>
-                    
             </section>
 
             <section>
@@ -583,8 +717,7 @@
         <aside>
             <h3>Core pages developed:</h3>
 
-            <ul class="top-level-ul">
-                    
+            <ul class="top-level-ul">   
                 <li>Student 3</li>
                     <ul>
                         <li><a href="#feedback">Feedback</a> </li>
@@ -596,9 +729,9 @@
                 <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
                 <li><a href="#ai">AI Use Statements</a></li>
                 <li><a href="#ref">References</a></li>
-
             </ul>
         </aside>
+
     </div>
 
     <!-- Footer -->
@@ -618,7 +751,7 @@
             </div>
         </div>
     </footer>
-    
+
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>

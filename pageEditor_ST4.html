@@ -53,6 +53,24 @@
                                 <li><code>&lt;div id="profileBuilder"&gt;</code> contains the interactive profile builder</li>
                             </ul>
 
+                        <h3>CSS Technical Description</h3>
+                            <ul>
+                                <li><code>background-attachment: fixed</code> creates a parallax effect with a static background</li>
+                                
+                                <li><code>#sample-data-container</code> uses CSS Grid (<code>repeat(3, 1fr)</code>) for a 3-column layout that distributes profile cards evenly</li>
+                                
+                                <li><code>.sample-data:hover</code> uses <code>transform: translateY(-10px)</code> and <code>box-shadow</code> to create a lift effect for interactive feedback</li>
+                                
+                                <li><code>.country</code> and <code>.role</code> use color-coded styles for quick visual distinction</li>
+                                
+                                <li><code>#profileBuilder</code> is initially <code>display: none</code> and toggled to <code>display: flex</code> via JavaScript</li>
+                                
+                                <li><code>.profile-photo</code> uses <code>object-fit: cover</code> for consistent image sizing</li>
+                                
+                                <li>Media queries (<code>1024px</code>, <code>768px</code>, <code>480px</code>) ensure responsive layout across devices</li>
+                            </ul>
+
+
                         <h3>JavaScript Technical Description</h3>
                             <ul>
                                 <li><code>profile</code> stores the current profile data</li>
@@ -78,23 +96,6 @@
                                 <li><code>updateProgress()</code> calculates completion and updates the progress bar</li>
                                 
                                 <li><code>renderProfile()</code> updates displayed fields, leaving blanks if empty</li>
-                            </ul>
-
-                        <h3>CSS Technical Description</h3>
-                            <ul>
-                                <li><code>background-attachment: fixed</code> creates a parallax effect with a static background</li>
-                                
-                                <li><code>#sample-data-container</code> uses CSS Grid (<code>repeat(3, 1fr)</code>) for a 3-column layout that distributes profile cards evenly</li>
-                                
-                                <li><code>.sample-data:hover</code> uses <code>transform: translateY(-10px)</code> and <code>box-shadow</code> to create a lift effect for interactive feedback</li>
-                                
-                                <li><code>.country</code> and <code>.role</code> use color-coded styles for quick visual distinction</li>
-                                
-                                <li><code>#profileBuilder</code> is initially <code>display: none</code> and toggled to <code>display: flex</code> via JavaScript</li>
-                                
-                                <li><code>.profile-photo</code> uses <code>object-fit: cover</code> for consistent image sizing</li>
-                                
-                                <li>Media queries (<code>1024px</code>, <code>768px</code>, <code>480px</code>) ensure responsive layout across devices</li>
                             </ul>
 
                     <h3 id="profile-a11y">Accessibility</h3>
@@ -210,10 +211,121 @@
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                    <h3>HTML Technical Description</h3>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> and <code>&lt;html lang="en"&gt;</code> define the document as HTML5 and set the language for accessibility and correct interpretation.</li>
+
+                        <li><code>&lt;meta charset="UTF-8"&gt;</code> ensures support for a wide range of characters and symbols.</li>
+
+                        <li><code>&lt;meta name="viewport"&gt;</code> enables responsive design by matching the layout to the device width.</li>
+
+                        <li><code>&lt;link rel="stylesheet"&gt;</code> imports external CSS files and Google Fonts to style the page.</li>
+
+                        <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> structure the navigation bar, improving usability and accessibility.</li>
+
+                        <li><code>&lt;main&gt;</code> wraps the primary content, helping screen readers identify the main section of the page.</li>
+
+                        <li><code>&lt;section&gt;</code> elements divide the page into logical content areas such as hero, content cards, and handoff.</li>
+
+                        <li><code>id</code> attributes (e.g., <code>#top</code>, <code>#act3</code>) are used for internal navigation and anchor linking.</li>
+
+                        <li><code>class</code> attributes are used to apply consistent styling and layout through CSS.</li>
+
+                        <li><code>data-*</code> attributes (e.g., <code>data-bg</code>, <code>data-ch</code>) store custom data used by JavaScript for dynamic behaviour.</li>
+
+                        <li><code>&lt;img&gt;</code> elements include <code>alt</code> text for accessibility and <code>onerror</code> to hide images if they fail to load.</li>
+
+                        <li><code>aria-hidden="true"</code> is used to hide decorative elements from screen readers.</li>
+
+                        <li><code>&lt;a&gt;</code> elements provide navigation between pages and within the page using anchor links.</li>
+
+                        <li><code>&lt;script src="..."&gt;</code> links an external JavaScript file, separating behaviour from structure.</li>
+
+                        <li><code>&lt;footer&gt;</code> contains additional navigation and student details, placed at the end of the page.</li>
+                    </ul>
+
+                    <h3>CSS Technical Description</h3>
+                    <ul>
+                        <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
+
+                        <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
+
+                        <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
+
+                        <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
+
+                        <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
+
+                        <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
+
+                        <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
+
+                        <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
+
+                        <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
+
+                        <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
+
+                        <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
+
+                        <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
+
+                        <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
+
+                        <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
+
+                        <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
+                    </ul>
+
+                    <h3>JavaScript Technical Description</h3>
+                    <ul>
+                        <li><code>document.getElementById()</code> is used to select specific elements such as the scroll bar and sonar rings.</li>
+
+                        <li><code>document.querySelectorAll()</code> selects multiple elements (e.g., sections with <code>data-bg</code>) and converts them into an array using <code>Array.from()</code>.</li>
+
+                        <li><code>reduce()</code> is used to create an object mapping background IDs to their corresponding DOM elements for efficient access.</li>
+
+                        <li><code>switchBg()</code> function controls background transitions by adding and removing the <code>active</code> class.</li>
+
+                        <li><code>classList.add()</code> and <code>classList.remove()</code> dynamically update CSS classes to change styles and trigger animations.</li>
+
+                        <li><code>setTimeout()</code> is used to delay actions such as resetting <code>z-index</code> and controlling animation timing.</li>
+
+                        <li><code>window.addEventListener('scroll')</code> listens for scrolling to update the progress bar and trigger effects.</li>
+
+                        <li><code>window.pageYOffset</code> and document height calculations are used to determine scroll progress.</li>
+
+                        <li><code>getBoundingClientRect()</code> calculates the position of sections to detect which section is closest to the viewport centre.</li>
+
+                        <li><code>dataset</code> (e.g., <code>dataset.bg</code>) accesses custom HTML data attributes to control background switching.</li>
+
+                        <li><code>IntersectionObserver</code> detects when elements enter the viewport and adds a <code>visible</code> class for animations.</li>
+
+                        <li><code>addEventListener('load')</code> ensures initial functions run only after the page fully loads.</li>
+                    </ul>
+
+
+
 
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                    <ul>
+                        <li><code>lang="en"</code> defines the page language, helping screen readers use correct pronunciation.</li>
+
+                        <li><code>alt</code> attributes on images provide descriptions for visually impaired users.</li>
+
+                        <li><code>aria-hidden="true"</code> hides decorative elements (e.g., background images, sonar effects) from screen readers.</li>
+
+                        <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> create a semantic structure for easier navigation.</li>
+
+                        <li><code>aria-label</code> (e.g., "Back to top") gives meaningful descriptions to icons or non-text elements.</li>
+
+                        <li><code>&lt;a&gt;</code> links enable keyboard navigation between sections and pages.</li>
+
+                        <li><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> provide semantic emphasis, improving how screen readers interpret content.</li>
+
+                        <li><code>id</code> attributes allow users to jump to sections using anchor links, supporting keyboard navigation.</li>
+                    </ul>
+
 
                     <h3>Link to the validation page</h3> 
                         <p><a href="validation_ST4.html#content">Validation Page</a></p> 
@@ -226,11 +338,11 @@
             <section>
                 <h2 id="challenge">Challenges and Lessons Learned</h2>
                     <ul>
-                        <li>Building a multistep profile builder with real-time updates seemed challenging at first but became manageable with careful planning.</li>
+                        <li>Building a multistep profile builder with real time updates seemed challenging at first but became manageable with careful planning.</li>
                         
-                        <li>The SVG sitemap had to be built twice—once for desktop and once for mobile—because fixed coordinates prevented responsive scaling.</li>
+                        <li>The SVG sitemap had to be built twice, once for desktop and once for mobile—because fixed coordinates prevented responsive scaling.</li>
                         
-                        <li>Making the sitemap keyboard-accessible required adding extra attributes to each SVG node, which was initially overlooked.</li>
+                        <li>Making the sitemap keyboard accessible required adding extra attributes to each SVG node, which was initially overlooked.</li>
                         
                         <li>Keeping CSS organised across separate files for each page required discipline to avoid style conflicts.</li>
                         
@@ -403,13 +515,14 @@
                 <ul class="references-list">
                     <li>
                         NOAA Fisheries (2024) <em>Why Can't Killer Whales Find and Capture Food? The Ocean Is too Noisy.</em> 
-                        Available at: <a href="https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy" target="_blank">
+                        <br>Available at: <a href="https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy" target="_blank">
                         https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy</a> 
                         (Accessed: 22 March 2026).
                     </li>
                     <li>
                         Tennessen, J.B. et al. (2024) 'Vessel noise levels drive foraging responses in endangered killer whales', 
                         <em>Biological Conservation.</em>
+                        <br>Available at: <a href="https://onlinelibrary.wiley.com/doi/10.1111/gcb.17490#" target=""_blank>https://onlinelibrary.wiley.com/doi/10.1111/gcb.17490#</a>(Accessed: 22 March 2026).
                     </li>
                 </ul>
             </section>
