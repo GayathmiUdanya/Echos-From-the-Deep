@@ -414,7 +414,7 @@ body {
 
 
 
-
+/* what are these forrrr */
 
 .tc-line-bot {
   width: 1px;
@@ -445,8 +445,6 @@ body {
     opacity: 0;
   }
 }
-
-
 
 /* ── Stat Row ── */
 .stat-row {
@@ -520,7 +518,6 @@ body {
   text-align: center;
 }
 
-
 /* ── Action List ── */
 .alist {
   list-style: none;
@@ -539,8 +536,6 @@ body {
   color: rgba(186, 230, 253, .67);
   line-height: 1.68;
 }
-
-
 
 .chaptrnavii {
   font-family: 'Cinzel', serif;
