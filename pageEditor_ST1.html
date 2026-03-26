@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kulith | Page-Editor</title>
 
+    <!-- Global CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+    <!-- Page Editor Validator CSS -->
+    <link rel="stylesheet" href="pageEditor_validator.css"> 
 
 </head>
 <body>
-    
-    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
-
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo-area">
@@ -36,15 +36,12 @@
     </header>
 
     <section class="stud">
-        <h2>Kulith Silva, team name, student 01</h2>
+        <h2>Kulith Silva,  Deep Dive Devs, Student 01</h2>
     </section>
 
     <div class="container">
         <!-- Main content area -->
         <main>
-
-            <!-- Update those first three sections for the pages you were responsible to implement -->
-
             <section>
                 <h2 id="home">Home Page</h2>
                     <h3>Technical Description</h3>
@@ -127,8 +124,8 @@
                             <li><code>font-family: var(--font-body)</code> defaults to <code>sans-serif</code> for maximum character legibility</li>
                         </ul>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST1.html#home">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST1.html#home">Validation page</a></p>
 
                     <h3>Link to the page</h3>
                         <p><a href="home.html">Home page</a></p>
@@ -196,8 +193,8 @@
                             <li><code>onerror="this.style.display='none'"</code> hides broken images to prevent screen reader confusion and maintain a clean layout.</li>
                         </ul>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST1.html#gallery">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST1.html#gallery">Validation page</a></p> 
 
 
                     <h3>Link to the page</h3>
@@ -280,12 +277,15 @@
                             <li><code>&lt;h1&gt;</code> through <code>&lt;h3&gt;</code> maintain a proper heading hierarchy for navigation</li>
                         </ul>    
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST1.html#content">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p>
+                            <a href="validation_ST1.html#content">Validation page</a>
+                        </p> 
 
-                        
                     <h3>Link to the page</h3>
-                        <p><a href="content_ST1.html">Content page</a></p>
+                        <p>
+                            <a href="content_ST1.html">Content page</a>
+                        </p>
             </section>
 
             <section>
@@ -295,21 +295,32 @@
 
             <section>
                 <h2 id="compliance"> Compliance</h2>
-                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes demonstrating your understanding and application of these regulations. Be realistic and truthful. <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> and <code>lang="en"</code> are included on both pages, ensuring proper HTML5 structure and correct interpretation by browsers and screen readers.</li>
 
+                        <li><code>W3C HTML Validator</code> was used to check both pages for structural errors, missing tags, and incorrect nesting before submission.</li>
+
+                        <li><code>W3C CSS Validator</code> was used to validate <code>style.css</code>, <code>feedback.css</code>, and <code>team.css</code>, ensuring no invalid properties or syntax errors.</li>
+
+                        <li><code>alt attributes</code> are applied to all images, and semantic HTML elements are used for buttons, links, and inputs to meet accessibility standards.</li>
+
+                        <li><code>Google Gemini</code> was used to generate images, and <code>Google Fonts</code> are loaded via their official API under an open licence, avoiding copyright issues.</li>
+
+                        <li><code>HTTPS</code> is used for all external resources, ensuring secure loading and preventing mixed content warnings.</li>
+
+                        <li><code>No data storage</code> is implemented in the feedback form, aligning with data minimisation principles as no user input is saved or transmitted.</li>
+
+                        <li><code>novalidate</code> ensures all validation is handled client-side with JavaScript, meaning no data is sent to external systems.</li>
+
+                        <li><code>Appropriate content</code> is maintained across both pages, with no offensive or misleading material, complying with acceptable use standards.</li>
+
+                        <li><code>Responsive design</code> is implemented using <code>flex-wrap: wrap</code> on the team page and <code>max-width</code> with <code>margin: auto</code> on the feedback page to ensure usability across devices.</li>
+                    </ul>
                     
             </section>
 
             <section>
                 <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
-                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
-                    Requirements:
-                        <ul> 
-                            <li>A minimum of six (6) group meetings must be recorded.</li>
-                            <li>Each student must provide their own account of the meetings.</li>
-                            <li>The log must focus on individual contribution, not just group activity.</li>
-                        </ul>
-                        <p>Feel free to follow the example table structure below:</p>
 
                         <table >
     
@@ -424,8 +435,23 @@
             </section>
 
             <section>
+                <h2 id="ai">AI Use Statements</h2>
+                    <p>The following AI tools were used during the development of this project:</p>
+
+                    <ul class="ai-list">
+                        <li><strong>Gemini &amp; ChatGPT</strong> — Grammar and spelling checking for the Content Page</li>
+
+                        <li><strong>ChatGPT</strong> — Generating image prompts for the Home, Gallery, and Content Pages</li>
+
+                        <li><strong>Gemini</strong> — Generating images for the Home, Gallery, and Content Pages</li>
+
+                        <li><strong>Gemini</strong> — Providing structural guidance for organising Content Page information</li>
+                    </ul>
+            </section>
+
+            <section>
                 <h2 id="ref">References</h2>
-                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
+                
                     <ul class="ref">
                         <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
                         <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
@@ -438,9 +464,8 @@
         <aside>
             <h3>Core pages developed:</h3>
 
-        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
-                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
+                
                 <li>Student 1</li>
                 <ul>
                         <li><a href="#home">Home page </a></li>
@@ -450,6 +475,7 @@
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
                 <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ai">AI Use Statements</a></li>
                 <li><a href="#ref">References</a></li>
             </ul>
         </aside>
@@ -472,6 +498,7 @@
             </div>
         </div>
     </footer>
+
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>

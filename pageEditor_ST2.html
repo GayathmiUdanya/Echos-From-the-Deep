@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nethnu | Page-Editor</title>
 
+    <!-- Global CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+    <!-- Page Editor Validator CSS -->
+    <link rel="stylesheet" href="pageEditor_validator.css"> 
 
 </head>
 <body>
-    
-    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
-
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo-area">
@@ -36,14 +36,12 @@
     </header>
 
     <section class="stud">
-        <h2>Nethnu Bulathsinghala, team name, student 02</h2>
+        <h2>Nethnu Bulathsinghala, Deep Dive Devs, Student 02</h2>
     </section>
 
     <div class="container">
         <!-- Main content area -->
         <main>
-
-            <!-- Update those first three sections for the pages you were responsible to implement -->
 
             <section>
                 <h2 id="splash">Splash Screen</h2>
@@ -53,11 +51,14 @@
                     <h3 id="splash-a11y">Accessibility</h3>
                         <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
                     
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST2.html#splash">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
-
+                    <h3>Link to the validation page</h3> 
+                        <p>
+                            <a href="validation_ST2.html#splash">Validation Page</a>
+                        </p> 
                     <h3>Link to the page</h3>
-                        <p><a href="splash.html">Include a link to the actual page you describe.</a></p>
+                        <p>
+                            <a href="splash.html">Splash Screen</a>
+                        </p>
             </section>
 
             <section>
@@ -68,12 +69,16 @@
                     <h3 id="ais-a11y">Accessibility</h3>
                         <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST2.html#ais">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p>
+                            <a href="validation_ST2.html#ais">Validation Page</a>
+                        </p> 
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="ais.html">Include a link to the actual page you describe.</a></p>
+                        <p>
+                            <a href="ais.html">Action Impact Simulator</a>
+                        </p>
             </section>
 
             <section>
@@ -84,147 +89,182 @@
                     <h3 id="content-ally">Accessibility</h3>
                         <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST2.html#content">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
-
+                    <h3>Link to the validation page</h3>
+                        <p>
+                            <a href="validation_ST2.html#content">Validation Page</a>
+                        </p> 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="content_ST2.html">Include a link to the actual page you describe.</a></p>
+                        <p>
+                            <a href="content_ST2.html">Content Page</a>
+                        </p>
             </section>
 
             <section>
                 <h2 id="challenge">Challenges and Lessons Learned</h2>
+                    <!--remove the p-->
                     <p>Detail any challenges encountered during the implementation process and explain how they were resolved. Reflect on the lessons learned from overcoming these challenges.</p> 
             </section>
 
             <section>
-                <h2 id="compliance">Compliance</h2>
-                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes demonstrating your understanding and application of these regulations. Be realistic and truthful. <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+                <h2 id="compliance"> Compliance</h2>
+                    <ul>
+                        <li>All pages include a valid &lt;!DOCTYPE html&gt; declaration and lang attribute, ensuring properly structured HTML5 documents.</li>
+                        
+                        <li>Both pages were validated using the W3C HTML Validator to check for structural errors, unclosed tags, and incorrect nesting.</li>
+                        
+                        <li>CSS was validated using the W3C CSS Validator to confirm no invalid properties or syntax errors exist.</li>
+                        
+                        <li>Images include alt attributes and interactive elements use semantic tags, meeting basic accessibility requirements.</li>
+                        
+                        <li>All images are generated using Google Gemini and Google Fonts are loaded via their official API under open licence, ensuring no copyright violations.</li>
+                        
+                        <li>External resources load over HTTPS, complying with secure resource loading requirements.</li>
+                        
+                        <li>No personal data is stored beyond the current session, aligning with data minimisation principles.</li>
+                        
+                        <li>Pages contain no offensive, discriminatory, or misleading content, complying with Janet's acceptable use standards.</li>
+                        
+                        <li>Responsive design ensures pages are accessible across a range of devices and screen sizes.</li>
+                    </ul> 
+            </section>
 
+            <section>
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
+
+                <ul type="circle">
+                    <li>The individual contributions are presented in a generic format and they only reflect the general nature of the discussions held during the meeting.</li>
+                </ul>
+
+                    <table >
+                        <thead>
+
+                            <tr>
+                                <th colspan="6">Group Meetings and Contribution Log</th>
+                            </tr>
+                            <tr>
+                                <th>Meeting</th>
+                                <th>Date &amp; Time</th>
+                                <th>Format</th>
+                                <th>Objective</th>
+                                <th>Attended</th>
+                                <th>Your Individual Contribution</th>
+                            </tr>
+                            
+                        </thead>
+                    
+                        <tbody>
+
+                            <tr>
+                                <td>1</td>
+                                <td>10 Feb 2026</td>
+                                <td>Online</td>
+                                <td>Identify the CW requirements</td>
+                                <td>Yes</td>
+                                <td>Contributed to understanding coursework requirements and clarified key deliverables</td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>21 Feb 2026</td>
+                                <td>Online</td>
+                                <td>Agree on the SDG</td>
+                                <td>Yes</td>
+                                <td>Participated in discussion and helped select the most suitable SDG</td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>24 Feb 2026</td>
+                                <td>Physical</td>
+                                <td>Assign roles</td>
+                                <td>Yes</td>
+                                <td>Took part in role allocation and accepted assigned responsibilities</td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>13 March 2026</td>
+                                <td>Physical</td>
+                                <td>Choose color palettes, design styles</td>
+                                <td>Yes</td>
+                                <td>Suggested design ideas and contributed to initial visual concepts</td>
+                            </tr>
+
+                            <tr>
+                                <td>5</td>
+                                <td>14 March 2026</td>
+                                <td>Online</td>
+                                <td>Finalize the color palettes and design styles</td>
+                                <td>Yes</td>
+                                <td>Helped finalize design decisions and agreed on overall theme and the storyline</td>
+                            </tr>
+
+                            <tr>
+                                <td>6</td>
+                                <td>18 March 2026</td>
+                                <td>Online</td>
+                                <td>Review the design</td>
+                                <td>Yes</td>
+                                <td>Gave feedback and suggested improvements to design elements</td>
+                            </tr>
+
+                            <tr>
+                                <td>7</td>
+                                <td>19 March 2026</td>
+                                <td>Physical</td>
+                                <td>Progress review</td>
+                                <td>Yes</td>
+                                <td>Shared progress updates and discussed next steps</td>
+                            </tr>
+
+                            <tr>
+                                <td>8</td>
+                                <td>22 March 2026</td>
+                                <td>Online</td>
+                                <td>Progress review</td>
+                                <td>Yes</td>
+                                <td>Contributed updates and helped identify pending tasks</td>
+                            </tr>
+
+                            <tr>
+                                <td>9</td>
+                                <td>24 March 2026</td>
+                                <td>Online</td>
+                                <td>Finalize the individual components</td>
+                                <td>Yes</td>
+                                <td>Completed assigned component and ensured it met requirements</td>
+                            </tr>
+
+                            <tr>
+                                <td>10</td>
+                                <td>26 March 2026</td>
+                                <td>Online</td>
+                                <td>Final review and submission preparation</td>
+                                <td>Yes</td>
+                                <td>Participated in final checks and ensured readiness for submission</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
                     
             </section>
 
             <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
-                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
-                    Requirements:
-                        <ul> 
-                            <li>A minimum of six (6) group meetings must be recorded.</li>
-                            <li>Each student must provide their own account of the meetings.</li>
-                            <li>The log must focus on individual contribution, not just group activity.</li>
-                        </ul>
-                        <p>Feel free to follow the example table structure below:</p>
+                <h2 id="ai">AI Use Statements</h2>
+                    <p>The following AI tools were used during the development of this project:</p>
 
-                        <table >
-    
-                            <thead>
-                                <tr>
-                                    <th colspan="6">Group Meetings and Contribution Log</th>
-                                </tr>
-                                <tr>
-                                    <th>Meeting</th>
-                                    <th>Date &amp; Time</th>
-                                    <th>Format</th>
-                                    <th>Objective</th>
-                                    <th>Attended</th>
-                                    <th>Your Individual Contribution</th>
-                                </tr>
-                            </thead>
-                        
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>10 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Identify the CW requirements</td>
-                                    <td>Yes</td>
-                                    <td>Contributed to understanding coursework requirements and clarified key deliverables</td>
-                                </tr>
+                    <ul class="ai-list">
+                        <li><strong>Gemini &amp; ChatGPT</strong> — Grammar and spelling checking for the Content Page</li>
 
-                                <tr>
-                                    <td>2</td>
-                                    <td>21 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Agree on the SDG</td>
-                                    <td>Yes</td>
-                                    <td>Participated in discussion and helped select the most suitable SDG</td>
-                                </tr>
+                        <li><strong>ChatGPT</strong> — Generating image prompts for the AIS, Splash Screen, and Content Pages</li>
 
-                                <tr>
-                                    <td>3</td>
-                                    <td>24 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Assign roles</td>
-                                    <td>Yes</td>
-                                    <td>Took part in role allocation and accepted assigned responsibilities</td>
-                                </tr>
+                        <li><strong>Gemini</strong> — Generating images for the AIS, Splash Screen, and Content Pages</li>
 
-                                <tr>
-                                    <td>4</td>
-                                    <td>13 March 2026</td>
-                                    <td>Physical</td>
-                                    <td>Choose color palettes, design styles</td>
-                                    <td>Yes</td>
-                                    <td>Suggested design ideas and contributed to initial visual concepts</td>
-                                </tr>
+                        <li><strong>Claude</strong> — Assisting in understanding validation error messages across the AIS, Splash Screen, and Content Pages</li>
 
-                                <tr>
-                                    <td>5</td>
-                                    <td>14 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Finalize the color palettes and design styles</td>
-                                    <td>Yes</td>
-                                    <td>Helped finalize design decisions and agreed on overall theme and the storyline</td>
-                                </tr>
-
-                                <tr>
-                                    <td>6</td>
-                                    <td>18 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Review the design</td>
-                                    <td>Yes</td>
-                                    <td>Gave feedback and suggested improvements to design elements</td>
-                                </tr>
-
-                                <tr>
-                                    <td>7</td>
-                                    <td>19 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Progress review</td>
-                                    <td>Yes</td>
-                                    <td>Shared progress updates and discussed next steps</td>
-                                </tr>
-
-                                <tr>
-                                    <td>8</td>
-                                    <td>22 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Progress review</td>
-                                    <td>Yes</td>
-                                    <td>Contributed updates and helped identify pending tasks</td>
-                                </tr>
-
-                                <tr>
-                                    <td>9</td>
-                                    <td>24 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Finalize the individual components</td>
-                                    <td>Yes</td>
-                                    <td>Completed assigned component and ensured it met requirements</td>
-                                </tr>
-
-                                <tr>
-                                    <td>10</td>
-                                    <td>26 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Final review and submission preparation</td>
-                                    <td>Yes</td>
-                                    <td>Participated in final checks and ensured readiness for submission</td>
-                                </tr>
-                            </tbody>
-                        
-                        </table>
-                    
+                        <li><strong>Gemini</strong> — Providing structural guidance for organising Content Page information</li>
+                    </ul>
             </section>
 
             <section>
@@ -241,9 +281,7 @@
         <aside>
             <h3>Core pages developed:</h3>
 
-        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
-                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
                 <li>Student 2</li>
                 <ul> 
                     <li><a href="splash">Splash Screen</a></li>
@@ -253,6 +291,7 @@
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
                 <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ai">AI Use Statements</a></li>
                 <li><a href="#ref">References</a></li>
             </ul>
         </aside>
@@ -275,7 +314,9 @@
             </div>
         </div>
     </footer>
+    
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
 </body>
 </html>
