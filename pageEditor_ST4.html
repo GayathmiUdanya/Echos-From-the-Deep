@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gayathmi | Page-Editor</title>
 
+    <!-- Global CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+    <!-- Page Editor Validator CSS -->
+    <link rel="stylesheet" href="pageEditor_validator.css"> 
 
 </head>
 <body>
-
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo-area">
@@ -44,56 +46,56 @@
             <section>
                 <h2 id="profile">Profile Page</h2>
                     <h3>Technical Description</h3>
-                    <h3>HTML Technical Description</h3>
-                        <ul>
-                            <li><code>&lt;div id="sample-data-container"&gt;</code> holds dynamic profile cards</li>
-                            
-                            <li><code>&lt;div id="profileBuilder"&gt;</code> contains the interactive profile builder</li>
-                        </ul>
+                        <h3>HTML Technical Description</h3>
+                            <ul>
+                                <li><code>&lt;div id="sample-data-container"&gt;</code> holds dynamic profile cards</li>
+                                
+                                <li><code>&lt;div id="profileBuilder"&gt;</code> contains the interactive profile builder</li>
+                            </ul>
 
                         <h3>JavaScript Technical Description</h3>
-                        <ul>
-                            <li><code>profile</code> stores the current profile data</li>
-                            
-                            <li><code>sampleProfiles</code> is an array of pre-filled profiles</li>
-                            
-                            <li><code>renderSampleData()</code> clears the container and displays profiles, skipping empty fields</li>
-                            
-                            <li><code>createCreateButton()</code> adds a "Create New Profile" button that triggers <code>createProfile()</code></li>
-                            
-                            <li><code>saveProfile()</code> saves a profile with a random photo, replaces skipped fields, updates <code>sampleProfiles</code>, resets the builder, and re-renders profiles</li>
-                            
-                            <li><code>clearProfile()</code> resets fields to "Not Added Yet" and resets the progress bar after confirmation</li>
-                            
-                            <li><code>createProfile()</code> displays the builder with steps, fields, progress bar, and Save button</li>
-                            
-                            <li><code>step1()</code> collects basic info (name, age, country, role)</li>
-                            
-                            <li><code>step2()</code> collects interests (issue, animal, activity)</li>
-                            
-                            <li><code>step3()</code> collects goals and actions (goal, volunteer, awareness)</li>
-                            
-                            <li><code>updateProgress()</code> calculates completion and updates the progress bar</li>
-                            
-                            <li><code>renderProfile()</code> updates displayed fields, leaving blanks if empty</li>
-                        </ul>
+                            <ul>
+                                <li><code>profile</code> stores the current profile data</li>
+                                
+                                <li><code>sampleProfiles</code> is an array of pre-filled profiles</li>
+                                
+                                <li><code>renderSampleData()</code> clears the container and displays profiles, skipping empty fields</li>
+                                
+                                <li><code>createCreateButton()</code> adds a "Create New Profile" button that triggers <code>createProfile()</code></li>
+                                
+                                <li><code>saveProfile()</code> saves a profile with a random photo, replaces skipped fields, updates <code>sampleProfiles</code>, resets the builder, and re-renders profiles</li>
+                                
+                                <li><code>clearProfile()</code> resets fields to "Not Added Yet" and resets the progress bar after confirmation</li>
+                                
+                                <li><code>createProfile()</code> displays the builder with steps, fields, progress bar, and Save button</li>
+                                
+                                <li><code>step1()</code> collects basic info (name, age, country, role)</li>
+                                
+                                <li><code>step2()</code> collects interests (issue, animal, activity)</li>
+                                
+                                <li><code>step3()</code> collects goals and actions (goal, volunteer, awareness)</li>
+                                
+                                <li><code>updateProgress()</code> calculates completion and updates the progress bar</li>
+                                
+                                <li><code>renderProfile()</code> updates displayed fields, leaving blanks if empty</li>
+                            </ul>
 
                         <h3>CSS Technical Description</h3>
-                        <ul>
-                            <li><code>background-attachment: fixed</code> creates a parallax effect with a static background</li>
-                            
-                            <li><code>#sample-data-container</code> uses CSS Grid (<code>repeat(3, 1fr)</code>) for a 3-column layout that distributes profile cards evenly</li>
-                            
-                            <li><code>.sample-data:hover</code> uses <code>transform: translateY(-10px)</code> and <code>box-shadow</code> to create a lift effect for interactive feedback</li>
-                            
-                            <li><code>.country</code> and <code>.role</code> use color-coded styles for quick visual distinction</li>
-                            
-                            <li><code>#profileBuilder</code> is initially <code>display: none</code> and toggled to <code>display: flex</code> via JavaScript</li>
-                            
-                            <li><code>.profile-photo</code> uses <code>object-fit: cover</code> for consistent image sizing</li>
-                            
-                            <li>Media queries (<code>1024px</code>, <code>768px</code>, <code>480px</code>) ensure responsive layout across devices</li>
-                        </ul>
+                            <ul>
+                                <li><code>background-attachment: fixed</code> creates a parallax effect with a static background</li>
+                                
+                                <li><code>#sample-data-container</code> uses CSS Grid (<code>repeat(3, 1fr)</code>) for a 3-column layout that distributes profile cards evenly</li>
+                                
+                                <li><code>.sample-data:hover</code> uses <code>transform: translateY(-10px)</code> and <code>box-shadow</code> to create a lift effect for interactive feedback</li>
+                                
+                                <li><code>.country</code> and <code>.role</code> use color-coded styles for quick visual distinction</li>
+                                
+                                <li><code>#profileBuilder</code> is initially <code>display: none</code> and toggled to <code>display: flex</code> via JavaScript</li>
+                                
+                                <li><code>.profile-photo</code> uses <code>object-fit: cover</code> for consistent image sizing</li>
+                                
+                                <li>Media queries (<code>1024px</code>, <code>768px</code>, <code>480px</code>) ensure responsive layout across devices</li>
+                            </ul>
 
                     <h3 id="profile-a11y">Accessibility</h3>
                         <ul>
@@ -118,7 +120,7 @@
                             <li>Google Fonts <code>display=swap</code> prevents invisible text during font loading</li>
                         </ul>
                     
-                    <h3>Link to th validation page</h3> 
+                    <h3>Link to the validation page</h3> 
                         <p><a href="validation_ST4.html#profile">Validation page</a></p> 
 
                     <h3>Link to the page</h3>
@@ -128,52 +130,53 @@
             <section>
                 <h2 id="sitemap">Sitemap Page</h2>
                     <h3>Technical Description</h3>
-                    <h3>HTML Technical Description</h3>
-                        <ul>
-                            <li><code>viewBox</code> allows the diagram to scale proportionally across all screen sizes</li>
-                            
-                            <li>Two SVGs (<code>.desktop-map</code> and <code>.mobile-map</code>) are created instead of making one responsive</li>
-                            
-                            <li><code>&lt;g&gt;</code> groups SVG elements together</li>
-                            
-                            <li><code>&lt;a&gt;</code> tags make nodes functional with hyperlinks</li>
-                            
-                            <li><code>tabindex="0"</code> enables keyboard navigation</li>
-                            
-                            <li><code>&lt;title&gt;</code> inside each SVG <code>&lt;a&gt;</code> provides accessible descriptions</li>
-                            
-                            <li><code>&lt;defs&gt;</code> stores reusable elements like <code>&lt;marker&gt;</code> (arrowheads) and <code>&lt;linearGradient&gt;</code> (fills)</li>
-                            
-                            <li><code>&lt;marker orient="auto"&gt;</code> adds arrowheads to lines</li>
-                            
-                            <li><code>&lt;rect rx="10"&gt;</code> creates rounded node boxes</li>
-                            
-                            <li><code>&lt;line&gt;</code> draws connections between nodes</li>
-                            
-                            <li><code>&lt;circle&gt;</code> shows decorative junction points</li>
-                            
-                            <li><code>&lt;text&gt;</code> elements display titles and subtitles with hierarchy</li>
-                        </ul>
+                        <h3>HTML Technical Description</h3>
+                            <ul>
+                                <li><code>viewBox</code> allows the diagram to scale proportionally across all screen sizes</li>
+                                
+                                <li>Two SVGs (<code>.desktop-map</code> and <code>.mobile-map</code>) are created instead of making one responsive</li>
+                                
+                                <li><code>&lt;g&gt;</code> groups SVG elements together</li>
+                                
+                                <li><code>&lt;a&gt;</code> tags make nodes functional with hyperlinks</li>
+                                
+                                <li><code>tabindex="0"</code> enables keyboard navigation</li>
+                                
+                                <li><code>&lt;title&gt;</code> inside each SVG <code>&lt;a&gt;</code> provides accessible descriptions</li>
+                                
+                                <li><code>&lt;defs&gt;</code> stores reusable elements like <code>&lt;marker&gt;</code> (arrowheads) and <code>&lt;linearGradient&gt;</code> (fills)</li>
+                                
+                                <li><code>&lt;marker orient="auto"&gt;</code> adds arrowheads to lines</li>
+                                
+                                <li><code>&lt;rect rx="10"&gt;</code> creates rounded node boxes</li>
+                                
+                                <li><code>&lt;line&gt;</code> draws connections between nodes</li>
+                                
+                                <li><code>&lt;circle&gt;</code> shows decorative junction points</li>
+                                
+                                <li><code>&lt;text&gt;</code> elements display titles and subtitles with hierarchy</li>
+                            </ul>
+
                         <h3>CSS Technical Description</h3>
-                        <ul>
-                            <li><code>background-attachment: fixed</code> creates a parallax effect</li>
-                            
-                            <li><code>.sitemap-wrapper</code> centers the diagram with a dark semi-transparent panel and teal border</li>
-                            
-                            <li><code>.box-rect</code> uses smooth transition for hover animations</li>
-                            
-                            <li><code>.node-group:hover</code> ensures all node types respond consistently</li>
-                            
-                            <li><code>.root-rect</code>, <code>.home-rect</code>, <code>.active-rect</code> use distinct fills and strokes; active uses dashed stroke</li>
-                            
-                            <li><code>text-anchor: middle</code> centers labels in nodes</li>
-                            
-                            <li><code>.hero_title</code> uses <code>clamp()</code> for consistent font size across screens</li>
-                            
-                            <li><code>.svg-link:focus</code> adds a visible teal outline for keyboard focus</li>
-                            
-                            <li><code>.desktop-map</code> and <code>.mobile-map</code> toggle via media queries for responsive layouts</li>
-                        </ul>
+                            <ul>
+                                <li><code>background-attachment: fixed</code> creates a parallax effect</li>
+                                
+                                <li><code>.sitemap-wrapper</code> centers the diagram with a dark semi-transparent panel and teal border</li>
+                                
+                                <li><code>.box-rect</code> uses smooth transition for hover animations</li>
+                                
+                                <li><code>.node-group:hover</code> ensures all node types respond consistently</li>
+                                
+                                <li><code>.root-rect</code>, <code>.home-rect</code>, <code>.active-rect</code> use distinct fills and strokes; active uses dashed stroke</li>
+                                
+                                <li><code>text-anchor: middle</code> centers labels in nodes</li>
+                                
+                                <li><code>.hero_title</code> uses <code>clamp()</code> for consistent font size across screens</li>
+                                
+                                <li><code>.svg-link:focus</code> adds a visible teal outline for keyboard focus</li>
+                                
+                                <li><code>.desktop-map</code> and <code>.mobile-map</code> toggle via media queries for responsive layouts</li>
+                            </ul>
 
                     <h3 id="sitemap-a11y">Accessibility</h3>
                         <ul>
@@ -196,12 +199,12 @@
                             <li>Semantic <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> enable easy navigation</li>
                         </ul>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST4.html#sitemap">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST4.html#sitemap">Validation Page</a></p> 
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="sitemap.html">Sitemap page</a></p>
+                        <p><a href="sitemap.html">Sitemap Page</a></p>
             </section>
 
             <section>
@@ -213,26 +216,30 @@
                         <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
 
                     <h3>Link to the validation page</h3> 
-                        <p><a href="validation_ST4.html#content">Validation page</a></p> 
+                        <p><a href="validation_ST4.html#content">Validation Page</a></p> 
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="content_ST4.html">Content page</a></p>
+                        <p><a href="content_ST4.html">Content Page</a></p>
             </section>
 
             <section>
-                <h2 id="challenge"> Challenges and Lessons Learned</h2>
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
                     <ul>
-                    <li>Building a multistep profile builder with real-time updates seemed challenging at first but became manageable with careful planning.</li>
-                    <li>The SVG sitemap had to be built twice—once for desktop and once for mobile—because fixed coordinates prevented responsive scaling.</li>
-                    <li>Making the sitemap keyboard-accessible required adding extra attributes to each SVG node, which was initially overlooked.</li>
-                    <li>Keeping CSS organised across separate files for each page required discipline to avoid style conflicts.</li>
-                    <li>Maintaining a consistent visual theme across all pages was an important part of the process.</li>
+                        <li>Building a multistep profile builder with real-time updates seemed challenging at first but became manageable with careful planning.</li>
+                        
+                        <li>The SVG sitemap had to be built twice—once for desktop and once for mobile—because fixed coordinates prevented responsive scaling.</li>
+                        
+                        <li>Making the sitemap keyboard-accessible required adding extra attributes to each SVG node, which was initially overlooked.</li>
+                        
+                        <li>Keeping CSS organised across separate files for each page required discipline to avoid style conflicts.</li>
+                        
+                        <li>Maintaining a consistent visual theme across all pages was an important part of the process.</li>
                     </ul>
             </section>
 
             <section>
-                <h2 id="compliance"> Compliance</h2>
+                <h2 id="compliance">Compliance</h2>
                     <ul>
                         <li>All pages include a valid <!DOCTYPE html> declaration and lang attribute, ensuring properly structured HTML5 documents.</li>
                         
@@ -256,7 +263,7 @@
             </section>
 
             <section>
-                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
+                <h2 id="group">Group Meetings and Individual Contribution Log</h2>
 
                 <ul type="circle">
                     <li>The individual contributions are presented in a generic format and they only reflect the general nature of the discussions held during the meeting.</li>
@@ -372,9 +379,8 @@
                             </tr>
 
                         </tbody>
-                    
-                    </table>
-                    
+                
+                    </table> 
             </section>
 
             <section>
@@ -389,24 +395,23 @@
                         <li><strong>ChatGPT</strong> — Generating image prompts</li>
 
                         <li><strong>Gemini</strong> — Generating images from prompts</li>
-
                     </ul>
             </section>
 
             <section>
                 <h2 id="ref">References</h2>
                 <ul class="references-list">
-                        <li>
-                            NOAA Fisheries (2024) <em>Why Can't Killer Whales Find and Capture Food? The Ocean Is too Noisy.</em> 
-                            Available at: <a href="https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy" target="_blank">
-                            https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy</a> 
-                            (Accessed: 22 March 2026).
-                        </li>
-                        <li>
-                            Tennessen, J.B. et al. (2024) 'Vessel noise levels drive foraging responses in endangered killer whales', 
-                            <em>Biological Conservation.</em>
-                        </li>
-                    </ul>
+                    <li>
+                        NOAA Fisheries (2024) <em>Why Can't Killer Whales Find and Capture Food? The Ocean Is too Noisy.</em> 
+                        Available at: <a href="https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy" target="_blank">
+                        https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy</a> 
+                        (Accessed: 22 March 2026).
+                    </li>
+                    <li>
+                        Tennessen, J.B. et al. (2024) 'Vessel noise levels drive foraging responses in endangered killer whales', 
+                        <em>Biological Conservation.</em>
+                    </li>
+                </ul>
             </section>
 
         </main>
@@ -447,6 +452,7 @@
             </div>
         </div>
     </footer>
+    
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
