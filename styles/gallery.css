@@ -111,6 +111,11 @@ body,html{
     flex-direction: column;
 }
 
+.card-content h2{
+    font-family:'Cinzel', serif;
+    font-size: 0.84rem;
+}
+
 /* Category Label */
 .category-label {
     font-size: 0.7rem;
