@@ -86,13 +86,50 @@ body {
   pointer-events: none;
 }
 
-#bg1::after {
-  background: linear-gradient(180deg, rgba(1, 8, 20, .55) 0%, rgba(2, 13, 28, .45) 60%, rgba(1, 8, 20, .75) 100%);
-}
+    #bg1::after {
+      background: linear-gradient(180deg,
+          rgba(1, 8, 20, 0.55) 0%,
+          rgba(2, 13, 28, 0.45) 60%,
+          rgba(1, 8, 20, 0.75) 100%);
+    }
 
-#bg4::after {
-  background: linear-gradient(160deg, rgba(0, 20, 18, .55) 0%, rgba(2, 28, 22, .40) 50%, rgba(0, 16, 14, .70) 100%);
-}
+    #bg2::after {
+      background: linear-gradient(160deg,
+          rgba(0, 20, 50, 0.52) 0%,
+          rgba(0, 30, 65, 0.38) 50%,
+          rgba(0, 18, 45, 0.68) 100%);
+    }
+
+    #bg3::after {
+      background: linear-gradient(200deg,
+          rgba(5, 12, 5, 0.60) 0%,
+          rgba(8, 18, 8, 0.45) 50%,
+          rgba(3, 8, 3, 0.72) 100%);
+      /* desaturate ghost-net scene */
+      filter: saturate(0.55);
+    }
+
+    #bg4::after {
+      background: linear-gradient(160deg,
+          rgba(0, 20, 18, 0.55) 0%,
+          rgba(2, 28, 22, 0.40) 50%,
+          rgba(0, 16, 14, 0.70) 100%);
+    }
+        #bg5::after {
+      background: linear-gradient(160deg,
+          rgba(0, 20, 18, 0.55) 0%,
+          rgba(2, 28, 22, 0.40) 50%,
+          rgba(0, 16, 14, 0.70) 100%);
+    }
+
+        #bg6::after {
+      background: linear-gradient(160deg,
+          rgba(0, 20, 18, 0.55) 0%,
+          rgba(2, 28, 22, 0.40) 50%,
+          rgba(0, 16, 14, 0.70) 100%);
+    }
+
+
 
 /* Story Hero */
 .chapters {
