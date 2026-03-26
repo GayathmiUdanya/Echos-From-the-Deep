@@ -407,7 +407,7 @@ body {
   color: rgba(255, 255, 255, .8);
 }
 
-/* ── Stat Row ── */
+/* Stat Row */
 .stat-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -447,56 +447,6 @@ body {
   line-height: 1.6;
 }
 
-/* ── Story Image ── */
-.story-img-wrap {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid rgb(255, 0, 0);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, .55);
-  aspect-ratio: 16/9;
-}
-
-.story-img {
-  width: 100%;
-  display: block;
-  aspect-ratio: 16/9;
-  object-fit: cover;
-  transform: scale(1.12) translateY(var(--py, 0px));
-  transition: transform .05s linear;
-  background: linear-gradient(135deg, #021525, #0e3a5a);
-  min-height: 140px;
-  will-change: transform;
-}
-
-.img-cap {
-  font-family: 'Cinzel', serif;
-  font-size: .44rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(125, 211, 252, .26);
-  margin-top: .55rem;
-  text-align: center;
-}
-
-/* ── Action List ── */
-.alist {
-  list-style: none;
-  display: grid;
-  gap: .6rem;
-  margin: .45rem 0 1rem;
-}
-
-.alist li {
-  display: flex;
-  gap: .8rem;
-  align-items: flex-start;
-  font-family: 'DM Sans', sans-serif;
-  font-size: .87rem;
-  font-weight: 300;
-  color: rgba(186, 230, 253, .67);
-  line-height: 1.68;
-}
 
 .chaptrnavii {
   font-family: 'Cinzel', serif;
@@ -547,4 +497,3 @@ body {
     opacity: 0;
   }
 }
-

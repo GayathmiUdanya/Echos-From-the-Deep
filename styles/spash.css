@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   overflow: hidden;
   background: var(--deep);
+  padding-top: 0px !important;  /*This is added because from the univesal css it adds padding top 50px this is here just to reset this */
 }
 
 .hero {
@@ -270,13 +271,14 @@ h1 em {
   max-width: 500px;
   line-height: 1.6;
 }
-
+/* Divider in the team memebers */
 .divider {
     width: 46px;
     height: 1px;
     background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.4), transparent);
 }
 
+/* Team members */
 .team-member {
     font-family: var(--font-display);
     font-size: clamp(0.42rem, 0.85vw, 0.56rem);
@@ -295,7 +297,7 @@ h1 em {
     border-color: rgba(125, 211, 252, 0.35);
     background: rgba(125, 211, 252, 0.12);
 }
-
+/* Skip Button */
 .skip-btn {
     display: inline-flex;
     align-items: center;
