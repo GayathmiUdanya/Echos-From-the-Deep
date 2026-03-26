@@ -46,11 +46,78 @@
             <section>
                 <h2 id="splash">Splash Screen</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
-                    
+                    <h3>HTML Technical Description</h3>
+                    <ul>
+                        <li>A <code>&lt;section class="hero"&gt;</code> element was used as the outermost wrapper, containing all visual layers including the background image, moon, ripples, and content panel.</li>
+
+                        <li>The background image was implemented as an <code>&lt;img&gt;</code> element positioned absolutely with <code>object-fit: cover</code>, ensuring proportional scaling across all screen sizes.</li>
+
+                        <li>A CSS overlay was applied using the <code>::after</code> pseudo-element with a linear-gradient, darkening the image edges to improve text readability.</li>
+                        
+                        <li>The moon and halo were placed as separate absolutely positioned elements, initially given negative top values to keep them off-screen on load.</li>
+
+                        <li>The hero content panel used <code>backdrop-filter: blur(28px)</code> to produce a frosted-glass effect over the background.</li>
+
+                        <li>The automatic redirect was implemented using <code>&lt;meta http-equiv="refresh" content="6;url=home.html"&gt;</code> placed in the <code>&lt;head&gt;</code>, as specified in the coursework requirements.</li>
+
+                        <li>Bioluminescent dots and ripple rings were generated dynamically — a for loop creates each element, assigns randomised CSS custom properties inline, and appends them to their containers.</li>
+
+                        <li>A <code>&lt;div class="loader-wrap"&gt;</code> was included inside the hero content panel containing a CSS-only loader ring animation and a countdown <code>&lt;p&gt;</code> element, visually reinforcing the transition period before redirect.</li>
+
+                        <li>A <code>&lt;div class="moonReflection"&gt;</code> element was placed at the bottom of the hero section to simulate the moon's reflection on the water surface, fading in separately from the moon itself via a delayed CSS transition</li>
+
+                        <li>A <code>&lt;div id="stars"&gt;</code> container was used to hold the dynamically generated bioluminescent dots, keeping generated content separated from static markup</li>
+                    </ul>
+
+                    <h3>CSS Technical Description</h3>
+                    <ul>
+                        <li>The <code>.loaded</code> class is added via JavaScript after a 300ms delay, triggering CSS transition with <code>cubic-bezier(0.22, 1, 0.36, 1)</code> easing to produce the moon rising effect.</li>
+                        
+                        <li><code>clamp()</code> was used throughout for font sizes and spacing, allowing fluid scaling between screen widths without breakpoint-specific media queries.</li>
+                        
+                        <li>Animations for dots and ripples are handled entirely in CSS using <code>@keyframes</code>, keeping behaviour and presentation separated.</li>
+                        
+                        <li><code>z-index</code> layering was used to stack all visual elements correctly — background at z-index 1, overlays at 2, moon at 6, content panel at 10.</li>
+                        
+                        <li>The loader ring was implemented using a rotating <code>&lt;div class="loader-ring"&gt;</code> with a <code>&lt;div class="loader-dot"&gt;</code> child — both animated purely in CSS using <code>@keyframes</code>, with no JavaScript involvement.</li>
+                        
+                        <li>CSS custom properties such as <code>--bio</code>, <code>--deep</code>, <code>--glow</code>, and <code>--radius-sm</code> were used throughout, referencing values defined in the global <code>style.css</code>, ensuring visual consistency with the rest of the website.</li>
+                        
+                        <li>The moon reflection used <code>transition: opacity 1.8s ease 0.8s</code> — the 0.8s delay was intentional, causing the reflection to appear slightly after the moon itself for a more natural visual sequence.</li>
+                        
+                        <li>The <code>bioTwinkle</code> and <code>rippleOut</code> animations both use randomised <code>--duration</code> and <code>--delay</code> custom properties set inline by JavaScript, allowing each dot and ripple to animate independently without separate CSS rules for each element.</li>
+                    </ul>
+
+                    <h3>JavaScript Technical Description</h3>
+                        <ul>
+                            <li>The <code>window.addEventListener('load', ...)</code> pattern ensures everything waits for the full page load before animations trigger.</li>
+                            
+                            <li>The <code>var(--bio)</code> and other CSS custom properties are used across multiple elements for consistent styling and animation timing.</li>
+                            
+                            <li>The moon reflection element (<code>moonReflection</code>) has a separate fade-in transition, creating a more natural visual sequence after the moon itself appears.</li>
+                            
+                            <li>The loader ring and loader dot are CSS-only animated elements inside the content panel, with no JavaScript involvement for animation.</li>
+                            
+                            <li>The <code>skipIntro()</code> function removes the meta tag using <code>document.querySelector('meta[http-equiv="refresh"]').remove()</code>, preventing the automatic redirect if desired.</li>
+                            
+                            <li>The <code>stars</code> container is reused for the dynamically generated bioluminescent dots, with <code>id="stars"</code> feeding multiple animations.</li>
+                        </ul>
+
                     <h3 id="splash-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
-                    
+                        <ul>
+                            <li>All image elements were given descriptive <code>alt</code> attributes — the hero background uses <code>alt="Night ocean scene with clouds and stars"</code> and the moon uses <code>alt="Full moon rising over the ocean"</code>.</li>
+                            
+                            <li>The skip button is implemented as a native <code>&lt;button&gt;</code> element, making it keyboard-focusable and correctly announced by screen readers without additional ARIA roles.</li>
+                            
+                            <li>The <code>lang="en"</code> attribute is set on the <code>&lt;html&gt;</code> element, allowing screen readers to apply the correct language profile.</li>
+                            
+                            <li>A single <code>&lt;h1&gt;</code> is used for the page title, maintaining a correct and logical document outline.</li>
+                            
+                            <li>Text colours were chosen to maintain sufficient contrast against the dark background — for example, the main heading uses near-white <code>#eef6fa</code> over a semi-transparent dark panel.</li>
+                            
+                            <li>The countdown and skip button both carry clear visible text labels, making the transition behaviour understandable to all users.</li>
+                        </ul>
+                                            
                     <h3>Link to the validation page</h3> 
                         <p>
                             <a href="validation_ST2.html#splash">Validation Page</a>
@@ -64,10 +131,30 @@
             <section>
                 <h2 id="ais">AIS Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                    <h3>HTML Technical Description</h3>
+                        <ul>
+                            <li>The page was structured using a <code>&lt;main&gt;</code> element containing a hero introduction section followed by the simulator panel.</li>
+                            
+                            <li>Six action cards were marked up as <code>&lt;div&gt;</code> elements, each containing a thumbnail <code>&lt;img&gt;</code> with descriptive alt text, a category <code>&lt;span&gt;</code> label, an <code>&lt;h2&gt;</code> card title, a <code>&lt;p&gt;</code> description, and an impact point <code>&lt;span&gt;</code>.</li>
+                            
+                            <li>Each card was given <code>role="checkbox"</code> and <code>aria-checked="false"</code> as default attributes for accessibility.</li>
+                            
+                            <li>The simulator feedback container was marked up with <code>role="region"</code> and styled with <code>backdrop-filter: blur(18px)</code>.</li>
+                            
+                            <li>A fixed-position <code>&lt;img id="sceneBg"&gt;</code> element was used as the dynamic background, layered behind all content via z-index.</li>
+                            
+                            <li>The action card grid container was marked up with <code>role="group"</code> to semantically group the interactive cards.</li>
+                            
+                            <li>The reset button was implemented as a native <code>&lt;button&gt;</code> element, ensuring keyboard accessibility without additional ARIA roles.</li>
+                            
+                            <li>A <code>&lt;footer&gt;</code> was included containing links to the Page Editor, Validation Page, Accessibility, and Compliance sections.</li>
+                        </ul>
+                    <h3>CSS Technical Description</h3>
+
+                    <h3>JavaScript Technical Description</h3>
 
                     <h3 id="ais-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        
 
                     <h3>Link to the validation page</h3> 
                         <p>
