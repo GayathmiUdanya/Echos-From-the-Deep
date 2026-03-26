@@ -434,39 +434,39 @@ border-radius: 2px;
 margin: 0.75rem 0;
 }
 
-    /* ── Ref Box ── */
-    .refferancee {
-      background: rgba(2, 12, 22, .5);
-      border: 1px solid rgba(125, 211, 252, .07);
-      border-radius: 9px;
-      padding: .95rem 1.2rem;
-      margin-top: 1.3rem;
-    }
+/* ── Ref Box ── */
+.refferancee {
+    background: rgba(2, 12, 22, .5);
+    border: 1px solid rgba(125, 211, 252, .07);
+    border-radius: 9px;
+    padding: .95rem 1.2rem;
+    margin-top: 1.3rem;
+}
 
-    .refferancee h3 {
-      font-family: 'Cinzel', serif;
-      font-size: .47rem;
-      letter-spacing: .26em;
-      text-transform: uppercase;
-      color: rgba(125, 211, 252, .26);
-      margin-bottom: .7rem;
-    }
+.refferancee h3 {
+    font-family: 'Cinzel', serif;
+    font-size: .47rem;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: rgba(125, 211, 252, .26);
+    margin-bottom: .7rem;
+}
 
-    .refferancee ol {
-      padding-left: 1rem;
-    }
+.refferancee ol {
+    padding-left: 1rem;
+}
 
-    .refferancee li {
-      font-family: 'DM Sans', sans-serif;
-      font-size: .74rem;
-      font-weight: 300;
-      color: rgba(125, 211, 252, .34);
-      line-height: 1.72;
-      margin-bottom: .3rem;
-    }
+.refferancee li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .74rem;
+    font-weight: 300;
+    color: rgba(125, 211, 252, .34);
+    line-height: 1.72;
+    margin-bottom: .3rem;
+}
 
-    .refferancee a {
-      color: rgba(125, 211, 252, .42);
-      text-underline-offset: 3px;
-      transition: color .2s;
-    }
+.refferancee a {
+    color: rgba(125, 211, 252, .42);
+    text-underline-offset: 3px;
+    transition: color .2s;
+}

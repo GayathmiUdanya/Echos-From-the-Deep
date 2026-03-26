@@ -2,6 +2,56 @@ body {
   background: #020810;
 }
 
+/* Animated ripple effect */
+.sonar {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(73, 174, 192, 0);
+  transform: scale(0);
+  opacity: 0;
+}
+
+#sonarpart {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.sonar.fire {
+  animation: sonarRing 1.6s cubic-bezier(.2, .6, .4, 1) forwards;
+}
+
+.sonar.fire2 {
+  animation: sonarRing 1.6s cubic-bezier(.2, .6, .4, 1) .3s forwards;
+}
+
+.sonar.fire3 {
+  animation: sonarRing 1.6s cubic-bezier(.2, .6, .4, 1) .6s forwards;
+}
+
+@keyframes sonarRing {
+  0% {
+    transform: scale(0);
+    opacity: .65;
+    border-color: rgba(73, 174, 192, .65);
+    width: 60px;
+    height: 60px;
+    margin: -30px;
+  }
+
+  100% {
+    transform: scale(12);
+    opacity: 0;
+    border-color: rgba(73, 174, 192, 0);
+  }
+}
+
+/* Background images */ 
 .bg {
   position: fixed;
   inset: 0;
@@ -44,6 +94,77 @@ body {
   background: linear-gradient(160deg, rgba(0, 20, 18, .55) 0%, rgba(2, 28, 22, .40) 50%, rgba(0, 16, 14, .70) 100%);
 }
 
+/* Story Hero */
+.chapters {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 2rem;
+}
+
+.chaptersTagg {
+  font-family: 'Cinzel', serif;
+  letter-spacing: .42em;
+  color: #49aec0;
+  opacity: .72;
+  display: block;
+  margin-bottom: 1.4rem;
+}
+
+.chapters h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 1.2rem;
+}
+
+.chapters h1 em {
+  font-style: italic;
+  color: #7dd3fc;
+}
+
+/* Hero tagline */ 
+.chaptersDescription {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-style: italic;
+  color: rgba(186, 230, 253, .58);
+  max-width: 420px;
+  line-height: 1.75;
+  margin: 0 auto 1.8rem;
+}
+
+/* Hero navigation */
+.chaptrsnavii { 
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Scroll */
+.scrolltext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.scrolltext span {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  letter-spacing: 6px;
+  color: rgba(125, 211, 252, .36);
+}
+
+/* Content Page specific styling */
 .title{
   position: relative;
   z-index: 10;
@@ -67,6 +188,7 @@ body {
   pointer-events: none;
 }
 
+/* Title mini heading */
 .title-act {
   font-family: 'Cinzel', serif;
   font-size: clamp(.48rem, .9vw, .65rem);
@@ -77,6 +199,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Title heading */
 .title-head {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 5vw, 4.5rem);
@@ -92,6 +215,7 @@ body {
   color: #7dd3fc;
 }
 
+/* Title tagline */
 .title-tag {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(.9rem, 1.6vw, 1.1rem);
@@ -102,6 +226,7 @@ body {
   padding: 0 2rem;
 }
 
+/* Title student details */
 .title-student{
   font-family: 'Cinzel', serif;
   font-size: .46rem;
@@ -110,6 +235,186 @@ body {
   color: rgba(125, 211, 252, .3);
   margin-top: 1.5rem;
 }
+
+/* Content cards */ 
+.content {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8vh 0;
+}
+
+.contentcon {
+  width: min(820px, 90vw);
+  padding: clamp(2rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem);
+  background: rgba(1, 8, 20, .62);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(125, 211, 252, .10);
+  border-radius: 18px;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(125, 211, 252, .06);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s ease, transform .9s ease;
+}
+
+.contentcon.visible {
+  opacity: 1;
+  transform: translateY(0) !important;
+}
+
+/* Content card - Title mini heading */
+.contentdec {
+  font-family: 'Cinzel', serif;
+  font-size: .5rem;
+  letter-spacing: .36em;
+  text-transform: uppercase;
+  color: #49aec0;
+  opacity: .7;
+  display: block;
+  margin-bottom: .55rem;
+}
+
+/* Content card - Styling the title heading */
+.contentcon h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.7rem, 3vw, 2.6rem);
+  font-weight: 300;
+  line-height: 1.12;
+  color: rgba(255, 255, 255, .93);
+  margin: 0 0 .4rem;
+}
+
+.contentcon h2 em {
+  font-style: italic;
+  color: #7dd3fc;
+}
+
+/* Content card - Title tagline */
+.contentsub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .95rem;
+  font-style: italic;
+  color: rgba(186, 230, 253, .48);
+}
+
+/* Content card - Content divider line */ 
+.contentline {
+  width: 36px;
+  height: 1px;
+  background: linear-gradient(90deg, #0e7490, #7dd3fc);
+  margin: .9rem 0 1.4rem;
+}
+
+/* Content card - Content styling */ 
+.contentcon p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: .9rem;
+  font-weight: 300;
+  line-height: 1.92;
+  color: rgba(186, 230, 253, .68);
+  margin-bottom: .95rem;
+}
+
+.contentcon strong {
+  color: rgba(186, 230, 253, .9);
+  font-weight: 500;
+}
+
+/* Content card - Styling for the quotes */ 
+.quate {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+  font-style: italic;
+  font-weight: 300;
+  color: #7dd3fc;
+  border-left: 2px solid rgba(73, 174, 192, .6);
+  padding: .45rem 0 .45rem 1.2rem;
+  line-height: 1.48;
+  margin: 1rem 0;
+}
+
+/* Content card - Title 2 */
+.t2 {
+  font-family: 'Cinzel', serif;
+  font-size: .53rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: #49aec0;
+  margin: 1.2rem 0 .55rem;
+}
+
+/* Reference styling is available in the style.css */
+
+/* Handoff */
+/* Handoff Section's Container */
+.handoff {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 32px;
+  overflow: hidden;
+}
+
+/* Handoff Section - Container Heading */
+.handofflebel {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: rgba(125, 211, 252, .4);
+  margin-bottom: 20px;
+}
+
+/* Handoff Section - Container Sub Heading */
+.handoff h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 4vw, 48px);
+  font-weight: 300;
+  color: rgba(255, 255, 255, .88);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.handoff h2 em {
+  font-style: italic;
+  color: #7dd3fc;
+}
+
+/* Handoff Section - Tag line */
+.handoff p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(186, 230, 253, .5);
+  max-width: 400px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* Handoff Section - Link for the next content page */
+.nextbutton {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-style: italic;
+  color: rgba(255, 255, 255, .8);
+}
+
+
+
+
+
+
+
+
+
 
 .tc-line-bot {
   width: 1px;
@@ -141,98 +446,7 @@ body {
   }
 }
 
-.content {
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8vh 0;
-}
 
-.contentcon {
-  width: min(820px, 90vw);
-  padding: clamp(2rem, 4vw, 3.5rem) clamp(2rem, 5vw, 4rem);
-  background: rgba(1, 8, 20, .62);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(125, 211, 252, .10);
-  border-radius: 18px;
-  box-shadow: 0 8px 48px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(125, 211, 252, .06);
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .9s ease, transform .9s ease;
-}
-
-.contentcon.visible {
-  opacity: 1;
-  transform: translateY(0) !important;
-}
-
-.contentdec {
-  font-family: 'Cinzel', serif;
-  font-size: .5rem;
-  letter-spacing: .36em;
-  text-transform: uppercase;
-  color: #49aec0;
-  opacity: .7;
-  display: block;
-  margin-bottom: .55rem;
-}
-
-.contentcon h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.7rem, 3vw, 2.6rem);
-  font-weight: 300;
-  line-height: 1.12;
-  color: rgba(255, 255, 255, .93);
-  margin: 0 0 .4rem;
-}
-
-.contentcon h2 em {
-  font-style: italic;
-  color: #7dd3fc;
-}
-
-.contentsub {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: .95rem;
-  font-style: italic;
-  color: rgba(186, 230, 253, .48);
-}
-
-.contentline {
-  width: 36px;
-  height: 1px;
-  background: linear-gradient(90deg, #0e7490, #7dd3fc);
-  margin: .9rem 0 1.4rem;
-}
-
-.contentcon p {
-  font-family: 'DM Sans', sans-serif;
-  font-size: .9rem;
-  font-weight: 300;
-  line-height: 1.92;
-  color: rgba(186, 230, 253, .68);
-  margin-bottom: .95rem;
-}
-
-.contentcon strong {
-  color: rgba(186, 230, 253, .9);
-  font-weight: 500;
-}
-
-.quate {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.05rem, 2vw, 1.45rem);
-  font-style: italic;
-  font-weight: 300;
-  color: #7dd3fc;
-  border-left: 2px solid rgba(73, 174, 192, .6);
-  padding: .45rem 0 .45rem 1.2rem;
-  line-height: 1.48;
-  margin: 1rem 0;
-}
 
 /* ── Stat Row ── */
 .stat-row {
@@ -306,14 +520,6 @@ body {
   text-align: center;
 }
 
-.t2 {
-  font-family: 'Cinzel', serif;
-  font-size: .53rem;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  color: #49aec0;
-  margin: 1.2rem 0 .55rem;
-}
 
 /* ── Action List ── */
 .alist {
@@ -334,58 +540,7 @@ body {
   line-height: 1.68;
 }
 
-/* ── Story Hero ── */
-.chapters {
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 2rem;
-}
 
-.chaptersTagg {
-  font-family: 'Cinzel', serif;
-  letter-spacing: .42em;
-  color: #49aec0;
-  opacity: .72;
-  display: block;
-  margin-bottom: 1.4rem;
-}
-
-.chapters h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 300;
-  line-height: 1.05;
-  margin-bottom: 1.2rem;
-}
-
-.chapters h1 em {
-  font-style: italic;
-  color: #7dd3fc;
-}
-
-.chaptersDescription {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  font-style: italic;
-  color: rgba(186, 230, 253, .58);
-  max-width: 420px;
-  line-height: 1.75;
-  margin: 0 auto 1.8rem;
-}
-
-.chaptrsnavii { 
-  display: flex;
-  gap: .5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
 
 .chaptrnavii {
   font-family: 'Cinzel', serif;
@@ -405,20 +560,6 @@ body {
   color: #7dd3fc;
   border-color: rgba(125, 211, 252, .4);
   background: rgba(125, 211, 252, .06);
-}
-
-.scrolltext {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .5rem;
-}
-
-.scrolltext span {
-  font-family: 'Cinzel', serif;
-  font-size: 18px;
-  letter-spacing: 6px;
-  color: rgba(125, 211, 252, .36);
 }
 
 .scrollline {
@@ -450,100 +591,4 @@ body {
     opacity: 0;
   }
 }
-.handoff {
-  position: relative;
-  z-index: 10;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 32px;
-  overflow: hidden;
-}
 
-.handofflebel {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-  color: rgba(125, 211, 252, .4);
-  margin-bottom: 20px;
-}
-
-.handoff h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(26px, 4vw, 48px);
-  font-weight: 300;
-  color: rgba(255, 255, 255, .88);
-  line-height: 1.2;
-  margin-bottom: 16px;
-}
-
-.handoff h2 em {
-  font-style: italic;
-  color: #7dd3fc;
-}
-
-.handoff p {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  color: rgba(186, 230, 253, .5);
-  max-width: 400px;
-  line-height: 1.7;
-  margin-bottom: 2.5rem;
-}
-.nextbutton {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-  font-style: italic;
-  color: rgba(255, 255, 255, .8);
-}
-#sonarpart {
-  position: fixed;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sonar {
-  position: absolute;
-  border-radius: 50%;
-  border: 1px solid rgba(73, 174, 192, 0);
-  transform: scale(0);
-  opacity: 0;
-}
-
-.sonar.fire {
-  animation: sonarRing 1.6s cubic-bezier(.2, .6, .4, 1) forwards;
-}
-
-.sonar.fire2 {
-  animation: sonarRing 1.6s cubic-bezier(.2, .6, .4, 1) .3s forwards;
-}
-
-.sonar.fire3 {
-  animation: sonarRing 1.6s cubic-bezier(.2, .6, .4, 1) .6s forwards;
-}
-
-@keyframes sonarRing {
-  0% {
-    transform: scale(0);
-    opacity: .65;
-    border-color: rgba(73, 174, 192, .65);
-    width: 60px;
-    height: 60px;
-    margin: -30px;
-  }
-
-  100% {
-    transform: scale(12);
-    opacity: 0;
-    border-color: rgba(73, 174, 192, 0);
-  }
-}
