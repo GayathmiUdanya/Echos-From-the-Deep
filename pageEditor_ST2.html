@@ -181,7 +181,23 @@
 
 
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                    <ul>
+                        <li><code>lang="en"</code> defines the page language, helping screen readers use correct pronunciation.</li>
+
+                        <li><code>alt</code> attributes on images provide descriptions for visually impaired users.</li>
+
+                        <li><code>aria-hidden="true"</code> hides decorative elements (e.g., background images, sonar effects) from screen readers.</li>
+
+                        <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> create a semantic structure for easier navigation.</li>
+
+                        <li><code>aria-label</code> (e.g., "Back to top") gives meaningful descriptions to icons or non-text elements.</li>
+
+                        <li><code>&lt;a&gt;</code> links enable keyboard navigation between sections and pages.</li>
+
+                        <li><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> provide semantic emphasis, improving how screen readers interpret content.</li>
+
+                        <li><code>id</code> attributes allow users to jump to sections using anchor links, supporting keyboard navigation.</li>
+                    </ul>
 
                     <h3>Link to the validation page</h3> 
                         <p><a href="validation_ST2.html#content">Validation Page</a></p> 
