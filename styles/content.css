@@ -134,7 +134,7 @@ body {
 /* Hero tagline */ 
 .chaptersDescription {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-size: clamp(1rem, 1.8vw, 1.8rem);
   font-style: italic;
   color: rgba(186, 230, 253, .58);
   max-width: 420px;
@@ -163,7 +163,7 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 18px;
   letter-spacing: 6px;
-  color: rgba(125, 211, 252, .36);
+  color: rgba(125, 212, 252, 0.67);
 }
 
 /* Content Page specific styling */
@@ -368,11 +368,13 @@ body {
 /* Handoff Section - Container Heading */
 .handofflebel {
   font-family: 'Cinzel', serif;
-  font-size: 10px;
+  font-size: 16px;
   letter-spacing: 8px;
   text-transform: uppercase;
-  color: rgba(125, 211, 252, .4);
+  color: rgba(0, 255, 191, 0.771);
   margin-bottom: 20px;
+  font-style: bold;
+
 }
 
 /* Handoff Section - Container Sub Heading */
@@ -393,10 +395,10 @@ body {
 /* Handoff Section - Tag line */
 .handoff p {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
-  font-style: italic;
-  color: rgba(186, 230, 253, .5);
-  max-width: 400px;
+  font-size:20px;
+  font-style: bold italic;
+  color: rgba(222, 243, 255, 0.904);
+  max-width: 460px;
   line-height: 1.7;
   margin-bottom: 2.5rem;
 }
@@ -452,10 +454,10 @@ body {
 
 .chaptrnavii {
   font-family: 'Cinzel', serif;
-  font-size: .48rem;
+  font-size: .68rem;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(125, 211, 252, .45);
+  color: rgba(125, 212, 252, 0.755);
   text-decoration: none;
   padding: .28rem .85rem;
   border: 1px solid rgba(125, 211, 252, .14);
