@@ -21,7 +21,6 @@ body {
   justify-content: center;
 }
 
-
 .sonar.fire {
   animation: sonarRing 1.6s cubic-bezier(.2, .6, .4, 1) forwards;
 }
