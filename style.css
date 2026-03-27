@@ -437,7 +437,8 @@ border-radius: 2px;
 margin: 0.75rem 0;
 }
 
-/* ── Ref Box ── */
+/* ── Ref Box ── */ 
+/* Page Editors and Content pages */
 .refferancee {
     background: rgba(2, 12, 22, .5);
     border: 1px solid rgba(125, 211, 252, .07);
