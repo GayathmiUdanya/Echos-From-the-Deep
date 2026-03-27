@@ -131,7 +131,7 @@ body,html{
     font-weight: bold;
     color: #fff;
     margin-bottom: 12px;
-    letter-spacing: 0.05em;
+    letter-spacing: .1em;
 }
 
 /* Description Body */
@@ -141,6 +141,8 @@ body,html{
     line-height: 1.5;
     margin-bottom: 15px;
     flex-grow: 1; 
+    color: #94b8cc;
+    margin-top:10px;
 }
 
 /* Points Badge */
