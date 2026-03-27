@@ -501,99 +501,155 @@ body {
   }
 }
 
+
 /* Quick-Jump Navigation */
-    /* ══════════════════════════════════════════════════════
-       6 ── QUICK-JUMP NAV (floating right) — slim pill, tooltip on hover
-    ══════════════════════════════════════════════════════ */
-    #quickJump {
-      position: fixed;
-      right: 1.2rem; top: 50%;
-      transform: translateY(-50%);
-      z-index: 50;
-      display: flex; flex-direction: column; align-items: flex-end;
-    }
 
-    #qjPill {
-      display: flex; flex-direction: column; align-items: center; gap: 0;
-      background: rgba(2,10,22,0.52);
-      border: 1px solid rgba(125,211,252,0.10);
-      border-radius: 14px;
-      padding: 7px 5px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.3);
-      transition: border-color 0.3s;
-    }
-    #qjPill:hover { border-color: rgba(125,211,252,0.18); }
+#quickJump {
+  position: fixed;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 50;
 
-    .qj-item {
-      display: flex; align-items: center;
-      cursor: pointer; text-decoration: none;
-      padding: 5px 4px;
-      border-radius: 8px;
-      position: relative;
-      transition: background 0.2s;
-    }
-    .qj-item:hover { background: rgba(125,211,252,0.06); }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
-    /* Floating tooltip label — pops left on hover/active */
-    .qj-label {
-      position: absolute;
-      right: calc(100% + 10px);
-      top: 50%; transform: translateY(-50%);
-      font-family: 'Cinzel', serif;
-      font-size: 0.38rem; letter-spacing: 0.22em; text-transform: uppercase;
-      white-space: nowrap;
-      background: rgba(2,10,22,0.88);
-      border: 1px solid rgba(125,211,252,0.14);
-      border-radius: 5px;
-      padding: 3px 9px;
-      color: rgba(125,211,252,0);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s, color 0.2s;
-    }
-    .qj-item:hover .qj-label,
-    .qj-item.active .qj-label {
-      opacity: 1;
-      color: rgba(125,211,252,0.82);
-    }
-    .qj-item.active .qj-label { color: #7dd3fc; border-color: rgba(125,211,252,0.25); }
+/* Container */
+#qjPill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-    .qj-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: rgba(125,211,252,0.15);
-      border: 1px solid rgba(125,211,252,0.28);
-      transition: background 0.28s, box-shadow 0.28s, transform 0.28s;
-      flex-shrink: 0;
-      position: relative;
-    }
-    .qj-item:hover .qj-dot {
-      background: rgba(125,211,252,0.5);
-      transform: scale(1.25);
-    }
-    .qj-item.active .qj-dot {
-      background: #49aec0;
-      box-shadow: 0 0 8px rgba(73,174,192,0.85), 0 0 18px rgba(73,174,192,0.3);
-      transform: scale(1.4);
-    }
+  background: rgba(2, 10, 22, 0.52);
+  border: 1px solid rgba(125, 211, 252, 0.10);
+  border-radius: 14px;
+  padding: 7px 5px;
 
-    .qj-dot::after {
-      content: ''; position: absolute; inset: -5px;
-      border-radius: 50%;
-      border: 1px solid rgba(73,174,192,0.0);
-      transition: border-color 0.3s;
-    }
-    .qj-item.active .qj-dot::after {
-      border-color: rgba(73,174,192,0.45);
-      animation: qjPulse 2s ease-out infinite;
-    }
-    @keyframes qjPulse {
-      0%   { transform: scale(1);   opacity: 0.8; }
-      100% { transform: scale(3);   opacity: 0; }
-    }
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
-    .qj-connector {
-      width: 1px; height: 8px;
-      background: rgba(125,211,252,0.09);
-    }
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s;
+}
+
+#qjPill:hover {
+  border-color: rgba(125, 211, 252, 0.18);
+}
+
+/* Items */
+.qj-item {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  padding: 5px 4px;
+  border-radius: 8px;
+  position: relative;
+
+  transition: background 0.2s;
+}
+
+.qj-item:hover,
+.qj-item:focus-visible {
+  background: rgba(125, 211, 252, 0.06);
+  outline: none;
+}
+
+/* Tooltip label */
+.qj-label {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-family: 'Cinzel', serif;
+  font-size: 0.5rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  background: rgba(2, 10, 22, 0.9);
+  border: 1px solid rgba(125, 211, 252, 0.14);
+  border-radius: 5px;
+  padding: 4px 10px;
+
+  color: rgba(125, 211, 252, 0);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s, color 0.2s;
+}
+
+/* Show label */
+.qj-item:hover .qj-label,
+.qj-item:focus-visible .qj-label,
+.qj-item.active .qj-label {
+  opacity: 1;
+  color: rgba(125, 211, 252, 0.82);
+}
+
+.qj-item.active .qj-label {
+  color: #7dd3fc;
+  border-color: rgba(125, 211, 252, 0.25);
+}
+
+/* Dot */
+.qj-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+
+  background: rgba(125, 211, 252, 0.15);
+  border: 1px solid rgba(125, 211, 252, 0.28);
+
+  transition: all 0.28s ease;
+  flex-shrink: 0;
+  position: relative;
+}
+
+/* Hover */
+.qj-item:hover .qj-dot,
+.qj-item:focus-visible .qj-dot {
+  background: rgba(125, 211, 252, 0.5);
+  transform: scale(1.25);
+}
+
+/* Active */
+.qj-item.active .qj-dot {
+  background: #49aec0;
+  box-shadow: 0 0 8px rgba(73, 174, 192, 0.85),
+              0 0 18px rgba(73, 174, 192, 0.3);
+  transform: scale(1.4);
+}
+
+/* Pulse ring */
+.qj-dot::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+
+  border: 1px solid transparent;
+}
+
+.qj-item.active .qj-dot::after {
+  border-color: rgba(73, 174, 192, 0.45);
+  animation: qjPulse 2s ease-out infinite;
+}
+
+@keyframes qjPulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+/* Connectors */
+.qj-connector {
+  width: 1px;
+  height: 8px;
+  background: rgba(125, 211, 252, 0.09);
+}
