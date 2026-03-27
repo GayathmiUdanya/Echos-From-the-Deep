@@ -313,6 +313,7 @@ function step1() {
     // Required fields 
     while(!name) {
         let input = prompt("What is your name?");
+        if (input === null) return; //Exits the function if user clicks cancel
 
         //Checks if the user skipped it
         //trim() removes white spaces (if the user enters " " -> counts as empty input)
@@ -331,6 +332,7 @@ function step1() {
 
     while(!country) {
     let input = prompt("Which country do you live in?*");
+    if (input === null) return; //Exits the function if user clicks cancel
     if(input === null || input.trim() === "") {
         alert("Country is required!");
     } else {
@@ -341,6 +343,7 @@ function step1() {
 
     while(!role) {
         let input = prompt("What is your role?* (Student / Ocean Enthusiast / Volunteer / Researcher / Other)");
+        if (input === null) return; //Exits the function if user clicks cancel
         if(input === null || input.trim() === "") {
             alert("Role is required!");
         } else {
