@@ -1,4 +1,3 @@
-
 var scrollBar = document.getElementById('scroller');
 var sections  = Array.from(document.querySelectorAll('[data-bg]'));
 var bgs = ['bg1','bg2','bg3','bg4','bg5','bg6'].reduce(function(o,k) {
