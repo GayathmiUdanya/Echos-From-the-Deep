@@ -284,3 +284,10 @@ ul.top-level-ul ul li a:hover {
     background: rgba(125, 211, 252, 0.06);
     border-left-color: #7dd3fc;
 }
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #97c2e5;
+    margin: 1rem 0;
+}
