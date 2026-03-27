@@ -29,6 +29,7 @@ function onScroll() {
     return d < b.dist ? { el: sec, dist: d } : b;
   }, { el: null, dist: Infinity });
   if (best.el) switchBg(best.el.dataset.bg);
+    updateQuickJump(st);
 }
 
 var sonarRings = [document.getElementById('s1'), document.getElementById('s2'), document.getElementById('s3')];
@@ -63,3 +64,22 @@ window.addEventListener('scroll', function() {
   clearTimeout(sonarScrollTimer);
   sonarScrollTimer = setTimeout(triggerSonarPing, 1200);
 }, { passive: true });
+
+var qjItems   = document.querySelectorAll('#quickJump .qj-item');
+var qjTargets = Array.from(qjItems).map(function(el){ return el.getAttribute('data-target'); });
+
+function updateQuickJump(scrollY){
+  var winMid = scrollY + window.innerHeight * 0.45;
+  var best = -1, bestDist = Infinity;
+  qjTargets.forEach(function(id, i){
+    var el = document.getElementById(id);
+    if(!el) return;
+    var rect  = el.getBoundingClientRect();
+    var elMid = scrollY + rect.top + rect.height * 0.5;
+    var dist  = Math.abs(winMid - elMid);
+    if(dist < bestDist){ bestDist = dist; best = i; }
+  });
+  qjItems.forEach(function(item, i){
+    item.classList.toggle('active', i === best);
+  });
+}
