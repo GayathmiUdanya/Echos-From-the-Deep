@@ -243,6 +243,20 @@
 
                             <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> structure the navigation bar, improving usability and accessibility.</li>
 
+                            <li><code>id="quickJump"</code> acts as a navigation landmark with an aria-label to ensure screen readers identify it as a functional section for jumping between content.</li>
+
+                            <li><code>id="qjPill"</code> serves as the main container for the navigation items, likely styled as a floating or sticky horizontal "pill" bar.</li>
+
+                            <li><code>class="qj-item"</code> creates internal page links using <code>href</code> anchors (like <code>#act1</code>) to scroll the user to specific sections without a page reload.</li>
+
+                            <li><code>class="active"</code> and <code>aria-current="true"</code> are used on the first link to visually and programmatically mark the user's starting location in the document.</li>
+
+                            <li><code>class="qj-connector"</code> provides a structural element used in CSS to draw connecting lines between the navigation points, creating a "progress tracker" look.</li>
+
+                            <li><code>class="qj-dot"</code> functions as a decorative or functional bullet point within each link to give the menu a modern, minimalist aesthetic.</li>
+
+                            <li><code>data-target</code> attributes store the ID of the destination section, which is typically used by a JavaScript scroll-spy to highlight the correct link as the user scrolls.</li>
+
                             <li><code>&lt;main&gt;</code> wraps the primary content, helping screen readers identify the main section of the page.</li>
 
                             <li><code>&lt;section&gt;</code> elements divide the page into logical content areas such as hero, content cards, and handoff.</li>
@@ -265,37 +279,54 @@
                         </ul>
 
                     <h3>CSS Technical Description</h3>
-                        <ul>
-                            <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
+                    <ul>
+                        <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
 
-                            <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
+                        <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
 
-                            <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
+                        <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
 
-                            <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
+                        <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
 
-                            <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
+                        <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
 
-                            <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
+                        <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
 
-                            <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
+                        <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
 
-                            <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
+                        <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
 
-                            <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
+                        <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
 
-                            <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
+                        <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
 
-                            <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
+                        <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
 
-                            <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
+                        <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
 
-                            <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
+                        <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
 
-                            <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
+                        <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
 
-                            <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
-                        </ul>
+                        <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
+
+                        <li><code>#quickJump</code> is <strong>fixed to the right side</strong> of the viewport, vertically centered using <code>transform: translateY(-50%)</code></li>
+
+                        <li><code>#qjPill</code> is the container,  a <strong>frosted glass pill</strong> using <code>backdrop-filter: blur</code>, dark semi-transparent background, and a subtle sky-blue border</li>
+
+                        <li><code>.qj-item</code> is each nav dot row, flexbox-aligned, with a soft <strong>hover background highlight</strong></li> 
+
+                        <li><code>.qj-label</code> is a <strong>tooltip</strong> that appears to the left of each dot, hidden by default (<code>opacity: 0</code>, transparent color), revealed on hover, focus, or when <code>.active</code></li>
+
+                        <li><code>.qj-dot</code> is the <strong>circular indicator</strong>, small 6px dot with a sky-blue tint; scales up on hover and glows on active</li>
+
+                        <li><code>.qj-item.active .qj-dot</code> applies a <strong>cyan glow</strong> via <code>box-shadow</code> and scales the dot to 1.4x</li>
+
+                        <li><code>.qj-dot::after</code> creates a <strong>pulse ring</strong>, an expanding border that animates outward using <code>@keyframes qjPulse</code> only when the item is active</li> 
+
+                        <li><code>.qj-connector</code> is a thin <strong>1px vertical line</strong> between dots, acting as a visual divider</li> 
+
+                    </ul>
 
                     <h3>JavaScript Technical Description</h3>
                         <ul>
@@ -322,6 +353,19 @@
                             <li><code>IntersectionObserver</code> detects when elements enter the viewport and adds a <code>visible</code> class for animations.</li>
 
                             <li><code>addEventListener('load')</code> ensures initial functions run only after the page fully loads.</li>
+
+                            <li>Tracks which section is closest to <strong>45% down the viewport</strong></li> 
+
+                            <li><code>qjItems</code> = all nav links in <code>#quickJump</code>; <code>qjTargets</code> = their <code>data-target</code> section IDs</li>
+
+                            <li>On each call, computes a midpoint (<code>winMid</code>) at <strong>45% of the viewport</strong></li>
+
+                            <li>Loops through all target sections, finds the one whose <strong>center is closest</strong> to <code>winMid</code></li>
+
+                            <li>Toggles the <code>active</code> class on the <strong>matching nav item</strong>, removes it from the rest</li>
+
+                            <li><code>scrollY</code> is passed in by the caller, usually from a <strong>scroll event</strong></li> 
+
                         </ul>
 
                     <h3 id="content-a11y">Accessibility</h3>
