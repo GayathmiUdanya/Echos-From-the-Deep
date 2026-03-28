@@ -13,8 +13,6 @@
     <link rel="stylesheet" href="style.css">
     <!-- Gallery CSS -->
     <link rel="stylesheet" href="styles/gallery.css">
-    <link rel="icon" type="image/png" href="assets/Logoo.png">
-
 </head>
 
 <body>
@@ -40,7 +38,7 @@
                 <a href="team.html">Team</a>
                 <a href="profile.html">Profile</a>
                 <a href="sitemap.html">Sitemap</a>
-            </div>	
+            </div>  
         </nav>
     </header>
 
@@ -62,7 +60,8 @@
         <div class="dashboard-container">
 
             <!-- Content Card 1 -->
-            <div class="card">
+            <div class="card" 
+                data-extra="Beneath the surface, what should be a peaceful ocean nursery becomes a wall of noise. The calf, disoriented, drifts from its mother — a silent tragedy unfolding in the deep. Ocean noise pollution from cargo ships can travel hundreds of kilometres underwater, disrupting the sonar-based communication whales rely on for navigation, feeding, and raising their young.">
                 <img src="assets/gallery_whalewarning.png" alt="Cargo ship noise waves hitting whales" class="card-image">
                 <div class="card-content">
                     <h2>Whale Warning</h2>
@@ -71,7 +70,8 @@
             </div>
 
             <!-- Content Card 2 -->
-            <div class="card">
+            <div class="card" 
+                data-extra="Left behind by fishing vessels, these invisible killers entangle sea turtles, dolphins, and sharks — creatures that never had any part in the catch. Ghost nets are responsible for trapping and killing over 100,000 marine mammals and millions of fish each year. They can drift for decades, continuing to cause harm long after they are lost.">
                 <img src="assets/gallery_ghostnets.png" alt="Discarded fishing net on sea floor" class="card-image">
                 <div class="card-content">
                     <h2>Ghost Nets</h2>
@@ -80,7 +80,8 @@
             </div>
 
             <!-- Content Card 3 -->
-            <div class="card">
+            <div class="card" 
+                data-extra="Rising ocean temperatures have caused the coral to expel the algae it depends on to survive. Without intervention, entire reef ecosystems that took thousands of years to grow can vanish within a single season. Mass coral bleaching events have increased dramatically due to climate change, and scientists warn we may lose over 90% of the world's coral reefs by 2050.">
                 <img src="assets/gallery_bleachedreefs.png" alt="White skeletal coral reef" class="card-image">
                 <div class="card-content">
                     <h2>Bleached Reefs</h2>
@@ -89,7 +90,8 @@
             </div>
             
             <!-- Content Card 4 -->
-			<div class="card">
+            <div class="card" 
+                data-extra="Armed with knowledge and driven by urgency, they carry tools for reef restoration and debris removal. This is not rescue — this is restoration. Youth-led ocean conservation movements are growing globally, with young activists at the forefront of reef gardening projects, plastic clean-up campaigns, and lobbying for stronger marine protection laws under SDG 14.">
                 <div class="card-image-wrapper">
                     <img src="assets/gallery_acalltoaction.png" alt="A Call to Action" class="card-image">
                 </div>
@@ -100,27 +102,30 @@
             </div>
 
             <!-- Content Card 5 -->
-            <div  class="card">
+            <div class="card" 
+                data-extra="Pods of whales sing to one another across vast distances, dolphins click and whistle in complex dialogue, and even the smallest fish contribute to this aquatic orchestra. This magical, ancient language is older than any human voice — and it is under threat. Marine bioacoustics researchers warn that rising noise pollution is silencing the ocean's natural symphony, with devastating effects on entire species.">
                 <div class="card-image-wrapper">
-                <img src="assets/gallery_listeningtotheechoes.png" alt="Listening to the Echoes" class="card-image">
-                </div >
-                <div  class="card-content">
+                    <img src="assets/gallery_listeningtotheechoes.png" alt="Listening to the Echoes" class="card-image">
+                </div>
+                <div class="card-content">
                     <h2>Listening to the Echoes</h2>
                     <span class="card-description">The ocean is not silent; it is a symphony of soft, glowing sound. We observe this magical, aquatic language as it travels through the dark water.</span>
                 </div>
             </div>
         
             <!-- Content Card 6 -->
-            <div  class="card">
+            <div class="card" 
+                data-extra="The young protagonist and the elderly lighthouse keeper plant coral fragments together, their hands moving in quiet unison. What was broken is being rebuilt, one piece at a time. Community-driven marine restoration — such as coral gardening and coastline clean-ups — has proven highly effective, with local fishermen, scientists, students, and elders restoring entire reef ecosystems across Sri Lanka, Indonesia, and the Philippines.">
                 <div class="card-image-wrapper">
-                <img src="assets/gallery_thecommunityrebuilds.png" alt="The Community Rebuilds" class="card-image">
-                </div >
-                <div  class="card-content">
+                    <img src="assets/gallery_thecommunityrebuilds.png" alt="The Community Rebuilds" class="card-image">
+                </div>
+                <div class="card-content">
                     <h2>The Community Rebuilds</h2>
                     <span class="card-description">True change happens through collective effort. Under a bright, sun-drenched surface, a diverse group of people including the young protagonist and the elderly lighthouse keeper work as a team.</span>
-                </div >
-            </div >
-        </div >
+                </div>
+            </div>
+
+        </div>
 
     </main>
 
@@ -131,6 +136,7 @@
             <img id="modalImg" src="#" alt="" class="modal-image">
             <div id="modalTitle"></div>
             <div id="modalDesc"></div>
+            <div id="modalExtra"></div>
         
             <div class="custom-controls">
                 <button class="btn-custom" id="btnFont">Change Font</button>
@@ -142,9 +148,8 @@
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
     
-    
     <!--Footer-->
-	<footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-links">
                 <a href="pageEditor_ST1.html#gallery">Page Editor</a>
