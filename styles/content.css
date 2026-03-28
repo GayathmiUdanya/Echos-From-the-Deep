@@ -85,15 +85,9 @@ body {
   pointer-events: none;
 }
 
-
-
 #bg2::after, #bg6::after, #bg1::after {
   background: linear-gradient(180deg, rgba(1,8,20,.65) 0%, rgba(2,13,28,.50) 50%, rgba(1,8,20,.85) 100%);
 }
-
-
-
-
 
 /* Story Hero */
 .chapters {
@@ -501,9 +495,7 @@ body {
   }
 }
 
-
 /* Quick-Jump Navigation */
-
 #quickJump {
   position: fixed;
   right: 1.2rem;
