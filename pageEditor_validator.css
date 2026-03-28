@@ -291,3 +291,21 @@ hr {
     background: #97c2e5;
     margin: 1rem 0;
 }
+
+.core-pages {
+    font-family: Georgia, serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgb(191, 187, 187);
+    line-height: 1.25;
+    margin: 0 0 15px 0;
+    border:1px solid rgba(125, 211, 252, 0.12);
+    border-radius:40px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(28px);
+    padding: 0.6rem 1rem;
+
+}
