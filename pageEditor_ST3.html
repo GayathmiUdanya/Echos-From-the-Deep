@@ -39,7 +39,10 @@
     </header>
 
     <section class="stud">
-        <h2>Dulansa Manamperi<br> Deep Dive Devs<br> Student 3</h2>
+        <h2>Dulansa Manamperi<br> 
+            Deep Dive Devs<br> 
+            Student 3
+        </h2>
     </section>
 
     <div class="container">
@@ -57,7 +60,7 @@
 
                             <li><code>&lt;meta name="viewport"&gt;</code> makes the page responsive by matching the layout width to the device screen at a 1:1 zoom scale.</li>
 
-                            <li><code>&lt;link rel="stylesheet"&gt;</code> is used four times — once for Google Fonts loading Cinzel, Playfair Display, JetBrains Mono, and Inter, once for the global <code>style.css</code>, and once for the page-specific <code>feedback.css</code>.</li>
+                            <li><code>&lt;link rel="stylesheet"&gt;</code> is used four times, once for Google Fonts loading Cinzel, Playfair Display, JetBrains Mono, and Inter, once for the global <code>style.css</code>, and once for the page-specific <code>feedback.css</code>.</li>
 
                             <li><code>&lt;img class="scene-bg"&gt;</code> places the background image directly in the body so it can be positioned and layered using CSS rather than being set as a CSS background property.</li>
 
@@ -69,7 +72,7 @@
 
                             <li><code>id="programSection"</code>, <code>id="reviewSection"</code>, and <code>id="feedbackSection"</code> are placed on each major section so the side nav anchor links have targets to scroll to.</li>
 
-                            <li><code>&lt;em&gt;</code> inside the hero heading wraps <em>Our Mission.</em> — beyond just making it italic visually, it carries semantic emphasis so screen readers stress that text when reading aloud.</li>
+                            <li><code>&lt;em&gt;</code> inside the hero heading wraps <em>Our Mission.</em> beyond just making it italic visually, it carries semantic emphasis so screen readers stress that text when reading aloud.</li>
 
                             <li><code>&lt;select&gt;</code> with <code>&lt;option&gt;</code> elements is used for the Sort By dropdown, giving users a controlled set of choices rather than a free text input.</li>
 
@@ -83,11 +86,11 @@
 
                             <li><code>&lt;hr&gt;</code> inside each review card acts as a visual divider between the review text and the reviewer details footer.</li>
 
-                            <li><code>&lt;span class="reviewer-name"&gt;</code> and <code>&lt;span class="score-badge"&gt;</code> use inline <code>&lt;span&gt;</code> tags to style small pieces of text — the reviewer name and score — without breaking the surrounding layout.</li>
+                            <li><code>&lt;span class="reviewer-name"&gt;</code> and <code>&lt;span class="score-badge"&gt;</code> use inline <code>&lt;span&gt;</code> tags to style small pieces of text, the reviewer name and score, without breaking the surrounding layout.</li>
 
                             <li><code>&lt;form id="feedbackForm" novalidate&gt;</code> wraps the feedback form and <code>novalidate</code> disables browser default validation so JavaScript handles it instead, giving more control over error messages.</li>
 
-                            <li><code>&lt;fieldset&gt;</code> is used twice — once for Personal Details and once for Feedback Details — to group related form fields together, making the form easier to read and navigate.</li>
+                            <li><code>&lt;fieldset&gt;</code> is used twice, once for Personal Details and once for Feedback Details, to group related form fields together, making the form easier to read and navigate.</li>
 
                             <li><code>&lt;legend&gt;</code> gives each fieldset a visible title that screen readers announce when the user enters that group of fields.</li>
 
@@ -108,13 +111,13 @@
 
                         <h3>CSS Technical Description</h3>
                             <ul>
-                                <li><code>position: fixed</code> on <code>.scene-bg</code> keeps the background image stationary while the user scrolls, creating a parallax-like effect.</li>
+                                <li><code>position: fixed</code> on <code>.scene-bg</code> keeps the background image stationary while the user scrolls, creating a parallax like effect.</li>
 
                                 <li><code>inset: 0</code> stretches the background image to cover all four edges of the viewport without needing separate top, right, bottom, and left values.</li>
 
                                 <li><code>opacity: 0.55</code> makes the background semi-transparent so the content and cards remain readable over it.</li>
 
-                                <li><code>z-index</code> is used to layer elements correctly — the background sits at 0, the main content at 1, and the side nav at 10 so it always appears above other content.</li>
+                                <li><code>z-index</code> is used to layer elements correctly, the background sits at 0, the main content at 1, and the side nav at 10 so it always appears above other content.</li>
 
                                 <li><code>position: absolute</code> on <code>.side-nav</code> places it at a fixed position within the hero section, using <code>top</code> and <code>right</code> values to anchor it to the top right corner.</li>
 
@@ -243,7 +246,7 @@
 
                             <li><code>&lt;meta name="viewport"&gt;</code> makes the page responsive by matching the layout width to the device screen at a 1:1 zoom scale.</li>
 
-                            <li><code>&lt;link rel="stylesheet"&gt;</code> is used three times, for Google Fonts, the global <code>style.css</code>, and the page-specific <code>team.css</code>.</li>
+                            <li><code>&lt;link rel="stylesheet"&gt;</code> is used three times, for Google Fonts, the global <code>style.css</code>, and the page specific <code>team.css</code>.</li>
 
                             <li><code>&lt;img class="scene-bg"&gt;</code> places the background image directly in the body so it can be positioned and layered using CSS, rather than being set as a CSS background property.</li>
 
@@ -261,7 +264,7 @@
 
                             <li><code>&lt;div class="value-group"&gt;</code> wraps multiple values under one label, such as listing more than one page or contribution per student.</li>
 
-                            <li><code>&lt;a href="#" aria-label="Back to top"&gt;</code> provides a scroll-to-top button with a screen-reader-friendly label since the ↑ symbol has no readable text on its own.</li>
+                            <li><code>&lt;a href="#" aria-label="Back to top"&gt;</code> provides a scroll to top button with a screen reader friendly label since the ↑ symbol has no readable text on its own.</li>
 
                             <li><code>&lt;footer&gt;</code> contains page editor links, validation links, and the student's details, clearly separating it from the main content.</li>
                         </ul>
@@ -340,6 +343,10 @@
                     </ul>
 
                     <h3>HTML Technical Description</h3>
+                        <ul type="circle">
+                            <li>The shared content page template was collaboratively created by Nethnu Bulathsinghala and Kulith Silva.</li>
+                            <li>The technical description and accessibility are consistent and shared across the entire team.</li>
+                        </ul>
                         <ul>
                             <li><code>&lt;!DOCTYPE html&gt;</code> and <code>&lt;html lang="en"&gt;</code> define the document as HTML5 and set the language for accessibility and correct interpretation.</li>
 
@@ -350,6 +357,20 @@
                             <li><code>&lt;link rel="stylesheet"&gt;</code> imports external CSS files and Google Fonts to style the page.</li>
 
                             <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> structure the navigation bar, improving usability and accessibility.</li>
+
+                            <li><code>id="quickJump"</code> acts as a navigation landmark with an aria-label to ensure screen readers identify it as a functional section for jumping between content.</li>
+
+                            <li><code>id="qjPill"</code> serves as the main container for the navigation items, likely styled as a floating or sticky horizontal "pill" bar.</li>
+
+                            <li><code>class="qj-item"</code> creates internal page links using <code>href</code> anchors (like <code>#act1</code>) to scroll the user to specific sections without a page reload.</li>
+
+                            <li><code>class="active"</code> and <code>aria-current="true"</code> are used on the first link to visually and programmatically mark the user's starting location in the document.</li>
+
+                            <li><code>class="qj-connector"</code> provides a structural element used in CSS to draw connecting lines between the navigation points, creating a "progress tracker" look.</li>
+
+                            <li><code>class="qj-dot"</code> functions as a decorative or functional bullet point within each link to give the menu a modern, minimalist aesthetic.</li>
+
+                            <li><code>data-target</code> attributes store the ID of the destination section, which is typically used by a JavaScript scroll-spy to highlight the correct link as the user scrolls.</li>
 
                             <li><code>&lt;main&gt;</code> wraps the primary content, helping screen readers identify the main section of the page.</li>
 
@@ -373,37 +394,54 @@
                         </ul>
 
                     <h3>CSS Technical Description</h3>
-                        <ul>
-                            <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
+                    <ul>
+                        <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
 
-                            <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
+                        <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
 
-                            <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
+                        <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
 
-                            <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
+                        <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
 
-                            <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
+                        <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
 
-                            <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
+                        <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
 
-                            <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
+                        <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
 
-                            <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
+                        <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
 
-                            <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
+                        <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
 
-                            <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
+                        <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
 
-                            <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
+                        <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
 
-                            <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
+                        <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
 
-                            <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
+                        <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
 
-                            <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
+                        <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
 
-                            <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
-                        </ul>
+                        <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
+
+                        <li><code>#quickJump</code> is <strong>fixed to the right side</strong> of the viewport, vertically centered using <code>transform: translateY(-50%)</code></li>
+
+                        <li><code>#qjPill</code> is the container,  a <strong>frosted glass pill</strong> using <code>backdrop-filter: blur</code>, dark semi-transparent background, and a subtle sky-blue border</li>
+
+                        <li><code>.qj-item</code> is each nav dot row, flexbox-aligned, with a soft <strong>hover background highlight</strong></li> 
+
+                        <li><code>.qj-label</code> is a <strong>tooltip</strong> that appears to the left of each dot, hidden by default (<code>opacity: 0</code>, transparent color), revealed on hover, focus, or when <code>.active</code></li>
+
+                        <li><code>.qj-dot</code> is the <strong>circular indicator</strong>, small 6px dot with a sky-blue tint; scales up on hover and glows on active</li>
+
+                        <li><code>.qj-item.active .qj-dot</code> applies a <strong>cyan glow</strong> via <code>box-shadow</code> and scales the dot to 1.4x</li>
+
+                        <li><code>.qj-dot::after</code> creates a <strong>pulse ring</strong>, an expanding border that animates outward using <code>@keyframes qjPulse</code> only when the item is active</li> 
+
+                        <li><code>.qj-connector</code> is a thin <strong>1px vertical line</strong> between dots, acting as a visual divider</li> 
+
+                    </ul>
 
                     <h3>JS Technical Description</h3>
                         <ul>
@@ -430,7 +468,21 @@
                             <li><code>IntersectionObserver</code> detects when elements enter the viewport and adds a <code>visible</code> class for animations.</li>
 
                             <li><code>addEventListener('load')</code> ensures initial functions run only after the page fully loads.</li>
+
+                            <li>Tracks which section is closest to <strong>45% down the viewport</strong></li> 
+
+                            <li><code>qjItems</code> = all nav links in <code>#quickJump</code>; <code>qjTargets</code> = their <code>data-target</code> section IDs</li>
+
+                            <li>On each call, computes a midpoint (<code>winMid</code>) at <strong>45% of the viewport</strong></li>
+
+                            <li>Loops through all target sections, finds the one whose <strong>center is closest</strong> to <code>winMid</code></li>
+
+                            <li>Toggles the <code>active</code> class on the <strong>matching nav item</strong>, removes it from the rest</li>
+
+                            <li><code>scrollY</code> is passed in by the caller, usually from a <strong>scroll event</strong></li> 
+
                         </ul>
+
 
                     <h3 id="content-a11y">Accessibility</h3>
                         <ul>
@@ -469,7 +521,7 @@
 
                         <li><code>:focus</code> was added alongside <code>:hover</code> to ensure the card detail reveal works for both keyboard and mouse users, improving accessibility.</li>
 
-                        <li><code>z-index</code> management required careful adjustment — setting the hovered card to <code>z-index: 10</code> ensures it appears above neighbouring cards.</li>
+                        <li><code>z-index</code> management required careful adjustment, setting the hovered card to <code>z-index: 10</code> ensures it appears above neighbouring cards.</li>
 
                         <li><code>&lt;fieldset&gt;</code> groups were split into personal details and feedback details to create clear semantic and visual separation in the form.</li>
 
