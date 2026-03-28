@@ -112,11 +112,6 @@ body,html{
     flex-direction: column;
 }
 
-.card-content h2{
-    font-family:'Cinzel', serif;
-    font-size: 0.84rem;
-}
-
 /* Category Label */
 .category-label {
     font-size: 0.7rem;
@@ -125,13 +120,15 @@ body,html{
     margin-bottom: 8px;
 }
 
-/* Title */
-.card-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 12px;
+/* Card Title */
+.card-content h2{
+    font-family: 'Cinzel', serif;
+    font-size: .76rem;
     letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #e8f4f8;
+    font-size: 0.84rem;
+    margin-bottom: .4rem;;
 }
 
 /* Description Body */
@@ -142,7 +139,6 @@ body,html{
     margin-bottom: 15px;
     flex-grow: 1; 
     color: #94b8cc;
-    margin-top:10px;
 }
 
 /* Points Badge */
