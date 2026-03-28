@@ -345,3 +345,32 @@
     color: rgba(186,230,253,.58);
     line-height: 1.7;
 }
+
+/* Highlight list inside expanded card body */
+.peek-highlights {
+    list-style: none;
+    padding: 0;
+    margin: .6rem 0 0;
+}
+
+/* Individual highlight item */
+.peek-highlights li {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .68rem;
+    font-weight: 300;
+    color: rgba(186,230,253,.72);
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: .25rem;
+}
+
+/* Teal bullet dot */
+.peek-highlights li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: #49aec0;
+    font-size: 1rem;
+    line-height: 0.8;
+}
