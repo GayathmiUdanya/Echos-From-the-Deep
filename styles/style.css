@@ -1,12 +1,15 @@
 /* Do NOT change the global CSS */
+
+/* Apply to all elements and pseudo-element */
 *, 
 *::before, 
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; /* Removes default browser margins */
+    padding: 0; /* Removes default browser padding */
+    box-sizing: border-box; /* Include padding and border in element's total width/height */
 }
 
+/* Colours and fonts */
 :root {
     --teal: #49aec0;
     --teal-dark: #37909f;
