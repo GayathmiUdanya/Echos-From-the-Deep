@@ -142,7 +142,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 5% 80px;
+    padding: 340px 5% 80px;
 }
 
 .section-eyebrow {
@@ -166,7 +166,7 @@
     color: rgba(255,255,255,.88);
     margin-bottom: .5rem;
     line-height: 1.15;
-    padding: 100px 5% 80px;
+    padding: 0px 5% 30px;
 }
 
 .section-title em { 
@@ -507,7 +507,12 @@
     color: rgba(255,255,255,.88);
     margin-bottom: .5rem;
     line-height: 1.15;
-    padding-top: 250px;
+}
+.mission-header {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding-top: 340px;
 }
 
 .mission-title em { 
