@@ -80,7 +80,7 @@
 
                             <li><code>.glass-panel</code> is a <strong>wrapper div</strong> that applies the frosted glass styling around the iframe</li> 
 
-                            <li>The <code>&lt;iframe&gt;</code> embeds <code>feedback_exploreProgram.html</code> as a <strong>scrollable self-contained section</strong> displaying the programme cards</li> 
+                            <li>The <code>&lt;iframe&gt;</code> embeds <code>feedback_exploreProgram.html</code> as a <strong>scrollable self-contained section</strong> displaying the programme cards.</li> 
 
                             <li><code>aria-label="Sort programs"</code> is added to the sort dropdown since it has no visible <code>&lt;label&gt;</code> element paired with it, giving screen readers a meaningful description of its purpose.</li>
 
@@ -180,7 +180,7 @@
 
                                 <li><code>addEventListener("submit")</code> detects when the form is submitted and runs validation logic.</li>
 
-                                <li><code>event.preventDefault()</code> stops the default form submission to allow custom validation.</li>
+                                <li><code>event.preventDefault()</code>     stops the default form submission to allow custom validation.</li>
 
                                 <li><code>showError()</code> function displays error messages and sets a validation flag to false.</li>
 
@@ -193,6 +193,10 @@
                                 <li><code>conditional (ternary) operators</code> are used to perform validation checks and display appropriate messages.</li>
 
                                 <li><code>form.reset()</code> clears all input fields after successful submission and resets the character counter.</li>
+
+                                <li><code>document.getElementById("success-message").style.display = "block"</code> displays the confirmation message after a valid submission.</li>
+
+                                <li><code>charCount.textContent</code> resets the character count, since <code>reset()</code> does not trigger <code>input</code> event that updates the counter.</li>
                             </ul>
                         
                     <h3 id="feedback-a11y">Accessibility</h3>
@@ -583,10 +587,6 @@
             <section>
                 <h2 id="group">Group Meetings and Individual Contribution Log</h2>
 
-                <ul>
-                    <li>The individual contributions are presented in a generic format and they only reflect the general nature of the discussions held during the meeting.</li>
-                </ul>
-
                 <table>
                     <thead>
                         <tr>
@@ -598,7 +598,7 @@
                             <th>Format</th>
                             <th>Objective</th>
                             <th>Attended</th>
-                            <th>Your Individual Contribution</th>
+                            <th>Individual Contribution</th>
                         </tr>
                     </thead>
                     <tbody>
