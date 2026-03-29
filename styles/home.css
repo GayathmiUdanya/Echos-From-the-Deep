@@ -340,7 +340,8 @@
 /* Each card */
 .parallel-card {
     position: relative;
-    height: 100%;
+    border-radius: 16px;
+    height: 80%;
     overflow: hidden;
     align-items: center;
     justify-content: center;
@@ -366,7 +367,7 @@
     object-fit: cover;
     object-position: center;
     filter: brightness(0.38);
-    transition: filter 0.45s ease;
+    transition: 0.45s ;
     z-index: 0;
 }
 
@@ -431,10 +432,10 @@
 /* Main heading */
 .parallel-body h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: 50px;
     font-weight: 300;
     color: rgba(255,255,255,0.92);
-    line-height: 1.1;
+    line-height: 1.0;
     margin-bottom: 1rem;
 }
 
