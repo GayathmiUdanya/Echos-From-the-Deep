@@ -345,202 +345,230 @@
             line-height: 1.7;
         }
 
-        /* ── PARALLEL CARDS SECTION ── */
+       /* ── Blurred background collage ── */
+        .bg-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            opacity: .14;
+            pointer-events: none;
+        }
+        .bg-canvas img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(.55);
+        }
 
-        /* Parallel section */
-        .parallel-section {
+        /* ── Grid wrapper ── */
+        .gg-grid {
             position: relative;
             z-index: 10;
-            width: 100%;
-            height: 600px;
-            display: flex;
-            flex-direction: row;
-            margin-top: 100px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 0 40px 100px;
         }
 
-        /* Each card */
-        .parallel-card {
+        /* ── Individual card ── */
+        .gg-card {
             position: relative;
-            border-radius: 16px;
+            border-radius: 20px;
             overflow: hidden;
-            align-items: center;
-            justify-content: center;
+            border: 1px solid rgba(73, 174, 192, .14);
             cursor: default;
-            margin: 15px;
-            padding: 20px;
-
+            min-height: 360px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: border-color .35s ease, transform .4s ease;
         }
 
-        /* Background image */
-        .parallel-bg {
+        .gg-card:hover {
+            border-color: rgba(73, 174, 192, .45);
+            transform: translateY(-6px);
+        }
+
+        /* ── Background photo ── */
+        .gg-img {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
-            filter: brightness(0.35);
-            transition: 0.45s ;
-            z-index: 1;
+            filter: brightness(.32) saturate(.55);
+            transition: filter .5s ease, transform .6s ease;
+            z-index: 0;
+        }
+        .gg-card:hover .gg-img {
+            filter: brightness(.52) saturate(.95);
+            transform: scale(1.04);
         }
 
-        /* Image brightens on hover */
-        .parallel-card:hover .parallel-bg {
-            filter: brightness(0.55);
-        }
-
-        /* Dark gradient overlay per card */
-        .parallel-overlay {
+        /* ── Bottom glass gradient ── */
+        .gg-glass {
             position: absolute;
-            inset: 0;
+            bottom: 0; left: 0; right: 0;
+            height: 65%;
             background: linear-gradient(
                 180deg,
-                rgba(2,8,20,0.7) 0%,
-                rgba(2,13,28,0.35) 50%,
-                rgba(2,8,20,0.85) 100%
+                rgba(2, 10, 22, 0)    0%,
+                rgba(2, 10, 22, .72)  30%,
+                rgba(2, 10, 22, .97)  100%
             );
             z-index: 1;
+            transition: height .4s ease;
+        }
+        .gg-card:hover .gg-glass {
+            height: 78%;
         }
 
-        /* Thin vertical divider line between cards */
-        .parallel-card:first-child::after {
-            content: '';
+        /* ── Ghost number ── */
+        .gg-num {
             position: absolute;
-            top: 10%;
-            right: 0;
-            height: 80%;
-            width: 1px;
-            background: linear-gradient(
-                180deg,
-                transparent,
-                rgba(125,211,252,0.25) 30%,
-                rgba(125,211,252,0.25) 70%,
-                transparent
-            );
-            z-index: 5;
+            top: 18px; right: 20px;
+            z-index: 3;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 300;
+            color: rgba(73, 174, 192, .1);
+            line-height: 1;
+            transition: color .4s ease;
+            pointer-events: none;
+            user-select: none;
+        }
+        .gg-card:hover .gg-num {
+            color: rgba(73, 174, 192, .26);
         }
 
-        /* Content body — centred text over image */
-        .parallel-body {
+        /* ── Text body ── */
+        .gg-body {
             position: relative;
             z-index: 2;
-            text-align: center;
-            padding: 50px 20px;
-            max-width: 520px;
-            width: 100%;
+            padding: 26px 26px 30px;
         }
 
-        .parallel-body ul{
-            font-size: 12px;
-            color: rgba(165, 218, 246, 0.65);
-            line-height: 1.85;
-            margin-bottom: 10px;
-            list-style-type: circle;
-            padding-left: 5px;
-        }
-
-        /* Eyebrow label */
-        .parallel-eyebrow {
+        /* Tag pill */
+        .gg-tag {
             font-family: 'Cinzel', serif;
             font-size: 8px;
-            letter-spacing: 0.42em;
+            letter-spacing: .35em;
             text-transform: uppercase;
             color: #49aec0;
-            opacity: 0.8;
-            display: block;
-            margin-bottom: 1.2rem;
-            margin-top: 0.5px;
+            opacity: .85;
+            display: inline-block;
+            background: rgba(73, 174, 192, .08);
+            border: 1px solid rgba(73, 174, 192, .22);
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin-bottom: 12px;
         }
 
-        /* Main heading */
-        .parallel-body h2 {
+        /* Italic teal headline */
+        .gg-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 30px;
+            font-size: 1.85rem;
+            font-style: italic;
             font-weight: 300;
-            color: rgba(255,255,255,0.92);
-            line-height: 1.0;
-        }
-
-        /* Italic teal accent */
-        .parallel-body h2 em {
             color: #7dd3fc;
-            display: block;
+            line-height: 1.1;
+            margin-bottom: 12px;
         }
 
-        /* Thin divider under heading */
-        .parallel-divider {
-            width: 36px;
+        /* Thin divider */
+        .gg-sep {
+            width: 28px;
             height: 1px;
-            background: linear-gradient(90deg, #0e7490, #7dd3fc);
-            margin: 0 auto 1.6rem;
+            background: rgba(73, 174, 192, .3);
+            margin-bottom: 12px;
         }
 
-        /* Description paragraph */
-        .parallel-desc {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 15px;
-            color: rgba(230, 246, 255, 0.65);
-            line-height: 1.85;
-            margin-bottom: 10px;
+        /* Description */
+        .gg-desc {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12.5px;
+            font-weight: 300;
+            color: rgba(186, 230, 253, .58);
+            line-height: 1.78;
+            margin-bottom: 14px;
         }
 
-        /* Highlights list */
-        .parallel-list {
+        /* Goal list — always visible, no JS needed */
+        .gg-goals {
             list-style: none;
             padding: 0;
-            margin: 0 0 2.2rem;
-            text-align: left;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
         }
-
-        /* List item styling */
-        .parallel-list li {
+        .gg-goals li {
             font-family: 'DM Sans', sans-serif;
-            font-size: 15px;
-            color: rgba(125,211,252,0.78);
-            padding: 5px 0 5px 18px;
+            font-size: 11.5px;
+            font-weight: 300;
+            color: rgba(125, 211, 252, .55);
+            padding-left: 16px;
             position: relative;
             line-height: 1.5;
+            /* Slide-in on hover — pure CSS transition from opacity 0 */
+            opacity: 0;
+            transform: translateX(-8px);
+            transition: opacity .3s ease, transform .3s ease;
         }
 
-        /* Teal Star */
-        .parallel-list li::before {
-            content: '*';
+        /* Staggered reveal via sibling selectors */
+        .gg-card:hover .gg-goals li:nth-child(1) {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: .04s;
+        }
+        .gg-card:hover .gg-goals li:nth-child(2) {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: .10s;
+        }
+        .gg-card:hover .gg-goals li:nth-child(3) {
+            opacity: 1;
+            transform: translateX(0);
+            transition-delay: .16s;
+        }
+
+        .gg-goals li::before {
+            content: '›';
             position: absolute;
             left: 0;
             color: #49aec0;
-            font-size: 15px;
-            line-height: 1.8;
+            font-size: 13px;
+            line-height: 1.3;
         }
 
-        /* Our Mission and Goals title*/
-        .mission-title {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 65px;
-            font-weight: 300;
-            text-align: center;
-            color: rgba(255,255,255,.88);
-            margin-bottom: .5rem;
-            line-height: 1.15;
-        }
-        .mission-header {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding-top: 50px;
-        }
-
-        .mission-title em { 
-            font-style: italic; 
-            color:#7dd3fc;
-            text-align: center; 
+        /* ── Responsive ── */
+        @media (max-width: 720px) {
+            .gg-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px 80px;
+            }
+            .gg-title {
+                font-size: 1.55rem;
+            }
+            /* On mobile, always show goals since hover doesn't exist */
+            .gg-goals li {
+                opacity: 1;
+                transform: translateX(0);
+            }
         }
 
-        .mission-divider {
-            width: 36px;
-            height: 1px;
-            background: linear-gradient(90deg, #0e7490, #7dd3fc);
-            margin: 1rem auto 3rem;
+        @media (max-width: 480px) {
+            .gg-body {
+                padding: 20px 18px 22px;
+            }
+            .gg-num {
+                font-size: 2.8rem;
+            }
         }
         
 
@@ -606,127 +634,108 @@
             <span class="arrow">↓</span>
         </div>
     
-<!-- Mission and Goal Title Section -->
-    <div class="mission-header">
-    <span class="section-eyebrow reveal">SDG 14 · Our Missions and Goals</span>
-    <h2 class="mission-title reveal">Our Missions <em>and Goals</em></h2>
-    <div class="mission-divider reveal"></div>
-    </div>
+<!-- ── BACKGROUND IMAGES ── -->
+<div class="bg-canvas" aria-hidden="true">
+    <img src="assets/contentCard_whaleWatching.png" alt="Ocean noise pollution and whale communication conservation goals">
+    <img src="assets/contentCard_ghostNets.png"     alt="Ghost fishing nets and marine debris conservation goals">
+    <img src="assets/contentCard_bleachedReefs.png" alt="Coral reef bleaching and restoration conservation goals">
+    <img src="assets/contentCard_hope.png"          alt="Hope for marine conservation">
+</div>
 
-<!-- ── MISSION & GOAL CARDS ── -->
-<section class="parallel-section" id="mission-goals">
+<!-- ── SECTION HEADER ── -->
+<div class="mission-header">
+    <span class="section-eyebrow">SDG 14 · Our Missions and Goals</span>
+    <h2 class="mission-title">Our Missions <em>and Goals</em></h2>
+    <div class="mission-divider"></div>
+</div>
 
-    <!-- Whale Warning Mission and Goal Card -->
-    <div class="parallel-card goal-parallel">
+<!-- ── GLASS GRID ── -->
+<section class="gg-grid" id="mission-goals">
 
-        <img src="assets/contentCard_whaleWatching.png"
-            class="parallel-bg"
-            alt="Image of the ocean noise pollution and whale communication conservation goals">
-
-        <div class="parallel-overlay"></div>
-
-        <div class="parallel-body">
-
-            <h2><em>Silence Is Survival</em></h2>
-            <div class="parallel-divider"></div>
-
-            <p class="parallel-desc">
-                Our mission is to reduce ocean noise pollution and protect whales that rely on sound to survive. 
-                As human activity grows, the ocean is becoming louder, making it harder for marine life to communicate and hunt. 
-                This issue matters today because healthy oceans support life on Earth, including us.
+    <div class="gg-card">
+        <img src="assets/contentCard_whaleWatching.png" class="gg-img" alt="Ocean noise pollution and whale conservation">
+        <div class="gg-glass"></div>
+        <span class="gg-num">01</span>
+        <div class="gg-body">
+            <span class="gg-tag">Noise Pollution</span>
+            <h3 class="gg-title">Silence Is Survival</h3>
+            <div class="gg-sep"></div>
+            <p class="gg-desc">
+                Our mission is to reduce ocean noise pollution and protect whales that rely on
+                sound to survive. The ocean is becoming louder, disrupting ancient communication,
+                navigation, and the hunt for food.
             </p>
-
-            <ul>
-                <li>Promote slower, quieter shipping in marine habitats.</li>
-                <li>Raise awareness about ocean noise pollution.</li>
-                <li>Support actions that protect marine ecosystems.</li>
+            <ul class="gg-goals">
+                <li>Promote slower, quieter shipping in marine habitats</li>
+                <li>Raise awareness about ocean noise pollution</li>
+                <li>Support actions that protect marine ecosystems</li>
             </ul>
         </div>
     </div>
 
-    <!-- Ghost Nets Mission and Goal Card -->
-    <div class="parallel-card goal-parallel">
-
-        <img src="assets/contentCard_ghostNets.png"
-             class="parallel-bg"
-             alt="Image of ghost fishing nets and marine debris conservation goals">
-
-        <div class="parallel-overlay"></div>
-
-        <div class="parallel-body">
-
-            <h2><em>Lost Nets, Endless Damage</em></h2>
-            <div class="parallel-divider"></div>
-
-            <p class="parallel-desc">
-                Our mission is to stop ghost nets from continuing their silent destruction in the ocean. 
-                These abandoned fishing nets trap and kill marine life long after they are lost. 
-                This issue matters today because plastic-based fishing gear is increasing, turning the ocean into a dangerous place for animals and ecosystems.
+    <div class="gg-card">
+        <img src="assets/contentCard_ghostNets.png" class="gg-img" alt="Ghost fishing nets and marine debris">
+        <div class="gg-glass"></div>
+        <span class="gg-num">02</span>
+        <div class="gg-body">
+            <span class="gg-tag">Marine Debris</span>
+            <h3 class="gg-title">Lost Nets, Endless Damage</h3>
+            <div class="gg-sep"></div>
+            <p class="gg-desc">
+                Our mission is to stop ghost nets from their silent destruction. Abandoned fishing
+                nets trap and kill marine life long after they are lost, drifting unseen for
+                decades through the deep.
             </p>
-
-            <ul>
-                <li>Support the use of biodegradable fishing gear.</li>
-                <li>Encourage ocean clean-up efforts.</li>
-                <li>Raise awareness about ghost net pollution.</li>
+            <ul class="gg-goals">
+                <li>Support the use of biodegradable fishing gear</li>
+                <li>Encourage ocean clean-up efforts</li>
+                <li>Raise awareness about ghost net pollution</li>
             </ul>
         </div>
     </div>
 
-<!-- Bleached Reefs Mission and Goal Card -->
-    <div class="parallel-card goal-parallel">
-
-        <img src="assets/contentCard_bleachedReefs.png"
-             class="parallel-bg"
-             alt="Image of coral reef restoration and ocean conservation goals">
-
-        <div class="parallel-overlay"></div>
-
-        <div class="parallel-body">
-
-            <h2><em>Our Reefs Are Dying</em></h2>
-            <div class="parallel-divider"></div>
-
-            <p class="parallel-desc">
-                Our mission is to protect coral reefs from bleaching and restore the life they support. 
-                Rising ocean temperatures are destroying these underwater cities, putting marine life and coastal communities at risk. 
-                This issue matters today because coral reefs are essential for biodiversity, protection, and future survival.
+    <div class="gg-card">
+        <img src="assets/contentCard_bleachedReefs.png" class="gg-img" alt="Coral reef bleaching and restoration">
+        <div class="gg-glass"></div>
+        <span class="gg-num">03</span>
+        <div class="gg-body">
+            <span class="gg-tag">Reef Crisis</span>
+            <h3 class="gg-title">Our Reefs Are Dying</h3>
+            <div class="gg-sep"></div>
+            <p class="gg-desc">
+                Our mission is to protect coral reefs from bleaching and restore the life they
+                support. Rising temperatures are destroying these underwater cities, threatening
+                biodiversity and coastal communities.
             </p>
-
-            <ul>
-                <li>Reduce activities that contribute to climate change.</li>
-                <li>Support reef conservation and restoration projects.</li>
-                <li>Spread awareness about coral bleaching and ocean health.</li>
+            <ul class="gg-goals">
+                <li>Reduce activities that contribute to climate change</li>
+                <li>Support reef conservation and restoration projects</li>
+                <li>Spread awareness about coral bleaching and ocean health</li>
             </ul>
         </div>
     </div>
 
-    <!-- Echoes of Hope Mission and Goal Card -->
-    <div class="parallel-card goal-parallel">
-
-        <img src="assets/contentCard_hope.png"
-             class="parallel-bg"
-             alt="Image of the ocean healing and conservation goals">
-
-        <div class="parallel-overlay"></div>
-
-        <div class="parallel-body">
-
-            <h2><em>Healing the Ocean</em></h2>
-            <div class="parallel-divider"></div>
-
-            <p class="parallel-desc">
-                Our mission is to support ocean recovery by protecting marine ecosystems and encouraging global action. 
-                The ocean has the power to heal, but only if we give it the chance. 
-                This matters today because a healthy ocean supports life on Earth and offers hope for future generations.
+    <div class="gg-card">
+        <img src="assets/contentCard_hope.png" class="gg-img" alt="Ocean recovery and hope for the future">
+        <div class="gg-glass"></div>
+        <span class="gg-num">04</span>
+        <div class="gg-body">
+            <span class="gg-tag">Recovery</span>
+            <h3 class="gg-title">Healing the Ocean</h3>
+            <div class="gg-sep"></div>
+            <p class="gg-desc">
+                Our mission is to support ocean recovery by protecting marine ecosystems and
+                encouraging global action. The ocean has the power to heal — but only if we give
+                it the chance it deserves.
             </p>
-
-            <ul>
-                <li>Support marine protected areas (30×30 goal).</li>
-                <li>Reduce harmful human impact on oceans.</li>
-                <li>Promote awareness and action for ocean recovery.</li>
+            <ul class="gg-goals">
+                <li>Support marine protected areas (30×30 goal)</li>
+                <li>Reduce harmful human impact on oceans</li>
+                <li>Promote awareness and action for ocean recovery</li>
             </ul>
         </div>
     </div>
+
 </section>
 
 <!-- Content Card Section -->
