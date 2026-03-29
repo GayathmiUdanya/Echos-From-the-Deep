@@ -262,9 +262,11 @@ body, html {
     background: rgba(73, 174, 192, 0.15);
 }
 
-/* Active Font Style */
-.alt-font-active {
-    font-family: 'JetBrains Mono', monospace !important;
+.alt-font-active,
+.alt-font-active #modalTitle,
+.alt-font-active #modalDesc,
+.alt-font-active #modalExtra {
+    font-family: 'Roboto', Arial, sans-serif !important;
 }
 
 /* Active Colour Scheme */
