@@ -1,3 +1,5 @@
+/* Do NOT change the global CSS */
+
 *, 
 *::before, 
 *::after {
@@ -76,6 +78,7 @@ html {
     margin-top: 2px;
 }
 
+/* Instead of styling the header, the class nav is styled */
 /* Navigation */
 nav {
     position: fixed;
