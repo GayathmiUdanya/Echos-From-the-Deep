@@ -32,6 +32,7 @@
     letter-spacing: .42em; text-transform: uppercase;
     color: #49aec0; opacity: .72;
     margin-bottom: 1.6rem; display: block;
+    margin-top: 20px;
 }
 
 /* Hero Title and Description */
@@ -332,31 +333,21 @@
     position: relative;
     z-index: 10;
     width: 100%;
-    height: 100vh;
+    height: 600px;
     display: flex;
     flex-direction: row;
+    margin-top: 100px;
 }
 
 /* Each card */
 .parallel-card {
     position: relative;
-    flex: 1;
-    height: 110%;
+    border-radius: 16px;
     overflow: hidden;
-    display: flex;
     align-items: center;
     justify-content: center;
     cursor: default;
-    transition: flex;
-}
-
-/* Hover expand hovered card, shrink the other */
-.parallel-section:has(.parallel-card:hover) .parallel-card:not(:hover) {
-    flex: 0.6;
-}
-
-.parallel-card:hover {
-    flex: 1.4;
+    margin: 15px;
 }
 
 /* Background image */
@@ -368,7 +359,7 @@
     object-fit: cover;
     object-position: center;
     filter: brightness(0.38);
-    transition: filter 0.45s ease;
+    transition: 0.45s ;
     z-index: 0;
 }
 
@@ -421,28 +412,28 @@
 /* Eyebrow label */
 .parallel-eyebrow {
     font-family: 'Cinzel', serif;
-    font-size: clamp(0.42rem, 0.8vw, 0.6rem);
+    font-size: 8px;
     letter-spacing: 0.42em;
     text-transform: uppercase;
     color: #49aec0;
     opacity: 0.8;
     display: block;
     margin-bottom: 1.2rem;
+    margin-top: 0.5px;
 }
 
 /* Main heading */
 .parallel-body h2 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: 30px;
     font-weight: 300;
     color: rgba(255,255,255,0.92);
-    line-height: 1.1;
+    line-height: 1.0;
     margin-bottom: 1rem;
 }
 
 /* Italic teal accent */
 .parallel-body h2 em {
-    font-style: italic;
     color: #7dd3fc;
     display: block;
 }
@@ -458,7 +449,6 @@
 /* Description paragraph */
 .parallel-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
     font-size: 15px;
     color: rgba(186,230,253,0.65);
     line-height: 1.85;

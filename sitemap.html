@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Sitemap</title>
-    <!-- Global CSS -->
     <link rel="stylesheet" href="style.css">
-    <!-- Page specific CSS -->
     <link rel="stylesheet" href="styles/sitemap.css">
     <link rel="icon" type="image/png" href="assets/Logoo.png">
-
 </head>
 
 <body>
@@ -24,19 +21,18 @@
                 </div>
             </div>
             <div class="nav-links">
-                <a href="home.html" >Home</a>
+                <a href="home.html">Home</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="ais.html">Action Impact Simulator</a>
                 <a href="feedback.html">Feedback</a>
                 <a href="team.html">Team</a>
                 <a href="profile.html">Profile</a>
-                <a href="sitemap.html"class="active">Sitemap</a>
+                <a href="sitemap.html" class="active">Sitemap</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <!--Hero-->
         <section class="pageup">
             <div class="container">
             <div class="upcontent">
@@ -49,31 +45,22 @@
             </div>
             </div>
         </section>
-        
+
         <!-- Desktop Sitemap -->
         <div class="sitemap-wrapper desktop-map">
-            <svg viewBox="0 0 1100 400" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
-                <!-- Defs -> Define reusable styles -->
+            <svg viewBox="0 0 1100 560" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <!-- Arrow -->
                     <marker id="arrowD" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
-                        <!-- Arrow head -->
                         <path d="M0,0 L0,6 L9,3 z" fill="rgba(148,216,213,0.7)" />
                     </marker>
-
-                    <!-- Glow effect -->
                     <filter id="glow">
                         <feGaussianBlur stdDeviation="3" result="blur"/>
                         <feComposite in="SourceGraphic" in2="blur" operator="over"/>
                     </filter>
-
-                    <!-- Background color gradient -->
                     <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#0a2a3a;stop-opacity:0.95"/>
                         <stop offset="100%" style="stop-color:#071820;stop-opacity:0.98"/>
                     </linearGradient>
-
-                    <!-- Background color gradient (active) -->
                     <linearGradient id="activeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
                         <stop offset="0%" style="stop-color:#0d4a5e;stop-opacity:0.98"/>
                         <stop offset="100%" style="stop-color:#083040;stop-opacity:1"/>
@@ -81,17 +68,11 @@
                 </defs>
 
                 <!-- Splash Screen (Root) -->
-                 <!-- tabindex="0" - keyboard accessible -->
                 <a href="splash.html" tabindex="0" class="svg-link">
-                    <!-- Similar to alt -->
                     <title>Link to the splash screen</title>
-                    <!-- Groups related svg elements -->
                     <g class="node-group root-node">
-                        <!-- Boxes with rounded corners -->
                         <rect x="450" y="20" width="200" height="56" rx="10" class="box-rect root-rect"/>
-                        <!-- Main text inside the box -->
-                        <text x="550" y="48" class="node-text root-text"> Splash Screen</text>
-                        <!-- Sub text inside the box -->
+                        <text x="550" y="48" class="node-text root-text">Splash Screen</text>
                         <text x="550" y="65" class="node-sub">Entry point</text>
                     </g>
                 </a>
@@ -106,91 +87,148 @@
                     </g>
                 </a>
 
-                <!-- Child Pages Row -->
+                <!-- ── SUB-PAGES OF HOME (2nd row — y=255, unchanged) ── -->
+                <a href="content1.html" tabindex="0" class="svg-link">
+                    <title>Link to content page 1</title>
+                    <g class="node-group">
+                        <rect x="155" y="255" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="225" y="278" class="node-text">Whales Warning</text>
+                        <text x="225" y="295" class="node-sub">Content 01</text>
+                    </g>
+                </a>
+
+                <a href="content2.html" tabindex="0" class="svg-link">
+                    <title>Link to content page 2</title>
+                    <g class="node-group">
+                        <rect x="330" y="255" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="400" y="278" class="node-text">Ghost Nets</text>
+                        <text x="400" y="295" class="node-sub">Content 02</text>
+                    </g>
+                </a>
+
+                <a href="content3.html" tabindex="0" class="svg-link">
+                    <title>Link to content page 3</title>
+                    <g class="node-group">
+                        <rect x="630" y="255" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="700" y="278" class="node-text">Bleached Reefs</text>
+                        <text x="700" y="295" class="node-sub">Content 03</text>
+                    </g>
+                </a>
+
+                <a href="content4.html" tabindex="0" class="svg-link">
+                    <title>Link to content page 4</title>
+                    <g class="node-group">
+                        <rect x="805" y="255" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="875" y="278" class="node-text">Echo of Hope</text>
+                        <text x="875" y="295" class="node-sub">Content 04</text>
+                    </g>
+                </a>
+
+                <!-- ── MAIN CHILD PAGES (3rd row — y=400) ── -->
                 <a href="gallery.html" tabindex="0" class="svg-link">
                     <title>Link to the gallery page</title>
                     <g class="node-group">
-                        <rect x="40" y="290" width="140" height="52" rx="8" class="box-rect child-rect"/>
-                        <text x="110" y="313" class="node-text">Gallery</text>
-                        <text x="110" y="330" class="node-sub">Marine visuals</text>
+                        <rect x="40" y="400" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="110" y="423" class="node-text">Gallery</text>
+                        <text x="110" y="440" class="node-sub">Marine visuals</text>
                     </g>
                 </a>
 
                 <a href="ais.html" tabindex="0" class="svg-link">
                     <title>Link to the impact simulator</title>
                     <g class="node-group">
-                        <rect x="210" y="290" width="140" height="52" rx="8" class="box-rect child-rect"/>
-                        <text x="280" y="313" class="node-text">AIS</text>
-                        <text x="280" y="330" class="node-sub">Ocean impact</text>
+                        <rect x="210" y="400" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="280" y="423" class="node-text">AIS</text>
+                        <text x="280" y="440" class="node-sub">Ocean impact</text>
                     </g>
                 </a>
 
                 <a href="feedback.html" tabindex="0" class="svg-link">
                     <title>Link to the feedback page</title>
                     <g class="node-group">
-                        <rect x="380" y="290" width="140" height="52" rx="8" class="box-rect child-rect"/>
-                        <text x="450" y="313" class="node-text">Feedback</text>
-                        <text x="450" y="330" class="node-sub">Share thoughts</text>
+                        <rect x="380" y="400" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="450" y="423" class="node-text">Feedback</text>
+                        <text x="450" y="440" class="node-sub">Share thoughts</text>
                     </g>
                 </a>
 
                 <a href="team.html" tabindex="0" class="svg-link">
                     <title>Link to the team page</title>
                     <g class="node-group">
-                        <rect x="550" y="290" width="140" height="52" rx="8" class="box-rect child-rect"/>
-                        <text x="620" y="313" class="node-text">Team</text>
-                        <text x="620" y="330" class="node-sub">Meet the crew</text>
+                        <rect x="550" y="400" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="620" y="423" class="node-text">Team</text>
+                        <text x="620" y="440" class="node-sub">Meet the crew</text>
                     </g>
                 </a>
 
                 <a href="profile.html" tabindex="0" class="svg-link">
                     <title>Link to the profile page</title>
                     <g class="node-group">
-                        <rect x="720" y="290" width="140" height="52" rx="8" class="box-rect child-rect"/>
-                        <text x="790" y="313" class="node-text">Profile</text>
-                        <text x="790" y="330" class="node-sub">Your account</text>
+                        <rect x="720" y="400" width="140" height="52" rx="8" class="box-rect child-rect"/>
+                        <text x="790" y="423" class="node-text">Profile</text>
+                        <text x="790" y="440" class="node-sub">Your account</text>
                     </g>
                 </a>
 
                 <a href="sitemap.html" tabindex="0" class="svg-link">
                     <title>Link to the sitemap</title>
                     <g class="node-group active-node">
-                        <rect x="890" y="290" width="140" height="52" rx="8" class="box-rect active-rect"/>
-                        <text x="960" y="313" class="node-text active-text">Sitemap</text>
-                        <text x="960" y="330" class="node-sub active-sub">You are here</text>
+                        <rect x="890" y="400" width="140" height="52" rx="8" class="box-rect active-rect"/>
+                        <text x="960" y="423" class="node-text active-text">Sitemap</text>
+                        <text x="960" y="440" class="node-sub active-sub">You are here</text>
                     </g>
                 </a>
 
-                <!-- Connector: Splash → Home -->
+                <!-- ── CONNECTORS ── -->
+
+                <!-- Splash → Home -->
                 <line x1="550" y1="76" x2="550" y2="125" stroke="rgba(148,216,213,0.5)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowD)" />
 
-                <!-- Connector: Home → horizontal spine -->
-                <line x1="550" y1="182" x2="550" y2="240" stroke="rgba(148,216,213,0.45)" stroke-width="1.5" />
+                <!-- Home → sub-page spine -->
+                <line x1="550" y1="182" x2="550" y2="210" stroke="rgba(148,216,213,0.45)" stroke-width="1.5" />
 
-                <!-- Horizontal spine -->
-                <line x1="110" y1="240" x2="960" y2="240" stroke="rgba(148,216,213,0.3)" stroke-width="1.5" />
+                <!-- Sub-page horizontal spine -->
+                <line x1="225" y1="210" x2="875" y2="210" stroke="rgba(148,216,213,0.3)" stroke-width="1.5" />
 
-                <!-- Bubble accents on spine -->
-                <circle cx="110" cy="240" r="3" fill="rgba(148,216,213,0.5)"/>
-                <circle cx="280" cy="240" r="3" fill="rgba(148,216,213,0.5)"/>
-                <circle cx="450" cy="240" r="3" fill="rgba(148,216,213,0.5)"/>
-                <circle cx="620" cy="240" r="3" fill="rgba(148,216,213,0.5)"/>
-                <circle cx="790" cy="240" r="3" fill="rgba(148,216,213,0.5)"/>
-                <circle cx="960" cy="240" r="3" fill="rgba(148,216,213,0.6)"/>
+                <!-- Dots on sub-page spine -->
+                <circle cx="225" cy="210" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="400" cy="210" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="700" cy="210" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="875" cy="210" r="3" fill="rgba(148,216,213,0.5)"/>
 
-                <!-- Connectors: Spine → child nodes -->
-                <line x1="110" y1="240" x2="110" y2="285" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
-                <line x1="280" y1="240" x2="280" y2="285" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
-                <line x1="450" y1="240" x2="450" y2="285" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
-                <line x1="620" y1="240" x2="620" y2="285" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
-                <line x1="790" y1="240" x2="790" y2="285" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
-                <line x1="960" y1="240" x2="960" y2="285" stroke="rgba(100,200,210,0.6)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <!-- Sub-page spine → sub-page boxes -->
+                <line x1="225" y1="210" x2="225" y2="250" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="400" y1="210" x2="400" y2="250" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="700" y1="210" x2="700" y2="250" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="875" y1="210" x2="875" y2="250" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+
+                <!-- Home → main child spine (y=350) -->
+                <line x1="550" y1="182" x2="550" y2="350" stroke="rgba(148,216,213,0.45)" stroke-width="1.5" />
+
+                <!-- Main child horizontal spine (y=350) -->
+                <line x1="110" y1="350" x2="960" y2="350" stroke="rgba(148,216,213,0.3)" stroke-width="1.5" />
+
+                <!-- Dots on main child spine -->
+                <circle cx="110" cy="350" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="280" cy="350" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="450" cy="350" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="620" cy="350" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="790" cy="350" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="960" cy="350" r="3" fill="rgba(148,216,213,0.6)"/>
+
+                <!-- Main child spine → child boxes -->
+                <line x1="110" y1="350" x2="110" y2="395" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="280" y1="350" x2="280" y2="395" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="450" y1="350" x2="450" y2="395" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="620" y1="350" x2="620" y2="395" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="790" y1="350" x2="790" y2="395" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowD)" />
+                <line x1="960" y1="350" x2="960" y2="395" stroke="rgba(100,200,210,0.6)" stroke-width="1.5" marker-end="url(#arrowD)" />
             </svg>
         </div>
 
-        <!-- Mobile Sitemap -->
+        <!-- Mobile Sitemap — unchanged -->
         <div class="sitemap-wrapper mobile-map">
-            <svg viewBox="0 0 360 760" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 360 1100" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <marker id="arrowM" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
                         <path d="M0,0 L0,6 L9,3 z" fill="rgba(148,216,213,0.7)" />
@@ -217,89 +255,132 @@
                     </g>
                 </a>
 
-                <!-- Children -->
+                <!-- SUB-PAGES OF HOME -->
+                <a href="content_ST4.html" tabindex="0">
+                    <title>Link to content page 1</title>
+                    <g class="node-group">
+                        <rect x="200" y="205" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="228" class="node-text">Whales Warning</text>
+                        <text x="265" y="246" class="node-sub">Content 01</text>
+                    </g>
+                </a>
+
+                <a href="content_ST1.html" tabindex="0">
+                    <title>Link to content page 2</title>
+                    <g class="node-group">
+                        <rect x="200" y="278" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="301" class="node-text">Ghost Nets</text>
+                        <text x="265" y="319" class="node-sub">Content 02</text>
+                    </g>
+                </a>
+
+                <a href="content_ST3.html" tabindex="0">
+                    <title>Link to content page 3</title>
+                    <g class="node-group">
+                        <rect x="200" y="351" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="374" class="node-text">Bleached Reefs</text>
+                        <text x="265" y="392" class="node-sub">Content 03</text>
+                    </g>
+                </a>
+
+                <a href="content_ST2.html" tabindex="0">
+                    <title>Link to content page 4</title>
+                    <g class="node-group">
+                        <rect x="200" y="424" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="447" class="node-text">Echo of Hope</text>
+                        <text x="265" y="465" class="node-sub">Content 04</text>
+                    </g>
+                </a>
+
+                <!-- MAIN CHILD PAGES -->
                 <a href="gallery.html" tabindex="0">
                     <title>Link to the gallery page</title>
                     <g class="node-group">
-                        <rect x="200" y="205" width="130" height="50" rx="8" class="box-rect child-rect"/>
-                        <text x="265" y="228" class="node-text">Gallery</text>
-                        <text x="265" y="246" class="node-sub">Marine visuals</text>
+                        <rect x="200" y="520" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="543" class="node-text">Gallery</text>
+                        <text x="265" y="561" class="node-sub">Marine visuals</text>
                     </g>
                 </a>
 
                 <a href="ais.html" tabindex="0">
                     <title>Link to the impact simulator</title>
                     <g class="node-group">
-                        <rect x="200" y="278" width="130" height="50" rx="8" class="box-rect child-rect"/>
-                        <text x="265" y="301" class="node-text">AIS</text>
-                        <text x="265" y="319" class="node-sub">Ocean impact</text>
+                        <rect x="200" y="593" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="616" class="node-text">AIS</text>
+                        <text x="265" y="634" class="node-sub">Ocean impact</text>
                     </g>
                 </a>
 
                 <a href="feedback.html" tabindex="0">
                     <title>Link to the feedback page</title>
                     <g class="node-group">
-                        <rect x="200" y="351" width="130" height="50" rx="8" class="box-rect child-rect"/>
-                        <text x="265" y="374" class="node-text">Feedback</text>
-                        <text x="265" y="392" class="node-sub">Share thoughts</text>
+                        <rect x="200" y="666" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="689" class="node-text">Feedback</text>
+                        <text x="265" y="707" class="node-sub">Share thoughts</text>
                     </g>
                 </a>
 
                 <a href="team.html" tabindex="0">
                     <title>Link to the team page</title>
                     <g class="node-group">
-                        <rect x="200" y="424" width="130" height="50" rx="8" class="box-rect child-rect"/>
-                        <text x="265" y="447" class="node-text">Team</text>
-                        <text x="265" y="465" class="node-sub">Meet the crew</text>
+                        <rect x="200" y="739" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="762" class="node-text">Team</text>
+                        <text x="265" y="780" class="node-sub">Meet the crew</text>
                     </g>
                 </a>
 
                 <a href="profile.html" tabindex="0">
                     <title>Link to the profile page</title>
                     <g class="node-group">
-                        <rect x="200" y="497" width="130" height="50" rx="8" class="box-rect child-rect"/>
-                        <text x="265" y="520" class="node-text">Profile</text>
-                        <text x="265" y="538" class="node-sub">Your account</text>
+                        <rect x="200" y="812" width="130" height="50" rx="8" class="box-rect child-rect"/>
+                        <text x="265" y="835" class="node-text">Profile</text>
+                        <text x="265" y="853" class="node-sub">Your account</text>
                     </g>
                 </a>
 
                 <a href="sitemap.html" tabindex="0">
                     <title>Link to the sitemap</title>
                     <g class="node-group active-node">
-                        <rect x="200" y="570" width="130" height="50" rx="8" class="box-rect active-rect"/>
-                        <text x="265" y="593" class="node-text active-text">Sitemap</text>
-                        <text x="265" y="611" class="node-sub active-sub">You are here</text>
+                        <rect x="200" y="885" width="130" height="50" rx="8" class="box-rect active-rect"/>
+                        <text x="265" y="908" class="node-text active-text">Sitemap</text>
+                        <text x="265" y="926" class="node-sub active-sub">You are here</text>
                     </g>
                 </a>
 
-                <!-- Arrows -->
+                <!-- CONNECTORS -->
                 <line x1="180" y1="72" x2="180" y2="115" stroke="rgba(148,216,213,0.5)" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arrowM)" />
+                <line x1="180" y1="172" x2="180" y2="960" stroke="rgba(148,216,213,0.3)" stroke-width="1.5" />
 
-                <!-- Vertical spine from Home down -->
-                <line x1="180" y1="172" x2="180" y2="645" stroke="rgba(148,216,213,0.3)" stroke-width="1.5" />
-
-                <!-- Dots on spine -->
                 <circle cx="180" cy="230" r="3" fill="rgba(148,216,213,0.5)"/>
                 <circle cx="180" cy="303" r="3" fill="rgba(148,216,213,0.5)"/>
                 <circle cx="180" cy="376" r="3" fill="rgba(148,216,213,0.5)"/>
                 <circle cx="180" cy="449" r="3" fill="rgba(148,216,213,0.5)"/>
-                <circle cx="180" cy="522" r="3" fill="rgba(148,216,213,0.5)"/>
-                <circle cx="180" cy="595" r="3" fill="rgba(100,200,210,0.7)"/>
+                <circle cx="180" cy="545" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="180" cy="618" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="180" cy="691" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="180" cy="764" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="180" cy="837" r="3" fill="rgba(148,216,213,0.5)"/>
+                <circle cx="180" cy="910" r="3" fill="rgba(100,200,210,0.7)"/>
 
-                <!-- Horizontal branches -->
                 <line x1="180" y1="230" x2="196" y2="230" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
                 <line x1="180" y1="303" x2="196" y2="303" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
                 <line x1="180" y1="376" x2="196" y2="376" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
                 <line x1="180" y1="449" x2="196" y2="449" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
-                <line x1="180" y1="522" x2="196" y2="522" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
-                <line x1="180" y1="595" x2="196" y2="595" stroke="rgba(100,200,210,0.6)" stroke-width="1.5" marker-end="url(#arrowM)" />
+                <line x1="180" y1="545" x2="196" y2="545" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
+                <line x1="180" y1="618" x2="196" y2="618" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
+                <line x1="180" y1="691" x2="196" y2="691" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
+                <line x1="180" y1="764" x2="196" y2="764" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
+                <line x1="180" y1="837" x2="196" y2="837" stroke="rgba(148,216,213,0.4)" stroke-width="1.5" marker-end="url(#arrowM)" />
+                <line x1="180" y1="910" x2="196" y2="910" stroke="rgba(100,200,210,0.6)" stroke-width="1.5" marker-end="url(#arrowM)" />
+
+                <line x1="150" y1="500" x2="330" y2="500" stroke="rgba(148,216,213,0.15)" stroke-width="1" stroke-dasharray="3 3"/>
             </svg>
         </div>
 
     </main>
 
     <!-- Footer -->
-	<footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-links">
                 <a href="pageEditor_ST4.html#sitemap">Page Editor</a>
@@ -307,7 +388,6 @@
                 <a href="pageEditor_ST4.html#sitemap-a11y">Accessibility</a>
                 <a href="pageEditor_ST4.html#compliance">Compliance</a>
             </div>
-
             <div class="student-details">
                 <p>Developed by: Gayathmi Udanya</p>
                 <p>Student ID: 21819250</p>
@@ -315,8 +395,6 @@
             </div>
         </div>
     </footer>
-    <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>
 </html>
-
