@@ -29,6 +29,7 @@ form.addEventListener("submit",(e)=>{
     // Validating the Full Name
     const fullname = document.getElementById("fullname").value.trim(); // Removes empty spaces from the start and finish 
     const nameRegex = /^[a-zA-Z\s]+$/; // Only allows letters and spaces
+    
     if (fullname === ""){ 
         showError("fullname-error", "Full name is required");//Runs if the field is empty
     } 
