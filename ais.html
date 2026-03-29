@@ -22,12 +22,12 @@
       object-position: center;
       transition: opacity 0.8s ease;
     }
+
     /* to prevent white flash on background change */
     body{
       background-color: rgb(0, 5, 41);
     }
     /* ais container */
-
     .feed {
       background: rgba(1, 8, 20, .62);
       backdrop-filter: blur(18px);
@@ -40,7 +40,6 @@
       box-shadow: 0 8px 48px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(125, 211, 252, .06);
       position: relative;
     }
-
     .feed::after {
       content: '';
       position: absolute;
@@ -53,7 +52,6 @@
       transition: background 0.7s ease;
     }
     /* Impact Levels */
-
     .feed.impact-low {
       border-color: rgba(239, 68, 68, 0.3);
       box-shadow: 0 8px 40px rgba(239, 68, 68, 0.08);
@@ -81,11 +79,13 @@
     .feed.impact-high::after {
       background: #34d399;
     }
-/* Card Styling */
+
+    /* Card Styling */
     .inside {
       padding: 1.8rem 2rem 1.8rem 2.4rem;
     }
-/* Score Styling */
+
+    /* Score Styling */
     .score {
       font-family: 'Cormorant Garamond', serif;
       font-size: 4.5rem;
@@ -95,12 +95,13 @@
       transition: color 0.7s ease;
       text-shadow: 0 0 40px rgba(125, 211, 252, 0.3);
       display: inline-block;
-    }
-    /* Score Animation little pop up */
+    } 
 
+    /* Score Animation little pop up */
     .score.pop {
       animation: scorePop 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97);
     }
+
     /* Score Pop Animation */
     @keyframes scorePop {
       0% {
@@ -119,8 +120,8 @@
         transform: scale(1);
       }
     }
-    /* Impact Level Colors */
 
+    /* Impact Level Colors */
     .score.impact-low {
       color: #f87171;
       text-shadow: 0 0 40px rgba(239, 68, 68, 0.3);
@@ -135,8 +136,8 @@
       color: #34d399;
       text-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
     }
-    /* Card Label */
 
+    /* Card Label */
     .label {
       font-family: 'Cinzel', serif;
       font-size: .58rem;
@@ -145,7 +146,8 @@
       color: #4a7a94;
       margin-top: .3rem;
     }
-/* Impact Level  Styling */
+
+    /* Impact Level  Styling */
     .impact-level-badge {
       display: inline-flex;
       align-items: center;
@@ -160,32 +162,36 @@
       margin-bottom: .6rem;
       transition: all 0.5s ease;
     }
+    
     /* Impact Level  Styles */
-
     .impact-level-badge.none {
       background: rgba(125, 211, 252, .07);
       color: #7dd3fc;
       border-color: rgba(125, 211, 252, .2);
     }
-/* Impact Level  Styles */
+
+    /* Impact Level  Styles */
     .impact-level-badge.low {
       background: rgba(239, 68, 68, .1);
       color: #f87171;
       border-color: rgba(239, 68, 68, .28);
     }
-/* Impact Level  Styles */
+
+    /* Impact Level  Styles */
     .impact-level-badge.mid {
       background: rgba(245, 158, 11, .1);
       color: #fbbf24;
       border-color: rgba(245, 158, 11, .28);
     }
-/* Impact Level  Styles */
+
+    /* Impact Level  Styles */
     .impact-level-badge.high {
       background: rgba(16, 185, 129, .1);
       color: #34d399;
       border-color: rgba(16, 185, 129, .28);
     }
-/* Impact Level Badge Animation */
+
+    /* Impact Level Badge Animation */
     .impact-level-badge.level-up {
       animation: badgePulse 0.5s ease;
     }
@@ -215,7 +221,8 @@
       min-height: 2.5rem;
       transition: opacity 0.4s ease;
     }
-/* Counter Styles */
+
+    /* Counter Styles */
     .counterR {
       display: flex;
       align-items: center;
@@ -223,11 +230,13 @@
       flex-wrap: wrap;
       margin-top: .8rem;
     }
-/* Counter item Styles */
+
+    /* Counter item Styles */
     .counterI {
       text-align: center;
     }
-/* Counter Value Styles */
+
+    /* Counter Value Styles */
     .count {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.8rem;
@@ -235,7 +244,7 @@
       color: #7dd3fc;
       line-height: 1;
     }
-/* Counter Total Styles */
+    /* Counter Total Styles */
     .total {
       font-family: 'Cinzel', serif;
       font-size: .48rem;
@@ -244,7 +253,7 @@
       color: #4a7a94;
       margin-top: .2rem;
     }
-/* Rest Button Styles */
+    /* Rest Button Styles */
     .restbutton {
       background: transparent;
       color: #4a7a94;
@@ -261,19 +270,19 @@
       align-items: center;
       gap: .4rem;
     }
-/* Rest Button Hover Styles */
+    /* Rest Button Hover Styles */
     .restbutton:hover {
       color: #f87171;
       border-color: rgba(239, 68, 68, .35);
       background: rgba(239, 68, 68, .06);
     }
-/* Rest Button Icon Styles */
+    /* Rest Button Icon Styles */
     .restbutton svg {
       width: 11px;
       height: 11px;
       opacity: 0.7;
     }
-/* Ocean Box Styles */
+    /* Ocean Box Styles */
     .oceanBox {
       display: flex;
       align-items: center;
@@ -285,7 +294,7 @@
       border-radius: 10px;
       transition: background 0.7s ease, border-color 0.7s ease;
     }
-/* Ocean Box Impact Level Styles */
+    /* Ocean Box Impact Level Styles */
     .oceanBox.impact-low {
       background: rgba(239, 68, 68, 0.05);
       border-color: rgba(239, 68, 68, 0.12);
@@ -300,12 +309,12 @@
       background: rgba(16, 185, 129, 0.05);
       border-color: rgba(16, 185, 129, 0.12);
     }
-/* Ocean Box Icon Styles */
+    /* Ocean Box Icon Styles */
     .oceanBoxicon {
       font-size: 1.2rem;
       flex-shrink: 0;
     }
-/* Ocean Box Text Styles */
+    /* Ocean Box Text Styles */
     .oceanBoxtext {
       font-family: 'Cormorant Garamond', serif;
       font-size: .9rem;
@@ -313,7 +322,7 @@
       color: #94b8cc;
       line-height: 1.5;
     }
-/* Action Grid Styles */
+    /* Action Grid Styles */
     .actiongrid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -333,7 +342,7 @@
         grid-template-columns: 1fr;
       }
     }
-/* Card Styles */
+    /* Card Styles */
     .card {
       background: rgba(3, 13, 26, 0.78);
       border: 1px solid rgba(125, 211, 252, 0.11);
@@ -367,7 +376,7 @@
       background: rgba(14, 116, 144, 0.2);
       box-shadow: 0 0 30px rgba(14, 116, 144, 0.3);
     }
-/* Ripple Animation Styles when card is pressed */
+    /* Ripple Animation Styles when card is pressed */
     .card .ripple {
       position: absolute;
       border-radius: 50%;
@@ -383,7 +392,7 @@
         opacity: 0;
       }
     }
-/* Card Tick Styles */
+    /* Card Tick Styles */
     .card .tick {
       position: absolute;
       top: 10px;
@@ -405,7 +414,7 @@
     .card.selected .tick {
       opacity: 1;
     }
-/* Card Image Styles */
+    /* Card Image Styles */
     .cardimg {
       width: 100%;
       aspect-ratio: 16/9;
@@ -413,11 +422,11 @@
       display: block;
       border-bottom: 1px solid rgba(125, 211, 252, 0.08);
     }
-/* Card Body Styles */
+    /* Card Body Styles */
     .cardBody {
       padding: 1rem 1.2rem 1.3rem;
     }
-/* Card Title Styles */
+    /* Card Title Styles */
     .cardTitle {
       font-family: 'Cinzel', serif;
       font-size: .76rem;
@@ -426,14 +435,14 @@
       color: #e8f4f8;
       margin-bottom: .4rem;
     }
-/* Card Description Styles */
+    /* Card Description Styles */
     .cardDescription {
       font-size: .82rem;
       color: #94b8cc;
       line-height: 1.55;
       margin-bottom: .8rem;
     }
-/* Impact Points Styles card */
+    /* Impact Points Styles card */
     .impactPoints {
       display: inline-flex;
       align-items: center;
@@ -447,12 +456,12 @@
       border-radius: 20px;
       padding: .18rem .7rem;
     }
-/* Impact Points Styles for Selected Card */
+    /* Impact Points Styles for Selected Card */
     .card.selected .impactPoints {
       background: rgba(14, 116, 144, 0.35);
       border-color: rgba(125, 211, 252, 0.45);
     }
-/* Toast Styles */
+    /* Toast Styles */
     .pts-toast {
       position: fixed;
       font-family: 'Cormorant Garamond', serif;
@@ -462,12 +471,12 @@
       text-shadow: 0 0 20px rgba(125, 211, 252, 0.6);
       animation: ptsFloat 1s ease forwards;
     }
-/* Negative Toast Styles */
+    /* Negative Toast Styles */
     .pts-toast.neg {
       color: #f87171;
       text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
     }
-/* Float Animation for Toasts */
+    /* Float Animation for Toasts */
     @keyframes ptsFloat {
       0% {
         opacity: 1;
@@ -479,11 +488,11 @@
         transform: translateY(-60px) scale(0.8);
       }
     }
-/* Card Entry Animation */
+    /* Card Entry Animation */
     .card {
       animation: cardEntry 0.5s ease both;
     }
-/* Card Animation Delays */
+    /* Card Animation Delays */
     .card:nth-child(1) {
       animation-delay: 0.05s;
     }
@@ -507,7 +516,7 @@
     .card:nth-child(6) {
       animation-delay: 0.40s;
     }
-/* Card Entry Animation */
+    /* Card Entry Animation */
     @keyframes cardEntry {
       from {
         opacity: 0;
@@ -519,7 +528,7 @@
         transform: translateY(0);
       }
     }
-/* Progress Bar Styles */
+    /* Progress Bar Styles */
     .bart {
       width: 100%;
       height: 6px;
@@ -529,7 +538,7 @@
       overflow: hidden;
       position: relative;
     }
-/* Progress Bar Fill */
+    /* Progress Bar Fill */
     .barF {
       height: 100%;
       border-radius: 3px;
@@ -538,7 +547,7 @@
       transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
       box-shadow: 0 0 10px rgba(125, 211, 252, 0.35);
     }
-/* Progress Bar Markers */
+    /* Progress Bar Markers */
     .bart::before {
       content: '';
       position: absolute;
@@ -548,7 +557,7 @@
       width: 1px;
       background: rgba(255, 255, 255, 0.12);
     }
-/* Progress Bar Markers */
+    /* Progress Bar Markers */
     .bart::after {
       content: '';
       position: absolute;
