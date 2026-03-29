@@ -177,7 +177,7 @@
         /* Keep Listening */
         .section-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-size: 60px;
             font-weight: 300; text-align: center;
             color: rgba(255,255,255,.88);
             margin-bottom: .5rem; line-height: 1.15;
@@ -201,12 +201,12 @@
             justify-content: center;
             align-items: stretch;
             width: 100%;
-            max-width: 1900px;
+            max-width: 900px;
         }
 
         /* Peek Card */
         .peek-card {
-            flex: 0 0 125px;
+            flex: 0 0 120px;
             height: 420px;
             border-radius: 16px;
             overflow: hidden;
@@ -214,10 +214,12 @@
             cursor: pointer;
 
             transition:
-                flex 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+                flex .45s cubic-bezier(.4,0,.2,1),
                 opacity .35s ease,
                 transform .4s ease,
                 box-shadow .4s ease;
+
+            opacity: .72;
             text-decoration: none;
             display: block;
             border: 1px solid rgba(125,211,252,.08);
@@ -226,10 +228,10 @@
         /* hover Expansion */
 
         .peek-card:hover {
-            flex: 0 0 330px;
+            flex: 0 0 260px;
             opacity: 1;
 
-            transform: translateY(-18px);
+            transform: translateY(-6px);
 
             box-shadow:
                 0 20px 60px rgba(0,0,0,.55),
@@ -243,7 +245,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(20%);
+            filter: grayscale(50%);
             transition: filter .4s ease;
         }
 
