@@ -118,6 +118,7 @@
     align-items: center;
     gap: 6px;
     animation: bounce 2s infinite ease-in-out;
+    padding-bottom: 40px;
 }
 
 /* Scroll Indicator Arrow */
