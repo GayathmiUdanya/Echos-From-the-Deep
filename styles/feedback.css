@@ -61,7 +61,7 @@ main {
 /*--------------------------------------------------------------------- Program Containers -------------------------------------------------------------------------------*/
 /* Sectional containers */
 .page-section {
-    padding: .5rem 0; /* Top and bottom padding */
+    padding: 2.5rem 0; /* Top and bottom padding */
     max-width: 1160px;
     margin:0 auto; /* Centers the section */
 }
@@ -111,7 +111,7 @@ main {
 /* Iframes - Explore Programs */ 
 .exploreProgram-iframe{
     width: 100%;
-    height: 650px;
+    height: 610px;
     border: none;
     overflow: hidden; 
 }
