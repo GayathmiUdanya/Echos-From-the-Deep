@@ -39,7 +39,6 @@ main {
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     background: rgba(255, 255, 255, 0.12);
-
 }
 
 /* Styles each NAV link */

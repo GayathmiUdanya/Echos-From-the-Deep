@@ -142,7 +142,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 340px 5% 80px;
+    padding: 100px 5% 80px;
 }
 
 .section-eyebrow {
@@ -166,6 +166,7 @@
     color: rgba(255,255,255,.88);
     margin-bottom: .5rem;
     line-height: 1.15;
+    padding: 100px 5% 80px;
 }
 
 .section-title em { 

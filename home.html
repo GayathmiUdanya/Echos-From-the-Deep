@@ -26,14 +26,19 @@
             color: #49aec0; opacity: .7;
             margin-bottom: .8rem; display: block; text-align: center;
         }
-                .section-title {
+
+        .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 3.5vw, 3rem);
             font-weight: 300; text-align: center;
             color: rgba(255,255,255,.88);
             margin-bottom: .5rem; line-height: 1.15;
         }
-        .section-title em { font-style: italic; color: #7dd3fc; }
+
+        .section-title em { 
+            font-style: italic; 
+            color: #7dd3fc; 
+        }
 
         .section-divider {
             width: 36px; height: 1px;
@@ -53,7 +58,7 @@
         <div class="sonar" id="s3"></div>
     </div>
     <!-- Background Image -->
-    <img src="assets/hero.jpeg" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+    <img src="assets/hero.jpeg" class="scene_bg" alt="Background image of the Ocean" onerror="this.style.display='none'">
     <div class="scene_overlay"></div>
     
     <header>
@@ -67,7 +72,7 @@
                 </div>
             </div>
             <div class="nav-links">
-                <a href="#" class="active">Home</a>
+                <a href="home.html" class="active">Home</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="ais.html">Action Impact Simulator</a>
                 <a href="feedback.html">Feedback</a>
@@ -95,7 +100,7 @@
 
             <div class="btn-container">
                 <a href="ais.html" class="btn btn-fill">Take Action Now</a>
-                <a href="content_ST4.html" class="btn btn-outline">Read The Story</a>
+                <a href="home.html#stories" class="btn btn-outline">Read The Story</a>
             </div>
         </div>
 
@@ -109,6 +114,7 @@
 <!-- ── MISSION & GOAL CARDS ── -->
 <section class="parallel-section" id="mission-goals">
 
+    <!-- Mission and Goal Title Section -->
     <div>
     <h2 class="mission-title reveal">Our Missions <em>and Goals</em></h2>
     <div class="mission-divider reveal"></div>
@@ -118,8 +124,8 @@
     <div class="parallel-card goal-parallel">
 
         <img src="assets/contentCard_whaleWatching.png"
-             class="parallel-bg"
-             alt="Ocean noise pollution and whale communication conservation goals">
+            class="parallel-bg"
+            alt="Ocean noise pollution and whale communication conservation goals">
 
         <div class="parallel-overlay"></div>
 
