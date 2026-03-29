@@ -93,11 +93,11 @@ function updateFeedback() { // updates the feedback panel based on current score
     const score = calcScore(); // calculate current score based on selected cards
     const count = countSelected(); // count how many cards are currently selected
 
-    let level;
-    if (score === 0) level = 'none'; // determine impact level based on score thresholds
-    else if (score <= 5) level = 'low';
-    else if (score <= 11) level = 'mid';
-    else level = 'high';
+    let level; // determine impact level based on score thresholds
+    if (score === 0) level = 'none'; //None = 0pts
+    else if (score <= 5) level = 'low'; //Low = 1–5pts
+    else if (score <= 11) level = 'mid'; //Mid = 6–11pts
+    else level = 'high'; //High = 12–17pts
 
     const data = messages[level]; // get feedback data for current impact level
     const scoreEl = document.getElementById('score'); // get score element to update points display
