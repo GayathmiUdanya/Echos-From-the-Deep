@@ -410,6 +410,13 @@
     width: 100%;
 }
 
+.parallel-body ul{
+    font-size: .82rem;
+    color: rgba(165, 218, 246, 0.65);
+    line-height: 1.85;
+    margin-bottom: 10px;
+}
+
 /* Eyebrow label */
 .parallel-eyebrow {
     font-family: 'Cinzel', serif;
@@ -451,7 +458,8 @@
 .parallel-desc {
     font-family: 'Cormorant Garamond', serif;
     font-size: 15px;
-    color: rgba(186,230,253,0.65);
+    
+    color: rgba(230, 246, 255, 0.65);
     line-height: 1.85;
     margin-bottom: 10px;
 }
