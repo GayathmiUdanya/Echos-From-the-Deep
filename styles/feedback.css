@@ -108,12 +108,14 @@ main {
 }
 
 /*--------------------------------------------------------------------- Explore Programs Section -------------------------------------------------------------------------*/
+/* Iframes - Explore Programs */ 
 .exploreProgram-iframe{
     width: 100%;
-    height: 700px;
+    height: 550px;
     border: none;
     overflow: hidden; 
 }
+
 /* Filter - SORT BY feature (not responsive) */
 .sort-row {
     display: flex; /* Position the SORT BY dropdown to the right */
