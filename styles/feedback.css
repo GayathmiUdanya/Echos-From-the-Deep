@@ -108,6 +108,12 @@ main {
 }
 
 /*--------------------------------------------------------------------- Explore Programs Section -------------------------------------------------------------------------*/
+.exploreProgram-iframe{
+    width: 100%;
+    height: 700px;
+    border: none;
+    overflow: hidden; 
+}
 /* Filter - SORT BY feature (not responsive) */
 .sort-row {
     display: flex; /* Position the SORT BY dropdown to the right */
@@ -140,11 +146,12 @@ main {
     box-shadow: 0 0 8px rgba(125, 211, 252, 0.25);
 }
 
-/* Scrolling feature for the content cards */
+/* Scrolling feature for the content cards 
 .container-grid {
-    height:700px;
+    /*height:700px;
     overflow-y:scroll;
 }
+*/
 
 /* Explore Program - cards */
 /* Ensures the cards sit beside another, and wrap on a small screen */
