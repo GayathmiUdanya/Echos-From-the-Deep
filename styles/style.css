@@ -1,5 +1,4 @@
 /* Do NOT change the global CSS */
-
 *, 
 *::before, 
 *::after {
@@ -95,7 +94,6 @@ nav {
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--white-10);
-    
 }
 
 .nav-links {
@@ -359,7 +357,6 @@ footer {
 }
 
 /* Footer Media Query */
-
 @media (max-width: 768px) {
 
     footer {
@@ -386,7 +383,7 @@ footer {
 
 }
 
-/* page heading part */
+/* Page heading part */
 .pageup {
     background: var(--abyss);
     border-bottom: 1px solid rgba(125, 211, 252, 0.12);
