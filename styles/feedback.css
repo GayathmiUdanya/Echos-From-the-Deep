@@ -196,7 +196,7 @@ main {
 }
 
 /* LEARN MORE "button" | JOIN "button" (non responsive) */
-.cardbutton_actions {
+.cardbutton-actions {
     display: flex; /* Aligns the buttons side by side */
     gap: 0.7rem;
     margin-top: 0.6em;
@@ -209,10 +209,10 @@ main {
     border-radius: 20px;
     color: #7dd3fc;
     font-family: 'Cinzel', serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
+    font-size: .58rem;
+    letter-spacing: .18em;
     text-transform: uppercase;
-    padding: 0.45rem 1.1rem;
+    padding: .45rem 1.1rem;
     cursor: pointer;
     transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
 }
