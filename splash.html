@@ -41,7 +41,7 @@
       animation: rippleOut var(--rdur) ease-out infinite var(--rdelay);
     }
 
-    /* rippling effect */
+    /* Rippling effect */
     @keyframes rippleOut {
       0% {
         transform: scale(0);
@@ -89,65 +89,84 @@
 </head>
 
 <body>
-  <!-- background image  -->
-
   <section class="hero">
-
+    <!-- Background image  -->
     <img src="assets/hero.jpeg" class="hero-bg" alt="Night ocean scene with clouds and stars">
-    <!-- empty starrrr -->
+    
+    <!-- Empty stars -->
     <div class="stars" id="stars"></div>
-    <!-- the fade circle behind the moon image -->
+    
+    <!-- The fade circle behind the moon image -->
     <div class="moonHalo" id="moonHalo"></div>
-    <!-- moon reflection -->
+    
+    <!-- Moon reflection -->
     <div class="moonReflection" id="moonReflection"></div>
-    <!-- moon image -->
+    
+    <!-- Moon image -->
     <img src="assets/moon.png" class="moon" id="moon" alt="Full moon rising over the ocean">
-    <!-- water ripples -->
+    
+    <!-- Water ripples -->
     <div class="ripples" id="ripples"></div>
-    <!-- depth bands -->
+    
+    <!-- Depth bands -->
     <div class="depth-bands">
-      <!-- depth band 1 -->
+      
+      <!-- Depth band 1 -->
       <div class="depth-band depth-band-1">
         <span class="depth-label depth-label-1">Sunlight zone · 0–200m</span>
       </div>
-      <!-- depth band 2 -->
+
+      <!-- Depth band 2 -->
       <div class="depth-band depth-band-2">
         <span class="depth-label depth-label-2">Twilight zone · 200–1000m</span>
       </div>
     </div>
+
     <!-- Hero panel -->
     <div class="heroContent" id="heroContent">
       <p class="sdg">Life Below Water — SDG 14</p>
+
       <!-- Hero heading -->
       <h1>Echoes From<br><em>the Deep</em></h1>
+
       <!-- Tag -->
       <p class="tagline">The ocean is speaking... but are we listening?</p>
+
       <!-- Loader ELEMENTS -->
       <div class="loader-wrap" id="loaderWrap">
+
         <div class="loader-ring">
           <div class="loader-dot"></div>
         </div>
+
         <!-- COUNTDOWN -->
         <p class="countdown" id="countdown">
           Entering site in <span id="countNum">4</span>
         </p>
+
         <!-- Skip Button -->
         <button class="skip-btn" id="skipBtn" onclick="skipIntro()">
           Skip Intro
         </button>
+
       </div>
     </div>
+
     <!-- Info Panel -->
     <div class="info-panel" id="infoPanel">
+
       <!-- badge -->
       <p class="sdg-badge">Sustainable Development Goal 14 · Life Below Water</p>
+      
       <!-- Mission Statement -->
       <p class="mission">
         Exploring how individuals, communities, and students can take real action
         to protect and restore our ocean ecosystems before it is too late.
       </p>
+
       <!-- Divider -->
       <div class="divider"></div>
+
       <!-- Team Members -->
       <div class="team-row">
         <span class="team-member">Gayathmi</span>
@@ -158,8 +177,8 @@
     </div>
 
   </section>
-  <!-- scripts -->
   
+  <!-- scripts -->
   <script src="scripts/splash.js"></script>
 </body>
 
