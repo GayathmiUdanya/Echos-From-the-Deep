@@ -341,21 +341,11 @@
 .parallel-card {
     position: relative;
     border-radius: 16px;
-    height: 80%;
     overflow: hidden;
     align-items: center;
     justify-content: center;
     cursor: default;
     margin: 15px;
-}
-
-/* Hover expand hovered card, shrink the other */
-.parallel-section:has(.parallel-card:hover) .parallel-card:not(:hover) {
-    flex: 0.6;
-}
-
-.parallel-card:hover {
-    flex: 1.4;
 }
 
 /* Background image */
