@@ -72,9 +72,13 @@
 
                             <li><code>id="programSection"</code>, <code>id="reviewSection"</code>, and <code>id="feedbackSection"</code> are placed on each major section so the side nav anchor links have targets to scroll to.</li>
 
-                            <li><code>&lt;em&gt;</code> inside the hero heading wraps <em>Our Mission.</em> beyond just making it italic visually, it carries semantic emphasis so screen readers stress that text when reading aloud.</li>
+                            <li><code>&lt;em&gt;</code> inside the hero heading wraps <em>Our Mission.</em> Beyond just making it italic visually, it carries semantic emphasis so screen readers stress that text when reading aloud.</li>
 
                             <li><code>&lt;select&gt;</code> with <code>&lt;option&gt;</code> elements is used for the Sort By dropdown, giving users a controlled set of choices rather than a free text input.</li>
+
+                            <li><code>.glass-panel</code> is a <strong>wrapper div</strong> that applies the frosted glass styling around the iframe</li> 
+
+                            <li>The <code>&lt;iframe&gt;</code> embeds <code>feedback_exploreProgram.html</code> as a <strong>scrollable self-contained section</strong> displaying the programme cards</li> 
 
                             <li><code>aria-label="Sort programs"</code> is added to the sort dropdown since it has no visible <code>&lt;label&gt;</code> element paired with it, giving screen readers a meaningful description of its purpose.</li>
 
@@ -124,6 +128,10 @@
                                 <li><code>backdrop-filter: blur(14px)</code> on <code>.side-nav</code> creates a frosted glass effect behind the navigation panel, letting the background show through while keeping the links readable.</li>
 
                                 <li><code>backdrop-filter: blur(28px)</code> on <code>.glass-panel</code> applies a stronger frosted glass effect to each major section container, giving the page a layered depth.</li>
+                                
+                                <li>Sets the iframe to <strong>full width</strong> of its container</li>
+                                
+                                <li>Gives it a <strong>fixed height</strong> of 610px; removes the <strong>default border</strong>; hides any <strong>overflow/scrollbars</strong> on the iframe itself</li>
 
                                 <li><code>background: rgba(3, 13, 26, 0.85)</code> on <code>.glass-panel</code> uses a semi-transparent dark fill so the background image is still slightly visible through each panel.</li>
 
@@ -198,6 +206,8 @@
                             <li><code>aria-label="Sort programs"</code> gives the dropdown a meaningful description for screen readers since there is no visible label.</li>
 
                             <li><code>id="programSection"</code>, <code>id="reviewSection"</code>, and <code>id="feedbackSection"</code> act as anchor targets, allowing keyboard users to jump directly between sections.</li>
+
+                            <li>The <code>title</code> attribute on the iframe is for <strong>accessibility</strong>, describing its content to screen readers</li> 
 
                             <li><code>&lt;button class="btn-lm"&gt;</code> and <code>&lt;button class="btn-join"&gt;</code> use proper button elements, making them keyboard-accessible and correctly announced by screen readers.</li>
 

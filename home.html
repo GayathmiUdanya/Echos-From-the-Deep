@@ -19,6 +19,153 @@
 
     <style>
 
+        /* Background Image Styling */
+        .scene_bg {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            opacity: 1;
+        }
+        .scene_overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1;
+            pointer-events: none;
+            background: linear-gradient(180deg, rgba(2,8,20,.5) 0%, rgba(2,13,28,.35) 50%, rgba(2,8,20,.75) 100%);
+        }
+
+        /* Hero Section */
+        .hero-content {
+            position: relative; z-index: 10;
+            min-height: 70vh;
+            display: flex; flex-direction: column;
+            justify-content: center;
+            padding: 2px 10% 80px;
+            overflow: hidden;
+        }
+
+        .sdg-label {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(.48rem, .9vw, .65rem);
+            letter-spacing: .42em; text-transform: uppercase;
+            color: #49aec0; opacity: .72;
+            margin-bottom: 1.6rem; display: block;
+            margin-top: 20px;
+        }
+
+        /* Hero Title and Description */
+        .title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 9vw, 8rem);
+            font-weight: 300; line-height: 1.02;
+            color: rgba(255,255,255,.92);
+            margin-bottom: 1.6rem;
+        }
+
+        .title em {
+            font-style: italic; color: #7dd3fc;; display: block;
+        }
+
+        .description {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: clamp(1rem, 1.8vw, 1.45rem);
+            color: rgba(186,230,253,.65);
+            max-width: 620px; line-height: 1.78;
+            margin-bottom: 2.8rem;
+        }
+
+        /* Button Container */
+        .btn-container {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        /* Button Styles */
+        .btn {
+            padding: 14px 34px;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        .btn-fill {
+            background-color: #49aec0;
+            color: #ffffff;
+            border: 1px solid transparent;
+        }
+
+        .btn-fill:hover {
+            background-color: #37909f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(73, 174, 192, 0.4);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            color:  #ffffff;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);;
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.65;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            animation: bounce 2s infinite ease-in-out;
+            padding-bottom: 40px;
+        }
+
+        /* Scroll Indicator Arrow */
+        .scroll-indicator .arrow {
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0);   }
+            50%       { transform: translateX(-50%) translateY(6px); }
+        }
+
+        /* ── CARDS SECTION ── */
+
+        .cards-section {
+            position: relative;
+            z-index: 10;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 340px 5% 80px;
+        }
+
         .section-eyebrow {
             font-family: 'Cinzel', serif;
             font-size: clamp(.45rem, .85vw, .62rem);
@@ -27,6 +174,7 @@
             margin-bottom: .8rem; display: block; text-align: center;
         }
 
+        /* Keep Listening */
         .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.8rem, 3.5vw, 3rem);
@@ -42,6 +190,340 @@
 
         .section-divider {
             width: 36px; height: 1px;
+            background: linear-gradient(90deg, #0e7490, #7dd3fc);
+            margin: 1rem auto 3rem;
+        }
+
+        /* Card Row */
+        .cards-row {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            align-items: stretch;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        /* Peek Card */
+        .peek-card {
+            flex: 0 0 90px;
+            height: 420px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+
+            transition:
+                flex .45s cubic-bezier(.4,0,.2,1),
+                opacity .35s ease,
+                transform .4s ease,
+                box-shadow .4s ease;
+
+            opacity: .72;
+            text-decoration: none;
+            display: block;
+            border: 1px solid rgba(125,211,252,.08);
+        }
+
+        /* hover Expansion */
+
+        .peek-card:hover {
+            flex: 0 0 260px;
+            opacity: 1;
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.55),
+                0 0 0 1px rgba(125,211,252,.18);
+        }
+
+        /* Image */
+        .peek-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(50%);
+            transition: filter .4s ease;
+        }
+
+        .peek-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* Gradient Overlay */
+
+        .peek-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(2,8,20,.95) 0%,
+                rgba(2,8,20,.45) 45%,
+                transparent 100%
+            );
+            z-index: 1;
+        }
+
+        /* Rotated label */
+        .peek-label {
+            position: absolute;
+            z-index: 2;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-90deg);
+            white-space: nowrap;
+            font-family: 'Cinzel', serif;
+            font-size: .7rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: rgba(186,230,253,.8);
+            font-weight: 400;
+            transition:
+                transform .4s ease,
+                bottom .4s ease,
+                opacity .35s;
+        }
+
+        /* overlay movement like original cards */
+        .peek-card:hover .peek-label {
+            bottom: 20px;
+            transform: translateX(-50%) rotate(0deg);
+            opacity: 0;
+        }
+
+        /* Expanded Text */
+        .peek-body {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 3;
+            padding: 20px 18px;
+            opacity: 0;
+            transform: translateY(12px);
+            transition:
+                opacity .35s ease,
+                transform .35s ease;
+        }
+
+        .peek-card:hover .peek-body {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .peek-act {
+            font-family: 'Cinzel', serif;
+            font-size: .44rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: #49aec0;
+            opacity: .8;
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        .peek-body h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: rgba(255,255,255,.92);
+            line-height: 1.2;
+            margin-bottom: .5rem;
+        }
+
+        .peek-body p {
+            font-family: 'DM Sans', sans-serif;
+            font-size: .75rem;
+            font-weight: 300;
+            color: rgba(186,230,253,.58);
+            line-height: 1.7;
+        }
+
+        /* ── PARALLEL CARDS SECTION ── */
+
+        /* Parallel section */
+        .parallel-section {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            flex-direction: row;
+            margin-top: 100px;
+        }
+
+        /* Each card */
+        .parallel-card {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            cursor: default;
+            margin: 15px;
+            height: 130%;
+            padding: 20px;
+
+        }
+
+        /* Background image */
+        .parallel-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.38);
+            transition: 0.45s ;
+            z-index: 0;
+        }
+
+        /* Image brightens on hover */
+        .parallel-card:hover .parallel-bg {
+            filter: brightness(0.55);
+        }
+
+        /* Dark gradient overlay per card */
+        .parallel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(2,8,20,0.7) 0%,
+                rgba(2,13,28,0.35) 50%,
+                rgba(2,8,20,0.85) 100%
+            );
+            z-index: 1;
+        }
+
+        /* Thin vertical divider line between cards */
+        .parallel-card:first-child::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: 0;
+            height: 80%;
+            width: 1px;
+            background: linear-gradient(
+                180deg,
+                transparent,
+                rgba(125,211,252,0.25) 30%,
+                rgba(125,211,252,0.25) 70%,
+                transparent
+            );
+            z-index: 5;
+        }
+
+        /* Content body — centred text over image */
+        .parallel-body {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 50px 8%;
+            max-width: 520px;
+            width: 100%;
+        }
+
+        .parallel-body ul{
+            font-size: .82rem;
+            color: rgba(165, 218, 246, 0.65);
+            line-height: 1.85;
+            margin-bottom: 10px;
+        }
+
+        /* Main heading */
+        .parallel-body h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 30px;
+            font-weight: 300;
+            color: rgba(255,255,255,0.92);
+            line-height: 1.0;
+            margin-bottom: 1rem;
+        }
+
+        /* Italic teal accent */
+        .parallel-body h2 em {
+            color: #7dd3fc;
+            display: block;
+        }
+
+        /* Thin divider under heading */
+        .parallel-divider {
+            width: 36px;
+            height: 1px;
+            background: linear-gradient(90deg, #0e7490, #7dd3fc);
+            margin: 0 auto 1.6rem;
+        }
+
+        /* Description paragraph */
+        .parallel-desc {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            color: rgba(230, 246, 255, 0.65);
+            line-height: 1.85;
+            margin-bottom: 10px;
+        }
+
+        /* Highlights list */
+        .parallel-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2.2rem;
+            text-align: left;
+            display: inline-block;
+        }
+
+        /* List item styling */
+        .parallel-list li {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 15px;
+            color: rgba(125,211,252,0.78);
+            padding: 5px 0 5px 18px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        /* Teal Star */
+        .parallel-list li::before {
+            content: '*';
+            position: absolute;
+            left: 0;
+            color: #49aec0;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* Our Mission and Goals title*/
+        .mission-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 65px;
+            font-weight: 300;
+            text-align: center;
+            color: rgba(255,255,255,.88);
+            margin-bottom: .5rem;
+            line-height: 1.15;
+        }
+        .mission-header {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .mission-title em { 
+            font-style: italic; 
+            color:#7dd3fc;
+            text-align: center; 
+        }
+
+        .mission-divider {
+            width: 36px;
+            height: 1px;
             background: linear-gradient(90deg, #0e7490, #7dd3fc);
             margin: 1rem auto 3rem;
         }
@@ -110,28 +592,27 @@
         </div>
 
     </div>
+    
+<!-- Mission and Goal Title Section -->
     <div class="mission-header">
+    <span class="section-eyebrow reveal">SDG 14 · Our Missions and Goals</span>
     <h2 class="mission-title reveal">Our Missions <em>and Goals</em></h2>
     <div class="mission-divider reveal"></div>
-</div>
+    </div>
 <!-- ── MISSION & GOAL CARDS ── -->
 <section class="parallel-section" id="mission-goals">
-
-    <!-- Mission and Goal Title Section -->
-
 
     <!-- Whale Warning Mission and Goal Card -->
     <div class="parallel-card goal-parallel">
 
         <img src="assets/contentCard_whaleWatching.png"
-            class="parallel-bg"
-            alt="Ocean noise pollution and whale communication conservation goals">
+             class="parallel-bg"
+             alt="Ocean noise pollution and whale communication conservation goals">
 
         <div class="parallel-overlay"></div>
 
         <div class="parallel-body">
 
-            <span class="parallel-eyebrow">SDG 14 · Our Missions and Goals</span>
             <h2><em>Silence Is Survival</em></h2>
             <div class="parallel-divider"></div>
 
@@ -160,7 +641,6 @@
 
         <div class="parallel-body">
 
-            <span class="parallel-eyebrow">SDG 14 · Our Missions and Goals</span>
             <h2><em>Lost Nets, Endless Damage</em></h2>
             <div class="parallel-divider"></div>
 
@@ -189,7 +669,6 @@
 
         <div class="parallel-body">
 
-            <span class="parallel-eyebrow">SDG 14 · Our Missions and Goals</span>
             <h2><em>Our Reefs Are Dying</em></h2>
             <div class="parallel-divider"></div>
 
@@ -218,7 +697,6 @@
 
         <div class="parallel-body">
 
-            <span class="parallel-eyebrow">SDG 14 · Our Missions and Goals</span>
             <h2><em>Healing the Ocean</em></h2>
             <div class="parallel-divider"></div>
 
@@ -294,6 +772,9 @@
         </div>
     </section>
 
+    <!--Back to top-->
+    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+    
 <!-- Footer -->
         <footer>
             <div class="footer-content">
