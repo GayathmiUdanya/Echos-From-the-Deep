@@ -151,7 +151,7 @@ button:hover{
 .details p:first-child{
     width:90px; /* fixed width for labels */
     font-weight:bold;
-    font-variant: uppercase;
+    text-transform: capitalize;
     color: #d0dce8;
 }   
 
