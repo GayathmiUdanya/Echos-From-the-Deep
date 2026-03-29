@@ -567,6 +567,25 @@
       width: 1px;
       background: rgba(255, 255, 255, 0.12);
     }
+    .pageup::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 41, 38, 0.808) 0%,
+        rgba(0, 41, 38, 0.55) 40%,
+        rgba(0, 41, 38, 0.0) 100%
+    );
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+body:has(#feed.impact-high) .pageup::before {
+    opacity: 1;
+}
 
   </style>
 </head>
