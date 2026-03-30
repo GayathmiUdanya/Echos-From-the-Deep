@@ -417,29 +417,10 @@
             overflow: hidden;
             border: 1px solid rgba(73, 174, 192, .15);
             cursor: default;
-            min-height: 200px;
+            min-height: 300px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity .6s ease, transform .6s ease, border-color .35s ease;
-            animation: cardReveal linear both;
-            animation-timeline: view();
-            animation-range: entry 0% entry 25%;
-        }
-
-
-        @keyframes cardReveal {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .card:hover {
@@ -447,19 +428,19 @@
             transform: translateY(-6px);
         }
 
+        /* Card Image */
         .card-img {
             position: absolute;
-            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: brightness(.32) saturate(.55);
-            transition: filter .5s ease, transform .6s ease;
+            filter: brightness(.32);
+            transition: 3s;
             z-index: 0;
         }
 
         .card:hover .card-img {
-            filter: brightness(.52) saturate(.95);
+            filter: brightness(.52);
             transform: scale(1.04);
         }
 
@@ -474,13 +455,10 @@
                     rgba(2, 10, 22, .72) 30%,
                     rgba(2, 10, 22, .97) 100%);
             z-index: 1;
-            transition: height .4s ease;
+            transition: 3s;
         }
 
-        .card:hover .card-glass {
-            height: 72%;
-        }
-
+        /* Card Content */
         .card-body {
             position: relative;
             z-index: 2;
@@ -502,6 +480,7 @@
             margin-bottom: 10px;
         }
 
+        /* Card Title and Description */
         .card-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.6rem;
@@ -513,13 +492,14 @@
         }
 
         .card-desc {
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 300;
             color: rgba(186, 230, 253, .58);
             line-height: 1.7;
             margin-bottom: 12px;
         }
 
+        /* Card Goals */
         .card-goals {
             list-style: none;
             display: flex;
@@ -528,7 +508,7 @@
         }
 
         .card-goals li {
-            font-size: 10px;
+            font-size: 12px;
             font-weight: 300;
             color: rgba(125, 211, 252, .65);
             padding-left: 16px;
@@ -536,7 +516,7 @@
             line-height: 1.5;
             opacity: 0;
             transform: translateX(-8px);
-            transition: opacity .3s ease, transform .3s ease;
+            transition: 1s;
         }
 
         .card:hover .card-goals li {
@@ -544,20 +524,8 @@
             transform: translateX(0);
         }
 
-        .card:hover .card-goals li:nth-child(1) {
-            transition-delay: .05s;
-        }
-
-        .card:hover .card-goals li:nth-child(2) {
-            transition-delay: .10s;
-        }
-
-        .card:hover .card-goals li:nth-child(3) {
-            transition-delay: .15s;
-        }
-
         .card-goals li::before {
-            content: '›';
+            content: '*';
             position: absolute;
             left: 0;
             color: #49aec0;
@@ -565,6 +533,7 @@
             line-height: 1.3;
         }
 
+        /* Card Number */
         .card-num {
             position: absolute;
             top: 16px;
@@ -581,6 +550,7 @@
         .card:hover .card-num {
             color: rgba(73, 174, 192, .22);
         }
+
     </style>
 </head>
 
@@ -653,9 +623,9 @@
         <!-- ── MISSION & GOAL CARDS ── -->
         <div class="grid" id="mission">
 
+            <!-- Card 1 -->
             <div class="card">
-                <img src="assets/contentCard_whaleWatching.png" class="card-img" alt=""
-                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <img src="assets/contentCard_whaleWatching.png" class="card-img" alt="Ocean noise pollution and whale communication conservation goals">
                 <div class="card-glass"></div>
                 <span class="card-num">01</span>
                 <div class="card-body">
@@ -665,16 +635,16 @@
                         sound to survive. The ocean is becoming louder, disrupting ancient communication, navigation,
                         and hunting.</p>
                     <ul class="card-goals">
-                        <li>Promote slower, quieter shipping in marine habitats</li>
-                        <li>Raise awareness about ocean noise pollution</li>
-                        <li>Support actions that protect marine ecosystems</li>
+                        <li>Promote slower, quieter shipping in marine habitats.</li>
+                        <li>Raise awareness about ocean noise pollution.</li>
+                        <li>Support actions that protect marine ecosystems.</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Card 2 -->
             <div class="card">
-                <img src="assets/contentCard_ghostNets.png" class="card-img" alt=""
-                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <img src="assets/contentCard_ghostNets.png" class="card-img" alt="Ghost fishing nets and marine debris conservation goals">
                 <div class="card-glass"></div>
                 <span class="card-num">02</span>
                 <div class="card-body">
@@ -691,9 +661,9 @@
                 </div>
             </div>
 
+            <!-- Card 3 -->
             <div class="card">
-                <img src="assets/contentCard_bleachedReefs.png" class="card-img" alt=""
-                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <img src="assets/contentCard_bleachedReefs.png" class="card-img" alt="Coral reef bleaching and restoration conservation goals">
                 <div class="card-glass"></div>
                 <span class="card-num">03</span>
                 <div class="card-body">
@@ -710,9 +680,9 @@
                 </div>
             </div>
 
+            <!-- Card 4 -->
             <div class="card">
-                <img src="assets/contentCard_hope.png" class="card-img" alt=""
-                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <img src="assets/contentCard_hope.png" class="card-img" alt="Hope for marine conservation">
                 <div class="card-glass"></div>
                 <span class="card-num">04</span>
                 <div class="card-body">
