@@ -22,27 +22,30 @@
     --font-serif: 'Playfair Display', serif;
 }
 
+/* Scroll progress bar - fixed at the top of the page */
 #scroller {
     position: fixed;
     top: 0;
     left: 0;
     height: 2px;
-    width: 0%;
+    width: 0%; /* STarts empty and grows with JS */
     background: linear-gradient(90deg, #0e7490, #7dd3fc);
-    z-index: 1000;
-    pointer-events: none;
+    z-index: 1000; /* Sits above everything */
+    pointer-events: none; /* Cant be clicked */ 
     box-shadow: 0 0 8px rgba(125, 211, 252, .5);
     transition: width .1s linear;
 }
 
+/* Base styles for html and body */
 html, 
 body {
     height: 100%;
-    font-family: var(--font-body) !important;
-    color: var(--white);
-    padding-top: 50px;
+    font-family: var(--font-body) !important; /* Force body font throughout */
+    color: var(--white); /* default text colour */
+    padding-top: 50px; /*   Space for fixed navbar */
 }
 
+/* Smooth scrolling for anchor links */
 html {
     scroll-behavior: smooth;
 }
@@ -54,16 +57,18 @@ html {
     gap: 12px;
 }
 
+/* Circular teal logo icon */ 
 .logo-circle {
     width: 36px;
     height: 36px;
-    border-radius: 50%;
+    border-radius: 50%; /* Makes the icon a cirlce */
     border: 2px solid var(--teal);
-    background: radial-gradient(circle at 40% 40%, var(--teal), transparent 70%);
+    background: radial-gradient(circle at 40% 40%, var(--teal), transparent 70%); /* Glowing center effect */
     opacity: 0.85;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Wont shrink in flex layout */
 }
 
+/* Logo heading */ 
 .logo-text h1 {
     font-size: 0.85rem;
     font-weight: 600;
@@ -72,22 +77,23 @@ html {
     line-height: 1.2;
 }
 
+/* Logo tagline */
 .logo-text p {
     font-size: 9px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     opacity: 0.7;
-    margin-top: 2px;
+    margin-top: 2px; /* To create a gap from the heading */
 }
 
 /* Instead of styling the header, the class nav is styled */
 /* Navigation */
 nav {
-    position: fixed;
+    position: fixed; /* Stays at the top while scrolling */
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 100; /* Sits above the page content */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -99,12 +105,14 @@ nav {
     border-bottom: 1px solid var(--white-10);
 }
 
+/* Navigation links */ 
 .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+    display: flex; /* Displays the links horizontally */
+    align-items: center; 
+    gap: 4px; /* Leaves a gap between each link */
 }
 
+/* Navigation - Individual nav link styling */
 .nav-links a {
     text-decoration: none;
     color: var(--white);
@@ -115,19 +123,22 @@ nav {
     padding: 7px 14px;
     border-radius: 5px;
     opacity: 0.7;
-    transition: opacity 0.2s, background 0.2s;
+    transition: opacity 0.2s, background 0.2s; /* Smooth hover effect */
 }
 
+/* Navigation - On hover effect */
 .nav-links a:hover {
-    opacity: 1;
-    background: var(--white-10);
+    opacity: 1; /* Full brightness on hover */
+    background: var(--white-10); /* Slight highlight */
 }
 
+/* Active/current page link */
 .nav-links a.active {
     opacity: 1;
     background: var(--white-20);
 }
 
+/* Mobile layout - For screens 768px and below */
 @media (max-width: 768px) {
 
     nav {
@@ -143,12 +154,13 @@ nav {
     }
 
     .nav-links a {
-        font-size: 9px;
+        font-size: 9px; 
         padding: 6px 10px;
     }
 
 }
 
+/* Small uppercase labels */
 .eyebrow,
 .sdg,
 .sdg-badge {
@@ -160,17 +172,20 @@ nav {
     opacity: 0.8;
 }
 
+/* SDG label */
 .sdg {
     margin-bottom: 0.75rem;
     display: block;
 }
 
+/* SDG badge */
 .sdg-badge {
     color: rgba(125, 211, 252, 0.55);
     opacity: 1;
     text-align: center;
 }
 
+/* Decorativee depth bands */ 
 .depth-bands {
     position: absolute;
     inset: 0;
@@ -214,6 +229,7 @@ nav {
     bottom: 23.5%;
 }
 
+/* Loader container */
 .loader-wrap {
     display: flex;
     flex-direction: column;
@@ -228,6 +244,7 @@ nav {
     opacity: 1;
 }
 
+/* LOader ring container */
 .loader-ring {
     position: relative;
     width: 50px;
@@ -314,7 +331,7 @@ a.back-to-top:hover {
     transform: translateY(-5px);
 }
 
-/* FOOTER STYLES */
+/* Footer */
 footer {
     backdrop-filter: blur(14px);
     border-top: 1px solid var(--white-10);
@@ -329,6 +346,7 @@ footer {
     z-index: 20;
 }
 
+/* Footer content */
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -339,27 +357,31 @@ footer {
     gap: 20px;
 }
 
+/* Footer links */
 .footer-links {
     display: flex;
     gap: 20px;
 }
 
+/* Individual footer links */
 .footer-links a {
     color: var(--teal);
     text-decoration: none;
     transition: color 0.2s;
 }
 
+/* Individual footer links - On hover*/
 .footer-links a:hover {
     color: var(--white);
 }
 
+/* Footer - Student details */
 .student-details {
     text-align: right;
     line-height: 1.6;
 }
 
-/* Footer Media Query */
+/* Footer layout for smaller screens */
 @media (max-width: 768px) {
 
     footer {
@@ -386,6 +408,7 @@ footer {
 
 }
 
+/* Hero Section */
 /* Page heading part */
 .pageup {
     background: var(--abyss);
@@ -397,24 +420,28 @@ footer {
     padding-bottom: 3rem;
 }
 
+/* Keeps content above background img */
 .upcontent {
     position: relative;
     z-index: 1;
 }
 
+/* Page container */
 .container {
     width: 100%;
     max-width: 1160px;
-    margin: 0 auto;
+    margin: 0 auto; /* Horizontally centered */
     padding: 0 clamp(1rem, 4vw, 2.5rem);
 }
 
+/* Hero heading */
 .uptittle{
-font-family:  'Montserrat', sans-serif !important;
-font-weight: bold;
-color: rgba(255, 255, 255, 0.9);
+    font-family:  'Montserrat', sans-serif !important;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.9);
 }
 
+/* Hero mini heading */
 .updescription {
     font-family: 'Cinzel', 'serif'!important;
     font-size: clamp(0.48rem, 0.9vw, 0.68rem);
@@ -424,6 +451,7 @@ color: rgba(255, 255, 255, 0.9);
     opacity: 0.8;
 }
 
+/* Hero tagline */
 .text-serif {
     font-family: 'Cormorant Garamond', 'serif'!important;
     font-size: 1.15rem !important;
@@ -432,6 +460,7 @@ color: rgba(255, 255, 255, 0.9);
     max-width:520px !important;
 }
 
+/* Divider line */
 .updevider{
 width: 40px;
 height: 2px;
@@ -440,7 +469,7 @@ border-radius: 2px;
 margin: 0.75rem 0;
 }
 
-/* ── Ref Box ── */ 
+/* Reference Box */ 
 /* Page Editors and Content Pages */
 .refferancee {
     background: rgba(2, 12, 22, .5);
