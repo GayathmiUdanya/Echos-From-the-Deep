@@ -277,6 +277,8 @@ ul.top-level-ul ul li a {
     padding: 0.3rem 0.8rem;
     border-radius: 7px;
     border-left: 2px solid transparent;
+    text-transform: none;
+    letter-spacing: normal;
 }
 
 ul.top-level-ul ul li a:hover {
