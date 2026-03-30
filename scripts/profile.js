@@ -70,7 +70,6 @@ function renderSampleData() {
         const card = document.createElement("div");
         card.classList.add("sample-data");
 
-
         // Insert HTML content into the card using template literals
         card.innerHTML = `
             <img src="${profile.photo}" alt="${profile.name}" class="profile-photo">

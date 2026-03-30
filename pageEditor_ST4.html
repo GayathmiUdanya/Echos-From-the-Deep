@@ -407,33 +407,31 @@
             <section>
                 <h2 id="compliance">Compliance</h2>
                     <ul>
-                        <li>All pages include a valid <!DOCTYPE html> declaration and lang attribute, ensuring properly structured HTML5 documents.</li>
-                        
-                        <li>Both pages were validated using the W3C HTML Validator to check for structural errors, unclosed tags, and incorrect nesting.</li>
-                        
-                        <li>CSS was validated using the W3C CSS Validator to confirm no invalid properties or syntax errors exist.</li>
-                        
-                        <li>Images include alt attributes and interactive elements use semantic tags, meeting basic accessibility requirements.</li>
-                        
-                        <li>All images are generated using Google Gemini and Google Fonts are loaded via their official API under open licence, ensuring no copyright violations.</li>
-                        
-                        <li>External resources load over HTTPS, complying with secure resource loading requirements.</li>
-                        
-                        <li>No personal data is stored beyond the current session, aligning with data minimisation principles.</li>
-                        
-                        <li>Pages contain no offensive, discriminatory, or misleading content, complying with Janet's acceptable use standards.</li>
-                        
-                        <li>Responsive design ensures pages are accessible across a range of devices and screen sizes.</li>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> and <code>lang="en"</code> are included on both pages, ensuring proper HTML5 structure and correct interpretation by browsers and screen readers.</li>
+
+                        <li><code>W3C HTML Validator</code> was used to check both pages for structural errors, missing tags, and incorrect nesting before submission.</li>
+
+                        <li><code>W3C CSS Validator</code> was used to validate <code>style.css</code>, <code>feedback.css</code>, and <code>team.css</code>, ensuring no invalid properties or syntax errors.</li>
+
+                        <li><code>alt attributes</code> are applied to all images, and semantic HTML elements are used for buttons, links, and inputs to meet accessibility standards.</li>
+
+                        <li><code>Google Gemini</code> was used to generate images, and <code>Google Fonts</code> are loaded via their official API under an open licence, avoiding copyright issues.</li>
+
+                        <li><code>HTTPS</code> is used for all external resources, ensuring secure loading and preventing mixed content warnings.</li>
+
+                        <li><code>No data storage</code> is implemented in the feedback form, aligning with data minimisation principles as no user input is saved or transmitted.</li>
+
+                        <li><code>novalidate</code> ensures all validation is handled client-side with JavaScript, meaning no data is sent to external systems.</li>
+
+                        <li><code>Appropriate content</code> is maintained across both pages, with no offensive or misleading material, complying with acceptable use standards.</li>
+
+                        <li><code>Responsive design</code> is implemented using <code>flex-wrap: wrap</code> on the team page and <code>max-width</code> with <code>margin: auto</code> on the feedback page to ensure usability across devices.</li>
                     </ul> 
                     
             </section>
 
             <section>
                 <h2 id="group">Group Meetings and Individual Contribution Log</h2>
-
-                <ul>
-                    <li>The individual contributions are presented in a generic format and they only reflect the general nature of the discussions held during the meeting.</li>
-                </ul>
 
                 <table>
                     <thead>
@@ -446,7 +444,7 @@
                             <th>Format</th>
                             <th>Objective</th>
                             <th>Attended</th>
-                            <th>Your Individual Contribution</th>
+                            <th>Individual Contribution</th>
                         </tr>
                     </thead>
                     <tbody>
