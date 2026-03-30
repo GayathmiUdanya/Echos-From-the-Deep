@@ -8,6 +8,10 @@ message.addEventListener("input",()=>{
     charCount.textContent = remaining + " Characters Remaining"; // Updates the remaining characters available to be entered 
 });
 
+document.querySelector('button[type="reset"]').addEventListener("click", () => {
+    charCount.textContent = "300 Characters Remaining";
+});
+
 // Form validation and Confirmation message
 const form = document.getElementById("feedbackForm"); // Grabs the from element 
 
