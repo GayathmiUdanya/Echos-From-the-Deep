@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Echoes From The Deep</title>
 
     <!--Fonts-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap">
-    
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap">
+
     <!-- Global CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <!-- Page specific CSS -->
     <link rel="stylesheet" href="styles/home.css">
 
-     <!-- Browser Tab - Icon -->
+    <!-- Browser Tab - Icon -->
     <link rel="icon" type="image/png" href="assets/Logoo.png">
 
     <style>
-
         /* Background Image Styling */
         .scene_bg {
             position: fixed;
@@ -31,19 +32,22 @@
             z-index: 0;
             opacity: 1;
         }
+
         .scene_overlay {
             position: fixed;
             inset: 0;
             z-index: 1;
             pointer-events: none;
-            background: linear-gradient(180deg, rgba(2,8,20,.5) 0%, rgba(2,13,28,.35) 50%, rgba(2,8,20,.75) 100%);
+            background: linear-gradient(180deg, rgba(2, 8, 20, .5) 0%, rgba(2, 13, 28, .35) 50%, rgba(2, 8, 20, .75) 100%);
         }
 
         /* Hero Section */
         .hero-content {
-            position: relative; z-index: 10;
+            position: relative;
+            z-index: 10;
             min-height: 70vh;
-            display: flex; flex-direction: column;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
             padding: 2px 10% 80px;
             overflow: hidden;
@@ -52,9 +56,12 @@
         .sdg-label {
             font-family: 'Cinzel', serif;
             font-size: clamp(.48rem, .9vw, .65rem);
-            letter-spacing: .42em; text-transform: uppercase;
-            color: #49aec0; opacity: .72;
-            margin-bottom: 1.6rem; display: block;
+            letter-spacing: .42em;
+            text-transform: uppercase;
+            color: #49aec0;
+            opacity: .72;
+            margin-bottom: 1.6rem;
+            display: block;
             margin-top: 20px;
         }
 
@@ -62,21 +69,26 @@
         .title {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(3.5rem, 9vw, 8rem);
-            font-weight: 300; line-height: 1.02;
-            color: rgba(255,255,255,.92);
+            font-weight: 300;
+            line-height: 1.02;
+            color: rgba(255, 255, 255, .92);
             margin-bottom: 1.6rem;
         }
 
         .title em {
-            font-style: italic; color: #7dd3fc;; display: block;
+            font-style: italic;
+            color: #7dd3fc;
+            ;
+            display: block;
         }
 
         .description {
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             font-size: clamp(1rem, 1.8vw, 1.45rem);
-            color: rgba(186,230,253,.65);
-            max-width: 620px; line-height: 1.78;
+            color: rgba(186, 230, 253, .65);
+            max-width: 620px;
+            line-height: 1.78;
             margin-bottom: 2.8rem;
         }
 
@@ -114,12 +126,13 @@
 
         .btn-outline {
             border: 1px solid rgba(255, 255, 255, 0.6);
-            color:  #ffffff;
+            color: #ffffff;
             background: transparent;
         }
 
         .btn-outline:hover {
-            background: rgba(255, 255, 255, 0.1);;
+            background: rgba(255, 255, 255, 0.1);
+            ;
             border-color: #ffffff;
             transform: translateY(-2px);
         }
@@ -151,8 +164,15 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0);   }
-            50%       { transform: translateX(-50%) translateY(6px); }
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(6px);
+            }
         }
 
         /* ── CARDS SECTION ── */
@@ -171,27 +191,34 @@
         .section-eyebrow {
             font-family: 'Cinzel', serif;
             font-size: clamp(.45rem, .85vw, .62rem);
-            letter-spacing: .42em; text-transform: uppercase;
-            color: #49aec0; opacity: .7;
-            margin-bottom: .8rem; display: block; text-align: center;
+            letter-spacing: .42em;
+            text-transform: uppercase;
+            color: #49aec0;
+            opacity: .7;
+            margin-bottom: .8rem;
+            display: block;
+            text-align: center;
         }
 
         /* Keep Listening */
         .section-title {
             font-family: 'Cormorant Garamond', serif;
             font-size: 60px;
-            font-weight: 300; text-align: center;
-            color: rgba(255,255,255,.88);
-            margin-bottom: .5rem; line-height: 1.15;
+            font-weight: 300;
+            text-align: center;
+            color: rgba(255, 255, 255, .88);
+            margin-bottom: .5rem;
+            line-height: 1.15;
         }
 
-        .section-title em { 
-            font-style: italic; 
-            color: #7dd3fc; 
+        .section-title em {
+            font-style: italic;
+            color: #7dd3fc;
         }
 
         .section-divider {
-            width: 36px; height: 1px;
+            width: 36px;
+            height: 1px;
             background: linear-gradient(90deg, #0e7490, #7dd3fc);
             margin: 1rem auto 3rem;
         }
@@ -216,7 +243,7 @@
             cursor: pointer;
 
             transition:
-                flex .45s cubic-bezier(.4,0,.2,1),
+                flex .45s cubic-bezier(.4, 0, .2, 1),
                 opacity .35s ease,
                 transform .4s ease,
                 box-shadow .4s ease;
@@ -224,7 +251,7 @@
             opacity: .72;
             text-decoration: none;
             display: block;
-            border: 1px solid rgba(125,211,252,.08);
+            border: 1px solid rgba(125, 211, 252, .08);
         }
 
         /* hover Expansion */
@@ -236,8 +263,8 @@
             transform: translateY(-6px);
 
             box-shadow:
-                0 20px 60px rgba(0,0,0,.55),
-                0 0 0 1px rgba(125,211,252,.18);
+                0 20px 60px rgba(0, 0, 0, .55),
+                0 0 0 1px rgba(125, 211, 252, .18);
         }
 
         /* Image */
@@ -261,12 +288,10 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                to top,
-                rgba(2,8,20,.95) 0%,
-                rgba(2,8,20,.45) 45%,
-                transparent 100%
-            );
+            background: linear-gradient(to top,
+                    rgba(2, 8, 20, .95) 0%,
+                    rgba(2, 8, 20, .45) 45%,
+                    transparent 100%);
             z-index: 1;
         }
 
@@ -282,7 +307,7 @@
             font-size: .7rem;
             letter-spacing: .22em;
             text-transform: uppercase;
-            color: rgba(186,230,253,.8);
+            color: rgba(186, 230, 253, .8);
             font-weight: 400;
             transition:
                 transform .4s ease,
@@ -332,7 +357,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem;
             font-weight: 300;
-            color: rgba(255,255,255,.92);
+            color: rgba(255, 255, 255, .92);
             line-height: 1.2;
             margin-bottom: .5rem;
         }
@@ -341,61 +366,88 @@
             font-family: 'DM Sans', sans-serif;
             font-size: .75rem;
             font-weight: 300;
-            color: rgba(186,230,253,.58);
+            color: rgba(186, 230, 253, .58);
             line-height: 1.7;
         }
 
-       /* ── Blurred background collage ── */
-        .bg-canvas {
-            position: fixed;
-            inset: 0;
-            z-index: 0;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            opacity: .14;
-            pointer-events: none;
-        }
-        .bg-canvas img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(.55);
+        /* Our Mission and Goals title*/
+        .mission-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 65px;
+            font-weight: 300;
+            text-align: center;
+            color: rgba(255, 255, 255, .88);
+            margin-bottom: .5rem;
+            line-height: 1.15;
         }
 
-        /* ── Grid wrapper ── */
-        .gg-grid {
+        .mission-header {
             position: relative;
             z-index: 10;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 1020px;
-            margin: 0 auto;
-            padding: 0 40px 100px;
+            text-align: center;
+            padding-top: 100px;
         }
 
-        /* ── Individual card ── */
-        .gg-card {
+        .mission-title em {
+            font-style: italic;
+            color: #7dd3fc;
+            text-align: center;
+        }
+
+        .mission-divider {
+            width: 36px;
+            height: 1px;
+            background: linear-gradient(90deg, #0e7490, #7dd3fc);
+            margin: 1rem auto 3rem;
+        }
+
+        /* ── MISSION & GOAL GRID ── */
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .card {
             position: relative;
-            border-radius: 20px;
+            border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(73, 174, 192, .14);
+            border: 1px solid rgba(73, 174, 192, .15);
             cursor: default;
-            min-height: 360px;
+            min-height: 200px;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            transition: border-color .35s ease, transform .4s ease;
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .6s ease, transform .6s ease, border-color .35s ease;
+            animation: cardReveal linear both;
+            animation-timeline: view();
+            animation-range: entry 0% entry 25%;
         }
 
-        .gg-card:hover {
+
+        @keyframes cardReveal {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card:hover {
             border-color: rgba(73, 174, 192, .45);
             transform: translateY(-6px);
         }
 
-        /* ── Background photo ── */
-        .gg-img {
+        .card-img {
             position: absolute;
             inset: 0;
             width: 100%;
@@ -405,139 +457,106 @@
             transition: filter .5s ease, transform .6s ease;
             z-index: 0;
         }
-        .gg-card:hover .gg-img {
+
+        .card:hover .card-img {
             filter: brightness(.52) saturate(.95);
             transform: scale(1.04);
         }
 
-        /* ── Bottom glass gradient ── */
-        .gg-glass {
+        .card-glass {
             position: absolute;
-            bottom: 0; left: 0; right: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             height: 65%;
-            background: linear-gradient(
-                180deg,
-                rgba(2, 10, 22, 0)    0%,
-                rgba(2, 10, 22, .72)  30%,
-                rgba(2, 10, 22, .97)  100%
-            );
+            background: linear-gradient(180deg,
+                    rgba(2, 10, 22, 0) 0%,
+                    rgba(2, 10, 22, .72) 30%,
+                    rgba(2, 10, 22, .97) 100%);
             z-index: 1;
             transition: height .4s ease;
         }
-        .gg-card:hover .gg-glass {
-            height: 78%;
+
+        .card:hover .card-glass {
+            height: 72%;
         }
 
-        /* ── Ghost number ── */
-        .gg-num {
-            position: absolute;
-            top: 18px; right: 20px;
-            z-index: 3;
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 4rem;
-            font-weight: 300;
-            color: rgba(73, 174, 192, .1);
-            line-height: 1;
-            transition: color .4s ease;
-            pointer-events: none;
-            user-select: none;
-        }
-        .gg-card:hover .gg-num {
-            color: rgba(73, 174, 192, .26);
-        }
-
-        /* ── Text body ── */
-        .gg-body {
+        .card-body {
             position: relative;
             z-index: 2;
-            padding: 26px 26px 30px;
+            padding: 20px 22px 22px;
         }
 
-        /* Tag pill */
-        .gg-tag {
+        .card-tag {
             font-family: 'Cinzel', serif;
             font-size: 8px;
             letter-spacing: .35em;
             text-transform: uppercase;
             color: #49aec0;
-            opacity: .85;
+            opacity: .82;
             display: inline-block;
             background: rgba(73, 174, 192, .08);
-            border: 1px solid rgba(73, 174, 192, .22);
+            border: 1px solid rgba(73, 174, 192, .2);
             border-radius: 20px;
             padding: 4px 12px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        /* Italic teal headline */
-        .gg-title {
+        .card-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.85rem;
+            font-size: 1.6rem;
             font-style: italic;
             font-weight: 300;
             color: #7dd3fc;
             line-height: 1.1;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        /* Thin divider */
-        .gg-sep {
-            width: 28px;
-            height: 1px;
-            background: rgba(73, 174, 192, .3);
-            margin-bottom: 12px;
-        }
-
-        /* Description */
-        .gg-desc {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 12.5px;
+        .card-desc {
+            font-size: 11px;
             font-weight: 300;
             color: rgba(186, 230, 253, .58);
-            line-height: 1.78;
-            margin-bottom: 14px;
+            line-height: 1.7;
+            margin-bottom: 12px;
         }
 
-        /* Goal list — always visible, no JS needed */
-        .gg-goals {
+        .card-goals {
             list-style: none;
-            padding: 0;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 4px;
         }
-        .gg-goals li {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 11.5px;
+
+        .card-goals li {
+            font-size: 10px;
             font-weight: 300;
-            color: rgba(125, 211, 252, .55);
+            color: rgba(125, 211, 252, .65);
             padding-left: 16px;
             position: relative;
             line-height: 1.5;
-            /* Slide-in on hover — pure CSS transition from opacity 0 */
             opacity: 0;
             transform: translateX(-8px);
             transition: opacity .3s ease, transform .3s ease;
         }
 
-        /* Staggered reveal via sibling selectors */
-        .gg-card:hover .gg-goals li:nth-child(1) {
+        .card:hover .card-goals li {
             opacity: 1;
             transform: translateX(0);
-            transition-delay: .04s;
-        }
-        .gg-card:hover .gg-goals li:nth-child(2) {
-            opacity: 1;
-            transform: translateX(0);
-            transition-delay: .10s;
-        }
-        .gg-card:hover .gg-goals li:nth-child(3) {
-            opacity: 1;
-            transform: translateX(0);
-            transition-delay: .16s;
         }
 
-        .gg-goals li::before {
+        .card:hover .card-goals li:nth-child(1) {
+            transition-delay: .05s;
+        }
+
+        .card:hover .card-goals li:nth-child(2) {
+            transition-delay: .10s;
+        }
+
+        .card:hover .card-goals li:nth-child(3) {
+            transition-delay: .15s;
+        }
+
+        .card-goals li::before {
             content: '›';
             position: absolute;
             left: 0;
@@ -546,32 +565,22 @@
             line-height: 1.3;
         }
 
-        /* ── Responsive ── */
-        @media (max-width: 720px) {
-            .gg-grid {
-                grid-template-columns: 1fr;
-                padding: 0 20px 80px;
-            }
-            .gg-title {
-                font-size: 1.55rem;
-            }
-            /* On mobile, always show goals since hover doesn't exist */
-            .gg-goals li {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .card-num {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            z-index: 3;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            font-weight: 300;
+            color: rgba(73, 174, 192, .1);
+            line-height: 1;
+            transition: color .4s;
         }
 
-        @media (max-width: 480px) {
-            .gg-body {
-                padding: 20px 18px 22px;
-            }
-            .gg-num {
-                font-size: 2.8rem;
-            }
+        .card:hover .card-num {
+            color: rgba(73, 174, 192, .22);
         }
-        
-
     </style>
 </head>
 
@@ -583,9 +592,10 @@
         <div class="sonar" id="s3"></div>
     </div>
     <!-- Background Image -->
-    <img src="assets/hero.jpeg" class="scene_bg" alt="Background image of the ocean" onerror="this.style.display='none'">
+    <img src="assets/hero.jpeg" class="scene_bg" alt="Background image of the Ocean"
+        onerror="this.style.display='none'">
     <div class="scene_overlay"></div>
-    
+
     <header>
         <!-- Navigation -->
         <nav>
@@ -607,7 +617,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main>
         <!-- Hero Section -->
         <div class="hero-content">
@@ -633,179 +643,173 @@
             Scroll
             <span class="arrow">↓</span>
         </div>
-    
-<!-- ── BACKGROUND IMAGES ── -->
-<div class="bg-canvas" aria-hidden="true">
-    <img src="assets/contentCard_whaleWatching.png" alt="Ocean noise pollution and whale communication conservation goals">
-    <img src="assets/contentCard_ghostNets.png"     alt="Ghost fishing nets and marine debris conservation goals">
-    <img src="assets/contentCard_bleachedReefs.png" alt="Coral reef bleaching and restoration conservation goals">
-    <img src="assets/contentCard_hope.png"          alt="Hope for marine conservation">
-</div>
 
-<!-- ── SECTION HEADER ── -->
-<div class="mission-header">
-    <span class="section-eyebrow">SDG 14 · Our Missions and Goals</span>
-    <h2 class="mission-title">Our Missions <em>and Goals</em></h2>
-    <div class="mission-divider"></div>
-</div>
-
-<!-- ── GLASS GRID ── -->
-<section class="gg-grid" id="mission-goals">
-
-    <div class="gg-card">
-        <img src="assets/contentCard_whaleWatching.png" class="gg-img" alt="Ocean noise pollution and whale conservation">
-        <div class="gg-glass"></div>
-        <span class="gg-num">01</span>
-        <div class="gg-body">
-            <span class="gg-tag">Noise Pollution</span>
-            <h3 class="gg-title">Silence Is Survival</h3>
-            <div class="gg-sep"></div>
-            <p class="gg-desc">
-                Our mission is to reduce ocean noise pollution and protect whales that rely on
-                sound to survive. The ocean is becoming louder, disrupting ancient communication,
-                navigation, and the hunt for food.
-            </p>
-            <ul class="gg-goals">
-                <li>Promote slower, quieter shipping in marine habitats</li>
-                <li>Raise awareness about ocean noise pollution</li>
-                <li>Support actions that protect marine ecosystems</li>
-            </ul>
+        <!-- Mission and Goal Title Section -->
+        <div class="mission-header">
+            <span class="section-eyebrow reveal">SDG 14 · Our Missions and Goals</span>
+            <h2 class="mission-title reveal">Our Missions <em>and Goals</em></h2>
+            <div class="mission-divider reveal"></div>
         </div>
-    </div>
+        <!-- ── MISSION & GOAL CARDS ── -->
+        <div class="grid" id="mission">
 
-    <div class="gg-card">
-        <img src="assets/contentCard_ghostNets.png" class="gg-img" alt="Ghost fishing nets and marine debris">
-        <div class="gg-glass"></div>
-        <span class="gg-num">02</span>
-        <div class="gg-body">
-            <span class="gg-tag">Marine Debris</span>
-            <h3 class="gg-title">Lost Nets, Endless Damage</h3>
-            <div class="gg-sep"></div>
-            <p class="gg-desc">
-                Our mission is to stop ghost nets from their silent destruction. Abandoned fishing
-                nets trap and kill marine life long after they are lost, drifting unseen for
-                decades through the deep.
-            </p>
-            <ul class="gg-goals">
-                <li>Support the use of biodegradable fishing gear</li>
-                <li>Encourage ocean clean-up efforts</li>
-                <li>Raise awareness about ghost net pollution</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="gg-card">
-        <img src="assets/contentCard_bleachedReefs.png" class="gg-img" alt="Coral reef bleaching and restoration">
-        <div class="gg-glass"></div>
-        <span class="gg-num">03</span>
-        <div class="gg-body">
-            <span class="gg-tag">Reef Crisis</span>
-            <h3 class="gg-title">Our Reefs Are Dying</h3>
-            <div class="gg-sep"></div>
-            <p class="gg-desc">
-                Our mission is to protect coral reefs from bleaching and restore the life they
-                support. Rising temperatures are destroying these underwater cities, threatening
-                biodiversity and coastal communities.
-            </p>
-            <ul class="gg-goals">
-                <li>Reduce activities that contribute to climate change</li>
-                <li>Support reef conservation and restoration projects</li>
-                <li>Spread awareness about coral bleaching and ocean health</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="gg-card">
-        <img src="assets/contentCard_hope.png" class="gg-img" alt="Ocean recovery and hope for the future">
-        <div class="gg-glass"></div>
-        <span class="gg-num">04</span>
-        <div class="gg-body">
-            <span class="gg-tag">Recovery</span>
-            <h3 class="gg-title">Healing the Ocean</h3>
-            <div class="gg-sep"></div>
-            <p class="gg-desc">
-                Our mission is to support ocean recovery by protecting marine ecosystems and
-                encouraging global action. The ocean has the power to heal — but only if we give
-                it the chance it deserves.
-            </p>
-            <ul class="gg-goals">
-                <li>Support marine protected areas (30×30 goal)</li>
-                <li>Reduce harmful human impact on oceans</li>
-                <li>Promote awareness and action for ocean recovery</li>
-            </ul>
-        </div>
-    </div>
-
-</section>
-
-<!-- Content Card Section -->
-    <section class="cards-section" id="stories">
-
-        <span class="section-eyebrow reveal">Four Stories · One Ocean</span>
-        <h2 class="section-title reveal">Keep <em>Listening</em></h2>
-        <div class="section-divider reveal"></div>
-
-        <div class="cards-row reveal">
-
-            <!-- Card 1 -->
-            <a href="content_ST4.html" class="peek-card">
-                <img src="assets/contentCard_whaleWatching.png" alt="Image of whales warning">
-                <span class="peek-label">Whales Warning</span>
-                <div class="peek-body">
-                    <span class="peek-act">Act I</span>
-                    <h3>A World Drowning in Noise</h3>
-                    <p>Ocean noise pollution disrupts the ancient communication of whales, pushing species to the edge of silence.</p>
+            <div class="card">
+                <img src="assets/contentCard_whaleWatching.png" class="card-img" alt=""
+                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <div class="card-glass"></div>
+                <span class="card-num">01</span>
+                <div class="card-body">
+                    <span class="card-tag">Noise Pollution</span>
+                    <h3 class="card-title">Silence Is Survival</h3>
+                    <p class="card-desc">Our mission is to reduce ocean noise pollution and protect whales that rely on
+                        sound to survive. The ocean is becoming louder, disrupting ancient communication, navigation,
+                        and hunting.</p>
+                    <ul class="card-goals">
+                        <li>Promote slower, quieter shipping in marine habitats</li>
+                        <li>Raise awareness about ocean noise pollution</li>
+                        <li>Support actions that protect marine ecosystems</li>
+                    </ul>
                 </div>
-            </a>
+            </div>
 
-            <!-- Card 2 -->
-            <a href="content_ST1.html" class="peek-card">
-                <img src="assets/contentCard_ghostNets.png" alt="Image of ghost nets">
-                <span class="peek-label">Ghost Nets</span>
-                <div class="peek-body">
-                    <span class="peek-act">Act II</span>
-                    <h3>The Silent Hunters of the Deep</h3>
-                    <p>Abandoned fishing nets drift endlessly, trapping marine life for decades in invisible, deadly embrace.</p>
+            <div class="card">
+                <img src="assets/contentCard_ghostNets.png" class="card-img" alt=""
+                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <div class="card-glass"></div>
+                <span class="card-num">02</span>
+                <div class="card-body">
+                    <span class="card-tag">Marine Debris</span>
+                    <h3 class="card-title">Lost Nets, Endless Damage</h3>
+                    <p class="card-desc">Our mission is to stop ghost nets from their silent destruction. Abandoned
+                        fishing nets trap and kill marine life long after they are lost, drifting for decades unseen.
+                    </p>
+                    <ul class="card-goals">
+                        <li>Support the use of biodegradable fishing gear</li>
+                        <li>Encourage ocean clean-up efforts</li>
+                        <li>Raise awareness about ghost net pollution</li>
+                    </ul>
                 </div>
-            </a>
+            </div>
 
-            <!-- Card 3 -->
-            <a href="content_ST3.html" class="peek-card">
-                <img src="assets/contentCard_bleachedReefs.png" alt="Image of bleached reefs">
-                <span class="peek-label">Bleached Reefs</span>
-                <div class="peek-body">
-                    <span class="peek-act">Act III</span>
-                    <h3>The Fading Cities of the Sea</h3>
-                    <p>Rising temperatures drain coral reefs of colour and life — once-vivid cities now stand pale beneath warming waters.</p>
+            <div class="card">
+                <img src="assets/contentCard_bleachedReefs.png" class="card-img" alt=""
+                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <div class="card-glass"></div>
+                <span class="card-num">03</span>
+                <div class="card-body">
+                    <span class="card-tag">Reef Crisis</span>
+                    <h3 class="card-title">Our Reefs Are Dying</h3>
+                    <p class="card-desc">Our mission is to protect coral reefs from bleaching and restore the life they
+                        support. Rising temperatures are destroying these underwater cities, threatening biodiversity
+                        and coastal communities.</p>
+                    <ul class="card-goals">
+                        <li>Reduce activities that contribute to climate change</li>
+                        <li>Support reef conservation and restoration projects</li>
+                        <li>Spread awareness about coral bleaching and ocean health</li>
+                    </ul>
                 </div>
-            </a>
+            </div>
 
-            <!-- Card 4 -->
-            <a href="content_ST2.html" class="peek-card">
-                <img src="assets/contentCard_hope.png" alt="Image of the ocean healing">
-                <span class="peek-label">Echo of Hope</span>
-                <div class="peek-body">
-                    <span class="peek-act">Act IV</span>
-                    <h3>The Echo of Hope</h3>
-                    <p>Communities and conservationists are fighting back — restoring coastlines and demanding change before it's too late.</p>
-
+            <div class="card">
+                <img src="assets/contentCard_hope.png" class="card-img" alt=""
+                    onerror="this.style.background='#040f20';this.removeAttribute('src')">
+                <div class="card-glass"></div>
+                <span class="card-num">04</span>
+                <div class="card-body">
+                    <span class="card-tag">Recovery</span>
+                    <h3 class="card-title">Healing the Ocean</h3>
+                    <p class="card-desc">Our mission is to support ocean recovery by protecting marine ecosystems and
+                        encouraging global action. The ocean has the power to heal — but only if we give it the chance.
+                    </p>
+                    <ul class="card-goals">
+                        <li>Support marine protected areas (30×30 goal)</li>
+                        <li>Reduce harmful human impact on oceans</li>
+                        <li>Promote awareness and action for ocean recovery</li>
+                    </ul>
                 </div>
-            </a>
+            </div>
 
         </div>
-    </section>
 
-    <!--Back to top-->
-    <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-links">
-                <a href="pageEditor_ST1.html#home">Page Editor</a>
-                <a href="validation_ST1.html#home">Validation Page</a>
-                <a href="pageEditor_ST1.html#home-a11y">Accessibility</a>
-                <a href="pageEditor_ST1.html#compliance">Compliance</a>
+        <!-- Content Card Section -->
+        <section class="cards-section" id="stories">
+
+            <span class="section-eyebrow reveal">Four Stories · One Ocean</span>
+            <h2 class="section-title reveal">Keep <em>Listening</em></h2>
+            <div class="section-divider reveal"></div>
+
+            <div class="cards-row reveal">
+
+                <!-- Card 1 -->
+                <a href="content_ST4.html" class="peek-card">
+                    <img src="assets/contentCard_whaleWatching.png" alt="Whales Warning">
+                    <span class="peek-label">Whales Warning</span>
+                    <div class="peek-body">
+                        <span class="peek-act">Act I</span>
+                        <h3>A World Drowning in Noise</h3>
+                        <p>Ocean noise pollution disrupts the ancient communication of whales, pushing species to the
+                            edge of silence.</p>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="content_ST1.html" class="peek-card">
+                    <img src="assets/contentCard_ghostNets.png" alt="Ghost Nets">
+                    <span class="peek-label">Ghost Nets</span>
+                    <div class="peek-body">
+                        <span class="peek-act">Act II</span>
+                        <h3>The Silent Hunters of the Deep</h3>
+                        <p>Abandoned fishing nets drift endlessly, trapping marine life for decades in invisible, deadly
+                            embrace.</p>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="content_ST3.html" class="peek-card">
+                    <img src="assets/contentCard_bleachedReefs.png" alt="Bleached Reefs">
+                    <span class="peek-label">Bleached Reefs</span>
+                    <div class="peek-body">
+                        <span class="peek-act">Act III</span>
+                        <h3>The Fading Cities of the Sea</h3>
+                        <p>Rising temperatures drain coral reefs of colour and life — once-vivid cities now stand pale
+                            beneath warming waters.</p>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="content_ST2.html" class="peek-card">
+                    <img src="assets/contentCard_hope.png" alt="Answering the Call">
+                    <span class="peek-label">Echo of Hope</span>
+                    <div class="peek-body">
+                        <span class="peek-act">Act IV</span>
+                        <h3>The Echo of Hope</h3>
+                        <p>Communities and conservationists are fighting back — restoring coastlines and demanding
+                            change before it's too late.</p>
+
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <!--Back to top-->
+        <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="pageEditor_ST1.html#home">Page Editor</a>
+                    <a href="validation_ST1.html#home">Validation Page</a>
+                    <a href="pageEditor_ST1.html#home-a11y">Accessibility</a>
+                    <a href="pageEditor_ST1.html#compliance">Compliance</a>
+                </div>
+
+                <div class="student-details">
+                    <p>Developed by: Kulith Silva</p>
+                    <p>Student ID: 21819126</p>
+                    <p>&copy; 2026 Echoes From The Deep</p>
+                </div>
             </div>
 
             <div class="student-details">
@@ -819,4 +823,5 @@
     </main>
 
 </body>
+
 </html>
