@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nethnu | Page-Editor</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Page Editor Validator CSS -->
+    <link rel="stylesheet" href="styles/pageEditor_validator.css">
+    
+    <!-- Browser Tab - Icon -->
+    <link rel="icon" type="image/png" href="assets/Logoo.png">
+
 
 </head>
 <body>
-    
-    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
-
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo-area">
@@ -36,220 +40,691 @@
     </header>
 
     <section class="stud">
-        <h2>Nethnu Bulathsinghala, team name, student 02</h2>
+        <h2>Nethnu Bulathsinghala<br> Deep Dive Devs<br> Student 2</h2>
     </section>
 
     <div class="container">
         <!-- Main content area -->
         <main>
 
-            <!-- Update those first three sections for the pages you were responsible to implement -->
-
             <section>
                 <h2 id="splash">Splash Screen</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
-                    
-                    <h3 id="splash-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
-                    
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST2.html#splash">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>HTML Technical Description</h3>
+                        <ul>
+                            <li>A <code>&lt;section class="hero"&gt;</code> element was used as the outermost wrapper, containing all visual layers including the background image, moon, ripples, and content panel.</li>
 
+                            <li>The background image was implemented as an <code>&lt;img&gt;</code> element positioned absolutely with <code>object-fit: cover</code>, ensuring proportional scaling across all screen sizes.</li>
+
+                            <li>A CSS overlay was applied using the <code>::after</code> pseudo-element with a linear-gradient, darkening the image edges to improve text readability.</li>
+                            
+                            <li>The moon and halo were placed as separate absolutely positioned elements, initially given negative top values to keep them off-screen on load.</li>
+
+                            <li>The hero content panel used <code>backdrop-filter: blur(28px)</code> to produce a frosted-glass effect over the background.</li>
+
+                            <li>The automatic redirect was implemented using <code>&lt;meta http-equiv="refresh" content="6;url=home.html"&gt;</code> placed in the <code>&lt;head&gt;</code>, as specified in the coursework requirements.</li>
+
+                            <li>Bioluminescent dots and ripple rings were generated dynamically — a for loop creates each element, assigns randomised CSS custom properties inline, and appends them to their containers.</li>
+
+                            <li>A <code>&lt;div class="loader-wrap"&gt;</code> was included inside the hero content panel containing a CSS-only loader ring animation and a countdown <code>&lt;p&gt;</code> element, visually reinforcing the transition period before redirect.</li>
+
+                            <li>A <code>&lt;div class="moonReflection"&gt;</code> element was placed at the bottom of the hero section to simulate the moon's reflection on the water surface, fading in separately from the moon itself via a delayed CSS transition</li>
+
+                            <li>A <code>&lt;div id="stars"&gt;</code> container was used to hold the dynamically generated bioluminescent dots, keeping generated content separated from static markup</li>
+                        </ul>
+
+                    <h3>CSS Technical Description</h3>
+                        <ul>
+                            <li>The <code>.loaded</code> class is added via JavaScript after a 300ms delay, triggering CSS transition with <code>cubic-bezier(0.22, 1, 0.36, 1)</code> easing to produce the moon rising effect.</li>
+                            
+                            <li><code>clamp()</code> was used throughout for font sizes and spacing, allowing fluid scaling between screen widths without breakpoint-specific media queries.</li>
+                            
+                            <li>Animations for dots and ripples are handled entirely in CSS using <code>@keyframes</code>, keeping behaviour and presentation separated.</li>
+                            
+                            <li><code>z-index</code> layering was used to stack all visual elements correctly — background at z-index 1, overlays at 2, moon at 6, content panel at 10.</li>
+                            
+                            <li>The loader ring was implemented using a rotating <code>&lt;div class="loader-ring"&gt;</code> with a <code>&lt;div class="loader-dot"&gt;</code> child — both animated purely in CSS using <code>@keyframes</code>, with no JavaScript involvement.</li>
+                            
+                            <li>CSS custom properties such as <code>--bio</code>, <code>--deep</code>, <code>--glow</code>, and <code>--radius-sm</code> were used throughout, referencing values defined in the global <code>style.css</code>, ensuring visual consistency with the rest of the website.</li>
+                            
+                            <li>The moon reflection used <code>transition: opacity 1.8s ease 0.8s</code> — the 0.8s delay was intentional, causing the reflection to appear slightly after the moon itself for a more natural visual sequence.</li>
+                            
+                            <li>The <code>bioTwinkle</code> and <code>rippleOut</code> animations both use randomised <code>--duration</code> and <code>--delay</code> custom properties set inline by JavaScript, allowing each dot and ripple to animate independently without separate CSS rules for each element.</li>
+                        </ul>
+
+                    <h3>JavaScript Technical Description</h3>
+                        <ul>
+                            <li>The <code>window.addEventListener('load', ...)</code> pattern ensures everything waits for the full page load before animations trigger.</li>
+                            
+                            <li>The <code>var(--bio)</code> and other CSS custom properties are used across multiple elements for consistent styling and animation timing.</li>
+                            
+                            <li>The moon reflection element (<code>moonReflection</code>) has a separate fade-in transition, creating a more natural visual sequence after the moon itself appears.</li>
+                            
+                            <li>The loader ring and loader dot are CSS-only animated elements inside the content panel, with no JavaScript involvement for animation.</li>
+                            
+                            <li>The <code>skipIntro()</code> function removes the meta tag using <code>document.querySelector('meta[http-equiv="refresh"]').remove()</code>, preventing the automatic redirect if desired.</li>
+                            
+                            <li>The <code>stars</code> container is reused for the dynamically generated bioluminescent dots, with <code>id="stars"</code> feeding multiple animations.</li>
+                        </ul>
+
+                    <h3 id="splash-a11y">Accessibility</h3>
+                        <ul>
+                            <li>All image elements were given descriptive <code>alt</code> attributes — the hero background uses <code>alt="Night ocean scene with clouds and stars"</code> and the moon uses <code>alt="Full moon rising over the ocean"</code>.</li>
+                            
+                            <li>The skip button is implemented as a native <code>&lt;button&gt;</code> element, making it keyboard-focusable and correctly announced by screen readers without additional ARIA roles.</li>
+                            
+                            <li>The <code>lang="en"</code> attribute is set on the <code>&lt;html&gt;</code> element, allowing screen readers to apply the correct language profile.</li>
+                            
+                            <li>A single <code>&lt;h1&gt;</code> is used for the page title, maintaining a correct and logical document outline.</li>
+                            
+                            <li>Text colours were chosen to maintain sufficient contrast against the dark background — for example, the main heading uses near-white <code>#eef6fa</code> over a semi-transparent dark panel.</li>
+                            
+                            <li>The countdown and skip button both carry clear visible text labels, making the transition behaviour understandable to all users.</li>
+                        </ul>
+                                            
+                    <h3>Link to the validation page</h3> 
+                        <p>
+                            <a href="validation_ST2.html#splash">Validation Page</a>
+                        </p> 
                     <h3>Link to the page</h3>
-                        <p><a href="splash.html">Include a link to the actual page you describe.</a></p>
+                        <p>
+                            <a href="splash.html">Splash Screen</a>
+                        </p>
             </section>
 
             <section>
                 <h2 id="ais">AIS Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                    <h3>HTML Technical Description</h3>
+                        <ul>
+                            <li>The page was structured using a <code>&lt;main&gt;</code> element containing a hero introduction section followed by the simulator panel.</li>
+                            
+                            <li>Six action cards were marked up as <code>&lt;div&gt;</code> elements, each containing a thumbnail <code>&lt;img&gt;</code> with descriptive alt text, a category <code>&lt;span&gt;</code> label, an <code>&lt;h2&gt;</code> card title, a <code>&lt;p&gt;</code> description, and an impact point <code>&lt;span&gt;</code>.</li>
+                            
+                            <li>Each card was given <code>role="checkbox"</code> and <code>aria-checked="false"</code> as default attributes for accessibility.</li>
+                            
+                            <li>The simulator feedback container was marked up with <code>role="region"</code> and styled with <code>backdrop-filter: blur(18px)</code>.</li>
+                            
+                            <li>A fixed-position <code>&lt;img id="sceneBg"&gt;</code> element was used as the dynamic background, layered behind all content via z-index.</li>
+                            
+                            <li>The action card grid container was marked up with <code>role="group"</code> to semantically group the interactive cards.</li>
+                            
+                            <li>The reset button was implemented as a native <code>&lt;button&gt;</code> element, ensuring keyboard accessibility without additional ARIA roles.</li>
+                            
+                            <li>A <code>&lt;footer&gt;</code> was included containing links to the Page Editor, Validation Page, Accessibility, and Compliance sections.</li>
+                        </ul>
+
+                    <h3>CSS Technical Description</h3>
+                        <ul>
+                            <li>Three impact level classes were defined: <code>impact-low</code>, <code>impact-mid</code>, <code>impact-high</code>, each changing border colour, box shadow, and text colour when applied.</li>
+                            
+                            <li>All colour transitions were handled using <code>transition: all 0.7s ease</code>, keeping visual changes separated from JavaScript logic.</li>
+                            
+                            <li>The action card grid was laid out using <code>display: grid</code> with <code>grid-template-columns: repeat(3, 1fr)</code>, with responsive breakpoints at 900px (2 columns) and 520px (1 column) using <code>@media</code> queries.</li>
+                            
+                            <li>A <code>scorePop</code> animation was defined using <code>@keyframes</code> and triggered via JavaScript class toggling, producing a bounce effect whenever the score changes.</li>
+                            
+                            <li>A <code>cardEntry</code> animation was applied to each card using <code>animation-delay</code> on <code>:nth-child</code> selectors, staggering the cards as they load in.</li>
+                            
+                            <li>A <code>ptsFloat</code> animation was defined for the floating toast notifications, fading and translating upward over 1 second.</li>
+                            
+                            <li>A <code>rippleAnimation</code> <code>@keyframes</code> was defined to scale a circular element outward and fade it to opacity 0, producing the water ripple effect on card click.</li>
+                            
+                            <li>The progress bar fill used <code>transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1)</code> for smooth animation and a linear-gradient spanning red through amber to green.</li>
+                            
+                            <li>The <code>selected</code> CSS class visually distinguishes selected cards through border colour and background change.</li>
+                            
+                            <li>The <code>.card:hover</code> style changes border colour and box shadow on hover, providing clear visual feedback that the cards are interactive.</li>
+                            
+                            <li>The tick indicator inside each card uses <code>opacity: 0</code> by default and <code>opacity: 1</code> when the <code>selected</code> class is applied, visually confirming selection without relying on colour alone.</li>
+                        </ul>
+
+                    <h3>JavaScript Technical Description</h3>
+                        <ul>
+                            <li>A <code>cardData</code> object was defined to store the point value assigned to each card using card IDs as keys — e.g. card 1 carries 3 points, card 2 carries 4 points.</li>
+                            
+                            <li>A <code>selected</code> object was used to track the selection state of each card, storing boolean values against each card ID.</li>
+                            
+                            <li>A <code>currentBg</code> variable was used to track the currently displayed background image, preventing unnecessary DOM updates when the level has not changed.</li>
+                            
+                            <li>A <code>prevLevel</code> variable was used to track the previous impact level, allowing the code to detect level changes and trigger animations only when the level actually shifts.</li>
+                            
+                            <li>A <code>messages</code> object was defined containing feedback data for each impact level — including badge label, feedback message, ocean description text, and emoji icon.</li>
+                            
+                            <li>A <code>backgrounds</code> object was defined mapping each impact level to its corresponding background image file path.</li>
+                            
+                            <li><code>calcScore()</code> iterates through the <code>selected</code> object using a <code>for...in</code> loop, summing point values from <code>cardData</code> for every card marked as true, and returns the total.</li>
+                            
+                            <li><code>countSelected()</code> uses <code>Object.values(selected).filter(Boolean).length</code> to count and return the number of currently selected cards.</li>
+                            
+                            <li><code>toggle(id, e)</code> is the main card interaction handler, retrieving the card element by ID, calling <code>spawnRipple()</code>, determining selection or deselection, toggling the <code>selected</code> state and CSS class, calling <code>spawnToast()</code>, and then calling <code>updateFeedback()</code>.</li>
+                            
+                            <li><code>spawnRipple(card, e)</code> calculates the click position relative to the card using <code>getBoundingClientRect()</code> and <code>event.clientX / clientY</code>, creates a <code>&lt;span&gt;</code> element sized 1.2× the card's largest dimension, positions it at the click coordinates, appends it to the card, and removes it after 600ms via <code>setTimeout()</code>.</li>
+                            
+                            <li><code>spawnToast(pts, adding, cardEl)</code> creates a <code>&lt;div&gt;</code> positioned near the clicked card using <code>getBoundingClientRect()</code>, sets text to +pts or −pts depending on selection, adds a <code>neg</code> class for deselection to apply red colouring, appends it to <code>&lt;body&gt;</code>, and removes it after 1000ms via <code>setTimeout()</code>.</li>
+                            
+                            <li><code>updateFeedback()</code> is the central update function called after every interaction and performs the following sequence: 
+                                <ul>
+                                    <li>calculates current score and selected count;</li>
+                                    <li>determines impact level based on thresholds — 0 = none, 1–5 = low, 6–11 = mid, 12+ = high;</li>
+                                    <li> updates the score display and applies the correct colour class, triggering the pop animation via forced reflow <code>void scoreEl.offsetWidth</code>;</li>
+                                    <li>updates the progress bar width as a percentage of 17 points;</li> 
+                                    <li> updates the impact level badge text and class, triggering a pulse animation only when the level changes;</li>
+                                    <li> fades feedback message out using <code>opacity: 0</code>, updates text after 220ms, and fades back in only when level changes;</li>
+                                    <li> updates selected actions counter, ocean icon, and description text;</li>
+                                    <li> updates CSS classes on ocean state box and feedback panel;</li>
+                                    <li> checks whether background image needs to change, if different, fades <code>&lt;img&gt;</code> to <code>opacity: 0</code>, updates <code>src</code> after 500ms, then fades back to <code>opacity: 1</code>.</li>
+                                </ul>
+
+                            <li><code>resetall()</code> iterates through all card IDs in <code>cardData</code>, sets each <code>selected</code> entry to false, removes the <code>selected</code> CSS class from each card, and calls <code>updateFeedback()</code> to return everything to default.</li>
+                            
+                            <li><code>updateFeedback()</code> is also called once on page load to initialise all display elements to their default values without requiring user interaction.</li>
+                        </ul>
 
                     <h3 id="ais-a11y">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <ul>
+                            <li>Each action card was given <code>role="checkbox"</code> and an <code>aria-checked</code> attribute toggled between "true" and "false" via JavaScript, communicating selection state to assistive technologies.</li>
+                            
+                            <li>All card images carry descriptive <code>alt</code> text relevant to their content — e.g. <code>alt="Single use plastic bottles on a beach"</code> and <code>alt="Volunteers cleaning a beach"</code>.</li>
+                            
+                            <li>The action card grid container was marked up with <code>role="group"</code> to semantically group the interactive cards together.</li>
+                            
+                            <li>The reset button was implemented as a native <code>&lt;button&gt;</code> element to ensure full keyboard accessibility.</li>
+                            
+                            <li>The back-to-top anchor link was given <code>aria-label="Back to top"</code> to provide a meaningful label beyond the arrow symbol used visually.</li>
+                            
+                            <li>The dynamic background <code>&lt;img&gt;</code> carries a descriptive <code>alt</code> attribute explaining that it changes in response to the user's score.</li>
+                            
+                            <li>Heading hierarchy was maintained with a single <code>&lt;h1&gt;</code> for the page title and <code>&lt;h2&gt;</code> elements used for card titles.</li>
+                        </ul>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST2.html#ais">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p>
+                            <a href="validation_ST2.html#ais">Validation Page</a>
+                        </p> 
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="ais.html">Include a link to the actual page you describe.</a></p>
+                        <p>
+                            <a href="ais.html">Action Impact Simulator</a>
+                        </p>
             </section>
 
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <ul>
+                            <li>The shared content page template was collaboratively created by Nethnu Bulathsinghala and Kulith Silva.</li>
+                            <li>The technical description and accessibility are consistent and shared across the entire team.</li>
+                        </ul>
+                        <ul>
+                            <li><code>&lt;!DOCTYPE html&gt;</code> and <code>&lt;html lang="en"&gt;</code> define the document as HTML5 and set the language for accessibility and correct interpretation.</li>
 
-                    <h3 id="content-ally">Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                            <li><code>&lt;meta charset="UTF-8"&gt;</code> ensures support for a wide range of characters and symbols.</li>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST2.html#content">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                            <li><code>&lt;meta name="viewport"&gt;</code> enables responsive design by matching the layout to the device width.</li>
+
+                            <li><code>&lt;link rel="stylesheet"&gt;</code> imports external CSS files and Google Fonts to style the page.</li>
+
+                            <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> structure the navigation bar, improving usability and accessibility.</li>
+
+                            <li><code>id="quickJump"</code> acts as a navigation landmark with an aria-label to ensure screen readers identify it as a functional section for jumping between content.</li>
+
+                            <li><code>id="qjPill"</code> serves as the main container for the navigation items, likely styled as a floating or sticky horizontal "pill" bar.</li>
+
+                            <li><code>class="qj-item"</code> creates internal page links using <code>href</code> anchors (like <code>#act1</code>) to scroll the user to specific sections without a page reload.</li>
+
+                            <li><code>class="active"</code> and <code>aria-current="true"</code> are used on the first link to visually and programmatically mark the user's starting location in the document.</li>
+
+                            <li><code>class="qj-connector"</code> provides a structural element used in CSS to draw connecting lines between the navigation points, creating a "progress tracker" look.</li>
+
+                            <li><code>class="qj-dot"</code> functions as a decorative or functional bullet point within each link to give the menu a modern, minimalist aesthetic.</li>
+
+                            <li><code>data-target</code> attributes store the ID of the destination section, which is typically used by a JavaScript scroll-spy to highlight the correct link as the user scrolls.</li>
+
+                            <li><code>&lt;main&gt;</code> wraps the primary content, helping screen readers identify the main section of the page.</li>
+
+                            <li><code>&lt;section&gt;</code> elements divide the page into logical content areas such as hero, content cards, and handoff.</li>
+
+                            <li><code>id</code> attributes (e.g., <code>#top</code>, <code>#act3</code>) are used for internal navigation and anchor linking.</li>
+
+                            <li><code>class</code> attributes are used to apply consistent styling and layout through CSS.</li>
+
+                            <li><code>data-*</code> attributes (e.g., <code>data-bg</code>, <code>data-ch</code>) store custom data used by JavaScript for dynamic behaviour.</li>
+
+                            <li><code>&lt;img&gt;</code> elements include <code>alt</code> text for accessibility and <code>onerror</code> to hide images if they fail to load.</li>
+
+                            <li><code>aria-hidden="true"</code> is used to hide decorative elements from screen readers.</li>
+
+                            <li><code>&lt;a&gt;</code> elements provide navigation between pages and within the page using anchor links.</li>
+
+                            <li><code>&lt;script src="..."&gt;</code> links an external JavaScript file, separating behaviour from structure.</li>
+
+                            <li><code>&lt;footer&gt;</code> contains additional navigation and student details, placed at the end of the page.</li>
+                        </ul>
+
+                    <h3>CSS Technical Description</h3>
+                    <ul>
+                        <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
+
+                        <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
+
+                        <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
+
+                        <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
+
+                        <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
+
+                        <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
+
+                        <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
+
+                        <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
+
+                        <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
+
+                        <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
+
+                        <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
+
+                        <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
+
+                        <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
+
+                        <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
+
+                        <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
+
+                        <li><code>#quickJump</code> is <strong>fixed to the right side</strong> of the viewport, vertically centered using <code>transform: translateY(-50%)</code></li>
+
+                        <li><code>#qjPill</code> is the container,  a <strong>frosted glass pill</strong> using <code>backdrop-filter: blur</code>, dark semi-transparent background, and a subtle sky-blue border</li>
+
+                        <li><code>.qj-item</code> is each nav dot row, flexbox-aligned, with a soft <strong>hover background highlight</strong></li> 
+
+                        <li><code>.qj-label</code> is a <strong>tooltip</strong> that appears to the left of each dot, hidden by default (<code>opacity: 0</code>, transparent color), revealed on hover, focus, or when <code>.active</code></li>
+
+                        <li><code>.qj-dot</code> is the <strong>circular indicator</strong>, small 6px dot with a sky-blue tint; scales up on hover and glows on active</li>
+
+                        <li><code>.qj-item.active .qj-dot</code> applies a <strong>cyan glow</strong> via <code>box-shadow</code> and scales the dot to 1.4x</li>
+
+                        <li><code>.qj-dot::after</code> creates a <strong>pulse ring</strong>, an expanding border that animates outward using <code>@keyframes qjPulse</code> only when the item is active</li> 
+
+                        <li><code>.qj-connector</code> is a thin <strong>1px vertical line</strong> between dots, acting as a visual divider</li> 
+
+                    </ul>
+
+                    <h3>JavaScript Technical Description</h3>
+                        <ul>
+                            <li><code>document.getElementById()</code> is used to select specific elements such as the scroll bar and sonar rings.</li>
+
+                            <li><code>document.querySelectorAll()</code> selects multiple elements (e.g., sections with <code>data-bg</code>) and converts them into an array using <code>Array.from()</code>.</li>
+
+                            <li><code>reduce()</code> is used to create an object mapping background IDs to their corresponding DOM elements for efficient access.</li>
+
+                            <li><code>switchBg()</code> function controls background transitions by adding and removing the <code>active</code> class.</li>
+
+                            <li><code>classList.add()</code> and <code>classList.remove()</code> dynamically update CSS classes to change styles and trigger animations.</li>
+
+                            <li><code>setTimeout()</code> is used to delay actions such as resetting <code>z-index</code> and controlling animation timing.</li>
+
+                            <li><code>window.addEventListener('scroll')</code> listens for scrolling to update the progress bar and trigger effects.</li>
+
+                            <li><code>window.pageYOffset</code> and document height calculations are used to determine scroll progress.</li>
+
+                            <li><code>getBoundingClientRect()</code> calculates the position of sections to detect which section is closest to the viewport centre.</li>
+
+                            <li><code>dataset</code> (e.g., <code>dataset.bg</code>) accesses custom HTML data attributes to control background switching.</li>
+
+                            <li><code>IntersectionObserver</code> detects when elements enter the viewport and adds a <code>visible</code> class for animations.</li>
+
+                            <li><code>addEventListener('load')</code> ensures initial functions run only after the page fully loads.</li>
+
+                            <li>Tracks which section is closest to <strong>45% down the viewport</strong></li> 
+
+                            <li><code>qjItems</code> = all nav links in <code>#quickJump</code>; <code>qjTargets</code> = their <code>data-target</code> section IDs</li>
+
+                            <li>On each call, computes a midpoint (<code>winMid</code>) at <strong>45% of the viewport</strong></li>
+
+                            <li>Loops through all target sections, finds the one whose <strong>center is closest</strong> to <code>winMid</code></li>
+
+                            <li>Toggles the <code>active</code> class on the <strong>matching nav item</strong>, removes it from the rest</li>
+
+                            <li><code>scrollY</code> is passed in by the caller, usually from a <strong>scroll event</strong></li> 
+
+                        </ul>
+
+
+                    <h3>Accessibility</h3>
+                    <ul>
+                        <li><code>lang="en"</code> defines the page language, helping screen readers use correct pronunciation.</li>
+
+                        <li><code>alt</code> attributes on images provide descriptions for visually impaired users.</li>
+
+                        <li><code>aria-hidden="true"</code> hides decorative elements (e.g., background images, sonar effects) from screen readers.</li>
+
+                        <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> create a semantic structure for easier navigation.</li>
+
+                        <li><code>aria-label</code> (e.g., "Back to top") gives meaningful descriptions to icons or non-text elements.</li>
+
+                        <li><code>&lt;a&gt;</code> links enable keyboard navigation between sections and pages.</li>
+
+                        <li><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> provide semantic emphasis, improving how screen readers interpret content.</li>
+
+                        <li><code>id</code> attributes allow users to jump to sections using anchor links, supporting keyboard navigation.</li>
+                    </ul>
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST2.html#content">Validation Page</a></p> 
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="content_ST2.html">Include a link to the actual page you describe.</a></p>
+                        <p><a href="content_ST2.html">Content Page</a></p>
             </section>
 
             <section>
                 <h2 id="challenge">Challenges and Lessons Learned</h2>
-                    <p>Detail any challenges encountered during the implementation process and explain how they were resolved. Reflect on the lessons learned from overcoming these challenges.</p> 
+                    <ul>
+                        <li>
+                            Coordinating the countdown timer with the <code>&lt;meta http-equiv="refresh"&gt;</code> required careful timing. The meta tag fires after 6 seconds, 
+                            but the visible countdown needed to start from 4, so a 2 second delay was introduced before the <code>setInterval()</code> began, with the initial counter value 
+                            set to 6 to account for the hidden loading window. Getting these two mechanisms to stay in sync without the numbers appearing to jump took several adjustments.
+                        </li>
+
+                        <li>
+                            Canceling the meta refresh when the skip button is pressed was not straightforward, as the <code>&lt;meta http-equiv="refresh"&gt;</code> tag cannot be paused 
+                            once the page has loaded. The solution was to remove the element from the DOM entirely using <code>document.querySelector('meta[http-equiv="refresh"]').remove()
+                            </code>, which was a behaviour that required understanding how the browser processes meta elements at runtime rather than just how to write HTML attributes.
+                        </li>
+
+                        <li>
+                            Sequencing the entrance animations — the moon rising, the halo fading in, the hero content appearing, and the info panel sliding up — required all elements to be
+                            revealed through separate CSS transitions with staggered delays, triggered simultaneously by adding a <code>loaded</code> class in JavaScript after a short timeout.
+                            Ensuring no element appeared before its parent container was ready took careful layering of transition-delay values, and the ordering only became clear after testing repeatedly in the browser.
+                        </li>
+
+                        <li>
+                            The bioluminescent dots and ripple rings are generated entirely in JavaScript, with randomised size, opacity, position, duration, and delay values injected as 
+                            inline CSS custom properties. Passing those custom properties through to the <code>@keyframes</code> animation rules, rather than hardcoding values, required 
+                            understanding how CSS variables interact with animation declarations, which was not something covered directly in lectures and took independent research to get 
+                            working correctly.
+                        </li>
+
+                        <li>
+                            The global <code>style.css</code> applies <code>padding-top: 50px</code> to the body universally, which causes unwanted spacing on the splash screen since
+                            it does not use the shared header. Overriding this required explicitly setting <code>padding-top: 0px !important</code> in the splash-specific CSS, which was 
+                            only discovered during integration testing when the shared stylesheet was first linked.
+                        </li>
+
+                        <li>
+                            For the AIS page, implementing card toggling so that clicking a selected card would correctly deselect it and subtract its points from the running total 
+                            required the JavaScript to check the card's current state before deciding whether to add or subtract, rather than simply accumulating points on every click. 
+                            Getting the logic right for edge cases, such as rapidly clicking the same card, took more iteration than expected.
+                        </li>
+
+                        <li>
+                            Triggering a background image change based on three distinct impact thresholds required defining clear point boundaries in the JavaScript and using those in 
+                            a conditional block that updated the page background directly through the DOM. Ensuring the content remained readable at all three background levels required 
+                            additional overlay adjustments for each impact state.
+                        </li>
+
+                        <li>
+                            Keeping the embedded CSS in the AIS page scoped to that page without conflicting with the shared <code>style.css</code> rules required reviewing every 
+                            selector carefully to avoid accidentally overriding navigation or card styles inherited from the global stylesheet. Coming from a background that was stronger 
+                            in CSS than JavaScript, this separation of concerns was one of the more practically useful things the project reinforced.
+                        </li>
+
+                        <li>
+                            Working across two technically different pages — a standalone animated splash screen and a JavaScript-driven interactive simulator within the same shared 
+                            codebase made it clear how much careful planning of CSS scope and file structure matters in a group project. On the JavaScript side, moving from a purely 
+                            CSS mindset to thinking about state, conditionals, and DOM manipulation required a shift in approach that became more natural over the course of the project. 
+                            Testing each page both in isolation and with the shared stylesheet applied early on would have caught several integration issues sooner, and that is something to carry into future projects.
+                        </li>
+                    </ul>
             </section>
 
             <section>
-                <h2 id="compliance">Compliance</h2>
-                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes demonstrating your understanding and application of these regulations. Be realistic and truthful. <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+                <h2 id="compliance"> Compliance</h2>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> and <code>lang="en"</code> are included on both pages, ensuring proper HTML5 structure and correct interpretation by browsers and screen readers.</li>
 
-                    
+                        <li><code>W3C HTML Validator</code> was used to check both pages for structural errors, missing tags, and incorrect nesting before submission.</li>
+
+                        <li><code>W3C CSS Validator</code> was used to validate <code>style.css</code>, <code>feedback.css</code>, and <code>team.css</code>, ensuring no invalid properties or syntax errors.</li>
+
+                        <li><code>alt attributes</code> are applied to all images, and semantic HTML elements are used for buttons, links, and inputs to meet accessibility standards.</li>
+
+                        <li><code>Google Gemini</code> was used to generate images, and <code>Google Fonts</code> are loaded via their official API under an open licence, avoiding copyright issues.</li>
+
+                        <li><code>HTTPS</code> is used for all external resources, ensuring secure loading and preventing mixed content warnings.</li>
+
+                        <li><code>No data storage</code> is implemented in the feedback form, aligning with data minimisation principles as no user input is saved or transmitted.</li>
+
+                        <li><code>novalidate</code> ensures all validation is handled client-side with JavaScript, meaning no data is sent to external systems.</li>
+
+                        <li><code>Appropriate content</code> is maintained across both pages, with no offensive or misleading material, complying with acceptable use standards.</li>
+
+                        <li><code>Responsive design</code> is implemented using <code>flex-wrap: wrap</code> on the team page and <code>max-width</code> with <code>margin: auto</code> on the feedback page to ensure usability across devices.</li>
+                    </ul> 
             </section>
 
             <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
-                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
-                    Requirements:
-                        <ul> 
-                            <li>A minimum of six (6) group meetings must be recorded.</li>
-                            <li>Each student must provide their own account of the meetings.</li>
-                            <li>The log must focus on individual contribution, not just group activity.</li>
-                        </ul>
-                        <p>Feel free to follow the example table structure below:</p>
+                <h2 id="group"> Group Meetings and Individual Contribution Log</h2>
 
-                        <table >
-    
-                            <thead>
-                                <tr>
-                                    <th colspan="6">Group Meetings and Contribution Log</th>
-                                </tr>
-                                <tr>
-                                    <th>Meeting</th>
-                                    <th>Date &amp; Time</th>
-                                    <th>Format</th>
-                                    <th>Objective</th>
-                                    <th>Attended</th>
-                                    <th>Your Individual Contribution</th>
-                                </tr>
-                            </thead>
-                        
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>10 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Identify the CW requirements</td>
-                                    <td>Yes</td>
-                                    <td>Contributed to understanding coursework requirements and clarified key deliverables</td>
-                                </tr>
-
-                                <tr>
-                                    <td>2</td>
-                                    <td>21 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Agree on the SDG</td>
-                                    <td>Yes</td>
-                                    <td>Participated in discussion and helped select the most suitable SDG</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>24 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Assign roles</td>
-                                    <td>Yes</td>
-                                    <td>Took part in role allocation and accepted assigned responsibilities</td>
-                                </tr>
-
-                                <tr>
-                                    <td>4</td>
-                                    <td>13 March 2026</td>
-                                    <td>Physical</td>
-                                    <td>Choose color palettes, design styles</td>
-                                    <td>Yes</td>
-                                    <td>Suggested design ideas and contributed to initial visual concepts</td>
-                                </tr>
-
-                                <tr>
-                                    <td>5</td>
-                                    <td>14 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Finalize the color palettes and design styles</td>
-                                    <td>Yes</td>
-                                    <td>Helped finalize design decisions and agreed on overall theme and the storyline</td>
-                                </tr>
-
-                                <tr>
-                                    <td>6</td>
-                                    <td>18 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Review the design</td>
-                                    <td>Yes</td>
-                                    <td>Gave feedback and suggested improvements to design elements</td>
-                                </tr>
-
-                                <tr>
-                                    <td>7</td>
-                                    <td>19 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Progress review</td>
-                                    <td>Yes</td>
-                                    <td>Shared progress updates and discussed next steps</td>
-                                </tr>
-
-                                <tr>
-                                    <td>8</td>
-                                    <td>22 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Progress review</td>
-                                    <td>Yes</td>
-                                    <td>Contributed updates and helped identify pending tasks</td>
-                                </tr>
-
-                                <tr>
-                                    <td>9</td>
-                                    <td>24 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Finalize the individual components</td>
-                                    <td>Yes</td>
-                                    <td>Completed assigned component and ensured it met requirements</td>
-                                </tr>
-
-                                <tr>
-                                    <td>10</td>
-                                    <td>26 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Final review and submission preparation</td>
-                                    <td>Yes</td>
-                                    <td>Participated in final checks and ensured readiness for submission</td>
-                                </tr>
-                            </tbody>
-                        
-                        </table>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>10 Feb 2026</td>
+                            <td>Online</td>
+                            <td>Identify the CW requirements</td>
+                            <td>Yes</td>
+                            <td>Reviewed requirements with focus on interactive simulation components</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>21 Feb 2026</td>
+                            <td>Online</td>
+                            <td>Agree on the SDG</td>
+                            <td>Yes</td>
+                            <td>Evaluated SDGs based on suitability for interactive simulation and visual design potential</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>24 Feb 2026</td>
+                            <td>Physical</td>
+                            <td>Assign roles</td>
+                            <td>Yes</td>
+                            <td>Accepted responsibility for the splash screen, Action Impact Simulator, and overall design direction</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>13 March 2026</td>
+                            <td>Physical</td>
+                            <td>Choose color palettes, design styles</td>
+                            <td>Yes</td>
+                            <td>Led the design discussion, proposed color palettes and visual styles, and drove the overall aesthetic direction</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>14 March 2026</td>
+                            <td>Online</td>
+                            <td>Finalize the color palettes and design styles</td>
+                            <td>Yes</td>
+                            <td>Finalised the color palette, design style, and overall visual theme and storyline for the website</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>18 March 2026</td>
+                            <td>Online</td>
+                            <td>Review the design</td>
+                            <td>Yes</td>
+                            <td>Led the design review, evaluated overall visual coherence, and proposed refinements to the splash screen and Action Impact Simulator UI</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>19 March 2026</td>
+                            <td>Physical</td>
+                            <td>Progress review</td>
+                            <td>Yes</td>
+                            <td>Shared progress on the splash screen, Action Impact Simulator, and design implementation</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>22 March 2026</td>
+                            <td>Online</td>
+                            <td>Progress review</td>
+                            <td>Yes</td>
+                            <td>Shared updates on splash screen refinements, Action Impact Simulator functionality, and design consistency across pages</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>24 March 2026</td>
+                            <td>Online</td>
+                            <td>Finalize the individual components</td>
+                            <td>Yes</td>
+                            <td>Finalised the splash screen and Action Impact Simulator, ensuring full functionality and design compliance across the site</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>28 March 2026</td>
+                            <td>Online</td>
+                            <td>Final review and submission preparation</td>
+                            <td>Yes</td>
+                            <td>Verified design consistency across all pages, conducted final testing of the splash screen and Action Impact Simulator, and participated in the marking scheme review</td>
+                        </tr>
+                    </tbody>
+                </table>
                     
             </section>
 
             <section>
                 <h2 id="ref">References</h2>
-                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
-                    <ul class="ref">
-                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
-                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
+                    <ul>
+                        <li>
+                            All the images including the background image and other page specific images were generated using <strong>Google Gemini</strong>.
+                        </li>
                     </ul>
+                    <hr>
+                    <ul class="ref">
+                        <ul>
+                            <li>
+                                Aburto-Oropeza, O., Erisman, B., Galland, G.R., Mascareñas-Osorio, I., Sala, E. and Ezcurra, E. (2011). <em>Large recovery of fish biomass in a no-take marine reserve.</em> PLoS ONE, 6(8), e23601. Available at: 
+                                <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316" target="_blank" rel="noopener">
+                                    https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                Duckett, J. (2011). <em>HTML and CSS: Design and Build Websites.</em> John Wiley & Sons, Inc.
+                            </li>
+                            <li>
+                                Google Fonts (2025). <em>Cormorant Garamond & Cinzel.</em> Available at: 
+                                <a href="https://fonts.google.com" target="_blank" rel="noopener">
+                                    https://fonts.google.com
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                Marine Conservation Institute (2025). <em>30 x 30: Protecting at least 30% of the ocean by 2030.</em> Available at: 
+                                <a href="https://marine-conservation.org/30x30" target="_blank" rel="noopener">
+                                    https://marine-conservation.org/30x30
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                Marine Stewardship Council (2024). <em>What is overfishing?</em> Available at: 
+                                <a href="https://www.msc.org/uk/what-we-are-doing/what-is-overfishing" target="_blank" rel="noopener">
+                                    https://www.msc.org/uk/what-we-are-doing/what-is-overfishing
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                MDN Web Docs (2025). <em>CSS: Cascading Style Sheets.</em> Available at: 
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener">
+                                    https://developer.mozilla.org/en-US/docs/Web/CSS
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                MDN Web Docs (2025). <em>JavaScript Reference.</em> Available at: 
+                                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener">
+                                    https://developer.mozilla.org/en-US/docs/Web/JavaScript
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                National Oceanic and Atmospheric Administration (NOAA) (2016). <em>Sunscreen chemicals and coral reefs.</em> Available at: 
+                                <a href="https://oceanservice.noaa.gov/news/sunscreen-corals-noaa-studies.html" target="_blank" rel="noopener">
+                                    https://oceanservice.noaa.gov/news/sunscreen-corals-noaa-studies.html
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                United Nations Department of Economic and Social Affairs (2025). <em>Goal 14: Conserve and sustainably use the oceans, seas and marine resources.</em> Available at: 
+                                <a href="https://sdgs.un.org/goals/goal14" target="_blank" rel="noopener">
+                                    https://sdgs.un.org/goals/goal14
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                United Nations Environment Programme (UNEP) (2025). <em>Plastic pollution.</em> Available at: 
+                                <a href="https://www.unep.org/plastic-pollution" target="_blank" rel="noopener">
+                                    https://www.unep.org/plastic-pollution
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                W3C (2025). <em>Markup Validation Service.</em> Available at: 
+                                <a href="https://validator.w3.org" target="_blank" rel="noopener">
+                                    https://validator.w3.org
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                W3Schools (2025). <em>HTML Tutorial.</em> Available at: 
+                                <a href="https://www.w3schools.com/html" target="_blank" rel="noopener">
+                                    https://www.w3schools.com/html
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                            <li>
+                                WebAIM (2025). <em>Introduction to Web Accessibility.</em> Available at: 
+                                <a href="https://webaim.org/intro" target="_blank" rel="noopener">
+                                    https://webaim.org/intro
+                                </a> 
+                                (Last accessed: March 2026).
+                            </li>
+                        </ul>
+                    </ul>
+
             </section>
         </main>
 
         <!-- Sidebar area -->
         <aside>
-            <h3>Core pages developed:</h3>
+            <h3 class="core-pages">Core Pages Developed:</h3>
 
-        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
-                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 2</li>
+                <li>Student 2
                 <ul> 
-                    <li><a href="splash">Splash Screen</a></li>
-                    <li><a href="ais">Action Impact Simulator</a></li>
-                    <li><a href="content">Content</a></li>
+                    <li><a href="#splash">Splash Screen</a></li>
+                    <li><a href="#ais">Action Impact Simulator</a></li>
+                    <li><a href="#content">Content</a></li>
                 </ul>
+                </li>
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
                 <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
@@ -275,7 +750,9 @@
             </div>
         </div>
     </footer>
+    
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
+
 </body>
 </html>

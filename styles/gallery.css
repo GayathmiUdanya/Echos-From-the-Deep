@@ -26,10 +26,6 @@
     --nav-bg: rgba(255, 255, 255, 0.12);
     --font-body: 'Montserrat', sans-serif;
     --font-serif: 'Playfair Display', serif;
-}
-		
-/* Global Reset & Body Styles */
-:root {
     --bg-color: #0b111a;
     --card-bg: #111a27;
     --text-color: #d1d9e2;
@@ -39,13 +35,15 @@
 }
 
 /* Global Reset */
-body,html{
+body, html {
     background-color: #0a1a2a; 
-    color:#e8f4f8;
-    font-family:'Cinzel', serif;
+    color: #e8f4f8;
+    font-family: 'Cinzel', serif;
     position: relative;
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    padding-top: 50px;
 }
 
 /* Layout Grid */
@@ -55,7 +53,7 @@ body,html{
     gap: 20px;
     max-width: 1000px;
     justify-content: center;
-    margin:20px auto;
+    margin: 20px auto;
     position: relative;
     z-index: 1;
 }
@@ -68,9 +66,10 @@ body,html{
     border: 1px solid #1f2d42;
     display: flex;
     flex-direction: column;
-	justify-content: center;
+    justify-content: center;
     align-items: center;
     transition: transform 0.3s;
+    cursor: pointer;
 }
 
 /* Image Section and Placeholder */
@@ -85,13 +84,13 @@ body,html{
     position: relative;
 }
 
-/*Images*/
+/* Images */
 .card-image {
     width: 100%;
     height: 300px;
     object-fit: cover;
     display: block;
-	background-size: 10% 100%;
+    background-size: 10% 100%;
 }
 
 /* Styling for when images are missing */
@@ -118,19 +117,20 @@ body,html{
     margin-bottom: 8px;
 }
 
-/* Title */
-.card-title {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: #fff;
-    margin-bottom: 12px;
-    letter-spacing: 0.05em;
+/* Card Title */
+.card-content h2 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #e8f4f8;
+    font-size: 0.84rem;
+    margin-bottom: .4rem;
 }
 
 /* Description Body */
 .card-description {
     font-size: 0.85rem;
-    color: var(--text-color);
+    color: #94b8cc;
     line-height: 1.5;
     margin-bottom: 15px;
     flex-grow: 1; 
@@ -152,7 +152,7 @@ body,html{
 /* Responsiveness for small screens */
 @media (max-width: 992px) {
     .dashboard-container {
-            grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -196,7 +196,7 @@ body,html{
     max-height: 460px;
 }
 
-/* Title & Description */
+/* Modal Title */
 #modalTitle {
     font-family: 'Cinzel', serif;
     font-size: 1.4rem;
@@ -206,10 +206,20 @@ body,html{
 
 /* Modal Description */
 #modalDesc {
+    font-family: 'Cinzel', serif;
     font-size: 0.9rem;
     color: #d1d9e2;
     line-height: 1.6;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+
+}
+
+/* Modal Extra Info - Additional Content */
+#modalExtra {
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    color: #d1d9e2;
+    line-height: 1.6;
 }
 
 /* Close Button */
@@ -252,11 +262,14 @@ body,html{
     background: rgba(73, 174, 192, 0.15);
 }
 
-/* Active Button Styles */
-.alt-font-active {
-    font-family: 'JetBrains Mono', monospace !important;
+.alt-font-active,
+.alt-font-active #modalTitle,
+.alt-font-active #modalDesc,
+.alt-font-active #modalExtra {
+    font-family: 'Roboto', Arial, sans-serif !important;
 }
 
+/* Active Colour Scheme */
 .alt-color-active {
     background: #0a2a1a !important;
     color: #a8f0c6 !important;

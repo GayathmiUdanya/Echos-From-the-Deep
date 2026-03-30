@@ -4,26 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Act IV</title>
+    <title>Act IV | Content Page</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Global CSS -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="styles/content.css">
+
+     <!-- Browser Tab - Icon -->
+    <link rel="icon" type="image/png" href="assets/Logoo.png">
+
 </head>
 
 <body>
-    <!-- navigation -->
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo-area">
                 <div class="logo-circle"></div>
                 <div class="logo-text">
-                    <p>Echoes From The Deep</p>
+                    <h1>Echoes From The Deep</h1>
                     <p>SDG 14 · Life Below Water</p>
                 </div>
             </div>
@@ -40,64 +44,129 @@
         </nav>
     </header>
 
-    <!-- Animated riple effect -->
+    <!-- Animated ripple effect -->
     <div id="sonarpart" aria-hidden="true">
         <div class="sonar" id="s1"></div>
         <div class="sonar" id="s2"></div>
         <div class="sonar" id="s3"></div>
     </div>
 
-    <!--invisible marker used to scroll to the bottom of the page-->
+    <!-- Invisible marker used to scroll to the bottom of the page -->
     <div id="scroller" aria-hidden="true"></div>
 
-    <!--background images for each chapter-->
-    <!--section 1 - introduction background-->
+    <!-- Background images for each chapter -->
+    <!-- Section 1 - Opening Background -->
     <div id="bg1" class="bg active" aria-hidden="true">
-        <img class="bimg" src="../assets/hero.jpeg" alt="" aria-hidden="true" onerror="this.style.display='none'">
+        <img class="bimg" src="assets/hero.jpeg" alt="Background image for the Opening page" aria-hidden="true" onerror="this.style.display='none'">
     </div>
 
-    <!--section 2 - intro background-->
+    <!-- Section 2 - Introduction Background -->
     <div id="bg2" class="bg" aria-hidden="true">
-        <img class="bimg" src="assets/contentIntro_hope.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+        <img class="bimg" src="assets/contentIntro_hope.png" alt="Background image for the Introduction section" 
+        aria-hidden="true" onerror="this.style.display='none'">
     </div>
 
-    <!--section 3 - problem background-->
+    <!-- Section 3 - Problem Background -->
     <div id="bg3" class="bg" aria-hidden="true">
-        <img class="bimg" src="assets/contentProblem_hope.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+        <img class="bimg" src="assets/contentProblem_hope.png" alt="Background image for the Problem section" 
+        aria-hidden="true" onerror="this.style.display='none'">
     </div>
 
-    <!--section 4 - Why background-->
+    <!-- Section 4 - Why It Matters Background -->
     <div id="bg4" class="bg" aria-hidden="true">
-        <img class="bimg" src="assets/contentWhy_hope.png" alt="" aria-hidden="true" onerror="this.style.display='none'">
+        <img class="bimg" src="assets/contentWhy_hope.png" alt="Background image for the Why It Matters section" 
+        aria-hidden="true" onerror="this.style.display='none'">
     </div>
 
-    <!--section 5 - Impact background-->
+    <!-- Section 5 - Impact Background -->
     <div id="bg5" class="bg" aria-hidden="true">
-        <img class="bimg" src="assets/contentImpact_hope.png" alt="Image of Bleached Reefs - Recommendations"
-            aria-hidden="true" onerror="this.style.display='none'">
+        <img class="bimg" src="assets/contentImpact_hope.png" alt="Background image for the Impact section" 
+        aria-hidden="true" onerror="this.style.display='none'">
     </div>
 
-    <!--section 6 - recommendations background-->
+    <!-- Section 6 - Recommendations Background -->
     <div id="bg6" class="bg" aria-hidden="true">
-        <img class="bimg" src="assets/contentRecommendations_hope.png" alt="#"
-            aria-hidden="true" onerror="this.style.display='none'">
+        <img class="bimg" src="assets/contentRecommendations_hope.png" alt="Background image for the Recommendations section"
+        aria-hidden="true" onerror="this.style.display='none'">
     </div>
 
     <main>
+        <!--content quick jump -->
+<div id="quickJump">
+  <div id="qjPill">
+
+    <a class="qj-item active" href="#top" data-target="top" aria-current="true">
+      <span class="qj-label">Surface</span>
+      <div class="qj-dot"></div>
+    </a>
+
+    <div class="qj-connector"></div>
+
+    <a class="qj-item" href="#act4" data-target="act4">
+      <span class="qj-label">Act IV</span>
+      <div class="qj-dot"></div>
+    </a>
+
+    <div class="qj-connector"></div>
+
+    <a class="qj-item" href="#ch1" data-target="ch1">
+      <span class="qj-label">Intro</span>
+      <div class="qj-dot"></div>
+    </a>
+
+    <div class="qj-connector"></div>
+
+    <a class="qj-item" href="#ch2" data-target="ch2">
+      <span class="qj-label">Problem</span>
+      <div class="qj-dot"></div>
+    </a>
+
+    <div class="qj-connector"></div>
+
+    <a class="qj-item" href="#ch3" data-target="ch3">
+      <span class="qj-label">Why</span>
+      <div class="qj-dot"></div>
+    </a>
+
+    <div class="qj-connector"></div>
+
+    <a class="qj-item" href="#ch4" data-target="ch4">
+      <span class="qj-label">Impact</span>
+      <div class="qj-dot"></div>
+    </a>
+
+    <div class="qj-connector"></div>
+
+    <a class="qj-item" href="#ch5" data-target="ch5">
+      <span class="qj-label">Solutions</span>
+      <div class="qj-dot"></div>
+    </a>
+
+    <div class="qj-connector"></div>
+
+    <a class="qj-item" href="#handoff" data-target="handoff">
+      <span class="qj-label">Next →</span>
+      <div class="qj-dot"></div>
+    </a>
+
+  </div>
+</div>
 
         <!-- Hero -->
         <section class="chapters" id="top" data-bg="bg1">
+
+            <!-- Hero mini heading -->
             <span class="chaptersTagg">Echoes From The Deep · A Four-Part Story · SDG 14</span>
 
-            <!-- Chapter heading -->
+            <!-- Hero heading -->
             <h1>
                 Ocean in Crisis:<br>
-                <em>A World at the Brinke</em>
+                <em>A World at the Brink</em>
             </h1>
 
-            <!-- Chapter Description -->
+            <!-- Hero description -->
             <p class="chaptersDescription">
-                Four stories. One dying ocean. A warning we can no longer ignore.
+                Four stories. One dying ocean.<br> A warning we can no longer ignore.
             </p>
 
             <!-- Chapter navigation -->
@@ -115,9 +184,10 @@
             </div>
         </section>
 
+        <!-- ACT IV - The Echo of Hope -->
         <section class="title" id="act4" data-bg="bg2">
-            <div class="titledec">II</div>
-            <span class="title-act">Act 4 ·  Answering the Call: The Echo of Hope</span>
+            <div class="titledec">IV</div>
+            <span class="title-act">Act IV ·  Answering the Call: The Echo of Hope</span>
 
             <!-- Title heading -->
             <h2 class="title-head">
@@ -126,14 +196,14 @@
             </h2>
 
             <!-- Title tagline -->
-            <p class="title-tag">When we answer the ocean’s call, it answers back with life.</p>
+            <p class="title-tag">When we answer the ocean's call, it answers back with life.</p>
 
             <!-- Student details -->
-            <span class="title-student">Nethnu Bulathsinghala · STUDENT 2</span>
+            <span class="title-student">NETHNU BULATHSINGHALA · STUDENT 2</span>
         </section>
 
         <!-- Content card 1 (hook)-->
-        <section class="content" id="ch1" data-ch="1">
+        <section class="content" id="ch1" data-ch="1" data-bg="bg2">
             <div class="contentcon">
 
                 <!-- Content subheading (main) -->
@@ -155,33 +225,33 @@
                 <p>
                     The ocean is not just a <strong>big body of water</strong> that stays the same. 
                     It is <strong>alive and very strong</strong>. 
-                    For a long time, we only heard <strong>bad things about the sea</strong>—the <strong>trash</strong>, 
+                    For a long time, we only heard <strong>bad things about the sea</strong>the <strong>trash</strong>, 
                     the <strong>loud noises from big ships</strong>, and the <strong>coral reefs that were dying and turning white</strong>. 
                     But today, the water sounds different. 
                     This is the <strong>sound of the ocean getting better</strong>.
                 </p>
                 <div class="quate">
-                    The ocean’s strength is its greatest message: recovery is possible.
+                    The ocean's strength is its greatest message: recovery is possible.
                 </div>
 
             </div>
         </section>
 
         <!-- Content card 2 (problem intro) -->
-        <section class="content" id="ch2" data-ch="2" data-bg="bg3">
+        <section class="content" id="ch2" data-ch="2" data-bg="bg2">
             <div class="contentcon">
 
                 <!-- Content subheading (main) -->
                 <span class="contentdec">From Ignorance to Action</span>
 
                 <!-- Content tagline -->
-                <h2>
+                <h3>
                     Hidden depths,<br>
                     <em>visible damage.</em>
-                </h2>
+                </h3>
 
                 <!-- Content Subheading -->
-                <p class="contentsub">The illusion of an indestructible ocean fueled human neglect.</p>
+                <p class="contentsub">Problem — The illusion of an indestructible ocean fueled human neglect.</p>
 
                 <!-- Content Line -->
                 <div class="contentline"></div>
@@ -195,29 +265,29 @@
         </section>
 
         <!-- Content card 3 (why it matters)-->
-        <section class="content" id="ch3" data-ch="3" data-bg="bg4">
+        <section class="content" id="ch3" data-ch="3" data-bg="bg3">
             <div class="contentcon">
 
                 <!-- Content subheading (main) -->
                 <span class="contentdec">Our Greatest Ally</span>
 
                 <!-- Content tagline -->
-                <h2>
+                <h3>
                     Our greatest ally is beneath the waves.
-                </h2>
+                </h3>
 
                 <!-- Content Subheading -->
-                <p class="contentsub">More than beauty—the ocean is life support for the planet.</p>
+                <p class="contentsub">Why It Matters — More than beauty—the ocean is life support for the planet.</p>
 
                 <!-- Content Line -->
                 <div class="contentline"></div>
 
                 <p>
-                    Why does it matter if the ocean is <strong>healthy</strong>? Well, it’s not just because fish are <strong>cool to look at</strong>. 
+                    Why does it matter if the ocean is <strong>healthy</strong>? Well, it's not just because fish are <strong>cool to look at</strong>. 
                     The ocean is our <strong>best friend</strong> when it comes to living on this earth. 
                     Do you know that our best friend, the ocean, gives us <strong>half of the air we need to breathe</strong>? 
                     It provides <strong>every other breath you take</strong>. 
-                    Our best friend is an <strong>air conditioner</strong>—it <strong>cools the Earth</strong> and 
+                    Our best friend is an <strong>air conditioner</strong>it <strong>cools the Earth</strong> and 
                     <strong>absorbs excess heat from the sun</strong> to keep the planet livable. 
                     Protecting the ocean is not just about being kind to nature; it is about <strong>protecting human life on Earth</strong>.
                 </p>
@@ -233,12 +303,12 @@
                 <span class="contentdec">The Miracle of Cabo Pulmo</span>
 
                 <!-- Content tagline -->
-                <h2>
+                <h3>
                     From ghost town to thriving reef.
-                </h2>
+                </h3>
 
                 <!-- Content Subheading -->
-                <p class="contentsub">How protection turned decline into a 463% comeback.</p>
+                <p class="contentsub">Impact — How protection turned decline into a 463% comeback.</p>
 
                 <!-- Content Line -->
                 <div class="contentline"></div>
@@ -261,8 +331,8 @@
                 </div>
 
                 <p>
-                    If you think it’s <strong>too late to save the sea</strong>, just look at a place called <strong>Cabo Pulmo in Mexico</strong>. 
-                    Within just <strong>ten years</strong>, the reef’s total fish biomass increased by a staggering <strong>463%</strong> (Aburto-Oropeza et al., 2011). 
+                    If you think it's <strong>too late to save the sea</strong>, just look at a place called <strong>Cabo Pulmo in Mexico</strong>. 
+                    Within just <strong>ten years</strong>, the reef's total fish biomass increased by a staggering <strong>463%</strong> (Aburto-Oropeza et al., 2011). 
                     So many fish had been pulled out that there were <strong>barely any left</strong>, and the underwater world had become like a <strong>"ghost town"</strong>.
                 </p>
 
@@ -271,13 +341,13 @@
                     <h3>References</h3>
                         <ol>
                             <li>
-                                Aburto-Oropeza, O., et al. (2011) ‘Large Recovery of Fish Biomass in a No-Take Marine Reserve’, 
+                                Aburto-Oropeza, O., et al. (2011) "Large Recovery of Fish Biomass in a No-Take Marine Reserve", 
                                 <em>PLoS ONE</em>, 6(8). 
                                 Available at: 
                                 <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3155316/" target="_blank" rel="noopener">
                                     pmc.ncbi.nlm.nih.gov
                                 </a> 
-                                (Accessed 22 March 2026).
+                                (Accessed 10 March 2026).
                             </li>
                         </ol>
                 </div>
@@ -286,87 +356,97 @@
         </section>
 
         <!-- Content card 5 (what can be done)-->
-        <section class="content" id="ch5" data-ch="6" data-bg="bg7">
+        <section class="content" id="ch5" data-ch="6" data-bg="bg6">
             <div class="contentcon">
 
                 <!-- Content subheading (main) -->
                 <span class="contentdec">The 30x30 Vision</span>
 
                 <!-- Content tagline -->
-                <h2>
+                <h3>
                     Safe seas today,<br>
                     <em>thriving oceans tomorrow.</em>
-                </h2>
+                </h3>
 
                 <!-- Content Subheading -->
-                <p class="contentsub">Protected areas let marine life rebound—and humanity benefits too.</p>
+                <p class="contentsub">Recommendations — Protected areas let marine life rebound—and humanity benefits too.</p>
 
                 <!-- Content Line -->
                 <div class="contentline"></div>
 
                 <p>
                     Leaders all over the world are working on a plan to protect <strong>30% of our oceans by 2030</strong>. 
-                    This plan is called <strong>"30×30"</strong>. We are creating <strong>safe zones</strong> in the ocean, 
+                    This plan is called <strong>"30*30"</strong>. We are creating <strong>safe zones</strong> in the ocean, 
                     where <strong>no big ships or fishing nets</strong> are allowed. 
                     Protecting an area allows <strong>fish to grow big and healthy</strong>, and they then spread out to the rest of the ocean, 
                     benefiting <strong>everyone</strong>. 
                     The ocean has been <strong>crying out for our help</strong>. 
-                    But now, as we finally answer the ocean’s call, 
+                    But now, as we finally answer the ocean's call, 
                     the ocean is <strong>answering us in ways greater than we could have imagined</strong>.
                 </p>
 
                 <div class="quate">
                     When we protect the ocean, it protects us in return—life, hope, and a future beneath the waves.
                 </div>
-
+                <div class="refferancee">
+                    <h3>References</h3>
+                        <ol>
+                            <li>
+                                Marine Conservation Institute (n.d.) <em>30x30: Protecting at least 30% of the ocean by 2030</em>. 
+                                Available at: 
+                                <a href="https://marine-conservation.org/30x30/" target="_blank" rel="noopener">
+                                    marine-conservation.org/30x30/
+                                </a> 
+                                (Accessed 10 March 2026).
+                            </li>
+                        </ol>
+                </div>
 
             </div>
         </section>
 
         <!-- Handoff Section -->
-        <section class="handoff" id="handoff" data-bg="bg4">
+        <section class="handoff" id="handoff" data-bg="bg6">
 
         <!-- Handoff Section - Container Heading-->
         <span class="handofflebel">The Ocean Answered Back</span>
         
         <!-- Handoff Section - Container Sub Heading-->
         <h2>
-            Answering the Call:<br>
-            <em>The Echo of Hope</em>
+            The Whale's Warning:<br>
+            <em>A World Drowning in Noise</em>
         </h2>
 
         <!-- Handoff Section - Tag line  -->
-        <p>The ocean is not asking to be saved — it is asking to be heard.<br> 
-            explore the full story from the beginning.
+        <p>When the ocean grows loud, whales lose their way, their voice, and <br> their chance to survive.
         </p>
 
         <!-- Handoff Section - Link for the next content page -->
-        <a href="content_ST3.html" class="nextbutton">Act III · The Echo of Hope →</a>
+        <a href="content_ST4.html" class="nextbutton">Act I · A World Drowning in Noise →</a>
         </section>
     </main>
 
     <a href="#top" class="back-to-top" aria-label="Back to top">↑</a>
 
     <!-- Footer -->
-    <footer>
+	<footer>
         <div class="footer-content">
-
             <div class="footer-links">
-                <a href="pageEditor_ST1.html">Page Editor</a>
-                <a href="validation_ST1.html">Validation Page</a>
-                <a href="pageEditor_ST1.html#home-a11y">Accessibility</a>
-                <a href="pageEditor_ST1.html#compliance">Compliance</a>
+                <a href="pageEditor_ST2.html#content">Page Editor</a>
+                <a href="validation_ST2.html#content">Validation Page</a>
+                <a href="pageEditor_ST2.html#content-a11y">Accessibility</a>
+                <a href="pageEditor_ST2.html#compliance">Compliance</a>
             </div>
 
             <div class="student-details">
-                <p>Developed by: Kulith Silva</p>
-                <p>Student ID: 21819126</p>
+                <p>Developed by: Nethnu Bulathsinghala</p>
+                <p>Student ID: 21818981</p>
                 <p>&copy; 2026 Echoes From The Deep</p>
             </div>
-
         </div>
-    </footer>
+  </footer>
 
+    <!-- JS -->
     <script src="scripts/content.js"></script>
 
 </body>

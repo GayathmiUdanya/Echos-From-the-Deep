@@ -8,9 +8,11 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/png" href="assets/Logoo.png">
 
   <style>
+    /* image fitting  */
     #sceneBg {
       position: fixed;
       inset: 0;
@@ -18,10 +20,14 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      z-index: 0;
       transition: opacity 0.8s ease;
     }
 
+    /* to prevent white flash on background change */
+    body{
+      background-color: rgb(0, 5, 41);
+    }
+    /* ais container */
     .feed {
       background: rgba(1, 8, 20, .62);
       backdrop-filter: blur(18px);
@@ -34,7 +40,6 @@
       box-shadow: 0 8px 48px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(125, 211, 252, .06);
       position: relative;
     }
-
     .feed::after {
       content: '';
       position: absolute;
@@ -46,7 +51,7 @@
       border-radius: 18px 0 0 18px;
       transition: background 0.7s ease;
     }
-
+    /* Impact Levels */
     .feed.impact-low {
       border-color: rgba(239, 68, 68, 0.3);
       box-shadow: 0 8px 40px rgba(239, 68, 68, 0.08);
@@ -62,6 +67,7 @@
       box-shadow: 0 8px 40px rgba(16, 185, 129, 0.12);
     }
 
+    /* Impact Level Indicators */
     .feed.impact-low::after {
       background: #f87171;
     }
@@ -74,10 +80,12 @@
       background: #34d399;
     }
 
+    /* Card Styling */
     .inside {
       padding: 1.8rem 2rem 1.8rem 2.4rem;
     }
 
+    /* Score Styling */
     .score {
       font-family: 'Cormorant Garamond', serif;
       font-size: 4.5rem;
@@ -87,12 +95,14 @@
       transition: color 0.7s ease;
       text-shadow: 0 0 40px rgba(125, 211, 252, 0.3);
       display: inline-block;
-    }
+    } 
 
+    /* Score Animation little pop up */
     .score.pop {
       animation: scorePop 0.35s cubic-bezier(0.36, 0.07, 0.19, 0.97);
     }
 
+    /* Score Pop Animation */
     @keyframes scorePop {
       0% {
         transform: scale(1);
@@ -111,6 +121,7 @@
       }
     }
 
+    /* Impact Level Colors */
     .score.impact-low {
       color: #f87171;
       text-shadow: 0 0 40px rgba(239, 68, 68, 0.3);
@@ -126,6 +137,7 @@
       text-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
     }
 
+    /* Card Label */
     .label {
       font-family: 'Cinzel', serif;
       font-size: .58rem;
@@ -135,6 +147,7 @@
       margin-top: .3rem;
     }
 
+    /* Impact Level  Styling */
     .impact-level-badge {
       display: inline-flex;
       align-items: center;
@@ -149,31 +162,36 @@
       margin-bottom: .6rem;
       transition: all 0.5s ease;
     }
-
+    
+    /* Impact Level  Styles */
     .impact-level-badge.none {
       background: rgba(125, 211, 252, .07);
       color: #7dd3fc;
       border-color: rgba(125, 211, 252, .2);
     }
 
+    /* Impact Level  Styles */
     .impact-level-badge.low {
       background: rgba(239, 68, 68, .1);
       color: #f87171;
       border-color: rgba(239, 68, 68, .28);
     }
 
+    /* Impact Level  Styles */
     .impact-level-badge.mid {
       background: rgba(245, 158, 11, .1);
       color: #fbbf24;
       border-color: rgba(245, 158, 11, .28);
     }
 
+    /* Impact Level  Styles */
     .impact-level-badge.high {
       background: rgba(16, 185, 129, .1);
       color: #34d399;
       border-color: rgba(16, 185, 129, .28);
     }
 
+    /* Impact Level Badge Animation */
     .impact-level-badge.level-up {
       animation: badgePulse 0.5s ease;
     }
@@ -192,6 +210,7 @@
       }
     }
 
+    /* Message Styling */
     .message {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.05rem;
@@ -203,6 +222,7 @@
       transition: opacity 0.4s ease;
     }
 
+    /* Counter Styles */
     .counterR {
       display: flex;
       align-items: center;
@@ -211,10 +231,12 @@
       margin-top: .8rem;
     }
 
+    /* Counter item Styles */
     .counterI {
       text-align: center;
     }
 
+    /* Counter Value Styles */
     .count {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.8rem;
@@ -222,7 +244,7 @@
       color: #7dd3fc;
       line-height: 1;
     }
-
+    /* Counter Total Styles */
     .total {
       font-family: 'Cinzel', serif;
       font-size: .48rem;
@@ -231,7 +253,7 @@
       color: #4a7a94;
       margin-top: .2rem;
     }
-
+    /* Rest Button Styles */
     .restbutton {
       background: transparent;
       color: #4a7a94;
@@ -248,19 +270,19 @@
       align-items: center;
       gap: .4rem;
     }
-
+    /* Rest Button Hover Styles */
     .restbutton:hover {
       color: #f87171;
       border-color: rgba(239, 68, 68, .35);
       background: rgba(239, 68, 68, .06);
     }
-
+    /* Rest Button Icon Styles */
     .restbutton svg {
       width: 11px;
       height: 11px;
       opacity: 0.7;
     }
-
+    /* Ocean Box Styles */
     .oceanBox {
       display: flex;
       align-items: center;
@@ -272,7 +294,7 @@
       border-radius: 10px;
       transition: background 0.7s ease, border-color 0.7s ease;
     }
-
+    /* Ocean Box Impact Level Styles */
     .oceanBox.impact-low {
       background: rgba(239, 68, 68, 0.05);
       border-color: rgba(239, 68, 68, 0.12);
@@ -287,12 +309,12 @@
       background: rgba(16, 185, 129, 0.05);
       border-color: rgba(16, 185, 129, 0.12);
     }
-
+    /* Ocean Box Icon Styles */
     .oceanBoxicon {
       font-size: 1.2rem;
       flex-shrink: 0;
     }
-
+    /* Ocean Box Text Styles */
     .oceanBoxtext {
       font-family: 'Cormorant Garamond', serif;
       font-size: .9rem;
@@ -300,7 +322,7 @@
       color: #94b8cc;
       line-height: 1.5;
     }
-
+    /* Action Grid Styles */
     .actiongrid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -320,7 +342,7 @@
         grid-template-columns: 1fr;
       }
     }
-
+    /* Card Styles */
     .card {
       background: rgba(3, 13, 26, 0.78);
       border: 1px solid rgba(125, 211, 252, 0.11);
@@ -342,22 +364,19 @@
       right: 15%;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-      z-index: 1;
     }
 
     .card:hover {
-      transform: translateY(-6px);
       border-color: rgba(125, 211, 252, 0.3);
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(125, 211, 252, 0.05);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(125, 211, 252, 0.05); 
     }
 
     .card.selected {
       border-color: rgba(125, 211, 252, 0.65);
       background: rgba(14, 116, 144, 0.2);
       box-shadow: 0 0 30px rgba(14, 116, 144, 0.3);
-      transform: translateY(-5px);
     }
-
+    /* Ripple Animation Styles when card is pressed */
     .card .ripple {
       position: absolute;
       border-radius: 50%;
@@ -365,7 +384,6 @@
       transform: scale(0);
       animation: rippleAnimation 0.55s linear;
       pointer-events: none;
-      z-index: 3;
     }
 
     @keyframes rippleAnimation {
@@ -374,7 +392,7 @@
         opacity: 0;
       }
     }
-
+    /* Card Tick Styles */
     .card .tick {
       position: absolute;
       top: 10px;
@@ -389,17 +407,14 @@
       font-size: .7rem;
       color: white;
       opacity: 0;
-      transform: scale(0.4);
       transition: opacity 0.25s, transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-      z-index: 2;
       box-shadow: 0 0 12px rgba(14, 116, 144, 0.6);
     }
 
     .card.selected .tick {
       opacity: 1;
-      transform: scale(1);
     }
-
+    /* Card Image Styles */
     .cardimg {
       width: 100%;
       aspect-ratio: 16/9;
@@ -407,54 +422,11 @@
       display: block;
       border-bottom: 1px solid rgba(125, 211, 252, 0.08);
     }
-
-    .cardimg-placeholder::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, transparent 30%, rgba(125, 211, 252, 0.04) 50%, transparent 70%);
-      background-size: 200% 200%;
-      animation: shimmer 4s ease infinite;
-    }
-
-    @keyframes shimmer {
-
-      0%,
-      100% {
-        background-position: 0% 50%;
-      }
-
-      50% {
-        background-position: 100% 50%;
-      }
-    }
-
-    .card-icon-svg {
-      width: 42px;
-      height: 42px;
-      opacity: 0.7;
-      filter: drop-shadow(0 0 10px rgba(125, 211, 252, 0.35));
-      transition: opacity 0.3s, transform 0.3s;
-    }
-
-    .card:hover .card-icon-svg {
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-    .cardLebel {
-      font-family: 'Cinzel', serif;
-      font-size: .44rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: #4a7a94;
-      padding-left: 110px;
-    }
-
+    /* Card Body Styles */
     .cardBody {
       padding: 1rem 1.2rem 1.3rem;
     }
-
+    /* Card Title Styles */
     .cardTitle {
       font-family: 'Cinzel', serif;
       font-size: .76rem;
@@ -463,14 +435,14 @@
       color: #e8f4f8;
       margin-bottom: .4rem;
     }
-
+    /* Card Description Styles */
     .cardDescription {
       font-size: .82rem;
       color: #94b8cc;
       line-height: 1.55;
       margin-bottom: .8rem;
     }
-
+    /* Impact Points Styles card */
     .impactPoints {
       display: inline-flex;
       align-items: center;
@@ -478,37 +450,33 @@
       font-family: 'Cinzel', serif;
       font-size: .55rem;
       letter-spacing: .14em;
-      text-transform: uppercase;
       color: #7dd3fc;
       background: rgba(14, 116, 144, 0.15);
       border: 1px solid rgba(125, 211, 252, 0.18);
       border-radius: 20px;
       padding: .18rem .7rem;
-      transition: background 0.3s, border-color 0.3s;
     }
-
+    /* Impact Points Styles for Selected Card */
     .card.selected .impactPoints {
       background: rgba(14, 116, 144, 0.35);
       border-color: rgba(125, 211, 252, 0.45);
     }
-
+    /* Toast Styles */
     .pts-toast {
       position: fixed;
-      pointer-events: none;
-      z-index: 9999;
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.4rem;
-      font-weight: 300;
+      font-weight: 800;
       color: #7dd3fc;
       text-shadow: 0 0 20px rgba(125, 211, 252, 0.6);
       animation: ptsFloat 1s ease forwards;
     }
-
+    /* Negative Toast Styles */
     .pts-toast.neg {
       color: #f87171;
       text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
     }
-
+    /* Float Animation for Toasts */
     @keyframes ptsFloat {
       0% {
         opacity: 1;
@@ -520,11 +488,11 @@
         transform: translateY(-60px) scale(0.8);
       }
     }
-
+    /* Card Entry Animation */
     .card {
       animation: cardEntry 0.5s ease both;
     }
-
+    /* Card Animation Delays */
     .card:nth-child(1) {
       animation-delay: 0.05s;
     }
@@ -548,7 +516,7 @@
     .card:nth-child(6) {
       animation-delay: 0.40s;
     }
-
+    /* Card Entry Animation */
     @keyframes cardEntry {
       from {
         opacity: 0;
@@ -560,7 +528,7 @@
         transform: translateY(0);
       }
     }
-
+    /* Progress Bar Styles */
     .bart {
       width: 100%;
       height: 6px;
@@ -570,7 +538,7 @@
       overflow: hidden;
       position: relative;
     }
-
+    /* Progress Bar Fill */
     .barF {
       height: 100%;
       border-radius: 3px;
@@ -579,7 +547,7 @@
       transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
       box-shadow: 0 0 10px rgba(125, 211, 252, 0.35);
     }
-
+    /* Progress Bar Markers */
     .bart::before {
       content: '';
       position: absolute;
@@ -588,9 +556,8 @@
       bottom: 0;
       width: 1px;
       background: rgba(255, 255, 255, 0.12);
-      z-index: 1;
     }
-
+    /* Progress Bar Markers */
     .bart::after {
       content: '';
       position: absolute;
@@ -599,55 +566,81 @@
       bottom: 0;
       width: 1px;
       background: rgba(255, 255, 255, 0.12);
-      z-index: 1;
     }
+    .pageup::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(0, 41, 38, 0.808) 0%,
+        rgba(0, 41, 38, 0.55) 40%,
+        rgba(0, 41, 38, 0.0) 100%
+    );
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+body:has(#feed.impact-high) .pageup::before {
+    opacity: 1;
+}
 
   </style>
 </head>
 
 <body class="bg-low">
+  <!-- Background Image -->
   <img src="assets/bg_low.png" class="scene-bg" id="sceneBg"
-    alt="Ocean state background — changes based on your impact score">
-    <header>
-        <nav>
-            <div class="logo-area">
-                <div class="logo-circle"></div>
-                <div class="logo-text">
-                    <p>Echoes From The Deep</p>
-                    <p>SDG 14 · Life Below Water</p>
+    alt="Background image for the ocean state background — changes based on your impact score">
+        <header>
+            <!-- Navigation -->
+            <nav>
+                <div class="logo-area">
+                    <div class="logo-circle"></div>
+                    <div class="logo-text">
+                        <h1>Echoes From The Deep</h1>
+                        <p>SDG 14 · Life Below Water</p>
+                    </div>
                 </div>
-            </div>
-            <div class="nav-links">
-                <a href="home.html" >Home</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="ais.html"  class="active">Action Impact Simulator</a>
-                <a href="feedback.html">Feedback</a>
-                <a href="team.html">Team</a>
-                <a href="profile.html">Profile</a>
-                <a href="sitemap.html">Sitemap</a>
-            </div>
-        </nav>
-    </header>
-
+                <div class="nav-links">
+                    <a href="home.html">Home</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="ais.html" class="active">Action Impact Simulator</a>
+                    <a href="feedback.html">Feedback</a>
+                    <a href="team.html">Team</a>
+                    <a href="profile.html">Profile</a>
+                    <a href="sitemap.html">Sitemap</a>
+                </div>
+            </nav>
+        </header>
+<!-- Top up  -->
     <main>
       <section class="pageup">
         <div class="container">
           <div class="upcontent">
+            <!-- Mini heading -->
             <span class="updescription">Act IV · The Turning Point</span>
+            <!-- Main heading -->
             <h1 class="uptittle">
               Your Actions.<br><em>Their Ocean.</em>
             </h1>
+            <!-- Divider -->
             <div class="updevider"></div>
+            <!-- Description -->
             <p class="text-serif">
               Every choice you make changes what the ocean becomes.<br>
               Select the actions you take — watch the water respond.
             </p>
           </div>
         </div>
+        <!-- AIS section  -->
       </section>
         <div class="container">
           <div class="feed" id="feed" role="region">
             <div class="inside">
+              <!-- Score up part with some internal styling -->
               <div style="display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;flex-wrap:wrap;">
                 <div style="text-align:center;min-width:100px;">
                   <div class="score" id="score">0</div>
@@ -657,19 +650,23 @@
                   </div>
                 </div>
                 <div>
+                  <!-- Impact Level part -->
                   <div class="impact-level-badge none" id="level">Awaiting Your Choices</div>
                   <p class="message" id="message">
                     The ocean is listening. Select actions below to begin.
                   </p>
+                  <!-- Action Counter -->
                   <div class="counterR">
                     <div class="counterI">
                       <div class="count" id="selcount">0</div>
                       <div class="total">Actions Selected</div>
                     </div>
+                    <!-- Total Available -->
                     <div class="counterI">
                       <div class="count">6</div>
                       <div class="total">Total Available</div>
                     </div>
+                    <!-- Reset Button -->
                     <button class="restbutton" id="restbutton" onclick="resetall()">
                       <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 6a4 4 0 1 1 1 2.7" stroke="currentColor" stroke-width="1.4"
@@ -680,6 +677,7 @@
                       Reset
                     </button>
                   </div>
+                  <!-- Ocean State -->
                   <div class="oceanBox" id="oceanState">
                     <span class="oceanBoxicon" id="oceanI">🌊</span>
                     <span class="oceanBoxtext" id="oceant">
@@ -690,71 +688,94 @@
 
               </div>
             </div>
+            <!-- Action Grid -->
             <div class="actiongrid" role="group">
+
+              <!-- Card 1 -->
               <div class="card" id="card1" onclick="toggle(1, event)" role="checkbox" aria-checked="false">
-                <div class="tick">✓</div>
-                <img src="assets/plastic.png" class="cardimg" alt="Single use plastic bottles on a beach">
-                <span class="cardLebel">Plastic Reduction</span>
+                <!-- Ticking -->
+                <div class="tick">✓</div> 
+                <!-- card 1 image -->
+                <img src="assets/plastic.png" class="cardimg" alt="Image of single use plastic bottles on a beach">
+                <!-- Card Body -->
                 <div class="cardBody">
+                  <!-- Card Title -->
                   <h2 class="cardTitle">Reduce Single Use Plastic</h2>
+                  <!-- Card Description -->
                   <p class="cardDescription">Switch to reusable bags, bottles and containers. Over 8 million tonnes of
                     plastic enter the ocean every year.</p>
-                  <span class="impactPoints">● 3 pts</span>
+                    <!-- Impact Points -->
+                  <span class="impactPoints">● 3 PTS</span>
                 </div>
               </div>
+
+              <!-- Card 2 -->
               <div class="card" id="card2" onclick="toggle(2, event)" role="checkbox" aria-checked="false">
+                <!-- Ticking -->
                 <div class="tick">✓</div>
-                <img src="assets/beach_clean.png" class="cardimg" alt="Volunteers cleaning a beach">
-                <span class="cardLebel">Beach Clean</span>
+                <!-- card 2 image -->
+                <img src="assets/beach_clean.png" class="cardimg" alt="Image of volunteers cleaning a beach">
                 <div class="cardBody">
                   <h2 class="cardTitle">Join a Beach Clean</h2>
                   <p class="cardDescription">Volunteer at a local beach clean event. Direct action that removes waste
                     from coastlines and prevents it reaching the sea.</p>
-                  <span class="impactPoints">● 4 pts</span>
+                  <span class="impactPoints">● 4 PTS</span>
                 </div>
               </div>
+
+              <!-- Card 3 -->
               <div class="card" id="card3" onclick="toggle(3, event)" role="checkbox" aria-checked="false">
+                <!-- Ticking -->
                 <div class="tick">✓</div>
-                <img src="assets/sunscreen.png" class="cardimg" alt="Reef safe sunscreen on a sunny beach">
-                <span class="cardLebel">Reef Safe Sunscreen</span>
+                <!-- card 3 image -->
+                <img src="assets/sunscreen.png" class="cardimg" alt="Image of reef safe sunscreen on a sunny beach">
                 <div class="cardBody">
                   <h2 class="cardTitle">Use Reef Safe Sunscreen</h2>
                   <p class="cardDescription">Chemical sunscreens contain oxybenzone which bleaches coral reefs. Switch
                     to mineral based zinc oxide alternatives.</p>
-                  <span class="impactPoints">● 2 pts</span>
+                  <span class="impactPoints">● 2 PTS</span>
                 </div>
               </div>
+
+              <!-- Card 4 -->
               <div class="card" id="card4" onclick="toggle(4, event)" role="checkbox" aria-checked="false">
+                <!-- Ticking -->
                 <div class="tick">✓</div>
-                <img src="assets/seafood.png" class="cardimg" alt="Sustainable seafood at a market">
-                <span class="cardLebel">Sustainable Seafood</span>
+                <!-- card 4 image -->
+                <img src="assets/seafood.png" class="cardimg" alt="Image of sustainable seafood at a market">
                 <div class="cardBody">
                   <h2 class="cardTitle">Choose Sustainable Seafood</h2>
                   <p class="cardDescription">Look for the MSC blue label when buying fish. Overfishing has depleted 90%
                     of large fish populations since 1950.</p>
-                  <span class="impactPoints">● 3 pts</span>
+                  <span class="impactPoints">● 3 PTS</span>
                 </div>
               </div>
+
+              <!-- Card 5 -->
               <div class="card" id="card5" onclick="toggle(5, event)" role="checkbox" aria-checked="false">
+                <!-- Ticking -->
                 <div class="tick">✓</div>
-                <img src="assets/charity.png" class="cardimg" alt="Ocean conservation volunteers">
-                <span class="cardLebel">Ocean Charities</span>
+                <!-- card 5 image -->
+                <img src="assets/charity.png" class="cardimg" alt="Image of ocean conservation volunteers">
                 <div class="cardBody">
                   <h2 class="cardTitle">Support Ocean Charities</h2>
                   <p class="cardDescription">Donate to or volunteer with organisations like Surfers Against Sewage,
                     Ocean Conservancy, or WWF ocean programmes.</p>
-                  <span class="impactPoints">● 3 pts</span>
+                  <span class="impactPoints">● 3 PTS</span>
                 </div>
               </div>
+
+                <!-- Card 6 -->
               <div class="card" id="card6" onclick="toggle(6, event)" role="checkbox" aria-checked="false">
+                <!-- Ticking -->
                 <div class="tick">✓</div>
-                <img src="assets/awareness.png" class="cardimg" alt="Spread Ocean Awareness on social media">
-                <span class="cardLebel">Spread Awareness</span>
+                <!-- card 6 image -->
+                <img src="assets/awareness.png" class="cardimg" alt="Image of spreading ocean awareness on social media">
                 <div class="cardBody">
                   <h2 class="cardTitle">Spread Ocean Awareness</h2>
                   <p class="cardDescription">Share facts, sign petitions, and talk to friends about ocean issues. Mass
                     awareness is what drives policy change globally.</p>
-                  <span class="impactPoints">● 2 pts</span>
+                  <span class="impactPoints">● 2 PTS</span>
                 </div>
               </div>
 
@@ -762,18 +783,19 @@
           </div>
         </div>
     </main>
-
+    <!-- Back to Top Button -->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 
 	<footer>
+    <!-- Footer Content -->
         <div class="footer-content">
             <div class="footer-links">
-                <a href="pageEditor_ST2.html">Page Editor</a>
-                <a href="validation_ST2.html">Validation Page</a>
+                <a href="pageEditor_ST2.html#ais">Page Editor</a>
+                <a href="validation_ST2.html#ais">Validation Page</a>
                 <a href="pageEditor_ST2.html#ais-a11y">Accessibility</a>
                 <a href="pageEditor_ST2.html#compliance">Compliance</a>
             </div>
-
+<!-- Student Details -->
             <div class="student-details">
                 <p>Developed by: Nethnu Bulathsinghala</p>
                 <p>Student ID: 21818981</p>
@@ -781,7 +803,7 @@
             </div>
         </div>
   </footer>
-
+<!-- Script -->
   <script src="scripts/ais.js"></script>
     
 </body>

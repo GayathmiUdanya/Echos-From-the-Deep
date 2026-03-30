@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gayathmi | Page-Editor</title>
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Page Editor Validator CSS -->
+    <link rel="stylesheet" href="styles/pageEditor_validator.css"> 
+
+    <!-- Browser Tab - Icon -->
+    <link rel="icon" type="image/png" href="assets/Logoo.png">
+
 
 </head>
 <body>
-    
-    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
-
+    <!-- Navigation -->
     <header>
         <nav>
             <div class="logo-area">
@@ -36,61 +40,67 @@
     </header>
 
     <section class="stud">
-        <h2>Gayathmi Udanya, team name, student 04</h2>
+        <h2>Gayathmi Udanya<br> Deep Dive Devs<br> Student 4</h2>
     </section>
 
     <div class="container">
         <!-- Main content area -->
         <main>
 
-            <!-- Update those first three sections for the pages you were responsible to implement -->
-
             <section>
                 <h2 id="profile">Profile Page</h2>
                     <h3>Technical Description</h3>
-                        <ul>
-                            <li><code>&lt;div id="sample-data-container"&gt;</code> holds dynamic profile cards</li>
-                            
-                            <li><code>&lt;div id="profileBuilder"&gt;</code> contains the interactive profile builder</li>
-                            
-                            <li><code>profile</code> stores the current profile data</li>
-                            
-                            <li><code>sampleProfiles</code> is an array of pre-filled profiles</li>
-                            
-                            <li><code>renderSampleData()</code> clears the container and displays profiles, skipping empty fields</li>
-                            
-                            <li><code>createCreateButton()</code> adds a "Create New Profile" button that triggers <code>createProfile()</code></li>
-                            
-                            <li><code>saveProfile()</code> saves a profile with a random photo, replaces skipped fields, updates <code>sampleProfiles</code>, resets the builder, and re-renders profiles</li>
-                            
-                            <li><code>clearProfile()</code> resets fields to "Not Added Yet" and resets the progress bar after confirmation</li>
-                            
-                            <li><code>createProfile()</code> displays the builder with steps, fields, progress bar, and Save button</li>
-                            
-                            <li><code>step1()</code> collects basic info (name, age, country, role)</li>
-                            
-                            <li><code>step2()</code> collects interests (issue, animal, activity)</li>
-                            
-                            <li><code>step3()</code> collects goals and actions (goal, volunteer, awareness)</li>
-                            
-                            <li><code>updateProgress()</code> calculates completion and updates the progress bar</li>
-                            
-                            <li><code>renderProfile()</code> updates displayed fields, leaving blanks if empty</li>
+                        <h3>HTML Technical Description</h3>
+                            <ul>
+                                <li><code>&lt;div id="sample-data-container"&gt;</code> holds dynamic profile cards</li>
+                                
+                                <li><code>&lt;div id="profileBuilder"&gt;</code> contains the interactive profile builder</li>
+                            </ul>
 
-                            <li><code>background-attachment: fixed</code> creates a parallax effect with a static background</li>
-                            
-                            <li><code>#sample-data-container</code> uses CSS Grid (<code>repeat(3, 1fr)</code>) for a 3-column layout that distributes profile cards evenly</li>
-                            
-                            <li><code>.sample-data:hover</code> uses <code>transform: translateY(-10px)</code> and <code>box-shadow</code> to create a lift effect for interactive feedback</li>
-                            
-                            <li><code>.country</code> and <code>.role</code> use color-coded styles for quick visual distinction</li>
-                            
-                            <li><code>#profileBuilder</code> is initially <code>display: none</code> and toggled to <code>display: flex</code> via JavaScript</li>
-                            
-                            <li><code>.profile-photo</code> uses <code>object-fit: cover</code> for consistent image sizing</li>
-                            
-                            <li>Media queries (<code>1024px</code>, <code>768px</code>, <code>480px</code>) ensure responsive layout across devices</li>
-                        </ul>
+                        <h3>CSS Technical Description</h3>
+                            <ul>
+                                <li><code>background-attachment: fixed</code> creates a parallax effect with a static background</li>
+                                
+                                <li><code>#sample-data-container</code> uses CSS Grid (<code>repeat(3, 1fr)</code>) for a 3-column layout that distributes profile cards evenly</li>
+                                
+                                <li><code>.sample-data:hover</code> uses <code>transform: translateY(-10px)</code> and <code>box-shadow</code> to create a lift effect for interactive feedback</li>
+                                
+                                <li><code>.country</code> and <code>.role</code> use color-coded styles for quick visual distinction</li>
+                                
+                                <li><code>#profileBuilder</code> is initially <code>display: none</code> and toggled to <code>display: flex</code> via JavaScript</li>
+                                
+                                <li><code>.profile-photo</code> uses <code>object-fit: cover</code> for consistent image sizing</li>
+                                
+                                <li>Media queries (<code>1024px</code>, <code>768px</code>, <code>480px</code>) ensure responsive layout across devices</li>
+                            </ul>
+
+
+                        <h3>JavaScript Technical Description</h3>
+                            <ul>
+                                <li><code>profile</code> stores the current profile data</li>
+                                
+                                <li><code>sampleProfiles</code> is an array of pre-filled profiles</li>
+                                
+                                <li><code>renderSampleData()</code> clears the container and displays profiles, skipping empty fields</li>
+                                
+                                <li><code>createCreateButton()</code> adds a "Create New Profile" button that triggers <code>createProfile()</code></li>
+                                
+                                <li><code>saveProfile()</code> saves a profile with a random photo, replaces skipped fields, updates <code>sampleProfiles</code>, resets the builder, and re-renders profiles</li>
+                                
+                                <li><code>clearProfile()</code> resets fields to "Not Added Yet" and resets the progress bar after confirmation</li>
+                                
+                                <li><code>createProfile()</code> displays the builder with steps, fields, progress bar, and Save button</li>
+                                
+                                <li><code>step1()</code> collects basic info (name, age, country, role)</li>
+                                
+                                <li><code>step2()</code> collects interests (issue, animal, activity)</li>
+                                
+                                <li><code>step3()</code> collects goals and actions (goal, volunteer, awareness)</li>
+                                
+                                <li><code>updateProgress()</code> calculates completion and updates the progress bar</li>
+                                
+                                <li><code>renderProfile()</code> updates displayed fields, leaving blanks if empty</li>
+                            </ul>
 
                     <h3 id="profile-a11y">Accessibility</h3>
                         <ul>
@@ -115,8 +125,8 @@
                             <li>Google Fonts <code>display=swap</code> prevents invisible text during font loading</li>
                         </ul>
                     
-                    <h3>Link to th validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST4.html#profile">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST4.html#profile">Validation page</a></p> 
 
                     <h3>Link to the page</h3>
                         <p><a href="profile.html">Profile page</a></p>
@@ -125,49 +135,53 @@
             <section>
                 <h2 id="sitemap">Sitemap Page</h2>
                     <h3>Technical Description</h3>
-                        <ul>
-                            <li><code>viewBox</code> allows the diagram to scale proportionally across all screen sizes</li>
-                            
-                            <li>Two SVGs (<code>.desktop-map</code> and <code>.mobile-map</code>) are created instead of making one responsive</li>
-                            
-                            <li><code>&lt;g&gt;</code> groups SVG elements together</li>
-                            
-                            <li><code>&lt;a&gt;</code> tags make nodes functional with hyperlinks</li>
-                            
-                            <li><code>tabindex="0"</code> enables keyboard navigation</li>
-                            
-                            <li><code>&lt;title&gt;</code> inside each SVG <code>&lt;a&gt;</code> provides accessible descriptions</li>
-                            
-                            <li><code>&lt;defs&gt;</code> stores reusable elements like <code>&lt;marker&gt;</code> (arrowheads) and <code>&lt;linearGradient&gt;</code> (fills)</li>
-                            
-                            <li><code>&lt;marker orient="auto"&gt;</code> adds arrowheads to lines</li>
-                            
-                            <li><code>&lt;rect rx="10"&gt;</code> creates rounded node boxes</li>
-                            
-                            <li><code>&lt;line&gt;</code> draws connections between nodes</li>
-                            
-                            <li><code>&lt;circle&gt;</code> shows decorative junction points</li>
-                            
-                            <li><code>&lt;text&gt;</code> elements display titles and subtitles with hierarchy</li>
-                            
-                            <li><code>background-attachment: fixed</code> creates a parallax effect</li>
-                            
-                            <li><code>.sitemap-wrapper</code> centers the diagram with a dark semi-transparent panel and teal border</li>
-                            
-                            <li><code>.box-rect</code> uses smooth transition for hover animations</li>
-                            
-                            <li><code>.node-group:hover</code> ensures all node types respond consistently</li>
-                            
-                            <li><code>.root-rect</code>, <code>.home-rect</code>, <code>.active-rect</code> use distinct fills and strokes; active uses dashed stroke</li>
-                            
-                            <li><code>text-anchor: middle</code> centers labels in nodes</li>
-                            
-                            <li><code>.hero_title</code> uses <code>clamp()</code> for consistent font size across screens</li>
-                            
-                            <li><code>.svg-link:focus</code> adds a visible teal outline for keyboard focus</li>
-                            
-                            <li><code>.desktop-map</code> and <code>.mobile-map</code> toggle via media queries for responsive layouts</li>
-                        </ul>
+                        <h3>HTML Technical Description</h3>
+                            <ul>
+                                <li><code>viewBox</code> allows the diagram to scale proportionally across all screen sizes</li>
+                                
+                                <li>Two SVGs (<code>.desktop-map</code> and <code>.mobile-map</code>) are created instead of making one responsive</li>
+                                
+                                <li><code>&lt;g&gt;</code> groups SVG elements together</li>
+                                
+                                <li><code>&lt;a&gt;</code> tags make nodes functional with hyperlinks</li>
+                                
+                                <li><code>tabindex="0"</code> enables keyboard navigation</li>
+                                
+                                <li><code>&lt;title&gt;</code> inside each SVG <code>&lt;a&gt;</code> provides accessible descriptions</li>
+                                
+                                <li><code>&lt;defs&gt;</code> stores reusable elements like <code>&lt;marker&gt;</code> (arrowheads) and <code>&lt;linearGradient&gt;</code> (fills)</li>
+                                
+                                <li><code>&lt;marker orient="auto"&gt;</code> adds arrowheads to lines</li>
+                                
+                                <li><code>&lt;rect rx="10"&gt;</code> creates rounded node boxes</li>
+                                
+                                <li><code>&lt;line&gt;</code> draws connections between nodes</li>
+                                
+                                <li><code>&lt;circle&gt;</code> shows decorative junction points</li>
+                                
+                                <li><code>&lt;text&gt;</code> elements display titles and subtitles with hierarchy</li>
+                            </ul>
+
+                        <h3>CSS Technical Description</h3>
+                            <ul>
+                                <li><code>background-attachment: fixed</code> creates a parallax effect</li>
+                                
+                                <li><code>.sitemap-wrapper</code> centers the diagram with a dark semi-transparent panel and teal border</li>
+                                
+                                <li><code>.box-rect</code> uses smooth transition for hover animations</li>
+                                
+                                <li><code>.node-group:hover</code> ensures all node types respond consistently</li>
+                                
+                                <li><code>.root-rect</code>, <code>.home-rect</code>, <code>.active-rect</code> use distinct fills and strokes; active uses dashed stroke</li>
+                                
+                                <li><code>text-anchor: middle</code> centers labels in nodes</li>
+                                
+                                <li><code>.hero_title</code> uses <code>clamp()</code> for consistent font size across screens</li>
+                                
+                                <li><code>.svg-link:focus</code> adds a visible teal outline for keyboard focus</li>
+                                
+                                <li><code>.desktop-map</code> and <code>.mobile-map</code> toggle via media queries for responsive layouts</li>
+                            </ul>
 
                     <h3 id="sitemap-a11y">Accessibility</h3>
                         <ul>
@@ -190,180 +204,388 @@
                             <li>Semantic <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code> enable easy navigation</li>
                         </ul>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST4.html#sitemap">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST4.html#sitemap">Validation Page</a></p> 
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="sitemap.html">Sitemap page</a></p>
+                        <p><a href="sitemap.html">Sitemap Page</a></p>
             </section>
 
             <section>
                 <h2 id="content">Content Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                    <h3>HTML Technical Description</h3>
+                    <ul>
+                        <li>The shared content page template was collaboratively created by Nethnu Bulathsinghala and Kulith Silva.</li>
+                        <li>The technical description and accessibility are consistent and shared across the entire team.</li>
+                    </ul>
+                    
+                        <ul>
+                            <li>The shared content page template was collaboratively created by Nethnu Bulathsinghala and Kulith Silva.</li>
+                            <li>The technical description and accessibility are consistent and shared across the entire team.</li>
+                        </ul>
+                        <ul>
+                            <li><code>&lt;!DOCTYPE html&gt;</code> and <code>&lt;html lang="en"&gt;</code> define the document as HTML5 and set the language for accessibility and correct interpretation.</li>
+
+                            <li><code>&lt;meta charset="UTF-8"&gt;</code> ensures support for a wide range of characters and symbols.</li>
+
+                            <li><code>&lt;meta name="viewport"&gt;</code> enables responsive design by matching the layout to the device width.</li>
+
+                            <li><code>&lt;link rel="stylesheet"&gt;</code> imports external CSS files and Google Fonts to style the page.</li>
+
+                            <li><code>&lt;header&gt;</code> and <code>&lt;nav&gt;</code> structure the navigation bar, improving usability and accessibility.</li>
+
+                            <li><code>id="quickJump"</code> acts as a navigation landmark with an aria-label to ensure screen readers identify it as a functional section for jumping between content.</li>
+
+                            <li><code>id="qjPill"</code> serves as the main container for the navigation items, likely styled as a floating or sticky horizontal "pill" bar.</li>
+
+                            <li><code>class="qj-item"</code> creates internal page links using <code>href</code> anchors (like <code>#act1</code>) to scroll the user to specific sections without a page reload.</li>
+
+                            <li><code>class="active"</code> and <code>aria-current="true"</code> are used on the first link to visually and programmatically mark the user's starting location in the document.</li>
+
+                            <li><code>class="qj-connector"</code> provides a structural element used in CSS to draw connecting lines between the navigation points, creating a "progress tracker" look.</li>
+
+                            <li><code>class="qj-dot"</code> functions as a decorative or functional bullet point within each link to give the menu a modern, minimalist aesthetic.</li>
+
+                            <li><code>data-target</code> attributes store the ID of the destination section, which is typically used by a JavaScript scroll-spy to highlight the correct link as the user scrolls.</li>
+
+                            <li><code>&lt;main&gt;</code> wraps the primary content, helping screen readers identify the main section of the page.</li>
+
+                            <li><code>&lt;section&gt;</code> elements divide the page into logical content areas such as hero, content cards, and handoff.</li>
+
+                            <li><code>id</code> attributes (e.g., <code>#top</code>, <code>#act3</code>) are used for internal navigation and anchor linking.</li>
+
+                            <li><code>class</code> attributes are used to apply consistent styling and layout through CSS.</li>
+
+                            <li><code>data-*</code> attributes (e.g., <code>data-bg</code>, <code>data-ch</code>) store custom data used by JavaScript for dynamic behaviour.</li>
+
+                            <li><code>&lt;img&gt;</code> elements include <code>alt</code> text for accessibility and <code>onerror</code> to hide images if they fail to load.</li>
+
+                            <li><code>aria-hidden="true"</code> is used to hide decorative elements from screen readers.</li>
+
+                            <li><code>&lt;a&gt;</code> elements provide navigation between pages and within the page using anchor links.</li>
+
+                            <li><code>&lt;script src="..."&gt;</code> links an external JavaScript file, separating behaviour from structure.</li>
+
+                            <li><code>&lt;footer&gt;</code> contains additional navigation and student details, placed at the end of the page.</li>
+                        </ul>
+
+                    <h3>CSS Technical Description</h3>
+                    <ul>
+                        <li><code>body</code> sets a dark background colour, creating the base theme of the page.</li>
+
+                        <li><code>.sonar</code> uses <code>position: absolute</code>, <code>border-radius: 50%</code>, and <code>transform</code> to create circular ripple elements.</li>
+
+                        <li><code>@keyframes sonarRing</code> defines the ripple animation using <code>transform</code> and <code>opacity</code> to simulate expanding waves.</li>
+
+                        <li><code>.sonar.fire</code>, <code>.fire2</code>, and <code>.fire3</code> apply staggered animations using delays for a layered ripple effect.</li>
+
+                        <li><code>#sonarpart</code> uses <code>position: fixed</code> and <code>pointer-events: none</code> so the animation stays centred and does not block user interaction.</li>
+
+                        <li><code>.bg</code> uses <code>position: fixed</code> and <code>opacity</code> transitions to create smooth background image changes.</li>
+
+                        <li><code>.bg.active</code> switches visibility by increasing opacity and z-index, controlling which background is shown.</li>
+
+                        <li><code>.bimg</code> uses <code>object-fit: cover</code> to ensure images fill the screen without distortion.</li>
+
+                        <li><code>.bg::after</code> applies gradient overlays using pseudo-elements to improve text readability over images.</li>
+
+                        <li><code>.chapters</code> uses Flexbox (<code>display: flex</code>) to centre content both vertically and horizontally.</li>
+
+                        <li><code>clamp()</code> is used for responsive font sizes, adjusting text smoothly across different screen sizes.</li>
+
+                        <li><code>.contentcon</code> uses <code>backdrop-filter: blur()</code> and semi-transparent backgrounds to create a glassmorphism effect.</li>
+
+                        <li><code>.contentcon.visible</code> uses <code>opacity</code> and <code>transform</code> transitions to animate content appearing on scroll.</li>
+
+                        <li><code>z-index</code> is used throughout (e.g., background = 0, content = 10) to control layering of elements correctly.</li>
+
+                        <li><code>@keyframes scrollDrop</code> animates the scroll indicator line using <code>transform</code> and <code>opacity</code> for a looping effect.</li>
+
+                        <li><code>#quickJump</code> is <strong>fixed to the right side</strong> of the viewport, vertically centered using <code>transform: translateY(-50%)</code></li>
+
+                        <li><code>#qjPill</code> is the container,  a <strong>frosted glass pill</strong> using <code>backdrop-filter: blur</code>, dark semi-transparent background, and a subtle sky-blue border</li>
+
+                        <li><code>.qj-item</code> is each nav dot row, flexbox-aligned, with a soft <strong>hover background highlight</strong></li> 
+
+                        <li><code>.qj-label</code> is a <strong>tooltip</strong> that appears to the left of each dot, hidden by default (<code>opacity: 0</code>, transparent color), revealed on hover, focus, or when <code>.active</code></li>
+
+                        <li><code>.qj-dot</code> is the <strong>circular indicator</strong>, small 6px dot with a sky-blue tint; scales up on hover and glows on active</li>
+
+                        <li><code>.qj-item.active .qj-dot</code> applies a <strong>cyan glow</strong> via <code>box-shadow</code> and scales the dot to 1.4x</li>
+
+                        <li><code>.qj-dot::after</code> creates a <strong>pulse ring</strong>, an expanding border that animates outward using <code>@keyframes qjPulse</code> only when the item is active</li> 
+
+                        <li><code>.qj-connector</code> is a thin <strong>1px vertical line</strong> between dots, acting as a visual divider</li> 
+
+                    </ul>
+
+                    <h3>JavaScript Technical Description</h3>
+                        <ul>
+                            <li><code>document.getElementById()</code> is used to select specific elements such as the scroll bar and sonar rings.</li>
+
+                            <li><code>document.querySelectorAll()</code> selects multiple elements (e.g., sections with <code>data-bg</code>) and converts them into an array using <code>Array.from()</code>.</li>
+
+                            <li><code>reduce()</code> is used to create an object mapping background IDs to their corresponding DOM elements for efficient access.</li>
+
+                            <li><code>switchBg()</code> function controls background transitions by adding and removing the <code>active</code> class.</li>
+
+                            <li><code>classList.add()</code> and <code>classList.remove()</code> dynamically update CSS classes to change styles and trigger animations.</li>
+
+                            <li><code>setTimeout()</code> is used to delay actions such as resetting <code>z-index</code> and controlling animation timing.</li>
+
+                            <li><code>window.addEventListener('scroll')</code> listens for scrolling to update the progress bar and trigger effects.</li>
+
+                            <li><code>window.pageYOffset</code> and document height calculations are used to determine scroll progress.</li>
+
+                            <li><code>getBoundingClientRect()</code> calculates the position of sections to detect which section is closest to the viewport centre.</li>
+
+                            <li><code>dataset</code> (e.g., <code>dataset.bg</code>) accesses custom HTML data attributes to control background switching.</li>
+
+                            <li><code>IntersectionObserver</code> detects when elements enter the viewport and adds a <code>visible</code> class for animations.</li>
+
+                            <li><code>addEventListener('load')</code> ensures initial functions run only after the page fully loads.</li>
+
+                            <li>Tracks which section is closest to <strong>45% down the viewport</strong></li> 
+
+                            <li><code>qjItems</code> = all nav links in <code>#quickJump</code>; <code>qjTargets</code> = their <code>data-target</code> section IDs</li>
+
+                            <li>On each call, computes a midpoint (<code>winMid</code>) at <strong>45% of the viewport</strong></li>
+
+                            <li>Loops through all target sections, finds the one whose <strong>center is closest</strong> to <code>winMid</code></li>
+
+                            <li>Toggles the <code>active</code> class on the <strong>matching nav item</strong>, removes it from the rest</li>
+
+                            <li><code>scrollY</code> is passed in by the caller, usually from a <strong>scroll event</strong></li> 
+
+                        </ul>
 
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                    <ul>
+                        <li><code>lang="en"</code> defines the page language, helping screen readers use correct pronunciation.</li>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST4.html#content">Validation page</a></p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                        <li><code>alt</code> attributes on images provide descriptions for visually impaired users.</li>
+
+                        <li><code>aria-hidden="true"</code> hides decorative elements (e.g., background images, sonar effects) from screen readers.</li>
+
+                        <li><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;footer&gt;</code> create a semantic structure for easier navigation.</li>
+
+                        <li><code>aria-label</code> (e.g., "Back to top") gives meaningful descriptions to icons or non-text elements.</li>
+
+                        <li><code>&lt;a&gt;</code> links enable keyboard navigation between sections and pages.</li>
+
+                        <li><code>&lt;em&gt;</code> and <code>&lt;strong&gt;</code> provide semantic emphasis, improving how screen readers interpret content.</li>
+
+                        <li><code>id</code> attributes allow users to jump to sections using anchor links, supporting keyboard navigation.</li>
+                    </ul>
+
+
+                    <h3>Link to the validation page</h3> 
+                        <p><a href="validation_ST4.html#content">Validation Page</a></p> 
 
                         
                     <h3>Link to the page</h3>
-                        <p><a href="content.html">Content page</a></p>
+                        <p><a href="content_ST4.html">Content Page</a></p>
             </section>
 
             <section>
-                <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                    <p>Detail any challenges encountered during the implementation process and explain how they were resolved. Reflect on the lessons learned from overcoming these challenges.</p> 
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+                    <ul>
+                        <li>Building a multistep profile builder with real time updates seemed challenging at first but became manageable with careful planning.</li>
+                        
+                        <li>The SVG sitemap had to be built twice, once for desktop and once for mobile—because fixed coordinates prevented responsive scaling.</li>
+                        
+                        <li>Making the sitemap keyboard accessible required adding extra attributes to each SVG node, which was initially overlooked.</li>
+                        
+                        <li>Keeping CSS organised across separate files for each page required discipline to avoid style conflicts.</li>
+                        
+                        <li>Maintaining a consistent visual theme across all pages was an important part of the process.</li>
+                    </ul>
             </section>
 
             <section>
-                <h2 id="compliance"> Compliance</h2>
-                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes demonstrating your understanding and application of these regulations. Be realistic and truthful. <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+                <h2 id="compliance">Compliance</h2>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> and <code>lang="en"</code> are included on both pages, ensuring proper HTML5 structure and correct interpretation by browsers and screen readers.</li>
 
+                        <li><code>W3C HTML Validator</code> was used to check both pages for structural errors, missing tags, and incorrect nesting before submission.</li>
+
+                        <li><code>W3C CSS Validator</code> was used to validate <code>style.css</code>, <code>feedback.css</code>, and <code>team.css</code>, ensuring no invalid properties or syntax errors.</li>
+
+                        <li><code>alt attributes</code> are applied to all images, and semantic HTML elements are used for buttons, links, and inputs to meet accessibility standards.</li>
+
+                        <li><code>Google Gemini</code> was used to generate images, and <code>Google Fonts</code> are loaded via their official API under an open licence, avoiding copyright issues.</li>
+
+                        <li><code>HTTPS</code> is used for all external resources, ensuring secure loading and preventing mixed content warnings.</li>
+
+                        <li><code>No data storage</code> is implemented in the feedback form, aligning with data minimisation principles as no user input is saved or transmitted.</li>
+
+                        <li><code>novalidate</code> ensures all validation is handled client-side with JavaScript, meaning no data is sent to external systems.</li>
+
+                        <li><code>Appropriate content</code> is maintained across both pages, with no offensive or misleading material, complying with acceptable use standards.</li>
+
+                        <li><code>Responsive design</code> is implemented using <code>flex-wrap: wrap</code> on the team page and <code>max-width</code> with <code>margin: auto</code> on the feedback page to ensure usability across devices.</li>
+                    </ul> 
                     
             </section>
 
             <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
-                        <table>
-    
-                            <thead>
-                                <tr>
-                                    <th colspan="6">Group Meetings and Contribution Log</th>
-                                </tr>
-                                <tr>
-                                    <th>Meeting</th>
-                                    <th>Date &amp; Time</th>
-                                    <th>Format</th>
-                                    <th>Objective</th>
-                                    <th>Attended</th>
-                                    <th>Your Individual Contribution</th>
-                                </tr>
-                            </thead>
-                        
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>10 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Identify the CW requirements</td>
-                                    <td>Yes</td>
-                                    <td>Contributed to understanding coursework requirements and clarified key deliverables</td>
-                                </tr>
+                <h2 id="group">Group Meetings and Individual Contribution Log</h2>
 
-                                <tr>
-                                    <td>2</td>
-                                    <td>21 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Agree on the SDG</td>
-                                    <td>Yes</td>
-                                    <td>Participated in discussion and helped select the most suitable SDG</td>
-                                </tr>
-
-                                <tr>
-                                    <td>3</td>
-                                    <td>24 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Assign roles</td>
-                                    <td>Yes</td>
-                                    <td>Took part in role allocation and accepted assigned responsibilities</td>
-                                </tr>
-
-                                <tr>
-                                    <td>4</td>
-                                    <td>13 March 2026</td>
-                                    <td>Physical</td>
-                                    <td>Choose color palettes, design styles</td>
-                                    <td>Yes</td>
-                                    <td>Suggested design ideas and contributed to initial visual concepts</td>
-                                </tr>
-
-                                <tr>
-                                    <td>5</td>
-                                    <td>14 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Finalize the color palettes and design styles</td>
-                                    <td>Yes</td>
-                                    <td>Helped finalize design decisions and agreed on overall theme and the storyline</td>
-                                </tr>
-
-                                <tr>
-                                    <td>6</td>
-                                    <td>18 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Review the design</td>
-                                    <td>Yes</td>
-                                    <td>Gave feedback and suggested improvements to design elements</td>
-                                </tr>
-
-                                <tr>
-                                    <td>7</td>
-                                    <td>19 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Progress review</td>
-                                    <td>Yes</td>
-                                    <td>Shared progress updates and discussed next steps</td>
-                                </tr>
-
-                                <tr>
-                                    <td>8</td>
-                                    <td>22 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Progress review</td>
-                                    <td>Yes</td>
-                                    <td>Contributed updates and helped identify pending tasks</td>
-                                </tr>
-
-                                <tr>
-                                    <td>9</td>
-                                    <td>24 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Finalize the individual components</td>
-                                    <td>Yes</td>
-                                    <td>Completed assigned component and ensured it met requirements</td>
-                                </tr>
-
-                                <tr>
-                                    <td>10</td>
-                                    <td>26 March 2026</td>
-                                    <td>Online</td>
-                                    <td>Final review and submission preparation</td>
-                                    <td>Yes</td>
-                                    <td>Participated in final checks and ensured readiness for submission</td>
-                                </tr>
-                            </tbody>
-                        
-                        </table>
-                    
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>10 Feb 2026</td>
+                            <td>Online</td>
+                            <td>Identify the CW requirements</td>
+                            <td>Yes</td>
+                            <td>Outlined key deliverables and ensured the team had a clear understanding of the coursework requirements</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>21 Feb 2026</td>
+                            <td>Online</td>
+                            <td>Agree on the SDG</td>
+                            <td>Yes</td>
+                            <td>Facilitated the SDG selection discussion and made the final call on the chosen SDG</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>24 Feb 2026</td>
+                            <td>Physical</td>
+                            <td>Assign roles</td>
+                            <td>Yes</td>
+                            <td>Coordinated role allocation and took ownership of the profile page and sitemap</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>13 March 2026</td>
+                            <td>Physical</td>
+                            <td>Choose color palettes, design styles</td>
+                            <td>Yes</td>
+                            <td>Participated in the design discussion and provided input from a content and structure perspective</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>14 March 2026</td>
+                            <td>Online</td>
+                            <td>Finalize the color palettes and design styles</td>
+                            <td>Yes</td>
+                            <td>Provided feedback on the finalised theme from a content and sitemap structure perspective</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>18 March 2026</td>
+                            <td>Online</td>
+                            <td>Review the design</td>
+                            <td>Yes</td>
+                            <td>Reviewed the profile page and sitemap against the agreed design and flagged any inconsistencies</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>19 March 2026</td>
+                            <td>Physical</td>
+                            <td>Progress review</td>
+                            <td>Yes</td>
+                            <td>Presented progress on the profile page and sitemap</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>22 March 2026</td>
+                            <td>Online</td>
+                            <td>Progress review</td>
+                            <td>Yes</td>
+                            <td>Confirmed near-completion of the profile page and sitemap and helped identify remaining tasks</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>24 March 2026</td>
+                            <td>Online</td>
+                            <td>Finalize the individual components</td>
+                            <td>Yes</td>
+                            <td>Completed the profile page and sitemap and verified they met the coursework requirements</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>28 March 2026</td>
+                            <td>Online</td>
+                            <td>Final review and submission preparation</td>
+                            <td>Yes</td>
+                            <td>Conducted a final check on the profile page and sitemap, and went through the marking scheme together with the team to ensure all requirements were met before submission</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
             <section>
                 <h2 id="ref">References</h2>
-                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
-                    <ul class="ref">
-                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
-                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
-                    </ul>
+                <ul>
+                    <li>
+                        All the images including the background image and other page specific images were generated using <strong>Google Gemini</strong>.
+                    </li>
+                </ul>
+                <hr>
+                <ul class="ref">
+                    <li>
+                        NOAA Fisheries (2024) <em>Why Can't Killer Whales Find and Capture Food? The Ocean Is too Noisy.</em> 
+                        <br>Available at: <a href="https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy" target="_blank">
+                        https://www.fisheries.noaa.gov/feature-story/why-cant-killer-whales-find-and-capture-food-ocean-too-noisy</a> 
+                        (Accessed: 22 March 2026).
+                    </li>
+                    <li>
+                        Tennessen, J.B. et al. (2024) 'Vessel noise levels drive foraging responses in endangered killer whales', 
+                        <em>Biological Conservation.</em>
+                        <br>Available at: <a href="https://onlinelibrary.wiley.com/doi/10.1111/gcb.17490#" target=""_blank>https://onlinelibrary.wiley.com/doi/10.1111/gcb.17490#</a>(Accessed: 22 March 2026).
+                    </li>
+                    <!-- UN Goal 14 reference -->
+                    <li>
+                        United Nations Department of Economic and Social Affairs (2025). <em>Goal 14: Conserve and sustainably use the oceans, seas and marine resources.</em>
+                        Available at: 
+                        <a href="https://sdgs.un.org/goals/goal14" target="_blank" rel="noopener">
+                            UN SDG Goal 14 page
+                        </a> 
+                        (Last accessed: 10 March 2026).S
+                    </li>
+
+                    <!-- W3Schools HTML links tutorial -->
+                    <li>
+                        W3Schools (n.d.). <em>HTML Links.</em> Available at: 
+                        <a href="https://www.w3schools.com/html/html_links.asp" target="_blank" rel="noopener">
+                            www.w3schools.com
+                        </a> 
+                        (Accessed 12 March 2026).
+                    </li>
+                </ul>
             </section>
 
         </main>
 
         <!-- Sidebar area -->
         <aside>
-            <h3>Core pages developed:</h3>
-
-        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
+            <h3 class="core-pages">Core Pages Developed:</h3>
             <ul class="top-level-ul">
-                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 4</li>
+                <li>Student 4
                     <ul>
                         <li><a href="#profile">User Profile </a></li>
                         <li><a href="#sitemap">Sitemap</a></li>
                         <li><a href="#content">Content</a></li>
                     </ul>
+                </li>
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
                 <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
@@ -389,6 +611,7 @@
             </div>
         </div>
     </footer>
+    
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
 </body>

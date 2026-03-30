@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!--Font-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
-    
     <title>Gallery</title>
 
-    <!--Global CSS-->
-    <link rel="stylesheet" href="style.css">
-
-    <!--Gallery CSS-->
+    <!-- Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;700&family=Roboto:wght@400;700&display=swap">
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Gallery CSS -->
     <link rel="stylesheet" href="styles/gallery.css">
-   
+
+     <!-- Browser Tab - Icon -->
+    <link rel="icon" type="image/png" href="assets/Logoo.png">
+
 </head>
 
 <body>
-    <img src="assets/gallery_bg.png" class="scene_bg" alt="Ocean background" onerror="this.style.display='none'">
+    <!-- Background Image -->
+    <img src="assets/gallery_bg.png" class="scene_bg" alt="Background image of the ocean" onerror="this.style.display='none'">
         
     <header>
+        <!-- Navigation -->
         <nav>
             <div class="logo-area">
                 <div class="logo-circle"></div>
@@ -38,108 +42,123 @@
                 <a href="team.html">Team</a>
                 <a href="profile.html">Profile</a>
                 <a href="sitemap.html">Sitemap</a>
-            </div>	
+            </div>  
         </nav>
     </header>
 
     <main>
         <section class="pageup">
             <div class="container">
-            <div class="upcontent">
-                <span class="updescription">Act III · Windows To The Deep</span>
-                <h1 class="uptittle">See The Ocean.<br><em>Feel The Truth.</em></h1>
-                <div class="updevider"></div>
-                <p class="text-serif">
-                    A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
-                </p>
+                <div class="upcontent">
+                    <span class="updescription">Act III · Windows To The Deep</span>
+                    <h1 class="uptittle">See The Ocean.<br><em>Feel The Truth.</em></h1>
+                    <div class="updevider"></div>
+                    <p class="text-serif">
+                        A visual journey through the beauty we are fighting to protect,<br>and the damage we can no longer ignore.
+                    </p>
+                </div>
             </div>
-        </div>
         </section>
         
-        <!--Gallery Section-->
+        <!-- Gallery Section -->
         <div class="dashboard-container">
-            <div class="card">
-                <img src="assets/gallery_whalewarning.png" alt="Cargo ship noise waves hitting whales" class="card-image">
+
+            <!-- Content Card 1 -->
+            <div class="card" 
+                data-extra="Beneath the surface, what should be a peaceful ocean nursery becomes a wall of noise. The calf, disoriented, drifts from its mother — a silent tragedy unfolding in the deep. Ocean noise pollution from cargo ships can travel hundreds of kilometres underwater, disrupting the sonar-based communication whales rely on for navigation, feeding, and raising their young.">
+                <img src="assets/gallery_whalewarning.png" alt="Image of a cargo ship emitting noise waves that hit whales" class="card-image">
                 <div class="card-content">
                     <h2>Whale Warning</h2>
                     <p class="card-description">A massive cargo ship blasts harsh red sound waves, distorting the delicate blue echoes of a mother whale and her calf.</p>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="assets/gallery_ghostnets.png" alt="Discarded fishing net on sea floor" class="card-image">
+            <!-- Content Card 2 -->
+            <div class="card" 
+                data-extra="Left behind by fishing vessels, these invisible killers entangle sea turtles, dolphins, and sharks — creatures that never had any part in the catch. Ghost nets are responsible for trapping and killing over 100,000 marine mammals and millions of fish each year. They can drift for decades, continuing to cause harm long after they are lost.">
+                <img src="assets/gallery_ghostnets.png" alt="Image of a discarded fishing net on the sea floor" class="card-image">
                 <div class="card-content">
                     <h2>Ghost Nets</h2>
                     <p class="card-description">A massive, forgotten "ghost net" drifts like a giant, suffocating spiderweb over ancient rock formations.</p>
                 </div>
             </div>
 
-            <div class="card">
-                <img src="assets/gallery_bleachedreefs.png" alt="White skeletal coral reef" class="card-image">
+            <!-- Content Card 3 -->
+            <div class="card" 
+                data-extra="Rising ocean temperatures have caused the coral to expel the algae it depends on to survive. Without intervention, entire reef ecosystems that took thousands of years to grow can vanish within a single season. Mass coral bleaching events have increased dramatically due to climate change, and scientists warn we may lose over 90% of the world's coral reefs by 2050.">
+                <img src="assets/gallery_bleachedreefs.png" alt="Image of a white skeletal coral reef" class="card-image">
                 <div class="card-content">
                     <h2>Bleached Reefs</h2>
                     <p class="card-description">A coral garden rapidly dying; what was once vibrant is now a ghostly, skeletal white due to warming waters.</p>
                 </div>
             </div>
             
-			<div class="card">
-            <div class="card-image-wrapper">
-			<img src="assets/gallery_acalltoaction.png" alt="A Call to Action" class="card-image">
+            <!-- Content Card 4 -->
+            <div class="card" 
+                data-extra="Armed with knowledge and driven by urgency, they carry tools for reef restoration and debris removal. This is not rescue — this is restoration. Youth-led ocean conservation movements are growing globally, with young activists at the forefront of reef gardening projects, plastic clean-up campaigns, and lobbying for stronger marine protection laws under SDG 14.">
+                <div class="card-image-wrapper">
+                    <img src="assets/gallery_acalltoaction.png" alt="Image of a call to action" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h2>A Call to Action</h2>
+                    <span class="card-description">Action is taken. Returning underwater, we see a team of divers. Crucially, they are led by the young character from the cliffside.</span>
+                </div>
             </div>
-            <div class="card-content">
-				<h2>A Call to Action</h2>
-                <span class="card-description">Action is taken. Returning underwater, we see a team of divers. Crucially, they are led by the young character from the cliffside.</span>
+
+            <!-- Content Card 5 -->
+            <div class="card" 
+                data-extra="Pods of whales sing to one another across vast distances, dolphins click and whistle in complex dialogue, and even the smallest fish contribute to this aquatic orchestra. This magical, ancient language is older than any human voice — and it is under threat. Marine bioacoustics researchers warn that rising noise pollution is silencing the ocean's natural symphony, with devastating effects on entire species.">
+                <div class="card-image-wrapper">
+                    <img src="assets/gallery_listeningtotheechoes.png" alt="Image of someone listening to the echoes" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h2>Listening to the Echoes</h2>
+                    <span class="card-description">The ocean is not silent; it is a symphony of soft, glowing sound. We observe this magical, aquatic language as it travels through the dark water.</span>
+                </div>
             </div>
+        
+            <!-- Content Card 6 -->
+            <div class="card" 
+                data-extra="The young protagonist and the elderly lighthouse keeper plant coral fragments together, their hands moving in quiet unison. What was broken is being rebuilt, one piece at a time. Community-driven marine restoration — such as coral gardening and coastline clean-ups — has proven highly effective, with local fishermen, scientists, students, and elders restoring entire reef ecosystems across Sri Lanka, Indonesia, and the Philippines.">
+                <div class="card-image-wrapper">
+                    <img src="assets/gallery_thecommunityrebuilds.png" alt="Image of the community rebuilding" class="card-image">
+                </div>
+                <div class="card-content">
+                    <h2>The Community Rebuilds</h2>
+                    <span class="card-description">True change happens through collective effort. Under a bright, sun-drenched surface, a diverse group of people including the young protagonist and the elderly lighthouse keeper work as a team.</span>
+                </div>
+            </div>
+
         </div>
 
-		<div  class="card">
-            <div  class="card-image-wrapper">
-            <img src="assets/gallery_listeningtotheechoes.png" alt="Listening to the Echoes" class="card-image">
-            </div >
-            <div  class="card-content">
-				<h2>Listening to the Echoes</h2>
-                <span class="card-description">The ocean is not silent; it is a symphony of soft, glowing sound. We observe this magical, aquatic language as it travels through the dark water.</span>
-            </div>
-        </div>
-       
-		<div  class="card">
-            <div  class="card-image-wrapper">
-             <img src="assets/gallery_thecommunityrebuilds.png" alt="The Community Rebuilds" class="card-image">
-            </div >
-            <div  class="card-content">
-				<h2>The Community Rebuilds</h2>
-                <span class="card-description">True change happens through collective effort. Under a bright, sun-drenched surface, a diverse group of people including the young protagonist and the elderly lighthouse keeper work as a team.</span>
-            </div >
-        </div >
-        </div >
     </main>
 
-<!--JavaScript Part(Change this comment)-->
-<div id="galleryModal" class="modal">
-    <div class="modal-content" id="modalTarget">
-        <span class="close-btn" id="closeModal">&times;</span>
-        <img id="modalImg" src="#" alt="" class="modal-image">
-        <div id="modalTitle"></div>
-        <div id="modalDesc"></div>
+    <!--JavaScript Part for Modal-->
+    <div id="galleryModal" class="modal">
+        <div class="modal-content" id="modalTarget">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <img id="modalImg" src="#" alt="" class="modal-image">
+            <div id="modalTitle"></div>
+            <div id="modalDesc"></div>
+            <div id="modalExtra"></div>
         
-        <div class="custom-controls">
-            <button class="btn-custom" id="btnFont">Change Font</button>
-            <button class="btn-custom" id="btnColor">Change Colour Scheme</button>
-        </div>
+            <div class="custom-controls">
+                <button class="btn-custom" id="btnFont">Change Font</button>
+                <button class="btn-custom" id="btnColor">Change Colour Scheme</button>
+            </div>
         </div>
     </div>
     
     <!--Back to top-->
     <a href="#" class="back-to-top" aria-label="Back to top">↑</a>
     
-    
     <!--Footer-->
-	<footer>
+    <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="pageEditor_ST1.html">Page Editor</a>
-                <a href="validation_ST1.html">Validation Page</a>
-                <a href="pageEditor_ST1.html#home-a11y">Accessibility</a>
+                <a href="pageEditor_ST1.html#gallery">Page Editor</a>
+                <a href="validation_ST1.html#gallery">Validation Page</a>
+                <a href="pageEditor_ST1.html#gallery-a11y">Accessibility</a>
                 <a href="pageEditor_ST1.html#compliance">Compliance</a>
             </div>
             
@@ -150,6 +169,8 @@
             </div>
         </div>
     </footer>
+
+    <!-- Gallery JS -->
     <script src="scripts/gallery.js"></script> 
 </body>
 

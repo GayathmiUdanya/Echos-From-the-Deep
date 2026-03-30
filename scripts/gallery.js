@@ -4,6 +4,7 @@ const modal = document.getElementById('galleryModal');
 const modalImg = document.getElementById('modalImg');
 const modalTitle = document.getElementById('modalTitle');
 const modalDesc = document.getElementById('modalDesc');
+const modalExtra = document.getElementById('modalExtra');
 const closeModal = document.getElementById('closeModal');
 const modalTarget = document.getElementById('modalTarget');
 
@@ -19,18 +20,20 @@ cards.forEach(card => {
         card.style.transform = "translateY(0)";
     });
 
-// Click-to-expand Interaction
+    // Click-to-expand Interaction
     card.addEventListener('click', () => {
         const imgSource = card.querySelector('img').src;
         const altText = card.querySelector('img').alt;
         const titleText = card.querySelector('h2').innerText;
         const descriptionText = card.querySelector('.card-description').innerText;
+        const extraText = card.dataset.extra || '';
 
-// Populate the extended view
+        // Populate the extended view
         modalImg.src = imgSource;
         modalImg.alt = altText;
         modalTitle.innerText = titleText;
         modalDesc.innerText = descriptionText;
+        modalExtra.innerText = extraText;
         modal.style.display = 'flex';
     });
 });
@@ -47,7 +50,7 @@ window.addEventListener('click', (e) => {
     if (e.target === modal) modal.style.display = 'none';
 });
 
-// User Customization 
+// User Customisation
 document.getElementById('btnFont').addEventListener('click', () => {
     modalTarget.classList.toggle('alt-font-active');
 });
