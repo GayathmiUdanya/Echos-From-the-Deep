@@ -68,6 +68,20 @@
                             <li><code>@keyframes bounce</code> powers the scroll indicator's vertical animation</li>
 
                             <li><code>backdrop-filter</code> creates a modern glassmorphism effect on the navigation bar</li>
+                        
+                            <li><code>.mission-header</code> serves as the primary container for the section introduction and branding.</li>
+                            
+                            <li><code>.section-eyebrow</code> provides a small-text label to categorize the content under SDG 14.</li>
+
+                            <li><code>.mission-title</code> uses <code>&lt;em&gt;</code> tags to apply specific italic styling to key mission phrases.</li>
+
+                            <li><code>.grid</code> implements the parent container for the 2-column mission card layout.</li>
+
+                            <li><code>.card-glass</code> acts as a middle layer between the background image and the foreground text.</li>
+
+                            <li><code>.card-num</code> holds a decorative string to provide a unique visual identifier for each goal.</li>
+
+                            <li><code>.card-goals</code> uses nested <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags to structure action items.</li>
                         </ul> 
 
                     <h3>CSS Technical Description</h3>
@@ -91,6 +105,18 @@
                             <li><code>.card.peek:hover</code> triggers a <code>width</code> expansion from 85px to 220px to reveal hidden content</li>
 
                             <li><code>.peek-overlay</code> uses <code>transform: rotate(-90deg)</code> to display text vertically on unexpanded cards</li>
+                        
+                            <li><code>.grid</code> uses <code>display: grid</code> with <code>repeat(2, 1fr)</code> for a symmetrical desktop view.</li>
+
+                            <li><code>.card-img</code> utilizes <code>object-fit: cover</code> and <code>filter: brightness(.32)</code> for background depth.</li>
+
+                            <li><code>.card-body</code> is set to <code>position: relative</code> with a high <code>z-index</code> to stay above the glass layer.</li>
+
+                            <li><code>.card-tag</code> uses <code>letter-spacing</code> and <code>text-transform</code> to create a professional UI label.</li>
+
+                            <li><code>.card-goals li</code> applies <code>opacity: 0</code> and <code>translateX</code> for a hidden-to-visible animation state.</li>
+
+                            <li><code>:hover</code> triggers <code>scale(1.04)</code> on images and shifts the goal list into view.</li>
                         </ul>   
                          
                     <h3 id="home-a11y">Accessibility</h3>
@@ -130,6 +156,12 @@
                             <li><code>pointer-events: none</code> on <code>.peek-overlay</code> prevents decorative text from blocking mouse clicks</li>
 
                             <li><code>font-family: var(--font-body)</code> defaults to <code>sans-serif</code> for maximum character legibility</li>
+                        
+                            <li><code>brightness(.32)</code> ensures the light-blue text maintains a passing contrast ratio against the dark imagery.</li>
+
+                            <li><code>transition: 1s</code> ensures that entrance animations are smooth and do not cause flash sensitivities.</li>
+                            
+                            <li><code>line-height: 1.7</code> improves the readability of mission descriptions for users with cognitive disabilities.</li>
                         </ul>
 
                     <h3>Link to the validation page</h3> 
