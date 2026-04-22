@@ -305,30 +305,41 @@ nav {
     }
 }
 
-/*Back to the top button*/
-a.back-to-top{
+/* ── BACK TO TOP BUTTON ── */
+a.back-to-top {
     position: fixed;
-    bottom: 1.0rem;
+    bottom: 1.2rem;
     right: 1.5rem;
-    width: 42px !important;
-    height: 42px !important;
-    background: rgba(3, 13, 26, 0.9);
-    border: 1px solid rgba(125, 211, 252, 0.22);
-    border-radius: 50%;
-    display: flex !important;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
     align-items: center;
     justify-content: center;
-    color: #7dd3fc;
-    font-size: 1.2rem !important;
-    text-decoration: none;
-    z-index: 50;
 
-    transition: background 0.25s, transform 0.25s;
+    border-radius: 50%;
+
+    background: rgba(3, 13, 26, 0.9);
+    border: 1px solid rgba(125, 211, 252, 0.25);
+
+    color: #7dd3fc;
+    font-size: 16px;
+    line-height: 1;
+    text-decoration: none;
+
+    z-index: 9999;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
+/* Hover effect */
 a.back-to-top:hover {
     background: rgba(125, 211, 252, 0.12);
-    transform: translateY(-5px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
 }
 
 /* Footer */
