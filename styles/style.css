@@ -41,7 +41,7 @@ html,
 body {
     height: 100%;
     font-family: var(--font-body) !important; /* Force body font throughout */
-    color: var(--white); /* default text colour */
+    color: var(--white); /* Default text colour */
     padding-top: 50px; /*   Space for fixed navbar */
 }
 
