@@ -307,6 +307,7 @@ nav {
 
 /* ── BACK TO TOP BUTTON ── */
 a.back-to-top {
+    font-family: Arial, sans-serif !important;
     position: fixed;
     bottom: 1.2rem;
     right: 1.5rem;
