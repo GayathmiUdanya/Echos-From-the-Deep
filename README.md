@@ -34,7 +34,6 @@ The project explores the impact of human activities—especially noise pollution
 ---
 
 ## 📂 Project Structure
-## 📂 Project Structure
 
 ```
 Echos-From-the-Deep/
